@@ -9918,23 +9918,26 @@
     }
   }
 
-  /* ── Coming-soon fallback ── */
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || href === '#') return;
-    link.addEventListener('click', function(e) {
-      const test = new XMLHttpRequest();
-      test.open('HEAD', href, false);
-      try {
-        test.send();
-        if (test.status === 404 || test.status === 0) {
-          e.preventDefault();
-          window.location.href = '../coming-soon.html';
-        }
-      } catch {
-        e.preventDefault();
-        window.location.href = '../coming-soon.html';
-      }
+  /* ── Intercept unbuilt external links → coming-soon ── */
+  const LIVE_PAGES = new Set([
+    '../HSK3/hsk3_01-10.html',
+    '../HSK3/hsk3_11-20.html',
+    'hsk3_01-10.html',
+    'hsk3_11-20.html',
+    '../HSK4/hsk4_01-10.html',
+    '../HSK4/hsk4_11-20.html',
+    '../hsk-menu.html',
+    '../../index.html',
+    '../coming-soon.html'
+  ]);
+
+  document.querySelectorAll('a[href]').forEach(function(a) {
+    const href = a.getAttribute('href');
+    if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+    if (LIVE_PAGES.has(href)) return;
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = '../coming-soon.html';
     });
   });
 </script>

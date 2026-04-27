@@ -2341,7 +2341,7 @@ function openLesson(idx){
   document.getElementById('den').textContent = CUR.en;
   // Breadcrumb tag stays fixed for this file
   const crumb = document.getElementById('dcrumb');
-  if(crumb){ crumb.href = '../HSK/HSK3/hsk3_11-20.html'; crumb.textContent = '‹ HSK 3'; }
+  if(crumb){ crumb.href = 'hsk3_11-20.html'; crumb.textContent = '‹ HSK 3'; }
   // Watermark: Chinese number character for lesson index (11–20)
   const WM = ['十一','十二','十三','十四','十五','十六','十七','十八','十九','二十'];
   const hdr = document.querySelector('.lesson-header');
@@ -2811,36 +2811,33 @@ function toggleBlock(btn, type, blockId){
 // ══════════════ INIT ══════════════
 renderHome();
 
-// ══════════════ LINK GUARD — redirect broken/missing pages to coming-soon ══════════════
+// ══════════════ LINK GUARD — redirect unbuilt pages to coming-soon ══════════════
 (function(){
   const COMING_SOON = '../coming-soon.html';
+  const LIVE_PAGES = new Set([
+    '../HSK3/hsk3_01-10.html',
+    '../HSK3/hsk3_11-20.html',
+    'hsk3_01-10.html',
+    'hsk3_11-20.html',
+    '../HSK4/hsk4_01-10.html',
+    '../HSK4/hsk4_11-20.html',
+    '../hsk-menu.html',
+    '../../index.html',
+    '../coming-soon.html'
+  ]);
 
   function guardLink(a){
     const href = a.getAttribute('href');
-    // Skip: empty, hash-only, external, or already pointing to coming-soon
     if(!href || href === '#' || href.startsWith('http') || href.startsWith('mailto') || href.includes('coming-soon')) return;
-
+    if(LIVE_PAGES.has(href)) return;
     a.addEventListener('click', function(e){
       e.preventDefault();
-      fetch(href, { method: 'HEAD' })
-        .then(function(res){
-          if(res.ok){
-            window.location.href = href;
-          } else {
-            window.location.href = COMING_SOON;
-          }
-        })
-        .catch(function(){
-          // Network error or file not found (local file:// protocol)
-          window.location.href = COMING_SOON;
-        });
+      window.location.href = COMING_SOON;
     });
   }
 
-  // Guard all links present now
   document.querySelectorAll('a[href]').forEach(guardLink);
 
-  // Also guard any links added dynamically later (e.g. lesson nav buttons)
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(m){
       m.addedNodes.forEach(function(node){
