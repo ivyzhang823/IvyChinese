@@ -9286,22 +9286,23 @@
     }
   }
 
-  /* ── External link guard: redirect unbuilt pages to coming-soon ── */
-  document.addEventListener('click', function(e) {
-    const a = e.target.closest('a[href]');
-    if (!a) return;
+  /* ── Intercept unbuilt external links → coming-soon ── */
+  const LIVE_PAGES = new Set([
+    '../HSK4/hsk4_01-10.html',
+    '../HSK4/hsk4_11-20.html',
+    '../hsk-menu.html',
+    '../../index.html',
+    '../coming-soon.html'
+  ]);
+
+  document.querySelectorAll('a[href]').forEach(function(a) {
     const href = a.getAttribute('href');
-    if (!href || href === '#' || href.startsWith('javascript:')) return;
-    if (href.startsWith('http://') || href.startsWith('https://')) return;
-    e.preventDefault();
-    const target = new URL(href, window.location.href).href;
-    fetch(target, { method: 'HEAD' })
-      .then(res => {
-        window.location.href = res.ok ? target : new URL('../coming-soon.html', window.location.href).href;
-      })
-      .catch(() => {
-        window.location.href = new URL('../coming-soon.html', window.location.href).href;
-      });
+    if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+    if (LIVE_PAGES.has(href)) return;
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = '../coming-soon.html';
+    });
   });
 </script>
 
