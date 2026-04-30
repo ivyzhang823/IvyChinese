@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04·能愿动词：会 VS 能 · 中文语法</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #9A6F2A;
+  --ink: #1E2235;
+  --bg2: #F0EDE6;
+  --muted: #9A96A0;
+  --border: #E2DDD6;
+  --hui: #2E7DC4;
+  --neng: #3A7A60;
+  --correct: #2D7D46;
+  --wrong: #C0392B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: #E8E4DC; color: var(--ink); font-family: 'Noto Sans SC', sans-serif; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+body::before { content:''; position:fixed; inset:0; background-image: radial-gradient(ellipse 80% 50% at 20% 20%, rgba(46,125,196,0.05) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(58,122,96,0.05) 0%, transparent 60%); pointer-events:none; z-index:0; }
+.page { position:relative; z-index:1; width:100%; padding: 40px clamp(16px,4vw,60px) 0; box-sizing:border-box; flex:1; display:flex; flex-direction:column; }
+.btn-home { position:absolute; top:16px; left:20px; z-index:10; padding:10px 20px; font-size:12px; letter-spacing:2px; color:var(--gold); background:rgba(154,111,42,0.08); border:1px solid rgba(154,111,42,0.3); border-radius:3px; text-decoration:none; font-weight:500; transition:background 0.2s; white-space:nowrap; font-family:'Noto Sans SC', sans-serif; }
+.btn-home:hover { background:rgba(154,111,42,0.16); }
+.header { text-align:center; margin-bottom:24px; padding-top:36px; animation:fadeDown 0.8s ease both; }
+.header-num { font-size:11px; letter-spacing:4px; color:var(--gold); margin-bottom:6px; opacity:0.8; }
+.header-title { font-family:'Noto Serif SC', serif; font-size:clamp(20px,3.5vw,32px); font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:4px; }
+.header-sub { font-size:13px; color:var(--muted); letter-spacing:1px; margin-top:4px; }
+.level-tag { display:inline-block; font-size:10px; padding:3px 10px; border-radius:2px; margin-top:6px; letter-spacing:1px; font-weight:500; background:rgba(46,125,196,0.1); color:var(--hui); border:1px solid rgba(46,125,196,0.3); }
+.gold-divider { display:flex; align-items:center; gap:16px; margin:12px auto; max-width:300px; }
+.gold-divider::before,.gold-divider::after { content:'';flex:1;height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+.gold-divider-dot { width:6px;height:6px;background:var(--gold);transform:rotate(45deg); }
+.btn-en { padding:0; width:28px; height:28px; font-size:11px; color:var(--muted); background:rgba(154,111,42,0.06); border:1px solid rgba(154,111,42,0.2); border-radius:3px; cursor:pointer; font-family:'Noto Sans SC', sans-serif; transition:all 0.2s; margin:auto 12px auto 0; flex-shrink:0; font-weight:500; display:flex; align-items:center; justify-content:center; }
+.btn-en:hover, .btn-en.active { border-color:rgba(154,111,42,0.5); background:rgba(154,111,42,0.2); color:var(--gold); }
+.en-text { display:none; font-size:0.8em; color:var(--muted); font-weight:400; letter-spacing:0.5px; margin-top:2px; }
+body.show-en .en-text { display:block; }
+.tabs { display:flex; gap:0; border-bottom:2px solid rgba(154,111,42,0.2); margin-bottom:0; overflow-x:auto; scrollbar-width:none; flex-shrink:0; position:sticky; top:0; z-index:50; background:rgba(253,252,249,0.97); backdrop-filter:blur(8px); box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+.tabs::-webkit-scrollbar { display:none; }
+.tab-btn { padding:12px 24px; font-size:13px; letter-spacing:1px; color:var(--muted); background:none; border:none; border-bottom:2px solid transparent; cursor:pointer; white-space:nowrap; font-family:'Noto Sans SC', sans-serif; transition:all 0.2s; position:relative; bottom:-2px; }
+.tab-btn:hover { color:var(--ink); }
+.tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); font-weight:500; }
+.tab-panel { display:none; animation:fadeUp 0.4s ease both; }
+.tab-panel.active { display:block; }
+.content { background:#FDFCF9; flex:1; padding: 32px clamp(16px,4vw,48px) 40px; }
+.card { background:#fff; border:1px solid #E2DDD6; border-radius:6px; padding:20px 24px; margin-bottom:16px; }
+.card-title { font-size:13px; font-weight:600; letter-spacing:1px; color:var(--gold); margin-bottom:14px; text-transform:uppercase; }
+.example { background:#FAFAF7; border-left:3px solid var(--gold); padding:12px 16px; margin-bottom:10px; border-radius:0 4px 4px 0; }
+.ex-zh { font-size:15px; color:var(--ink); font-weight:500; }
+.ex-pinyin { font-size:12px; color:var(--muted); margin-top:3px; font-style:italic; }
+.ex-en { display:none; font-size:12px; color:var(--muted); margin-top:3px; }
+body.show-en .ex-en { display:block; }
+.hui { color:var(--hui); font-weight:700; }
+.neng { color:var(--neng); font-weight:700; }
+.buneng { color:#C0392B; font-weight:700; }
+.buhui { color:#C0392B; font-weight:700; }
+.vs-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid #E2DDD6; border-radius:8px; overflow:hidden; margin-bottom:16px; }
+@media(max-width:540px) { .vs-grid { grid-template-columns:1fr; } }
+.vs-col-h { padding:16px 20px 12px; text-align:center; }
+.vs-col-h .char { font-family:'Noto Serif SC',serif; font-size:36px; font-weight:700; }
+.vs-col-h .char-pin { font-size:13px; opacity:0.8; margin-top:2px; }
+.vs-col-b { padding:14px 20px 18px; }
+.vs-hui .vs-col-h { background:#2E7DC4; color:#fff; }
+.vs-hui .vs-col-b { background:#EEF5FD; }
+.vs-neng .vs-col-h { background:#3A7A60; color:#fff; }
+.vs-neng .vs-col-b { background:#EEF6F1; }
+.vs-tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin:3px 2px; font-weight:600; }
+.vs-tag-hui { background:rgba(46,125,196,0.15); color:var(--hui); }
+.vs-tag-neng { background:rgba(58,122,96,0.15); color:var(--neng); }
+.compare-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+@media(max-width:540px) { .compare-row { grid-template-columns:1fr; } }
+.cmp-box { padding:14px 16px; border-radius:6px; }
+.cmp-hui { background:rgba(46,125,196,0.06); border:1px solid rgba(46,125,196,0.25); }
+.cmp-neng { background:rgba(58,122,96,0.06); border:1px solid rgba(58,122,96,0.25); }
+.cmp-label { font-size:11px; font-weight:700; letter-spacing:1px; margin-bottom:6px; }
+.cmp-hui .cmp-label { color:var(--hui); }
+.cmp-neng .cmp-label { color:var(--neng); }
+.cmp-sent { font-size:14px; line-height:1.6; }
+.cmp-rule { font-size:11px; color:var(--muted); margin-top:6px; font-style:italic; }
+.error-box { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+@media(max-width:520px) { .error-box { grid-template-columns:1fr; } }
+.err-card { padding:14px 16px; border-radius:6px; }
+.err-wrong { background:rgba(192,57,43,0.07); border:1px solid rgba(192,57,43,0.25); }
+.err-right { background:rgba(45,125,70,0.07); border:1px solid rgba(45,125,70,0.25); }
+.err-label { font-size:11px; font-weight:600; letter-spacing:1px; margin-bottom:8px; }
+.err-wrong .err-label { color:var(--wrong); }
+.err-right .err-label { color:var(--correct); }
+.err-sent { font-size:14px; }
+.err-note { font-size:12px; color:var(--muted); margin-top:6px; }
+.err-note-en { display:none; font-size:11px; color:var(--muted); margin-top:4px; font-style:italic; }
+body.show-en .err-note-en { display:block; }
+.matrix-table { width:100%; border-collapse:collapse; font-size:14px; }
+.matrix-table th, .matrix-table td { padding:12px 16px; border:1px solid #E2DDD6; }
+.matrix-table th { font-weight:700; font-size:13px; text-align:center; }
+.th-dim { background:#E8E4DC; color:var(--ink); }
+.th-hui-c { background:#2E7DC4; color:#fff; }
+.th-neng-c { background:#3A7A60; color:#fff; }
+.matrix-table td:first-child { font-weight:600; background:#FAFAF7; }
+.matrix-table td { text-align:center; }
+.quiz-section { margin-bottom:28px; }
+.quiz-title { font-size:13px; font-weight:600; letter-spacing:1px; color:var(--gold); text-transform:uppercase; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #E2DDD6; }
+.quiz-item { background:#fff; border:1px solid #E2DDD6; border-radius:6px; padding:16px 20px; margin-bottom:10px; }
+.quiz-q { font-size:14px; font-weight:500; margin-bottom:12px; line-height:1.6; }
+.quiz-q .blank { display:inline-block; min-width:60px; border-bottom:2px solid var(--gold); text-align:center; margin:0 4px; font-weight:700; color:var(--gold); }
+.quiz-opts { display:flex; gap:8px; flex-wrap:wrap; }
+.quiz-opt { padding:7px 18px; border:1px solid #D8D3CA; border-radius:4px; background:#FAFAF7; cursor:pointer; font-size:14px; font-family:'Noto Sans SC', sans-serif; transition:all 0.2s; }
+.quiz-opt:hover { border-color:var(--gold); background:rgba(154,111,42,0.06); }
+.quiz-opt.correct { background:rgba(45,125,70,0.12); border-color:var(--correct); color:var(--correct); font-weight:600; }
+.quiz-opt.wrong { background:rgba(192,57,43,0.1); border-color:var(--wrong); color:var(--wrong); }
+.quiz-opt:disabled { cursor:default; }
+.quiz-feedback { font-size:12px; margin-top:10px; padding:8px 12px; border-radius:4px; display:none; }
+.quiz-feedback.show { display:block; }
+.quiz-feedback.ok { background:rgba(45,125,70,0.1); color:var(--correct); }
+.quiz-feedback.no { background:rgba(192,57,43,0.08); color:var(--wrong); }
+.quiz-en { display:none; font-size:12px; color:var(--muted); margin-bottom:8px; font-style:italic; }
+body.show-en .quiz-en { display:block; }
+.judge-item { background:#fff; border:1px solid #E2DDD6; border-radius:6px; padding:16px 20px; margin-bottom:10px; display:flex; align-items:flex-start; gap:16px; }
+.judge-sent { flex:1; font-size:14px; line-height:1.6; }
+.judge-btns { display:flex; gap:8px; flex-shrink:0; }
+.judge-btn { padding:6px 14px; border-radius:4px; border:1px solid #D8D3CA; background:#FAFAF7; cursor:pointer; font-size:13px; font-family:'Noto Sans SC', sans-serif; transition:all 0.2s; }
+.judge-btn:hover { border-color:var(--gold); }
+.judge-btn.correct { background:rgba(45,125,70,0.12); border-color:var(--correct); color:var(--correct); }
+.judge-btn.wrong { background:rgba(192,57,43,0.1); border-color:var(--wrong); color:var(--wrong); }
+.progress-bar { height:4px; background:#E2DDD6; border-radius:2px; margin-bottom:20px; overflow:hidden; }
+.progress-fill { height:100%; background:var(--gold); border-radius:2px; transition:width 0.4s; width:0%; }
+.score-display { text-align:right; font-size:12px; color:var(--muted); margin-bottom:16px; }
+.site-footer { display:flex; align-items:center; justify-content:space-between; padding:20px clamp(16px,4vw,60px); background:#FDFCF9; border-top:1px solid #D8D3CA; margin-top:auto; position:relative; z-index:1; }
+.footer-left { display:flex; gap:10px; }
+.contact-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; border:1px solid #D8D3CA; background:#fff; border-radius:50%; cursor:pointer; transition:all 0.2s; color:var(--ink); text-decoration:none; flex-shrink:0; }
+.contact-btn:hover { background:var(--bg2); border-color:var(--gold); color:var(--gold); }
+.footer-right { display:flex; align-items:center; gap:8px; }
+.footer-brand { font-family:'Noto Serif SC', serif; font-size:14px; font-weight:600; color:var(--ink); letter-spacing:1px; }
+.footer-handle { font-size:12px; color:var(--muted); letter-spacing:1px; }
+.scroll-top { position:fixed; bottom:32px; right:32px; width:42px; height:42px; border-radius:50%; background:rgba(154,111,42,0.85); border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.15); opacity:0; transform:translateY(12px); transition:opacity 0.3s, transform 0.3s; pointer-events:none; z-index:300; }
+.scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+.scroll-top:hover { background:rgba(122,85,32,0.95); }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@media(max-width:480px){ .site-footer{padding:14px 16px;} .judge-item{flex-direction:column;} .judge-btns{width:100%;} }
+</style>
+</head>
+<body>
+
+<a class="btn-home" href="../menu.html">← Back To Menu</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-num">01 · 004</div>
+  <div class="header-title">
+    能愿动词辨析：会 VS 能<br>
+    <span class="en-text" style="font-size:0.55em;font-weight:300;color:var(--gold);letter-spacing:3px;">Discrimination of Modal Verbs: huì vs néng</span>
+  </div>
+  <div><span class="level-tag">一级 · Level 1</span></div>
+  <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+  <div class="header-sub">
+    英语中的 CAN，在汉语中截然不同
+    <div class="en-text">In English we use one word "can" — in Chinese, precision matters</div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab(0)">核心对比</button>
+  <button class="tab-btn" onclick="switchTab(1)">辨析详解</button>
+  <button class="tab-btn" onclick="switchTab(2)">偏误诊断</button>
+  <button class="tab-btn" onclick="switchTab(3)">练习题</button>
+  <div style="flex:1;"></div>
+  <button class="btn-en" id="btnEn" onclick="toggleEN(this)">EN</button>
+</div>
+
+<div class="content">
+
+<!-- ==================== TAB 0: 核心对比 ==================== -->
+<div class="tab-panel active" id="tab0">
+
+  <div class="card">
+    <div class="card-title">句式结构：共同框架 <span class="en-text">Shared Sentence Patterns</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+      <div style="padding:14px;background:rgba(46,125,196,0.06);border:1px solid rgba(46,125,196,0.2);border-radius:6px;">
+        <div style="font-size:12px;font-weight:700;color:var(--hui);margin-bottom:8px;">肯定 Positive</div>
+        <div style="font-size:15px;font-weight:700;">[ <span class="hui">会</span> / <span class="neng">能</span> ] ＋ [ 动词 V ]</div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">我<span class="hui">会</span>打太极拳。</div><div class="ex-en">I can play Tai Chi. (learned skill)</div>
+        </div>
+        <div class="example">
+          <div class="ex-zh">他的胳膊恢复了，又<span class="neng">能</span>跳绳了。</div><div class="ex-en">His arm recovered, he can jump rope again.</div>
+        </div>
+      </div>
+      <div style="padding:14px;background:rgba(58,122,96,0.06);border:1px solid rgba(58,122,96,0.2);border-radius:6px;">
+        <div style="font-size:12px;font-weight:700;color:var(--neng);margin-bottom:8px;">否定 Negative</div>
+        <div style="font-size:15px;font-weight:700;">[ <span class="buhui">不会</span> / <span class="buneng">不能</span> ] ＋ [ 动词 V ]</div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">我还<span class="buhui">不会</span>开车。</div><div class="ex-en">I don't know how to drive yet.</div>
+        </div>
+        <div class="example">
+          <div class="ex-zh">他今天喝酒了，<span class="buneng">不能</span>开车。</div><div class="ex-en">He drank today, he cannot drive.</div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:14px;background:rgba(154,111,42,0.05);border:1px solid rgba(154,111,42,0.2);border-radius:6px;">
+      <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px;">疑问 Interrogative</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;">吗 Question Particle</div>
+          <div style="font-size:13px;">[ <span class="hui">会</span>/<span class="neng">能</span> ] ＋ [V] ＋ [吗?]</div>
+          <div class="example" style="margin-top:6px;"><div class="ex-zh">你<span class="hui">会</span>用筷子吗？/ 你<span class="neng">能</span>去吗？</div></div>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;">正反疑问 A-not-A</div>
+          <div style="font-size:13px;">[ <span class="hui">会不会</span>/<span class="neng">能不能</span> ] ＋ [V?]</div>
+          <div class="example" style="margin-top:6px;"><div class="ex-zh">你<span class="hui">会不会</span>写毛笔字？/ 你<span class="neng">能不能</span>参加？</div></div>
+        </div>
+      </div>
+      <div style="margin-top:10px;padding:8px 12px;background:rgba(192,57,43,0.08);border-radius:4px;font-size:12px;color:var(--wrong);">
+        ⚠️ 注意：正反疑问句本身表示疑问，句末绝对不需要加「吗」。<br><span class="en-text">Affirmative-negative questions never take the particle 吗 at the end.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">核心对比速览 <span class="en-text">Quick Comparison</span></div>
+    <div class="vs-grid">
+      <div class="vs-hui">
+        <div class="vs-col-h">
+          <div class="char">会</div>
+          <div class="char-pin">huì</div>
+        </div>
+        <div class="vs-col-b">
+          <div style="margin-bottom:8px;"><span class="vs-tag vs-tag-hui">习得技能</span> <span class="vs-tag vs-tag-hui">主观推测</span></div>
+          <div style="font-size:13px;line-height:1.7;">通过学习具备某项能力。<br><span class="en-text">Acquired through learning.</span></div>
+          <div class="example" style="margin-top:8px;border-color:var(--hui);">
+            <div class="ex-zh">我姐姐<span class="hui">会</span>游泳。</div>
+            <div class="ex-en">My sister can swim. (learned)</div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-neng">
+        <div class="vs-col-h">
+          <div class="char">能</div>
+          <div class="char-pin">néng</div>
+        </div>
+        <div class="vs-col-b">
+          <div style="margin-bottom:8px;"><span class="vs-tag vs-tag-neng">程度效率</span> <span class="vs-tag vs-tag-neng">许可条件</span></div>
+          <div style="font-size:13px;line-height:1.7;">能力达到一定的程度、水平或效率。<br><span class="en-text">Reached a certain level, speed, or efficiency.</span></div>
+          <div class="example" style="margin-top:8px;border-color:var(--neng);">
+            <div class="ex-zh">她一分钟<span class="neng">能</span>跑 50 米。</div>
+            <div class="ex-en">She can run 50m per minute. (quantity)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">核心总结矩阵 <span class="en-text">The Ultimate Synthesis Matrix</span></div>
+    <div style="overflow-x:auto;">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th class="th-dim">维度 (Dimension)</th>
+            <th class="th-hui-c">会 (huì)</th>
+            <th class="th-neng-c">能 (néng)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>能力来源</td>
+            <td>学习掌握<br><small style="color:var(--muted);">Acquired Skill</small></td>
+            <td>程度效率<br><small style="color:var(--muted);">Efficiency &amp; Level</small></td>
+          </tr>
+          <tr>
+            <td>特殊状态</td>
+            <td>无此用法<br><small style="color:var(--muted);">N/A</small></td>
+            <td>恢复能力<br><small style="color:var(--muted);">Recovered Ability</small></td>
+          </tr>
+          <tr>
+            <td>可能性</td>
+            <td>主观推测<br><small style="color:var(--muted);">Subjective Estimation</small></td>
+            <td>客观条件<br><small style="color:var(--muted);">Objective Fact</small></td>
+          </tr>
+          <tr>
+            <td>强调重点</td>
+            <td>技巧高超<br><small style="color:var(--muted);">Technique Focused</small></td>
+            <td>数量耐力<br><small style="color:var(--muted);">Quantity Focused</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /tab0 -->
+
+<!-- ==================== TAB 1: 辨析详解 ==================== -->
+<div class="tab-panel" id="tab1">
+
+  <div class="card">
+    <div class="card-title">核心辨析 1：技能获取 VS 程度水平 <span class="en-text">Analysis 1 · Acquired Skill vs Level &amp; Efficiency</span></div>
+    <div class="compare-row">
+      <div class="cmp-box cmp-hui">
+        <div class="cmp-label">● 会 huì — 习得技能</div>
+        <div class="cmp-sent">表示通过学习具备某项能力。<br><span class="en-text" style="display:inline;">Acquired through learning.</span></div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">我姐姐<span class="hui">会</span>游泳。</div>
+          <div class="ex-en">My sister can swim. (She learned)</div>
+        </div>
+      </div>
+      <div class="cmp-box cmp-neng">
+        <div class="cmp-label">● 能 néng — 程度与效率</div>
+        <div class="cmp-sent">表示能力达到一定的程度、水平或效率。<br><span class="en-text" style="display:inline;">Reached a certain level, speed, or efficiency.</span></div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">她一分钟<span class="neng">能</span>跑 50 米。</div>
+          <div class="ex-en">She can run 50m per minute. (quantity/level)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">核心辨析 2：恢复某种能力 <span class="en-text">Analysis 2 · Recovering an Ability</span></div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">表示恢复了某项能力时，必须用「能」，绝对不能用「会」。<br><span class="en-text">When expressing that an ability has been recovered, you must use 能 (néng), never 会 (huì).</span></p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;margin-bottom:14px;">
+      <div style="padding:12px;background:#FAFAF7;border-radius:6px;border:1px solid #E2DDD6;">
+        <div style="font-size:20px;margin-bottom:4px;">🤕</div>
+        <div style="font-size:12px;color:var(--muted);">过去（受伤）<br><span class="en-text">Past (injured)</span></div>
+      </div>
+      <div style="padding:12px;background:#FAFAF7;border-radius:6px;border:1px solid #E2DDD6;">
+        <div style="font-size:20px;margin-bottom:4px;">🏥</div>
+        <div style="font-size:12px;color:var(--muted);">现在（康复）<br><span class="en-text">Now (recovered)</span></div>
+      </div>
+      <div style="padding:12px;background:rgba(58,122,96,0.08);border-radius:6px;border:1px solid rgba(58,122,96,0.25);">
+        <div style="font-size:20px;margin-bottom:4px;">✅</div>
+        <div style="font-size:12px;color:var(--neng);">结果（恢复能力）<br><span class="en-text">Result (ability regained)</span></div>
+      </div>
+    </div>
+    <div class="error-box">
+      <div class="err-card err-wrong">
+        <div class="err-label">✗ 错误</div>
+        <div class="err-sent">他的胳膊好了，又<del>会</del>跳绳了。</div>
+        <div class="err-note">「会」暗示从未学过此技能。<span class="err-note-en">会 implies he never learned the skill.</span></div>
+      </div>
+      <div class="err-card err-right">
+        <div class="err-label">✓ 正确</div>
+        <div class="err-sent">他的胳膊好了，又<strong class="neng">能</strong>跳绳了。</div>
+        <div class="err-note">Use 能 for recovery of an ability.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">核心辨析 3：客观事实 VS 主观推测 <span class="en-text">Analysis 3 · Objective Fact vs Subjective Estimation</span></div>
+    <div class="compare-row">
+      <div class="cmp-box cmp-neng">
+        <div class="cmp-label">● 能 néng — 客观可能性</div>
+        <div class="cmp-sent">基于客观条件作出的判断。<br><span class="en-text" style="display:inline;">Objective possibility based on facts or conditions.</span></div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">他知道很多这方面的知识，<span class="neng">能</span>帮你。</div>
+          <div class="ex-en">He knows a lot about this, he can help you. (objective fact)</div>
+        </div>
+      </div>
+      <div class="cmp-box cmp-hui">
+        <div class="cmp-label">● 会 huì — 估计推测</div>
+        <div class="cmp-sent">带有主观色彩的可能性预测。<br><span class="en-text" style="display:inline;">Subjective estimation or prediction.</span></div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">他今天有时间，一定<span class="hui">会</span>帮你的。</div>
+          <div class="ex-en">He has time today, he will surely help you. (subjective prediction)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">核心辨析 4：特长强调——技巧 VS 数量 <span class="en-text">Analysis 4 · Technique vs Quantity</span></div>
+    <div class="compare-row">
+      <div class="cmp-box cmp-hui">
+        <div class="cmp-label">● 会 huì — 重技巧</div>
+        <div class="cmp-sent">Emphasizes skills/techniques.</div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">大卫真<span class="hui">会</span>说，吵架的人终于和好了。</div>
+          <div class="ex-en">David really knows how to talk — the quarrelers made up.</div>
+        </div>
+      </div>
+      <div class="cmp-box cmp-neng">
+        <div class="cmp-label">● 能 néng — 重量</div>
+        <div class="cmp-sent">Emphasizes quantity/extent.</div>
+        <div class="example" style="margin-top:10px;">
+          <div class="ex-zh">这人可真<span class="neng">能</span>说，说了半天也不觉得累。</div>
+          <div class="ex-en">This person can really talk — talked for hours without getting tired.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab1 -->
+
+<!-- ==================== TAB 2: 偏误诊断 ==================== -->
+<div class="tab-panel" id="tab2">
+
+  <div class="card">
+    <div class="card-title">偏误诊断（1）：技能与恢复混淆 <span class="en-text">Error 1 · Skill vs Recovery Confusion</span></div>
+    <div class="error-box">
+      <div class="err-card err-wrong">
+        <div class="err-label">✗ 病灶</div>
+        <div class="err-sent">我的胳膊已经好了，又<del>会</del>跳绳了。</div>
+      </div>
+      <div class="err-card err-right">
+        <div class="err-label">✓ 处方</div>
+        <div class="err-sent">我的胳膊已经好了，又<strong class="neng">能</strong>跳绳了。</div>
+        <div class="err-note">Use 能 for recovery of an ability.<span class="err-note-en"> (恢复能力用「能」)</span></div>
+      </div>
+    </div>
+    <div class="error-box">
+      <div class="err-card err-wrong">
+        <div class="err-label">✗ 病灶</div>
+        <div class="err-sent">他当然<del>能</del>说汉语，他学了小半年呢。</div>
+      </div>
+      <div class="err-card err-right">
+        <div class="err-label">✓ 处方</div>
+        <div class="err-sent">他当然<strong class="hui">会</strong>说汉语，他学了小半年呢。</div>
+        <div class="err-note">Use 会 for skills learned through study.<span class="err-note-en"> (学习获得的技能用「会」)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">偏误诊断（2）：效率与可能性混淆 <span class="en-text">Error 2 · Efficiency vs Possibility Confusion</span></div>
+    <div class="error-box">
+      <div class="err-card err-wrong">
+        <div class="err-label">✗ 病灶</div>
+        <div class="err-sent">他一顿饭<del>会</del>吃三碗面。</div>
+      </div>
+      <div class="err-card err-right">
+        <div class="err-label">✓ 处方</div>
+        <div class="err-sent">他一顿饭<strong class="neng">能</strong>吃三碗面。</div>
+        <div class="err-note">Use 能 for quantitative capacity or efficiency.<span class="err-note-en"> (程度效率用「能」)</span></div>
+      </div>
+    </div>
+    <div class="error-box">
+      <div class="err-card err-wrong">
+        <div class="err-label">✗ 病灶</div>
+        <div class="err-sent">不喜欢参加活动，应该不<del>能</del>来。</div>
+      </div>
+      <div class="err-card err-right">
+        <div class="err-label">✓ 处方</div>
+        <div class="err-sent">不喜欢参加活动，应该不<strong class="hui">会</strong>来。</div>
+        <div class="err-note">Use 会 for subjective estimation/prediction.<span class="err-note-en"> (主观推测用「会」)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background:rgba(192,57,43,0.04);border-color:rgba(192,57,43,0.2);">
+    <div class="card-title" style="color:var(--wrong);">关键语法提示 <span class="en-text">Key Grammar Warning</span></div>
+    <div style="padding:16px;background:#fff;border-radius:6px;border:2px solid rgba(192,57,43,0.3);text-align:center;">
+      <div style="font-size:15px;font-weight:700;margin-bottom:8px;">
+        法则：提问时，正反疑问句（会不会/能不能）<br>本身已是疑问，句末绝对不能加「吗」。
+      </div>
+      <div style="font-size:13px;color:var(--muted);">Never add 吗 to affirmative-negative questions.</div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="error-box">
+        <div class="err-card err-wrong">
+          <div class="err-label">✗ 错误示范</div>
+          <div class="err-sent"><del>会跳舞不跳舞</del>（动词重复）</div>
+        </div>
+        <div class="err-card err-wrong">
+          <div class="err-label">✗ 错误示范</div>
+          <div class="err-sent"><del>能不能去吗</del>（末尾加吗）</div>
+        </div>
+      </div>
+      <div class="err-card err-right" style="margin-top:0;">
+        <div class="err-label">✓ 正确</div>
+        <div class="err-sent">你<strong class="hui">会不会</strong>跳舞？ / 你<strong class="neng">能不能</strong>去？</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab2 -->
+
+<!-- ==================== TAB 3: 练习题 ==================== -->
+<div class="tab-panel" id="tab3">
+
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="score-display" id="scoreDisplay">完成 0 / 10 题</div>
+
+  <!-- Section 1: Choose 会 or 能 -->
+  <div class="quiz-section">
+    <div class="quiz-title">一、选择题：「会」还是「能」？<span class="en-text">Choose 会 huì or 能 néng</span></div>
+
+    <div class="quiz-item" data-answer="会" data-done="">
+      <div class="quiz-q">
+        <div class="quiz-en">He likes Peking Opera — he'll definitely come tomorrow. (subjective estimation)</div>
+        1. 他很喜欢京剧，明天他（ <span class="blank" id="b1"></span> ）来的。
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answerQ(this,'会','b1','fb1')">会</button>
+        <button class="quiz-opt" onclick="answerQ(this,'能','b1','fb1')">能</button>
+      </div>
+      <div class="quiz-feedback" id="fb1"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="能" data-done="">
+      <div class="quiz-q">
+        <div class="quiz-en">David's leg is injured — he can't join the competition. (physical condition lost)</div>
+        2. 大卫的腿受伤了，不（ <span class="blank" id="b2"></span> ）去参加比赛了。
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answerQ(this,'会','b2','fb2')">会</button>
+        <button class="quiz-opt" onclick="answerQ(this,'能','b2','fb2')">能</button>
+      </div>
+      <div class="quiz-feedback" id="fb2"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="能" data-done="">
+      <div class="quiz-q">
+        <div class="quiz-en">Only he has so many books — he can lend them to you. (objective conditions met)</div>
+        3. 只有他有那么多书，（ <span class="blank" id="b3"></span> ）借给你。
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answerQ(this,'会','b3','fb3')">会</button>
+        <button class="quiz-opt" onclick="answerQ(this,'能','b3','fb3')">能</button>
+      </div>
+      <div class="quiz-feedback" id="fb3"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="能" data-done="">
+      <div class="quiz-q">
+        <div class="quiz-en">He can run 500m per minute. (efficiency / quantity)</div>
+        4. 他每分钟（ <span class="blank" id="b4"></span> ）跑 500 米。
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answerQ(this,'会','b4','fb4')">会</button>
+        <button class="quiz-opt" onclick="answerQ(this,'能','b4','fb4')">能</button>
+      </div>
+      <div class="quiz-feedback" id="fb4"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="会" data-done="">
+      <div class="quiz-q">
+        <div class="quiz-en">She studied Chinese for a year and now can speak Chinese. (learned skill)</div>
+        5. 经过一年的学习，她（ <span class="blank" id="b5"></span> ）说中文了。
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answerQ(this,'会','b5','fb5')">会</button>
+        <button class="quiz-opt" onclick="answerQ(this,'能','b5','fb5')">能</button>
+      </div>
+      <div class="quiz-feedback" id="fb5"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="能" data-done="">
+      <div class="quiz-q">
+        <div class="quiz-en">He has recovered — he can jump rope again. (recovered ability)</div>
+        6. 他的腿好了，又（ <span class="blank" id="b6"></span> ）跳绳了。
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answerQ(this,'会','b6','fb6')">会</button>
+        <button class="quiz-opt" onclick="answerQ(this,'能','b6','fb6')">能</button>
+      </div>
+      <div class="quiz-feedback" id="fb6"></div>
+    </div>
+
+  </div>
+
+  <!-- Section 2: True/False -->
+  <div class="quiz-section">
+    <div class="quiz-title">二、判断题 <span class="en-text">True / False</span></div>
+
+    <div class="judge-item" data-done="">
+      <div class="judge-sent">
+        <div class="quiz-en">Sentence: 你会不会说汉语吗？</div>
+        「你<strong class="hui">会不会</strong>说汉语吗？」这句话是正确的。
+      </div>
+      <div style="flex:1;">
+        <div class="judge-btns">
+          <button class="judge-btn" onclick="judgeQ(this,'wrong','jfb1','✗ 错误！正反疑问句末不能加「吗」。正确：你会不会说汉语？')">✓ 正确</button>
+          <button class="judge-btn" onclick="judgeQ(this,'correct','jfb1','✓ 正确！正反疑问句本身已是疑问，绝不加「吗」。')">✗ 错误</button>
+        </div>
+        <div class="quiz-feedback" id="jfb1"></div>
+      </div>
+    </div>
+
+    <div class="judge-item" data-done="">
+      <div class="judge-sent">
+        <div class="quiz-en">Sentence: 大卫真能说，吵架的人终于和好了。</div>
+        「大卫真<strong class="neng">能</strong>说，吵架的人终于和好了。」这句话是正确的。
+      </div>
+      <div style="flex:1;">
+        <div class="judge-btns">
+          <button class="judge-btn" onclick="judgeQ(this,'wrong','jfb2','✗ 这里强调说话的技巧，应用「会」：大卫真会说。')">✓ 正确</button>
+          <button class="judge-btn" onclick="judgeQ(this,'correct','jfb2','✓ 正确！这里强调说话技巧，应用「会」，不用「能」。')">✗ 错误</button>
+        </div>
+        <div class="quiz-feedback" id="jfb2"></div>
+      </div>
+    </div>
+
+    <div class="judge-item" data-done="">
+      <div class="judge-sent">
+        <div class="quiz-en">Sentence: 他知道很多知识，能帮你。</div>
+        「他知道很多这方面的知识，<strong class="neng">能</strong>帮你。」这句话是正确的。
+      </div>
+      <div style="flex:1;">
+        <div class="judge-btns">
+          <button class="judge-btn" onclick="judgeQ(this,'correct','jfb3','✓ 正确！基于客观条件（有知识），用「能」完全正确。')">✓ 正确</button>
+          <button class="judge-btn" onclick="judgeQ(this,'wrong','jfb3','✗ 这句话完全正确，「能」表示客观条件具备。')">✗ 错误</button>
+        </div>
+        <div class="quiz-feedback" id="jfb3"></div>
+      </div>
+    </div>
+
+    <div class="judge-item" data-done="">
+      <div class="judge-sent">
+        <div class="quiz-en">Sentence: 他一顿饭会吃三碗面。</div>
+        「他一顿饭<strong class="hui">会</strong>吃三碗面。」这句话是正确的。
+      </div>
+      <div style="flex:1;">
+        <div class="judge-btns">
+          <button class="judge-btn" onclick="judgeQ(this,'wrong','jfb4','✗ 错误！表示数量程度，应用「能」：他一顿饭能吃三碗面。')">✓ 正确</button>
+          <button class="judge-btn" onclick="judgeQ(this,'correct','jfb4','✓ 正确！数量与效率应用「能」，不用「会」。')">✗ 错误</button>
+        </div>
+        <div class="quiz-feedback" id="jfb4"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /tab3 -->
+
+</div><!-- /content -->
+</div><!-- /page -->
+
+<!-- CTA before footer -->
+<div style="text-align:center;padding:20px clamp(16px,4vw,60px) 16px;position:relative;z-index:1;">
+  <p style="font-size:13px;color:#7A7570;line-height:1.8;letter-spacing:0.3px;">
+    还有疑问？欢迎通过下方联系方式找到老师，获得一对一的解答与指导。
+    <span class="en-text" style="font-size:12px;color:var(--muted);"> · Still have questions? Feel free to reach out below for one-on-one guidance.</span>
+  </p>
+</div>
+
+<!-- FOOTER -->
+<div class="site-footer">
+  <div class="footer-left">
+    <a class="contact-btn" href="mailto:ivyzhang@example.com" title="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+    </a>
+    <a class="contact-btn" href="#" title="WeChat">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </a>
+  </div>
+  <div class="footer-right">
+    <div class="footer-brand">Chinese Language</div>
+    <div class="footer-handle">@IvyZhang.823</div>
+  </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+function toggleEN(btn) { document.body.classList.toggle('show-en'); btn.classList.toggle('active'); }
+function switchTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  document.querySelectorAll('.tab-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+let totalAnswered = 0;
+const TOTAL = 10;
+function updateProgress() {
+  const pct = (totalAnswered / TOTAL * 100).toFixed(0);
+  const fill = document.getElementById('progressFill');
+  const score = document.getElementById('scoreDisplay');
+  if (fill) fill.style.width = pct + '%';
+  if (score) score.textContent = '完成 ' + totalAnswered + ' / ' + TOTAL + ' 题';
+}
+function answerQ(btn, answer, blankId, feedbackId) {
+  const item = btn.closest('.quiz-item');
+  if (item.dataset.done) return;
+  item.dataset.done = '1';
+  totalAnswered++;
+  updateProgress();
+  const isRight = btn.textContent === item.dataset.answer;
+  item.querySelectorAll('.quiz-opt').forEach(b => {
+    b.disabled = true;
+    if (b.textContent === item.dataset.answer) b.classList.add('correct');
+  });
+  if (!isRight) btn.classList.add('wrong');
+  const blank = document.getElementById(blankId);
+  if (blank) blank.textContent = item.dataset.answer;
+  const fb = document.getElementById(feedbackId);
+  if (fb) {
+    fb.className = 'quiz-feedback show ' + (isRight ? 'ok' : 'no');
+    fb.textContent = isRight ? '✓ 正确！' : '✗ 不对，正确答案是：' + item.dataset.answer;
+  }
+}
+function judgeQ(btn, result, feedbackId, explanation) {
+  const item = btn.closest('.judge-item');
+  if (item.dataset.done) return;
+  item.dataset.done = '1';
+  totalAnswered++;
+  updateProgress();
+  btn.classList.add(result === 'correct' ? 'correct' : 'wrong');
+  const fb = document.getElementById(feedbackId);
+  if (fb) {
+    fb.className = 'quiz-feedback show ' + (result === 'correct' ? 'ok' : 'no');
+    fb.textContent = explanation;
+  }
+}
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+});
+</script>
+</body>
+</html>
