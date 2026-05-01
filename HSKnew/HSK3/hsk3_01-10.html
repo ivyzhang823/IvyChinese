@@ -2406,9 +2406,829 @@
 
   <!-- ═══════════════ LESSON 3 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-3" data-lesson="3" data-watermark="三" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第三课 · Lesson 03</span>
+    </div>
+    <h1>这个小区挺好的</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Zhège xiǎoqū tǐng hǎo de</p>
+    <p class="lesson-subtitle">This neighborhood is pretty nice</p>
   </div>
+
   <div class="lesson-content" data-lesson="3" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
   </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l3-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在家里</span>
+              <button class="dh-play-btn" id="l3-dhBtn1" onclick="dhPlay('l3-audioEl1','l3-dhBtn1')">
+                <svg id="l3-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l3-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l3-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Liu Ming and Wang Yixue chat about looking at a new place</span>
+          </div>
+          <audio id="l3-audioEl1" src="audio/03-1.mp3" onended="dhEnded('l3-audioEl1','l3-dhBtn1','l3-dhIcon1')" ontimeupdate="dhUpdate('l3-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">小雪的初中离家有点儿远，咱们换一个近点儿的房子吧。</div>
+            <div class="line-pinyin">Xiǎoxuě de chūzhōng lí jiā yǒudiǎnr yuǎn, zánmen huàn yī ge jìn diǎnr de fángzi ba.</div>
+            <div class="line-en">Xiaoxue's middle school is a bit far from home — let's switch to a place that's a little closer.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">好啊，我上网看看。你觉得这个小区怎么样？</div>
+            <div class="line-pinyin">Hǎo a, wǒ shàngwǎng kànkan. Nǐ juéde zhège xiǎoqū zěnmeyàng?</div>
+            <div class="line-en">Sure, I'll have a look online. What do you think of this complex?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">环境挺好的，离地铁站还不远。</div>
+            <div class="line-pinyin">Huánjìng tǐng hǎo de, lí dìtiězhàn hái bù yuǎn.</div>
+            <div class="line-en">The surroundings are pretty nice, and it's not far from the subway station.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">房子里面也不错，空调和洗衣机都是新的。</div>
+            <div class="line-pinyin">Fángzi lǐmiàn yě bú cuò, kōngtiáo hé xǐyījī dōu shì xīn de.</div>
+            <div class="line-en">The inside of the house is good too — the air conditioner and washing machine are both new.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">是不错，但是我不喜欢住一层。</div>
+            <div class="line-pinyin">Shì bú cuò, dànshì wǒ bù xǐhuan zhù yī céng.</div>
+            <div class="line-en">It is good, but I don't like living on the ground floor.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">这个一层带一个小花园，我觉得咱们可以去看看。</div>
+            <div class="line-pinyin">Zhège yī céng dài yī ge xiǎo huāyuán, wǒ juéde zánmen kěyǐ qù kànkan.</div>
+            <div class="line-en">This ground-floor unit comes with a little garden — I think we should go check it out.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l3-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在新家</span>
+              <button class="dh-play-btn" id="l3-dhBtn2" onclick="dhPlay('l3-audioEl2','l3-dhBtn2')">
+                <svg id="l3-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l3-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l3-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the new home — tidying up, lights left on, fridge issues</span>
+          </div>
+          <audio id="l3-audioEl2" src="audio/03-3.mp3" onended="dhEnded('l3-audioEl2','l3-dhBtn2','l3-dhIcon2')" ontimeupdate="dhUpdate('l3-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">我今天早上来的时候，灯还开着。</div>
+            <div class="line-pinyin">Wǒ jīntiān zǎoshang lái de shíhou, dēng hái kāi zhe.</div>
+            <div class="line-en">When I arrived this morning, the lights were still on.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">我这几天忙坏了，可能走的时候忘关了。</div>
+            <div class="line-pinyin">Wǒ zhè jǐ tiān máng huài le, kěnéng zǒu de shíhou wàng guān le.</div>
+            <div class="line-en">I've been swamped these past few days — I probably forgot to turn them off when I left.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">冰箱不能用，这些吃的东西放在哪儿？</div>
+            <div class="line-pinyin">Bīngxiāng bù néng yòng, zhèxiē chī de dōngxi fàng zài nǎr?</div>
+            <div class="line-en">The fridge isn't working — where do we put all this food?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">不可能吧？冰箱是新买的，我来看看。</div>
+            <div class="line-pinyin">Bù kěnéng ba? Bīngxiāng shì xīn mǎi de, wǒ lái kànkan.</div>
+            <div class="line-en">No way — the fridge is brand new, let me have a look.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">洗衣机也坏了吗？</div>
+            <div class="line-pinyin">Xǐyījī yě huài le ma?</div>
+            <div class="line-en">Is the washing machine broken too?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">没坏，但是卫生间没打扫好，还不能洗衣服。</div>
+            <div class="line-pinyin">Méi huài, dànshì wèishēngjiān méi dǎsǎo hǎo, hái bù néng xǐ yīfu.</div>
+            <div class="line-en">It's not broken, but the bathroom hasn't been cleaned yet, so we can't do laundry.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">星期天我们真的能搬家吗？</div>
+            <div class="line-pinyin">Xīngqītiān wǒmen zhēn de néng bānjiā ma?</div>
+            <div class="line-en">Can we really move in on Sunday?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l3-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在客厅聊天儿</span>
+              <button class="dh-play-btn" id="l3-dhBtn3" onclick="dhPlay('l3-audioEl3','l3-dhBtn3')">
+                <svg id="l3-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l3-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l3-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the living room — talking about money and applying for a credit card</span>
+          </div>
+          <audio id="l3-audioEl3" src="audio/03-5.mp3" onended="dhEnded('l3-audioEl3','l3-dhBtn3','l3-dhIcon3')" ontimeupdate="dhUpdate('l3-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">这个月花了不少钱。</div>
+            <div class="line-pinyin">Zhège yuè huā le bù shǎo qián.</div>
+            <div class="line-en">We've spent quite a lot of money this month.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">是的，我们买了很多搬家时要用的东西。</div>
+            <div class="line-pinyin">Shì de, wǒmen mǎi le hěn duō bānjiā shí yào yòng de dōngxi.</div>
+            <div class="line-en">Yes, we bought a lot of things we needed for moving.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">咱们办张信用卡吧，花的钱可以慢慢还。听说中国银行的服务不错，办了信用卡买东西还能便宜。</div>
+            <div class="line-pinyin">Zánmen bàn zhāng xìnyòngkǎ ba, huā de qián kěyǐ mànman huán. Tīngshuō Zhōngguó Yínháng de fúwù bú cuò, bàn le xìnyòngkǎ mǎi dōngxi hái néng piányi.</div>
+            <div class="line-en">Let's get a credit card — we can pay back what we spend gradually. I hear the Bank of China has good service, and with a credit card you can even get discounts on purchases.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">好啊！中国银行很近，走路几分钟就能到。咱们什么时候去？</div>
+            <div class="line-pinyin">Hǎo a! Zhōngguó Yínháng hěn jìn, zǒulù jǐ fēnzhōng jiù néng dào. Zánmen shénme shíhou qù?</div>
+            <div class="line-en">Sure! The Bank of China is close — just a few minutes' walk. When shall we go?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">今天下午？</div>
+            <div class="line-pinyin">Jīntiān xiàwǔ?</div>
+            <div class="line-en">This afternoon?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">我下午要去医院，很晚才能回来。</div>
+            <div class="line-pinyin">Wǒ xiàwǔ yào qù yīyuàn, hěn wǎn cái néng huílai.</div>
+            <div class="line-en">I have to go to the hospital this afternoon — I won't be back until late.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">那我下午自己去吧。</div>
+            <div class="line-pinyin">Nà wǒ xiàwǔ zìjǐ qù ba.</div>
+            <div class="line-en">Then I'll just go on my own this afternoon.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 -->
+      <div class="dialogue-block" id="l3-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 讨论搬家计划</span>
+              <button class="dh-play-btn" id="l3-dhBtn4" onclick="dhPlay('l3-audioEl4','l3-dhBtn4')">
+                <svg id="l3-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l3-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l3-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Liu Ming and Wang Yixue discuss their moving plans</span>
+          </div>
+          <audio id="l3-audioEl4" src="audio/03-7.mp3" onended="dhEnded('l3-audioEl4','l3-dhBtn4','l3-dhIcon4')" ontimeupdate="dhUpdate('l3-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">我觉得这个星期就能搬家。我明天去买一些纸箱，很快就能准备好。搬家那天，我想请几位朋友来帮忙，最多一天就能搬完。</div>
+            <div class="line-pinyin">Wǒ juéde zhège xīngqī jiù néng bānjiā. Wǒ míngtiān qù mǎi yīxiē zhǐxiāng, hěn kuài jiù néng zhǔnbèi hǎo. Bānjiā nà tiān, wǒ xiǎng qǐng jǐ wèi péngyou lái bāngmáng, zuì duō yī tiān jiù néng bān wán.</div>
+            <div class="line-en">I think we can move this week. I'll buy some cardboard boxes tomorrow and be ready in no time. On moving day, I'll ask a few friends to help — we can finish in a day at most.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">我觉得下个月才能搬家。这周开始准备，下周去打扫新家，这么多事情最少需要两个星期才能做完。搬家那天，我们应该找一家搬家公司。</div>
+            <div class="line-pinyin">Wǒ juéde xià ge yuè cái néng bānjiā. Zhè zhōu kāishǐ zhǔnbèi, xià zhōu qù dǎsǎo xīn jiā, zhème duō shìqing zuìshǎo xūyào liǎng ge xīngqī cái néng zuò wán. Bānjiā nà tiān, wǒmen yīnggāi zhǎo yī jiā bānjiā gōngsī.</div>
+            <div class="line-en">I think we won't be able to move until next month. We start prepping this week, clean the new place next week — there's so much to do, it'll take at least two weeks to finish. On moving day, we should hire a moving company.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l3-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">初中</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chūzhōng</div><div class="fcs-en">middle school</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">咱们</div><div class="fcs-pos">pron.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zánmen</div><div class="fcs-en">we; us (incl. listener)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">换</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huàn</div><div class="fcs-en">to change; to switch</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">房子</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fángzi</div><div class="fcs-en">house</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">小区</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiǎoqū</div><div class="fcs-en">residential complex; neighborhood</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">环境</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huánjìng</div><div class="fcs-en">surroundings; environment</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">挺</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tǐng</div><div class="fcs-en">quite; pretty; very</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">空调</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kōngtiáo</div><div class="fcs-en">air conditioner</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">洗衣机</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xǐyījī</div><div class="fcs-en">washing machine</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">层</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">céng</div><div class="fcs-en">floor; layer</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">花园</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huāyuán</div><div class="fcs-en">garden</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">灯</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dēng</div><div class="fcs-en">light; lamp</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">关</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">guān</div><div class="fcs-en">to turn off; to close</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">冰箱</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bīngxiāng</div><div class="fcs-en">refrigerator; fridge</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">卫生间</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wèishēngjiān</div><div class="fcs-en">bathroom; toilet</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">打扫</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dǎsǎo</div><div class="fcs-en">to clean (a place)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">搬家</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bānjiā</div><div class="fcs-en">to move (house)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">办</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bàn</div><div class="fcs-en">to do; to handle; to apply for</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">信用卡</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xìnyòngkǎ</div><div class="fcs-en">credit card</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">还</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huán</div><div class="fcs-en">to return; to pay back</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">听说</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tīngshuō</div><div class="fcs-en">to hear about; it's said that</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">银行</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yínháng</div><div class="fcs-en">bank</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">才</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">cái</div><div class="fcs-en">not until; only then</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">纸</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhǐ</div><div class="fcs-en">paper</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">搬</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bān</div><div class="fcs-en">to move; to carry</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">需要</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xūyào</div><div class="fcs-en">to need; need</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l3-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 26</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">初中</div><div class="vocab-pinyin">chūzhōng</div><div class="vocab-pos">n.</div><div class="vocab-en">middle school</div><div class="vocab-example">小雪的<em>初中</em>离家有点儿远。<br><span style="color:#bbb">Xiaoxue's middle school is a bit far from home.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">咱们</div><div class="vocab-pinyin">zánmen</div><div class="vocab-pos">pron.</div><div class="vocab-en">we; us (inclusive)</div><div class="vocab-example"><em>咱们</em>换一个房子吧。<br><span style="color:#bbb">Let's switch to another place.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">换</div><div class="vocab-pinyin">huàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to change; to switch</div><div class="vocab-example"><em>换</em>一个近点儿的房子。<br><span style="color:#bbb">Switch to a closer place.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">房子</div><div class="vocab-pinyin">fángzi</div><div class="vocab-pos">n.</div><div class="vocab-en">house</div><div class="vocab-example">这个<em>房子</em>不错。<br><span style="color:#bbb">This house is nice.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">小区</div><div class="vocab-pinyin">xiǎoqū</div><div class="vocab-pos">n.</div><div class="vocab-en">residential complex</div><div class="vocab-example">这个<em>小区</em>挺好的。<br><span style="color:#bbb">This complex is pretty nice.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">环境</div><div class="vocab-pinyin">huánjìng</div><div class="vocab-pos">n.</div><div class="vocab-en">surroundings; environment</div><div class="vocab-example"><em>环境</em>挺好的。<br><span style="color:#bbb">The environment is pretty nice.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">挺</div><div class="vocab-pinyin">tǐng</div><div class="vocab-pos">adv.</div><div class="vocab-en">quite; pretty; very</div><div class="vocab-example"><em>挺</em>好的。<br><span style="color:#bbb">Pretty nice.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">空调</div><div class="vocab-pinyin">kōngtiáo</div><div class="vocab-pos">n.</div><div class="vocab-en">air conditioner</div><div class="vocab-example"><em>空调</em>是新的。<br><span style="color:#bbb">The air conditioner is new.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">洗衣机</div><div class="vocab-pinyin">xǐyījī</div><div class="vocab-pos">n.</div><div class="vocab-en">washing machine</div><div class="vocab-example"><em>洗衣机</em>坏了吗？<br><span style="color:#bbb">Is the washing machine broken?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">层</div><div class="vocab-pinyin">céng</div><div class="vocab-pos">m.</div><div class="vocab-en">floor; layer</div><div class="vocab-example">我不喜欢住一<em>层</em>。<br><span style="color:#bbb">I don't like living on the ground floor.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">花园</div><div class="vocab-pinyin">huāyuán</div><div class="vocab-pos">n.</div><div class="vocab-en">garden</div><div class="vocab-example">带一个小<em>花园</em>。<br><span style="color:#bbb">Comes with a small garden.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">灯</div><div class="vocab-pinyin">dēng</div><div class="vocab-pos">n.</div><div class="vocab-en">light; lamp</div><div class="vocab-example"><em>灯</em>还开着。<br><span style="color:#bbb">The light is still on.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">关</div><div class="vocab-pinyin">guān</div><div class="vocab-pos">v.</div><div class="vocab-en">to turn off; to close</div><div class="vocab-example">忘<em>关</em>灯了。<br><span style="color:#bbb">Forgot to turn off the light.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">冰箱</div><div class="vocab-pinyin">bīngxiāng</div><div class="vocab-pos">n.</div><div class="vocab-en">refrigerator</div><div class="vocab-example"><em>冰箱</em>不能用。<br><span style="color:#bbb">The fridge isn't working.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">卫生间</div><div class="vocab-pinyin">wèishēngjiān</div><div class="vocab-pos">n.</div><div class="vocab-en">bathroom</div><div class="vocab-example"><em>卫生间</em>没打扫好。<br><span style="color:#bbb">The bathroom hasn't been cleaned.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">打扫</div><div class="vocab-pinyin">dǎsǎo</div><div class="vocab-pos">v.</div><div class="vocab-en">to clean (a place)</div><div class="vocab-example"><em>打扫</em>新家。<br><span style="color:#bbb">Clean the new home.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">搬家</div><div class="vocab-pinyin">bānjiā</div><div class="vocab-pos">v.</div><div class="vocab-en">to move (house)</div><div class="vocab-example">星期天<em>搬家</em>。<br><span style="color:#bbb">Move on Sunday.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">办</div><div class="vocab-pinyin">bàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to do; to handle; to apply for</div><div class="vocab-example"><em>办</em>张信用卡。<br><span style="color:#bbb">Apply for a credit card.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">信用卡</div><div class="vocab-pinyin">xìnyòngkǎ</div><div class="vocab-pos">n.</div><div class="vocab-en">credit card</div><div class="vocab-example">办张<em>信用卡</em>。<br><span style="color:#bbb">Get a credit card.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">还</div><div class="vocab-pinyin">huán</div><div class="vocab-pos">v.</div><div class="vocab-en">to return; to pay back</div><div class="vocab-example">慢慢<em>还</em>。<br><span style="color:#bbb">Pay it back gradually.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">听说</div><div class="vocab-pinyin">tīngshuō</div><div class="vocab-pos">v.</div><div class="vocab-en">to hear about</div><div class="vocab-example"><em>听说</em>中国银行不错。<br><span style="color:#bbb">I hear the Bank of China is good.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">银行</div><div class="vocab-pinyin">yínháng</div><div class="vocab-pos">n.</div><div class="vocab-en">bank</div><div class="vocab-example">中国<em>银行</em>很近。<br><span style="color:#bbb">The Bank of China is close.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">才</div><div class="vocab-pinyin">cái</div><div class="vocab-pos">adv.</div><div class="vocab-en">not until; only then</div><div class="vocab-example">很晚<em>才</em>能回来。<br><span style="color:#bbb">Won't be back until late.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">纸</div><div class="vocab-pinyin">zhǐ</div><div class="vocab-pos">n.</div><div class="vocab-en">paper</div><div class="vocab-example">买一些<em>纸</em>箱。<br><span style="color:#bbb">Buy some cardboard boxes.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">搬</div><div class="vocab-pinyin">bān</div><div class="vocab-pos">v.</div><div class="vocab-en">to move; to carry</div><div class="vocab-example">一天就能<em>搬</em>完。<br><span style="color:#bbb">Can finish moving in one day.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">需要</div><div class="vocab-pinyin">xūyào</div><div class="vocab-pos">v./n.</div><div class="vocab-en">to need; need</div><div class="vocab-example">最少<em>需要</em>两个星期。<br><span style="color:#bbb">Will take at least two weeks.</span></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:2rem">专有名词 · Proper Nouns</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">中国银行</div><div class="vocab-pinyin">Zhōngguó Yínháng</div><div class="vocab-pos">name</div><div class="vocab-en">Bank of China</div></div>
+        <div class="vocab-card"><div class="vocab-zh">小雪</div><div class="vocab-pinyin">Xiǎoxuě</div><div class="vocab-pos">name</div><div class="vocab-en">Xiaoxue (their daughter)</div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">挺</div>
+          <div class="wdh-info"><div class="wdh-pinyin">tǐng</div><div class="wdh-en">quite; pretty; very</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">挺好的</span><span class="collocation-tag">挺不错的</span><span class="collocation-tag">挺方便的</span><span class="collocation-tag">挺喜欢的</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这个小区环境挺好的。</div><div class="en">This complex has pretty nice surroundings.</div></div>
+            <div class="wd-ex"><div class="zh">这家饭馆的菜挺好吃的。</div><div class="en">The food at this restaurant is quite delicious.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">小区</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xiǎoqū</div><div class="wdh-en">residential complex; neighborhood</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">小</div><div class="char-meaning">xiǎo · small</div></div>
+            <div class="wd-char"><div class="char">区</div><div class="char-meaning">qū · area; district</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">这个小区</span><span class="collocation-tag">小区环境</span><span class="collocation-tag">住在小区</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你觉得这个小区怎么样？</div><div class="en">What do you think of this complex?</div></div>
+            <div class="wd-ex"><div class="zh">这个小区离地铁站还不远。</div><div class="en">This complex isn't far from the subway station.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">环境</div>
+          <div class="wdh-info"><div class="wdh-pinyin">huánjìng</div><div class="wdh-en">surroundings; environment</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">环</div><div class="char-meaning">huán · ring; surround</div></div>
+            <div class="wd-char"><div class="char">境</div><div class="char-meaning">jìng · area; condition</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">环境好</span><span class="collocation-tag">小区环境</span><span class="collocation-tag">学习环境</span><span class="collocation-tag">工作环境</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">环境挺好的，离地铁站还不远。</div><div class="en">The surroundings are pretty nice, and the subway is close.</div></div>
+            <div class="wd-ex"><div class="zh">这里的学习环境很好。</div><div class="en">The study environment here is great.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">搬家</div>
+          <div class="wdh-info"><div class="wdh-pinyin">bānjiā</div><div class="wdh-en">to move (house)</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">搬</div><div class="char-meaning">bān · to move; carry</div></div>
+            <div class="wd-char"><div class="char">家</div><div class="char-meaning">jiā · home</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">想搬家</span><span class="collocation-tag">搬家公司</span><span class="collocation-tag">搬完家</span><span class="collocation-tag">下个月搬家</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">星期天我们真的能搬家吗？</div><div class="en">Can we really move on Sunday?</div></div>
+            <div class="wd-ex"><div class="zh">搬家那天，我们应该找一家搬家公司。</div><div class="en">On moving day, we should hire a moving company.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">办</div>
+          <div class="wdh-info"><div class="wdh-pinyin">bàn</div><div class="wdh-en">to do; to handle; to apply for</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">办信用卡</span><span class="collocation-tag">办护照</span><span class="collocation-tag">办事</span><span class="collocation-tag">办手续</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">咱们办张信用卡吧。</div><div class="en">Let's apply for a credit card.</div></div>
+            <div class="wd-ex"><div class="zh">我下午要去银行办点儿事。</div><div class="en">I have some things to handle at the bank this afternoon.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">信用卡</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xìnyòngkǎ</div><div class="wdh-en">credit card</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">信</div><div class="char-meaning">xìn · trust</div></div>
+            <div class="wd-char"><div class="char">用</div><div class="char-meaning">yòng · use</div></div>
+            <div class="wd-char"><div class="char">卡</div><div class="char-meaning">kǎ · card</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">办信用卡</span><span class="collocation-tag">用信用卡</span><span class="collocation-tag">还信用卡</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">办了信用卡买东西还能便宜。</div><div class="en">With a credit card you even get discounts on purchases.</div></div>
+            <div class="wd-ex"><div class="zh">这家店不能用信用卡。</div><div class="en">This shop doesn't accept credit cards.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">听说</div>
+          <div class="wdh-info"><div class="wdh-pinyin">tīngshuō</div><div class="wdh-en">to hear about; it's said that</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">听</div><div class="char-meaning">tīng · to hear</div></div>
+            <div class="wd-char"><div class="char">说</div><div class="char-meaning">shuō · to say</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">听说…</span><span class="collocation-tag">我听说</span><span class="collocation-tag">听说过</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">听说中国银行的服务不错。</div><div class="en">I hear the Bank of China has good service.</div></div>
+            <div class="wd-ex"><div class="zh">我听说他下个月搬家。</div><div class="en">I heard he's moving next month.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">才</div>
+          <div class="wdh-info"><div class="wdh-pinyin">cái</div><div class="wdh-en">not until; only then</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">才能</span><span class="collocation-tag">很晚才</span><span class="collocation-tag">最少…才</span><span class="collocation-tag">下个月才</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我下午要去医院，很晚才能回来。</div><div class="en">I have to go to the hospital — I won't be back until late.</div></div>
+            <div class="wd-ex"><div class="zh">坐火车去北京，五个小时才能到。</div><div class="en">Going to Beijing by train takes a full five hours.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">需要</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xūyào</div><div class="wdh-en">to need; need</div></div>
+          <div class="wdh-pos">v. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">需</div><div class="char-meaning">xū · necessary</div></div>
+            <div class="wd-char"><div class="char">要</div><div class="char-meaning">yào · want; require</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">需要时间</span><span class="collocation-tag">需要帮助</span><span class="collocation-tag">不需要</span><span class="collocation-tag">最少需要</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这么多事情最少需要两个星期。</div><div class="en">So many things will take at least two weeks.</div></div>
+            <div class="wd-ex"><div class="zh">如果你需要帮助，告诉我。</div><div class="en">If you need help, let me know.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">咱们</div>
+          <div class="wdh-info"><div class="wdh-pinyin">zánmen</div><div class="wdh-en">we; us (including the listener)</div></div>
+          <div class="wdh-pos">pron.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"咱们" includes both the speaker AND the listener — equivalent to "we (you and I)". Compare with "我们", which can include or exclude the listener depending on context. "咱们" is more common in northern Mandarin and conveys a friendly, inclusive tone.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">咱们换一个近点儿的房子吧。</div><div class="en">Let's switch to a closer place. (you and I together)</div></div>
+            <div class="wd-ex"><div class="zh">咱们什么时候去？</div><div class="en">When shall we (you and I) go?</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">程度副词"挺"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">程度补语"坏了"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">"就" 和 "才"</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>程度副词"挺" · Adverb of Degree "挺"</div>
+          <p class="grammar-desc">程度副词"挺"用在形容词或心理动词前，表示程度较高，常用于口语中，常与句末"的"搭配。<br><span style="color:#888;font-size:0.85em;">"挺" is a degree adverb used before adjectives or psychological verbs to indicate a fairly high degree. It's typical of spoken Chinese and is usually paired with sentence-final "的".</span></p>
+          <div class="grammar-pattern"><strong>挺</strong> + Adj / Psych-Verb + <strong>的</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">这个小区环境<strong>挺好的</strong>。</div><div class="en">This complex has <strong>pretty nice</strong> surroundings.</div></div>
+            <div class="grammar-ex"><div class="zh">这家饭馆的菜<strong>挺好吃的</strong>。</div><div class="en">The food at this restaurant is <strong>quite delicious</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">买这个吧，我<strong>挺喜欢</strong>这个颜色<strong>的</strong>。</div><div class="en">Let's buy this one — I <strong>quite like</strong> this colour.</div></div>
+            <div class="grammar-ex"><div class="zh">他<strong>挺忙的</strong>，最近没时间出来玩。</div><div class="en">He's <strong>pretty busy</strong>, hasn't had time to hang out lately.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>程度补语"坏了" · Complement of Degree "坏了"</div>
+          <p class="grammar-desc">"坏了"用在形容词后，表示程度极高，带有夸张的语气，常用于负面或较强烈的情况中。<br><span style="color:#888;font-size:0.85em;">The complement "坏了" follows an adjective to indicate an extremely high degree, with an exaggerated tone. It's typically used in negative or intense situations — "X-ed to death".</span></p>
+          <div class="grammar-pattern">Adj + <strong>坏了</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">我这几天<strong>忙坏了</strong>。</div><div class="en">I've been <strong>swamped</strong> these past few days.</div></div>
+            <div class="grammar-ex"><div class="zh">我<strong>渴坏了</strong>，哪里能买水？</div><div class="en">I'm <strong>dying of thirst</strong> — where can I buy water?</div></div>
+            <div class="grammar-ex"><div class="zh">这几天非常忙，大家都<strong>累坏了</strong>。</div><div class="en">It's been so busy these days — everyone is <strong>exhausted</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">今天真是<strong>累坏了</strong>。</div><div class="en">I'm <strong>completely worn out</strong> today.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>副词"就"和"才"的对比 · Comparing "就" and "才"</div>
+          <p class="grammar-desc">副词"就"和"才"用在动词前作状语。"就"表示说话人认为动作发生得早、进行得快、顺利；"才"则相反——表示动作发生得晚、进行得慢、不顺利。<br><span style="color:#888;font-size:0.85em;">Both "就" and "才" come before a verb. "就" expresses that the speaker views the action as <em>early, fast, or smooth</em>; "才" expresses the opposite — <em>late, slow, or not smooth</em>.</span></p>
+          <div class="grammar-pattern">… <strong>就</strong> + V　(early / fast)　／　… <strong>才</strong> + V　(late / slow)</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">中国银行很近，走路几分钟<strong>就</strong>能到。</div><div class="en">The Bank of China is close — just a few minutes' walk and you're there. <em>(fast)</em></div></div>
+            <div class="grammar-ex"><div class="zh">我下午要去医院，很晚<strong>才</strong>能回来。</div><div class="en">I'm going to the hospital — I won't be back until late. <em>(late)</em></div></div>
+            <div class="grammar-ex"><div class="zh">我早上五点<strong>就</strong>起床了。</div><div class="en">I was already up at 5 in the morning. <em>(early)</em></div></div>
+            <div class="grammar-ex"><div class="zh">坐火车去北京，五个小时<strong>才</strong>能到。</div><div class="en">Going to Beijing by train, it takes a full five hours to get there. <em>(slow)</em></div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 王一雪和刘明为什么想换房子？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>因为现在的房子太小</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>因为现在的房子太贵</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>因为小雪的初中离家有点儿远</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>因为他们想买空调</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 王一雪为什么不喜欢这个房子？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>房子太远</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>她不喜欢住一层</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>她不喜欢这个小区</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>没有花园</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 灯为什么开着？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>灯坏了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>是王一雪打开的</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>刘明走的时候忘关了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>因为外面太黑</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 王一雪想什么时候搬家？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>这周</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>下周</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>下个月</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>明天</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"挺…的"完成句子：这个小区环境______好______。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l3-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l3-fill1','挺','l3-reveal1')">检查</button>
+        </div>
+        <div id="l3-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：这个小区环境<strong>挺</strong>好<strong>的</strong>。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"就"或"才"填空：A: 你昨天几点回的家？B: 我十点______回家。（很晚）</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l3-fill2" type="text" placeholder="就 / 才" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:200px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l3-fill2','才','l3-reveal2')">检查</button>
+        </div>
+        <div id="l3-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：我十点<strong>才</strong>回家。（"才"表示晚／慢）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你喜欢现在住的房子吗？为什么？</div>
+            <div>（2）你搬过家吗？你是怎么找到新房子的？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 王一雪不喜欢住一层，为什么刘明觉得这个一层不错？你呢，喜欢住高楼还是低楼？<br><br>
+          <strong>（2）</strong> 课文里王一雪和刘明对搬家的时间安排不一样——你觉得搬家应该早一点儿做完还是慢慢做？<br><br>
+          <strong>（3）</strong> 王一雪想办信用卡，因为"花的钱可以慢慢还"——你用信用卡吗？你觉得用信用卡好处多还是麻烦多？
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 你觉得选房子的时候，最重要的是什么？环境、价格、还是离学校／公司近？<br><br>
+          <strong>（2）</strong> 在你们国家，搬家一般是自己搬还是找搬家公司？要花多少时间？<br><br>
+          <strong>（3）</strong> 你住的地方有"小区"这样的住宅区吗？跟中国的小区有什么不一样？
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">在中国租房 <span class="pinyin">Renting an Apartment in China</span></div>
+        <div class="culture-zh">在中国大城市，"租房"是很常见的选择。中国的住宅一般在"小区"里——一个有围墙、保安和绿化（lǜhuà, landscaping）的住宅区，里面有花园、停车场，有时候还有超市和健身房。租房的时候，房东（fángdōng, landlord）一般要求"押一付三"（押一个月房租做押金，一次付三个月房租）。除了房租，租客还要付水电费、煤气费、网费等。中国年轻人换房子很常见，因为工作变动或家里情况变化都可能让人搬家。</div>
+        <div class="culture-en">In big Chinese cities, renting is the most common housing choice. Chinese apartments are usually inside a "小区" — a residential complex with walls, security guards, landscaping, and amenities like parking, sometimes a supermarket or a gym. Landlords typically require "押一付三" (a one-month deposit plus three months' rent up front). On top of rent, tenants also pay water, electricity, gas, and internet bills. Young people in China move quite often, as job changes or family situations frequently prompt a move.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">咱们 vs 我们 <span class="pinyin">"Inclusive We" vs. Plain "We"</span></div>
+        <div class="culture-zh">
+          <strong>相同点：</strong>都表示"我们"，都是代词。<br><br>
+          <strong>不同点：</strong><br>
+          ① <strong>咱们</strong>：一定包括听话的人——"你和我"。语气亲切、口语化，常见于北方话。<br>
+          例：<em>咱们</em>换一个房子吧。（你和我一起）<br><br>
+          ② <strong>我们</strong>：可以包括听话人，也可以不包括，要看上下文。<br>
+          例：明天<em>我们</em>去打扫新家，你也来吗？（"我们"可能不包括"你"）
+        </div>
+        <div class="culture-en">
+          <strong>Similarity:</strong> Both are pronouns meaning "we".<br><br>
+          <strong>Differences:</strong><br>
+          ① <strong>咱们</strong>: <em>Always</em> includes the listener — "you and I". It's friendly, colloquial, and especially common in northern Chinese.<br>
+          E.g., <em>咱们</em>换一个房子吧 = Let's switch homes (you and I together).<br><br>
+          ② <strong>我们</strong>: May or may not include the listener — depends on context.<br>
+          E.g., 明天<em>我们</em>去打扫新家 = Tomorrow we'll go clean the new place (the listener may or may not be included).
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">"V + 着"表示状态持续 <span class="pinyin">"V + 着" — Ongoing State</span></div>
+        <div class="culture-zh">
+          动词后面加"着"，表示动作或状态正在持续。常用于描写场景或对话中。<br><br>
+          常见结构：<strong>V + 着</strong>（表示状态在持续）<br><br>
+          例：<br>
+          灯还<strong>开着</strong>。（The light is still on.）<br>
+          门<strong>关着</strong>呢。（The door is closed.）<br>
+          他<strong>站着</strong>等我。（He's standing there waiting for me.）<br>
+          书桌上<strong>放着</strong>一本书。（There's a book on the desk.）
+        </div>
+        <div class="culture-en">
+          Adding <strong>着</strong> after a verb signals that the action or state is <em>ongoing / continuous</em>. It's often used to describe a scene or in dialogue.<br><br>
+          Pattern: <strong>V + 着</strong> (state in progress)<br><br>
+          Examples:<br>
+          灯还<strong>开着</strong> — the light is still on.<br>
+          门<strong>关着</strong>呢 — the door is closed.<br>
+          他<strong>站着</strong>等我 — he's standing there waiting for me.<br>
+          书桌上<strong>放着</strong>一本书 — there's a book on the desk.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L3 -->
+  </div><!-- end lesson-content data-lesson="3" -->
 
   <!-- ═══════════════ LESSON 4 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-4" data-lesson="4" data-watermark="四" style="display:none">
