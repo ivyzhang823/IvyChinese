@@ -8207,9 +8207,755 @@
 
   <!-- ═══════════════ LESSON 10 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-10" data-lesson="10" data-watermark="十" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第十课 · Lesson 10</span>
+    </div>
+    <h1>你明天再把书还给我</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Nǐ míngtiān zài bǎ shū huán gěi wǒ</p>
+    <p class="lesson-subtitle">You can return the book to me tomorrow</p>
   </div>
 
   <div class="lesson-content" data-lesson="10" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l10-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在教室里</span>
+              <button class="dh-play-btn" id="l10-dhBtn1" onclick="dhPlay('l10-audioEl1','l10-dhBtn1')">
+                <svg id="l10-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l10-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l10-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the classroom — Liu Xiaoxue shares her study methods</span>
+          </div>
+          <audio id="l10-audioEl1" src="audio/10-1.mp3" onended="dhEnded('l10-audioEl1','l10-dhBtn1','l10-dhIcon1')" ontimeupdate="dhUpdate('l10-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">你的数学越来越好，能不能介绍一下学习方法？</div>
+            <div class="line-pinyin">Nǐ de shùxué yuè lái yuè hǎo, néng bu néng jièshào yīxià xuéxí fāngfǎ?</div>
+            <div class="line-en">Your maths keeps getting better and better — could you share your study methods?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">没有什么特别的方法，认真听课，认真记笔记。</div>
+            <div class="line-pinyin">Méiyǒu shénme tèbié de fāngfǎ, rènzhēn tīngkè, rènzhēn jì bǐjì.</div>
+            <div class="line-en">There's no special method — just listen carefully in class and take careful notes.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">我看过你的笔记，记得非常清楚。</div>
+            <div class="line-pinyin">Wǒ kàn guo nǐ de bǐjì, jì de fēicháng qīngchu.</div>
+            <div class="line-en">I've seen your notes — they're written incredibly clearly.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">老师写在黑板上的题都很重要，所以我会把这些题都记在本子上。</div>
+            <div class="line-pinyin">Lǎoshī xiě zài hēibǎn shàng de tí dōu hěn zhòngyào, suǒyǐ wǒ huì bǎ zhèxiē tí dōu jì zài běnzi shàng.</div>
+            <div class="line-en">The problems the teacher writes on the blackboard are all important, so I write them all down in my notebook.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">你说得对。我没有记笔记的习惯。</div>
+            <div class="line-pinyin">Nǐ shuō de duì. Wǒ méiyǒu jì bǐjì de xíguàn.</div>
+            <div class="line-en">You're right. I don't have the habit of taking notes.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">笔记挺重要的，我每天写作业以前，都要看一遍。</div>
+            <div class="line-pinyin">Bǐjì tǐng zhòngyào de, wǒ měitiān xiě zuòyè yǐqián, dōu yào kàn yī biàn.</div>
+            <div class="line-en">Notes are really important — every day before doing my homework, I read through them once.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">这个方法真好！我以后也试试，希望能提高成绩。</div>
+            <div class="line-pinyin">Zhège fāngfǎ zhēn hǎo! Wǒ yǐhòu yě shìshi, xīwàng néng tígāo chéngjì.</div>
+            <div class="line-en">That's a great method! I'll try it too — hopefully I can improve my grades.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l10-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在教室里</span>
+              <button class="dh-play-btn" id="l10-dhBtn2" onclick="dhPlay('l10-audioEl2','l10-dhBtn2')">
+                <svg id="l10-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l10-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l10-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the classroom — talking about yesterday's exams</span>
+          </div>
+          <audio id="l10-audioEl2" src="audio/10-3.mp3" onended="dhEnded('l10-audioEl2','l10-dhBtn2','l10-dhIcon2')" ontimeupdate="dhUpdate('l10-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">小雪，昨天的考试，你考得怎么样？</div>
+            <div class="line-pinyin">Xiǎoxuě, zuótiān de kǎoshì, nǐ kǎo de zěnmeyàng?</div>
+            <div class="line-en">Xiaoxue, how did you do on yesterday's exam?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">我觉得历史有点儿难，你呢？</div>
+            <div class="line-pinyin">Wǒ juéde lìshǐ yǒudiǎnr nán, nǐ ne?</div>
+            <div class="line-en">I found history a bit difficult. What about you?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">数学考试我没看清楚要求，做错了好几个题，考得挺差的。</div>
+            <div class="line-pinyin">Shùxué kǎoshì wǒ méi kàn qīngchu yāoqiú, zuò cuò le hǎo jǐ gè tí, kǎo de tǐng chà de.</div>
+            <div class="line-en">In the maths exam I didn't read the requirements clearly and got quite a few questions wrong — I did pretty badly.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">明天还有考试呢，别想那么多了，先复习外语吧。</div>
+            <div class="line-pinyin">Míngtiān hái yǒu kǎoshì ne, bié xiǎng nàme duō le, xiān fùxí wàiyǔ ba.</div>
+            <div class="line-en">There's still an exam tomorrow — stop overthinking it and let's review foreign language first.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">外语作业里有几个问题，我可以问问你吗？</div>
+            <div class="line-pinyin">Wàiyǔ zuòyè lǐ yǒu jǐ gè wèntí, wǒ kěyǐ wènwen nǐ ma?</div>
+            <div class="line-en">There are a few problems in the foreign language homework — can I ask you about them?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">当然可以。在学习上，遇到什么问题都可以问我。</div>
+            <div class="line-pinyin">Dāngrán kěyǐ. Zài xuéxí shàng, yùdào shénme wèntí dōu kěyǐ wèn wǒ.</div>
+            <div class="line-en">Of course. When it comes to studying, you can always ask me whatever you run into.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">不好意思，这几个题我也不会。咱们还是一起去办公室问问李老师吧。</div>
+            <div class="line-pinyin">Bù hǎoyìsi, zhè jǐ gè tí wǒ yě bù huì. Zánmen háishi yīqǐ qù bàngōngshì wènwen Lǐ lǎoshī ba.</div>
+            <div class="line-en">Sorry — I don't know these ones either. Let's just go to the office together and ask Teacher Li.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l10-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在李老师办公室</span>
+              <button class="dh-play-btn" id="l10-dhBtn3" onclick="dhPlay('l10-audioEl3','l10-dhBtn3')">
+                <svg id="l10-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l10-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l10-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In Ms. Li's office — asking questions about a textbook exercise</span>
+          </div>
+          <audio id="l10-audioEl3" src="audio/10-5.mp3" onended="dhEnded('l10-audioEl3','l10-dhBtn3','l10-dhIcon3')" ontimeupdate="dhUpdate('l10-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">李老师，书上有几个问题，我们想问问您。</div>
+            <div class="line-pinyin">Lǐ lǎoshī, shū shàng yǒu jǐ gè wèntí, wǒmen xiǎng wènwen nín.</div>
+            <div class="line-en">Teacher Li, there are a few questions in the book we'd like to ask you about.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李老师</div>
+          <div class="line-content">
+            <div class="line-zh">好，坐下说吧，哪个题不会？</div>
+            <div class="line-pinyin">Hǎo, zuòxià shuō ba, nǎge tí bù huì?</div>
+            <div class="line-en">Sure, have a seat — which question are you stuck on?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">书上第五页的这个对话我看不懂，小雪也不明白。</div>
+            <div class="line-pinyin">Shū shàng dì wǔ yè de zhège duìhuà wǒ kàn bu dǒng, Xiǎoxuě yě bù míngbai.</div>
+            <div class="line-en">I can't understand this dialogue on page five of the book, and Xiaoxue doesn't get it either.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李老师</div>
+          <div class="line-content">
+            <div class="line-zh">我课上讲过这几句话，再给你们讲一遍。</div>
+            <div class="line-pinyin">Wǒ kè shàng jiǎng guo zhè jǐ jù huà, zài gěi nǐmen jiǎng yī biàn.</div>
+            <div class="line-en">I covered these sentences in class — let me go through them for you again.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">同学</div>
+          <div class="line-content">
+            <div class="line-zh">我终于懂了。这些句子一点儿也不难。</div>
+            <div class="line-pinyin">Wǒ zhōngyú dǒng le. Zhèxiē jùzi yīdiǎnr yě bù nán.</div>
+            <div class="line-en">I finally understand. These sentences aren't difficult at all.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘小雪</div>
+          <div class="line-content">
+            <div class="line-zh">我也明白了，谢谢您，李老师。</div>
+            <div class="line-pinyin">Wǒ yě míngbai le, xièxie nín, Lǐ lǎoshī.</div>
+            <div class="line-en">I understand now too — thank you, Teacher Li.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李老师</div>
+          <div class="line-content">
+            <div class="line-zh">我这本书上还有几个练习，你们回家也做一做，明天再把书还给我。</div>
+            <div class="line-pinyin">Wǒ zhè běn shū shàng hái yǒu jǐ gè liànxí, nǐmen huí jiā yě zuò yī zuò, míngtiān zài bǎ shū huán gěi wǒ.</div>
+            <div class="line-en">There are also a few exercises in my copy — do them at home too, and return the book to me tomorrow.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 -->
+      <div class="dialogue-block" id="l10-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 在家里</span>
+              <button class="dh-play-btn" id="l10-dhBtn4" onclick="dhPlay('l10-audioEl4','l10-dhBtn4')">
+                <svg id="l10-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l10-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l10-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Liu Xiaoxue writes an email to Bai Jiayue</span>
+          </div>
+          <audio id="l10-audioEl4" src="audio/10-7.mp3" onended="dhEnded('l10-audioEl4','l10-dhBtn4','l10-dhIcon4')" ontimeupdate="dhUpdate('l10-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker" style="visibility:hidden;">—</div>
+          <div class="line-content">
+            <div class="line-zh">家月姐姐：你最近怎么样？忙不忙？我现在上初中二年级，学习越来越忙，后年就要考高中了。中国的学校一般是小学六年，初中三年，高中三年。妈妈说想考上好大学，就得上一个好高中；为了考上好高中，初中就得有一个不错的成绩，所以我现在非常努力。家月姐姐，你知道吗？在你的影响下，我也开始喜欢拍照了。下次你再来北京，我给你看看我拍的照片。</div>
+            <div class="line-pinyin">Jiāyuè jiějiě: Nǐ zuìjìn zěnmeyàng? Máng bu máng? Wǒ xiànzài shàng chūzhōng èr niánjí, xuéxí yuè lái yuè máng, hòunián jiù yào kǎo gāozhōng le. Zhōngguó de xuéxiào yībān shì xiǎoxué liù nián, chūzhōng sān nián, gāozhōng sān nián. Māma shuō xiǎng kǎoshàng hǎo dàxué, jiù děi shàng yīgè hǎo gāozhōng; wèile kǎoshàng hǎo gāozhōng, chūzhōng jiù děi yǒu yīgè bùcuò de chéngjì, suǒyǐ wǒ xiànzài fēicháng nǔlì. Jiāyuè jiějiě, nǐ zhīdào ma? Zài nǐ de yǐngxiǎng xià, wǒ yě kāishǐ xǐhuan pāizhào le. Xià cì nǐ zài lái Běijīng, wǒ gěi nǐ kànkan wǒ pāi de zhàopiàn.</div>
+            <div class="line-en">Dear Jiayue: How have you been lately? Are you busy? I'm now in Year 2 of middle school — studying keeps getting busier, and the high school entrance exam is the year after next. In China, school is generally 6 years of primary, 3 years of middle school, and 3 years of high school. Mum says that to get into a good university you need to get into a good high school; and to get into a good high school, you need solid middle school grades — so I'm working very hard now. Jiayue, did you know? Under your influence, I've started to enjoy photography too. Next time you come to Beijing, I'll show you the photos I've taken.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end text tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l10-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">数学</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shùxué</div><div class="fcs-en">mathematics; maths</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">认真</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">rènzhēn</div><div class="fcs-en">conscientious; serious</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">笔记</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bǐjì</div><div class="fcs-en">notes</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">清楚</div><div class="fcs-pos">adj./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qīngchu</div><div class="fcs-en">clear; to understand clearly</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">黑板</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hēibǎn</div><div class="fcs-en">blackboard</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">把</div><div class="fcs-pos">prep.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bǎ</div><div class="fcs-en">(advances object before verb)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">作业</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zuòyè</div><div class="fcs-en">homework</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">遍</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">biàn</div><div class="fcs-en">once through; one time (for actions)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">提高</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tígāo</div><div class="fcs-en">to improve; to enhance</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">历史</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">lìshǐ</div><div class="fcs-en">history</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">难</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">nán</div><div class="fcs-en">hard; difficult</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">要求</div><div class="fcs-pos">n./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yāoqiú</div><div class="fcs-en">requirement; to require</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">差</div><div class="fcs-pos">adj./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chà</div><div class="fcs-en">poor; be short of</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">复习</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fùxí</div><div class="fcs-en">to review; revise</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">外语</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wàiyǔ</div><div class="fcs-en">foreign language</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">当然</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dāngrán</div><div class="fcs-en">of course; certainly</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">遇到</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yùdào</div><div class="fcs-en">to encounter; run into</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">办公室</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bàngōngshì</div><div class="fcs-en">office</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">页</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yè</div><div class="fcs-en">page</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">对话</div><div class="fcs-pos">n./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">duìhuà</div><div class="fcs-en">dialogue; to converse</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">明白</div><div class="fcs-pos">v./adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">míngbai</div><div class="fcs-en">to understand; clear</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">讲</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiǎng</div><div class="fcs-en">to explain; to tell</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">句</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jù</div><div class="fcs-en">(measure for sentences)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">句子</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jùzi</div><div class="fcs-en">sentence</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">年级</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">niánjí</div><div class="fcs-en">grade; year (in school)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">后年</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hòunián</div><div class="fcs-en">the year after next</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">一般</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yībān</div><div class="fcs-en">general; ordinary; usually</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">努力</div><div class="fcs-pos">adj./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">nǔlì</div><div class="fcs-en">hard-working; to make an effort</div></div></div></div>
+          </div>
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="fc-counter"><span id="l10-fcCur">1</span> / <span id="l10-fcTotal">28</span></div>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">数学</div><div class="vocab-pinyin">shùxué</div><div class="vocab-pos">n.</div><div class="vocab-en">mathematics; maths</div><div class="vocab-example"><em>数学</em>越来越好。<br><span style="color:#bbb">Getting better and better at maths.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">认真</div><div class="vocab-pinyin">rènzhēn</div><div class="vocab-pos">adj.</div><div class="vocab-en">conscientious; serious</div><div class="vocab-example"><em>认真</em>听课。<br><span style="color:#bbb">Listen carefully in class.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">笔记</div><div class="vocab-pinyin">bǐjì</div><div class="vocab-pos">n.</div><div class="vocab-en">notes</div><div class="vocab-example">认真记<em>笔记</em>。<br><span style="color:#bbb">Take careful notes.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">清楚</div><div class="vocab-pinyin">qīngchu</div><div class="vocab-pos">adj./v.</div><div class="vocab-en">clear; to understand clearly</div><div class="vocab-example">记得非常<em>清楚</em>。<br><span style="color:#bbb">Written very clearly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">黑板</div><div class="vocab-pinyin">hēibǎn</div><div class="vocab-pos">n.</div><div class="vocab-en">blackboard</div><div class="vocab-example">老师写在<em>黑板</em>上的题。<br><span style="color:#bbb">Problems the teacher writes on the board.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">把</div><div class="vocab-pinyin">bǎ</div><div class="vocab-pos">prep.</div><div class="vocab-en">把-word: advances object before verb</div><div class="vocab-example"><em>把</em>题记在本子上。<br><span style="color:#bbb">Write the problems in the notebook.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">作业</div><div class="vocab-pinyin">zuòyè</div><div class="vocab-pos">n.</div><div class="vocab-en">homework</div><div class="vocab-example">写<em>作业</em>以前。<br><span style="color:#bbb">Before doing homework.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">遍</div><div class="vocab-pinyin">biàn</div><div class="vocab-pos">m.</div><div class="vocab-en">once through (for actions)</div><div class="vocab-example">看一<em>遍</em>。<br><span style="color:#bbb">Read through once.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">提高</div><div class="vocab-pinyin">tígāo</div><div class="vocab-pos">v.</div><div class="vocab-en">to improve; enhance</div><div class="vocab-example"><em>提高</em>成绩。<br><span style="color:#bbb">Improve grades.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">历史</div><div class="vocab-pinyin">lìshǐ</div><div class="vocab-pos">n.</div><div class="vocab-en">history</div><div class="vocab-example"><em>历史</em>有点儿难。<br><span style="color:#bbb">History is a bit difficult.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">难</div><div class="vocab-pinyin">nán</div><div class="vocab-pos">adj.</div><div class="vocab-en">hard; difficult</div><div class="vocab-example">一点儿也不<em>难</em>。<br><span style="color:#bbb">Not difficult at all.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">要求</div><div class="vocab-pinyin">yāoqiú</div><div class="vocab-pos">n./v.</div><div class="vocab-en">requirement; to require</div><div class="vocab-example">没看清楚<em>要求</em>。<br><span style="color:#bbb">Didn't read the requirements clearly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">差</div><div class="vocab-pinyin">chà</div><div class="vocab-pos">adj./v.</div><div class="vocab-en">poor; be short of</div><div class="vocab-example">考得挺<em>差</em>的。<br><span style="color:#bbb">Did pretty badly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">复习</div><div class="vocab-pinyin">fùxí</div><div class="vocab-pos">v.</div><div class="vocab-en">to review; revise</div><div class="vocab-example">先<em>复习</em>外语吧。<br><span style="color:#bbb">Let's review foreign language first.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">外语</div><div class="vocab-pinyin">wàiyǔ</div><div class="vocab-pos">n.</div><div class="vocab-en">foreign language</div><div class="vocab-example"><em>外语</em>作业里有几个问题。<br><span style="color:#bbb">A few problems in the FL homework.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">当然</div><div class="vocab-pinyin">dāngrán</div><div class="vocab-pos">adv.</div><div class="vocab-en">of course; certainly</div><div class="vocab-example"><em>当然</em>可以。<br><span style="color:#bbb">Of course you can.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">遇到</div><div class="vocab-pinyin">yùdào</div><div class="vocab-pos">v.</div><div class="vocab-en">to encounter; run into</div><div class="vocab-example"><em>遇到</em>什么问题都可以问我。<br><span style="color:#bbb">You can ask me anything you run into.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">办公室</div><div class="vocab-pinyin">bàngōngshì</div><div class="vocab-pos">n.</div><div class="vocab-en">office</div><div class="vocab-example">去<em>办公室</em>问老师。<br><span style="color:#bbb">Go to the office to ask the teacher.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">页</div><div class="vocab-pinyin">yè</div><div class="vocab-pos">m.</div><div class="vocab-en">page</div><div class="vocab-example">第五<em>页</em>的对话。<br><span style="color:#bbb">The dialogue on page five.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">对话</div><div class="vocab-pinyin">duìhuà</div><div class="vocab-pos">n./v.</div><div class="vocab-en">dialogue; to converse</div><div class="vocab-example">这个<em>对话</em>我看不懂。<br><span style="color:#bbb">I can't understand this dialogue.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">明白</div><div class="vocab-pinyin">míngbai</div><div class="vocab-pos">v./adj.</div><div class="vocab-en">to understand; clear</div><div class="vocab-example">我也<em>明白</em>了。<br><span style="color:#bbb">I understand now too.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">讲</div><div class="vocab-pinyin">jiǎng</div><div class="vocab-pos">v.</div><div class="vocab-en">to explain; to tell</div><div class="vocab-example">再给你们<em>讲</em>一遍。<br><span style="color:#bbb">Explain it to you again.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">句</div><div class="vocab-pinyin">jù</div><div class="vocab-pos">m.</div><div class="vocab-en">(measure for sentences)</div><div class="vocab-example">这几<em>句</em>话。<br><span style="color:#bbb">These few sentences.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">句子</div><div class="vocab-pinyin">jùzi</div><div class="vocab-pos">n.</div><div class="vocab-en">sentence</div><div class="vocab-example">这些<em>句子</em>不难。<br><span style="color:#bbb">These sentences aren't difficult.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">年级</div><div class="vocab-pinyin">niánjí</div><div class="vocab-pos">n.</div><div class="vocab-en">grade; year (in school)</div><div class="vocab-example">初中二<em>年级</em>。<br><span style="color:#bbb">Year 2 of middle school.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">后年</div><div class="vocab-pinyin">hòunián</div><div class="vocab-pos">n.</div><div class="vocab-en">the year after next</div><div class="vocab-example"><em>后年</em>就要考高中了。<br><span style="color:#bbb">The high school exam is the year after next.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">一般</div><div class="vocab-pinyin">yībān</div><div class="vocab-pos">adj.</div><div class="vocab-en">general; ordinary; usually</div><div class="vocab-example">中国的学校<em>一般</em>是……<br><span style="color:#bbb">Chinese schools are generally…</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">努力</div><div class="vocab-pinyin">nǔlì</div><div class="vocab-pos">adj./v.</div><div class="vocab-en">hard-working; to make an effort</div><div class="vocab-example">我现在非常<em>努力</em>。<br><span style="color:#bbb">I'm working very hard now.</span></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:2rem">专有名词 · Proper Nouns</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">刘小雪</div><div class="vocab-pinyin">Liú Xiǎoxuě</div><div class="vocab-pos">name</div><div class="vocab-en">Liu Xiaoxue (character)</div></div>
+        <div class="vocab-card"><div class="vocab-zh">李老师</div><div class="vocab-pinyin">Lǐ lǎoshī</div><div class="vocab-pos">name</div><div class="vocab-en">Teacher Li</div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">把</div>
+          <div class="wdh-info"><div class="wdh-pinyin">bǎ</div><div class="wdh-en">preposition — advances object before verb</div></div>
+          <div class="wdh-pos">prep.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"把" is a preposition that moves a definite object to a position before the verb, highlighting what happens to it. Key constraints: the object must be definite (specific, not just "some object"); the verb must carry extra elements (a complement, 了, or reduplication); negation (不/没) and modals go before 把.</p>
+          <div class="wd-section-label">基本结构 · Structure</div>
+          <div class="wd-collocations"><span class="collocation-tag">把…记在…上</span><span class="collocation-tag">把…放到…</span><span class="collocation-tag">把…还给…</span><span class="collocation-tag">把…带给…</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我会把这些题都记在本子上。</div><div class="en">I'll write all these problems down in my notebook.</div></div>
+            <div class="wd-ex"><div class="zh">明天再把书还给我。</div><div class="en">Return the book to me tomorrow.</div></div>
+            <div class="wd-ex"><div class="zh">你不能把名字写在这里。</div><div class="en">You can't write your name here.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">认真</div>
+          <div class="wdh-info"><div class="wdh-pinyin">rènzhēn</div><div class="wdh-en">conscientious; serious; careful</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"认真" describes a person or their approach to an activity as being thorough, careful, and serious. As an adverb it modifies a verb directly: 认真听课 (listen carefully). It can also be used predicatively: 他很认真 (he's very serious/conscientious). Opposite: 马虎 (máhu, careless).</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">认真听课</span><span class="collocation-tag">认真记笔记</span><span class="collocation-tag">认真复习</span><span class="collocation-tag">非常认真</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">没有什么特别的方法，认真听课，认真记笔记。</div><div class="en">No special method — just listen carefully and take careful notes.</div></div>
+            <div class="wd-ex"><div class="zh">她做任何事都很认真。</div><div class="en">She approaches everything very seriously.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">清楚 vs 明白</div>
+          <div class="wdh-info"><div class="wdh-pinyin">qīngchu / míngbai</div><div class="wdh-en">clear / understand</div></div>
+          <div class="wdh-pos">adj. / v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Both relate to clarity, but differ in usage. <strong>清楚</strong>: as adj = clear, distinct (记得很清楚); as verb = to be clear about / understand a fact (我清楚这件事). <strong>明白</strong>: as verb = to understand / comprehend (我明白了); as adj = clear, reasonable. 明白 is more about comprehending something; 清楚 is more about it being distinct or factually known.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我看过你的笔记，记得非常清楚。</div><div class="en">I've seen your notes — they're recorded very clearly.</div></div>
+            <div class="wd-ex"><div class="zh">我终于明白了。</div><div class="en">I finally understand.</div></div>
+            <div class="wd-ex"><div class="zh">数学考试我没看清楚要求。</div><div class="en">I didn't read the requirements clearly in the maths exam.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">差</div>
+          <div class="wdh-info"><div class="wdh-pinyin">chà</div><div class="wdh-en">poor; be short of; differ from</div></div>
+          <div class="wdh-pos">adj. / v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"差" (chà) has two main uses: ① as an adjective meaning "poor quality / below standard" (考得很差, 成绩差); ② as a verb meaning "to be short of / lack" (差一点儿). Note: 差 has another reading 差 (chā) meaning "difference / discrepancy" (误差, 差别). Different tone, different meaning.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">考得很差</span><span class="collocation-tag">成绩差</span><span class="collocation-tag">差得多</span><span class="collocation-tag">差一点儿</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">做错了好几个题，考得挺差的。</div><div class="en">Got quite a few questions wrong — did pretty badly.</div></div>
+            <div class="wd-ex"><div class="zh">他的成绩越来越差了。</div><div class="en">His grades are getting worse and worse.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">遍 vs 次</div>
+          <div class="wdh-info"><div class="wdh-pinyin">biàn / cì</div><div class="wdh-en">two measure words for actions</div></div>
+          <div class="wdh-pos">m.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Both count occurrences of actions, but differently. <strong>遍</strong> (biàn): one complete run-through from start to finish — reading a passage once through, watching a film, listening to audio. <strong>次</strong> (cì): one occurrence or instance — can be brief (went once, asked once). 看一遍 = read it all the way through; 看一次 = watched it once (could be partial).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">写作业以前，都要看一遍笔记。</div><div class="en">Before doing homework, I always read through my notes once (start to finish).</div></div>
+            <div class="wd-ex"><div class="zh">我去过北京两次。</div><div class="en">I've been to Beijing twice. (two visits)</div></div>
+            <div class="wd-ex"><div class="zh">再给你们讲一遍。</div><div class="en">I'll go through it for you once more.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">努力</div>
+          <div class="wdh-info"><div class="wdh-pinyin">nǔlì</div><div class="wdh-en">hard-working; to make an effort</div></div>
+          <div class="wdh-pos">adj. / v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">As an adjective: 很努力 (very hard-working), 非常努力 (extremely diligent). As a verb (+ optional direction): 努力学习 (study hard), 努力工作 (work hard). The object of effort goes after: 为了考试努力 (work hard for the exam). Unlike 认真 (careful approach), 努力 emphasises the degree of effort expended.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">努力学习</span><span class="collocation-tag">非常努力</span><span class="collocation-tag">努力工作</span><span class="collocation-tag">很努力</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">所以我现在非常努力。</div><div class="en">That's why I'm working extremely hard now.</div></div>
+            <div class="wd-ex"><div class="zh">为了考上好高中，初中就得努力。</div><div class="en">To get into a good high school, you have to work hard in middle school.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">"把"字句（1）位置</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">"在……上/中/下"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">"把"字句（2）转移</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>"把"字句（1）— 位置的改变 · The "把" Sentence (1): Change of Position</div>
+          <p class="grammar-desc">"把"字句表示对确定的人或事物做出相应的动作，使其发生<strong>位置上的改变</strong>。否定副词"不/没"和能愿动词应该放在"把"字的前面。<br><span style="color:#888;font-size:0.85em;">The "把" sentence indicates performing an action on a <em>definite</em> person or thing that results in a <em>change of position</em>. Negation (不/没) and modals go before 把.</span></p>
+          <div class="grammar-pattern">Subject + (不/没/能愿动词) + <strong>把</strong> + Object + Verb + 在/到 + Location</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">我会<strong>把</strong>这些题都记<strong>在</strong>本子上。</div><div class="en">I'll write all these problems down <strong>in</strong> my notebook.</div></div>
+            <div class="grammar-ex"><div class="zh">老师<strong>把</strong>作业本放<strong>到</strong>桌子上了。</div><div class="en">The teacher put the homework books <strong>on</strong> the desk.</div></div>
+            <div class="grammar-ex"><div class="zh">你不能<strong>把</strong>名字写<strong>在</strong>这里。</div><div class="en">You can't write your name here.</div></div>
+            <div class="grammar-ex"><div class="zh">我好像<strong>把</strong>校园卡忘<strong>在</strong>宿舍里了。</div><div class="en">I think I left my campus card in the dorm.</div></div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:#888;background:#fff8f5;padding:0.7rem 1rem;border-radius:8px;border-left:3px solid var(--gold);">⚠️ The object must be <em>definite</em> (a specific thing, not "some object"). The verb cannot stand alone — it needs a complement (在/到 + place, 了, 结果补语, etc.).</p>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>固定格式"在……上/中/下" · Fixed Pattern "在……上/中/下"</div>
+          <p class="grammar-desc">介词"在"和方位词"上""中""下"组成固定格式，分别表示范围/方面、环境/时间、条件。<br><span style="color:#888;font-size:0.85em;">The preposition 在 combines with positional words 上, 中, 下 to indicate scope/aspect, environment/time, and condition respectively.</span></p>
+          <div class="grammar-pattern">在+N+<strong>上</strong>（scope）　｜　在+N+<strong>中</strong>（environment/time）　｜　在+VP+<strong>下</strong>（condition）</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">在学习<strong>上</strong>，遇到什么问题都可以问我。</div><div class="en">When it comes to studying, you can ask me anything.</div></div>
+            <div class="grammar-ex"><div class="zh">在工作<strong>上</strong>，他总是能给我很多帮助。</div><div class="en">At work, he's always able to help me a great deal.</div></div>
+            <div class="grammar-ex"><div class="zh">在比赛<strong>中</strong>，他得分最高。</div><div class="en">During the match, he scored the highest.</div></div>
+            <div class="grammar-ex"><div class="zh">在你的影响<strong>下</strong>，我也开始喜欢拍照了。</div><div class="en">Under your influence, I've started to enjoy photography too.</div></div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:#888;background:#fff8f5;padding:0.7rem 1rem;border-radius:8px;border-left:3px solid var(--gold);">💡 在+N+下 requires a disyllabic verb with an attributive: 在<em>老师的帮助</em>下, 在<em>她的影响</em>下. The noun describes who or what is providing the condition.</p>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>"把"字句（2）— 关系的转移 · The "把" Sentence (2): Relational Transfer</div>
+          <p class="grammar-desc">"把"字句还可以表示通过动作使确定的事物发生<strong>关系上的转移</strong>——即把某物给、送、带、还等给另一方。基本结构：主语+把+宾语₁+动词+给+宾语₂。<br><span style="color:#888;font-size:0.85em;">A second use of the 把 sentence shows the <em>relational transfer</em> of a thing through an action — giving, sending, bringing, returning something to someone. Structure: S + 把 + O₁ + V + 给 + O₂.</span></p>
+          <div class="grammar-pattern">Subject + <strong>把</strong> + Object₁ + Verb + <strong>给</strong> + Object₂</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">你明天再<strong>把</strong>书<strong>还给</strong>我。</div><div class="en">You can return the book to me tomorrow.</div></div>
+            <div class="grammar-ex"><div class="zh">我<strong>把</strong>礼物<strong>送给</strong>她了。</div><div class="en">I gave the gift to her.</div></div>
+            <div class="grammar-ex"><div class="zh">请你<strong>把</strong>这本书<strong>带给</strong>老师。</div><div class="en">Please bring this book to the teacher.</div></div>
+            <div class="grammar-ex"><div class="zh">我给你<strong>看看</strong>我拍的照片。</div><div class="en">Let me show you the photos I took.</div></div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:#888;background:#fff8f5;padding:0.7rem 1rem;border-radius:8px;border-left:3px solid var(--gold);">📌 Common transfer verbs with 把…给: <strong>还给</strong>（return to）, <strong>送给</strong>（give as gift to）, <strong>带给</strong>（bring to）, <strong>交给</strong>（hand in to）, <strong>借给</strong>（lend to）.</p>
+        </div>
+      </div>
+
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 刘小雪学习数学的方法是什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>每天多做练习题</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>认真听课，认真记笔记，写作业前看一遍笔记</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>每天复习外语</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>去办公室问老师</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 同学的数学考得不好，原因是什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>没有复习</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>没看清楚考试的要求</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>题太难了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>没有笔记</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 根据课文4，中国的升学路线是？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>小学5年 → 初中4年 → 高中3年</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>小学6年 → 初中3年 → 高中3年</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>小学6年 → 初中2年 → 高中4年</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>小学4年 → 初中3年 → 高中5年</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">4. 用"把"字句改写：我把题记在本子上。（使用：老师 / 作业本 / 放到 / 桌子上）</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l10-fill1" type="text" placeholder="老师把……" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:320px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l10-fill1','老师把作业本放到桌子上了','l10-reveal1')">检查</button>
+        </div>
+        <div id="l10-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>老师把作业本放到桌子上了。</strong></div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"在……上/中/下"填空：在老师的帮助___，我的成绩提高很快。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l10-fill2" type="text" placeholder="上/中/下" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:180px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l10-fill2','下','l10-reveal2')">检查</button>
+        </div>
+        <div id="l10-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：在老师的帮助<strong>下</strong>，我的成绩提高很快。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 翻译：Under your influence, I've also started to enjoy taking photos.</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l10-fill3" type="text" placeholder="在……下，我……" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:360px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l10-fill3','open','l10-reveal3')">检查</button>
+        </div>
+        <div id="l10-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>在你的影响下，我也开始喜欢拍照了。</strong>（答案不唯一）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）上课的时候你记笔记吗？你一般记什么？</div>
+            <div>（2）在家写作业的时候看到不会的题，你怎么办？</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 多人活动 · Group Discussion</div>
+        </div>
+        <div class="culture-title">交流学习外语的方法 <span class="pinyin">Share your language learning methods</span></div>
+        <div class="culture-zh">
+          四人一组，交流学习外语的方法，然后向全班分享。讨论时，使用本课所学的词语和语言点。<br><br>
+          <strong>（1）</strong> 你学外语有什么好方法？<br><br>
+          <strong>（2）</strong> 在学习外语的过程中，你遇到过什么问题？你是怎么解决的？<br><br>
+          <strong>（3）</strong> 在你的影响下（或者在谁的影响下），你的同学或朋友开始学中文了吗？<br><br>
+          <strong>（4）</strong> 你觉得记笔记对学习有帮助吗？为什么？<br><br>
+          <strong>（5）</strong> 考试考得不好的时候，你会怎么做？
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 刘小雪说"想考上好大学，就得上一个好高中"——你觉得升学压力大吗？你的国家的学生有类似的压力吗？<br><br>
+          <strong>（2）</strong> 中国的义务教育（yìwù jiàoyù, compulsory education）是9年。你的国家的义务教育是几年？有什么不同？<br><br>
+          <strong>（3）</strong> 你觉得老师更重要，还是自己的努力更重要？你同意"老师当然重要，但是自己的努力也很重要"吗？
+        </div>
+      </div>
+
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">中国的教育体系 <span class="pinyin">China's Education System</span></div>
+        <div class="culture-zh">中国的学校教育一般分为三个阶段：小学（xiǎoxué, 6年）、初中（chūzhōng, 3年）和高中（gāozhōng, 3年）。小学和初中是"义务教育"阶段（9年），国家要求所有孩子必须完成。高中教育不是义务教育，但是绝大多数学生都会继续读高中。高中学习结束后，学生要参加"高考"（gāokǎo，全国统一高等学校招生考试），根据高考成绩申请大学。高考是中国最重要的考试，对学生的未来影响非常大。</div>
+        <div class="culture-en">Chinese school education is generally divided into three stages: primary school (小学, 6 years), middle school (初中, 3 years), and high school (高中, 3 years). Primary and middle school are "compulsory education" (义务教育, 9 years) — the state requires all children to complete them. High school is not compulsory, but the vast majority of students continue. After high school, students sit the 高考 (Gaokao — the National College Entrance Examination), and apply to universities based on their scores. The Gaokao is the most important exam in China and has a huge influence on students' futures.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">把字句的两种用法 <span class="pinyin">Two uses of the 把 sentence</span></div>
+        <div class="culture-zh">
+          本课学习了两种"把"字句，它们都要求宾语是<em>特定的</em>事物：<br><br>
+          ① <strong>位置的改变</strong>（把…放在/到/写在…）：强调某物被移到一个新的位置。<br>
+          例：我会把这些题都记在本子上。（题→本子）<br>
+          例：老师把作业本放到桌子上了。（作业本→桌子）<br><br>
+          ② <strong>关系的转移</strong>（把…给/还给/送给…）：强调某物通过动作从一方转移到另一方。<br>
+          例：你明天再把书还给我。（书：学生→老师）<br>
+          例：我把礼物送给她了。（礼物：我→她）<br><br>
+          记住：两种用法都不能用于不确定的事物（不能说"把一本书给我"）。
+        </div>
+        <div class="culture-en">
+          This lesson introduced two uses of the 把 sentence — both require the object to be a <em>specific, definite</em> thing:<br><br>
+          ① <strong>Change of position</strong> (把…放在/到/写在…): highlights that something is moved to a new location.<br>
+          E.g., 我会把这些题都记在本子上 (problems → notebook); 老师把作业本放到桌子上了 (books → desk).<br><br>
+          ② <strong>Relational transfer</strong> (把…给/还给/送给…): highlights that something passes from one party to another through an action.<br>
+          E.g., 你明天再把书还给我 (book: student → teacher); 我把礼物送给她了 (gift: me → her).<br><br>
+          Remember: neither type works with indefinite objects — you cannot say 把一本书给我 (give me a book) using 把.
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">什么时候用"把"字句？ <span class="pinyin">When to use a 把 sentence?</span></div>
+        <div class="culture-zh">
+          "把"字句不是随时都能用的，需要满足三个条件：<br><br>
+          ① <strong>宾语必须是特定的</strong>（不能用"一个/一些"等不确定的表达）。<br>
+          ✓ 把这本书还给我。（this book = specific）<br>
+          ✗ 把一本书还给我。（a book = indefinite）<br><br>
+          ② <strong>动词不能单独出现</strong>，必须有补语（在/到+地点、结果补语、趋向补语）、"了"或重叠形式。<br>
+          ✓ 把作业本放到桌子上。（V+到+地点）<br>
+          ✗ 把作业本放。（V alone — wrong）<br><br>
+          ③ <strong>否定词和能愿动词放在"把"前面</strong>：不把/没把/可以把/应该把。<br>
+          ✓ 你不能把名字写在这里。<br>
+          ✗ 你把名字不能写在这里。
+        </div>
+        <div class="culture-en">
+          The 把 sentence has three conditions that must all be met:<br><br>
+          ① <strong>The object must be definite</strong> (specific — no 一个/一些 etc.).<br>
+          ✓ 把这本书还给我 (this book — specific). ✗ 把一本书还给我 (a book — indefinite).<br><br>
+          ② <strong>The verb cannot stand alone</strong> — it needs a complement (在/到+place, result complement, directional complement), 了, or reduplication.<br>
+          ✓ 把作业本放到桌子上 (V+到+place). ✗ 把作业本放 (V alone).<br><br>
+          ③ <strong>Negation and modals go before 把</strong>: 不把, 没把, 可以把, 应该把.<br>
+          ✓ 你不能把名字写在这里. ✗ 你把名字不能写在这里.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L10 -->
   </div><!-- end lesson-content data-lesson="10" -->
 
   <div class="lesson-nav">
