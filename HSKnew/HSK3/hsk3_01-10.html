@@ -4907,9 +4907,856 @@
 
   <!-- ═══════════════ LESSON 6 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-6" data-lesson="6" data-watermark="六" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第六课 · Lesson 06</span>
+    </div>
+    <h1>高铁上还可以点外卖</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Gāotiě shàng hái kěyǐ diǎn wàimài</p>
+    <p class="lesson-subtitle">You can even order takeout on a high-speed train</p>
   </div>
 
   <div class="lesson-content" data-lesson="6" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l6-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在咖啡厅里</span>
+              <button class="dh-play-btn" id="l6-dhBtn1" onclick="dhPlay('l6-audioEl1','l6-dhBtn1')">
+                <svg id="l6-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l6-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l6-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In a café — Li Wen and Bai Jiayue plan a trip to Shanghai</span>
+          </div>
+          <audio id="l6-audioEl1" src="audio/06-1.mp3" onended="dhEnded('l6-audioEl1','l6-dhBtn1','l6-dhIcon1')" ontimeupdate="dhUpdate('l6-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">家月，咱们该买去上海的票了。你打算怎么去上海？</div>
+            <div class="line-pinyin">Jiāyuè, zánmen gāi mǎi qù Shànghǎi de piào le. Nǐ dǎsuàn zěnme qù Shànghǎi?</div>
+            <div class="line-en">Jiayue, it's time we bought tickets for Shanghai. How are you planning to get there?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我还没坐过高铁，咱们坐高铁去，怎么样？</div>
+            <div class="line-pinyin">Wǒ hái méi zuò guò gāotiě, zánmen zuò gāotiě qù, zěnmeyàng?</div>
+            <div class="line-en">I've never taken the high-speed train — how about we go by high-speed train?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">没问题，从北京到上海的高铁很多，非常方便。</div>
+            <div class="line-pinyin">Méi wèntí, cóng Běijīng dào Shànghǎi de gāotiě hěn duō, fēicháng fāngbiàn.</div>
+            <div class="line-en">No problem — there are loads of high-speed trains from Beijing to Shanghai, very convenient.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">行！怎么买高铁票？</div>
+            <div class="line-pinyin">Xíng! Zěnme mǎi gāotiě piào?</div>
+            <div class="line-en">Great! How do we buy the tickets?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">用手机App就能买。给我你的护照，我帮你买。</div>
+            <div class="line-pinyin">Yòng shǒujī App jiù néng mǎi. Gěi wǒ nǐ de hùzhào, wǒ bāng nǐ mǎi.</div>
+            <div class="line-en">Just buy them on a phone app. Give me your passport — I'll buy yours.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">早就听说过高铁，终于可以坐上了。</div>
+            <div class="line-pinyin">Zǎo jiù tīng shuō guò gāotiě, zhōngyú kěyǐ zuò shàng le.</div>
+            <div class="line-en">I've heard about the high-speed rail forever — I'm finally getting to ride it.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">高铁又快又舒服，你一定会喜欢的。</div>
+            <div class="line-pinyin">Gāotiě yòu kuài yòu shūfu, nǐ yídìng huì xǐhuan de.</div>
+            <div class="line-en">It's both fast and comfortable — you're going to love it.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l6-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在车上去高铁站</span>
+              <button class="dh-play-btn" id="l6-dhBtn2" onclick="dhPlay('l6-audioEl2','l6-dhBtn2')">
+                <svg id="l6-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l6-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l6-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In Liu Ming's car — driving Bai Jiayue and Li Wen to the high-speed train station</span>
+          </div>
+          <audio id="l6-audioEl2" src="audio/06-3.mp3" onended="dhEnded('l6-audioEl2','l6-dhBtn2','l6-dhIcon2')" ontimeupdate="dhUpdate('l6-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">过了前面的路口就到高铁站了。</div>
+            <div class="line-pinyin">Guò le qiánmiàn de lùkǒu jiù dào gāotiě zhàn le.</div>
+            <div class="line-en">Once we pass the intersection ahead, we'll be at the station.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我看见了。马上就到了，这条路车很多，您小心点儿。</div>
+            <div class="line-pinyin">Wǒ kàn jiàn le. Mǎshàng jiù dào le, zhè tiáo lù chē hěn duō, nín xiǎoxīn diǎnr.</div>
+            <div class="line-en">I see it. We're almost there — there's a lot of traffic on this road, please drive carefully.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">好，你们还有一个小时，应该不会迟到的。</div>
+            <div class="line-pinyin">Hǎo, nǐmen hái yǒu yī ge xiǎoshí, yīnggāi bú huì chídào de.</div>
+            <div class="line-en">OK — you still have an hour, you shouldn't be late.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我发现这条路车多，红绿灯也多。</div>
+            <div class="line-pinyin">Wǒ fāxiàn zhè tiáo lù chē duō, hónglǜdēng yě duō.</div>
+            <div class="line-en">I'm noticing this road has lots of cars and lots of traffic lights too.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">是啊，这条路我走过一次，后来再也不走了。</div>
+            <div class="line-pinyin">Shì a, zhè tiáo lù wǒ zǒu guò yī cì, hòulái zài yě bù zǒu le.</div>
+            <div class="line-en">Yeah — I took this road once before, and after that I never used it again.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">那您今天为什么走了这条路？</div>
+            <div class="line-pinyin">Nà nín jīntiān wèishénme zǒu le zhè tiáo lù?</div>
+            <div class="line-en">Then why did you take this road today?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">我一急就走错了。如果没走错，二十分钟以前就到了。</div>
+            <div class="line-pinyin">Wǒ yī jí jiù zǒu cuò le. Rúguǒ méi zǒu cuò, èrshí fēnzhōng yǐqián jiù dào le.</div>
+            <div class="line-en">I rushed and took the wrong route. If I hadn't, we'd have been there twenty minutes ago.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l6-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在高铁站排队</span>
+              <button class="dh-play-btn" id="l6-dhBtn3" onclick="dhPlay('l6-audioEl3','l6-dhBtn3')">
+                <svg id="l6-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l6-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l6-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At the station — waiting in line for security and ticket inspection</span>
+          </div>
+          <audio id="l6-audioEl3" src="audio/06-5.mp3" onended="dhEnded('l6-audioEl3','l6-dhBtn3','l6-dhIcon3')" ontimeupdate="dhUpdate('l6-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">李文，我的耳机没电了，你有充电宝吗？</div>
+            <div class="line-pinyin">Lǐ Wén, wǒ de ěrjī méi diàn le, nǐ yǒu chōngdiànbǎo ma?</div>
+            <div class="line-en">Li Wen, my earphones are out of battery — do you have a power bank?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">有，这些常用的东西我都放在包里了，我给你拿。</div>
+            <div class="line-pinyin">Yǒu, zhèxiē chángyòng de dōngxi wǒ dōu fàng zài bāo lǐ le, wǒ gěi nǐ ná.</div>
+            <div class="line-en">Yes — I keep all the everyday stuff in my bag. I'll get it for you.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">前面的人越来越多。</div>
+            <div class="line-pinyin">Qiánmiàn de rén yuè lái yuè duō.</div>
+            <div class="line-en">There are more and more people up ahead.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">对，马上就进高铁站了。咱们一起走，别分开。</div>
+            <div class="line-pinyin">Duì, mǎshàng jiù jìn gāotiě zhàn le. Zánmen yīqǐ zǒu, bié fēnkāi.</div>
+            <div class="line-en">Yes — we'll be inside the station any moment. Let's stay together, don't get separated.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">好，你检查一下，高铁票都拿好了吗？</div>
+            <div class="line-pinyin">Hǎo, nǐ jiǎnchá yīxià, gāotiě piào dōu ná hǎo le ma?</div>
+            <div class="line-en">OK — could you double-check, do we have the tickets?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">不用拿票，刷护照就能检票进站。</div>
+            <div class="line-pinyin">Bú yòng ná piào, shuā hùzhào jiù néng jiǎnpiào jìn zhàn.</div>
+            <div class="line-en">No need for paper tickets — we just scan our passports to get through the gate.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">去哪里检票？</div>
+            <div class="line-pinyin">Qù nǎlǐ jiǎnpiào?</div>
+            <div class="line-en">Where do we go for the ticket gates?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">检票口在二层，我们一会儿坐电梯上去。</div>
+            <div class="line-pinyin">Jiǎnpiào kǒu zài èr céng, wǒmen yīhuìr zuò diàntī shàngqù.</div>
+            <div class="line-en">The gates are on the second floor — we'll take the escalator up in a minute.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 (短文) -->
+      <div class="dialogue-block" id="l6-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 给安妮的电话</span>
+              <button class="dh-play-btn" id="l6-dhBtn4" onclick="dhPlay('l6-audioEl4','l6-dhBtn4')">
+                <svg id="l6-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l6-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l6-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Bai Jiayue calls Annie to share her travel experience</span>
+          </div>
+          <audio id="l6-audioEl4" src="audio/06-7.mp3" onended="dhEnded('l6-audioEl4','l6-dhBtn4','l6-dhIcon4')" ontimeupdate="dhUpdate('l6-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              这次放假，我去了北京，还去了上海。我是从北京南站坐高铁去的上海。我觉得坐在高铁上跟坐在家里的沙发上一样，又安静又舒服。坐累了就站一会儿，饿了就点外卖。对，你没听错，高铁上可以点外卖，只需要选择好车站和想吃的东西，到站时不用下车，服务员就会给你拿过来。现在喜欢坐高铁的人越来越多。我爸妈来中国旅游的时候，必须带他们也坐一次高铁。
+            </div>
+            <div class="line-pinyin" style="color:var(--gold);font-size:0.85em;line-height:1.9;margin-top:0.5em;">
+              Zhè cì fàngjià, wǒ qù le Běijīng, hái qù le Shànghǎi. Wǒ shì cóng Běijīng Nán Zhàn zuò gāotiě qù de Shànghǎi. Wǒ juéde zuò zài gāotiě shàng gēn zuò zài jiā lǐ de shāfā shàng yīyàng, yòu ānjìng yòu shūfu. Zuò lèi le jiù zhàn yīhuìr, è le jiù diǎn wàimài. Duì, nǐ méi tīng cuò, gāotiě shàng kěyǐ diǎn wàimài, zhǐ xūyào xuǎnzé hǎo chēzhàn hé xiǎng chī de dōngxi, dào zhàn shí bú yòng xià chē, fúwùyuán jiù huì gěi nǐ ná guòlai. Xiànzài xǐhuan zuò gāotiě de rén yuè lái yuè duō. Wǒ bà mā lái Zhōngguó lǚyóu de shíhou, bìxū dài tāmen yě zuò yī cì gāotiě.
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);">
+              On this vacation, I went to Beijing and also to Shanghai. I took the high-speed train from Beijing South Station to Shanghai. I felt that sitting on the high-speed train was just like sitting on the sofa at home — both quiet and comfortable. When I got tired of sitting, I'd stand up for a bit; when hungry, I'd order takeout. Yes — you heard right: you can order takeout on a high-speed train. You just pick a station and what you want to eat, and when the train arrives at that station you don't even need to get off — a server brings the food right to you. More and more people love taking the high-speed rail these days. When my mom and dad come visit China, I absolutely have to take them on the high-speed train too.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l6-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">该</div><div class="fcs-pos">mod.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gāi</div><div class="fcs-en">should</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">打算</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dǎsuàn</div><div class="fcs-en">plan; intention</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">高铁</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gāotiě</div><div class="fcs-en">high-speed train</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">行</div><div class="fcs-pos">v./adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xíng</div><div class="fcs-en">be all right; OK; capable</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">路口</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">lùkǒu</div><div class="fcs-en">intersection; crossing</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">小心</div><div class="fcs-pos">v./adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiǎoxīn</div><div class="fcs-en">be careful; take care</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">迟到</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chídào</div><div class="fcs-en">to be late (a person)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">红绿灯</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hónglǜdēng</div><div class="fcs-en">traffic lights</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">后来</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hòulái</div><div class="fcs-en">afterward; later (in past)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">急</div><div class="fcs-pos">adj./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jí</div><div class="fcs-en">urgent; in a rush; anxious</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">如果</div><div class="fcs-pos">conj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">rúguǒ</div><div class="fcs-en">if</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">以前</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǐqián</div><div class="fcs-en">before; earlier times</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">耳机</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">ěrjī</div><div class="fcs-en">earphones; headphones</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">充电宝</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chōngdiànbǎo</div><div class="fcs-en">power bank</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">常用</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chángyòng</div><div class="fcs-en">commonly used; everyday</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">越</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yuè</div><div class="fcs-en">the more… (越来越…)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">分开</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fēnkāi</div><div class="fcs-en">to separate; split up</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">检查</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiǎnchá</div><div class="fcs-en">to check; to inspect</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">刷</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shuā</div><div class="fcs-en">to scan; to swipe</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">检票</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiǎnpiào</div><div class="fcs-en">to check tickets (at gate)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">电梯</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">diàntī</div><div class="fcs-en">elevator; escalator</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">放假</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fàngjià</div><div class="fcs-en">to have a vacation; days off</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">沙发</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shāfā</div><div class="fcs-en">sofa</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">安静</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">ānjìng</div><div class="fcs-en">quiet</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">选择</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xuǎnzé</div><div class="fcs-en">to choose; to select</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">必须</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bìxū</div><div class="fcs-en">have to; must</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l6-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 26</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">该</div><div class="vocab-pinyin">gāi</div><div class="vocab-pos">mod.</div><div class="vocab-en">should; ought to</div><div class="vocab-example">咱们<em>该</em>买票了。<br><span style="color:#bbb">It's time we bought tickets.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">打算</div><div class="vocab-pinyin">dǎsuàn</div><div class="vocab-pos">v./n.</div><div class="vocab-en">plan; intend</div><div class="vocab-example">你<em>打算</em>怎么去？<br><span style="color:#bbb">How do you plan to go?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">高铁</div><div class="vocab-pinyin">gāotiě</div><div class="vocab-pos">n.</div><div class="vocab-en">high-speed train</div><div class="vocab-example">坐<em>高铁</em>去。<br><span style="color:#bbb">Go by high-speed rail.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">行</div><div class="vocab-pinyin">xíng</div><div class="vocab-pos">v./adj.</div><div class="vocab-en">OK; all right</div><div class="vocab-example"><em>行</em>！怎么买票？<br><span style="color:#bbb">OK! How do we buy tickets?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">路口</div><div class="vocab-pinyin">lùkǒu</div><div class="vocab-pos">n.</div><div class="vocab-en">intersection</div><div class="vocab-example">过了前面的<em>路口</em>。<br><span style="color:#bbb">Pass the intersection ahead.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">小心</div><div class="vocab-pinyin">xiǎoxīn</div><div class="vocab-pos">v./adj.</div><div class="vocab-en">be careful</div><div class="vocab-example">您<em>小心</em>点儿。<br><span style="color:#bbb">Please be careful.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">迟到</div><div class="vocab-pinyin">chídào</div><div class="vocab-pos">v.</div><div class="vocab-en">to be late</div><div class="vocab-example">应该不会<em>迟到</em>。<br><span style="color:#bbb">Shouldn't be late.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">红绿灯</div><div class="vocab-pinyin">hónglǜdēng</div><div class="vocab-pos">n.</div><div class="vocab-en">traffic lights</div><div class="vocab-example"><em>红绿灯</em>很多。<br><span style="color:#bbb">Lots of traffic lights.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">后来</div><div class="vocab-pinyin">hòulái</div><div class="vocab-pos">n.</div><div class="vocab-en">afterward; later</div><div class="vocab-example"><em>后来</em>再也不走了。<br><span style="color:#bbb">After that I never took it again.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">急</div><div class="vocab-pinyin">jí</div><div class="vocab-pos">adj./v.</div><div class="vocab-en">urgent; anxious</div><div class="vocab-example">我一<em>急</em>就走错了。<br><span style="color:#bbb">I rushed and went the wrong way.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">如果</div><div class="vocab-pinyin">rúguǒ</div><div class="vocab-pos">conj.</div><div class="vocab-en">if</div><div class="vocab-example"><em>如果</em>没走错，早就到了。<br><span style="color:#bbb">If I hadn't gone wrong, we'd be there.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">以前</div><div class="vocab-pinyin">yǐqián</div><div class="vocab-pos">n.</div><div class="vocab-en">before; in the past</div><div class="vocab-example">二十分钟<em>以前</em>就到了。<br><span style="color:#bbb">Would have arrived 20 minutes ago.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">耳机</div><div class="vocab-pinyin">ěrjī</div><div class="vocab-pos">n.</div><div class="vocab-en">earphones</div><div class="vocab-example"><em>耳机</em>没电了。<br><span style="color:#bbb">My earphones are out of battery.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">充电宝</div><div class="vocab-pinyin">chōngdiànbǎo</div><div class="vocab-pos">n.</div><div class="vocab-en">power bank</div><div class="vocab-example">你有<em>充电宝</em>吗？<br><span style="color:#bbb">Do you have a power bank?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">常用</div><div class="vocab-pinyin">chángyòng</div><div class="vocab-pos">adj.</div><div class="vocab-en">commonly used</div><div class="vocab-example"><em>常用</em>的东西。<br><span style="color:#bbb">Everyday items.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">越</div><div class="vocab-pinyin">yuè</div><div class="vocab-pos">adv.</div><div class="vocab-en">the more (越来越…)</div><div class="vocab-example">人<em>越</em>来<em>越</em>多。<br><span style="color:#bbb">More and more people.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">分开</div><div class="vocab-pinyin">fēnkāi</div><div class="vocab-pos">v.</div><div class="vocab-en">to separate</div><div class="vocab-example">咱们别<em>分开</em>。<br><span style="color:#bbb">Let's not split up.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">检查</div><div class="vocab-pinyin">jiǎnchá</div><div class="vocab-pos">v.</div><div class="vocab-en">to check</div><div class="vocab-example"><em>检查</em>一下票。<br><span style="color:#bbb">Check the tickets.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">刷</div><div class="vocab-pinyin">shuā</div><div class="vocab-pos">v.</div><div class="vocab-en">to scan; to swipe</div><div class="vocab-example"><em>刷</em>护照进站。<br><span style="color:#bbb">Scan passport to enter.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">检票</div><div class="vocab-pinyin">jiǎnpiào</div><div class="vocab-pos">v.</div><div class="vocab-en">to check tickets</div><div class="vocab-example">在二层<em>检票</em>。<br><span style="color:#bbb">Ticket check on the 2nd floor.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">电梯</div><div class="vocab-pinyin">diàntī</div><div class="vocab-pos">n.</div><div class="vocab-en">elevator; escalator</div><div class="vocab-example">坐<em>电梯</em>上去。<br><span style="color:#bbb">Take the escalator up.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">放假</div><div class="vocab-pinyin">fàngjià</div><div class="vocab-pos">v.</div><div class="vocab-en">to have a vacation</div><div class="vocab-example">这次<em>放假</em>。<br><span style="color:#bbb">This vacation.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">沙发</div><div class="vocab-pinyin">shāfā</div><div class="vocab-pos">n.</div><div class="vocab-en">sofa</div><div class="vocab-example">家里的<em>沙发</em>。<br><span style="color:#bbb">The sofa at home.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">安静</div><div class="vocab-pinyin">ānjìng</div><div class="vocab-pos">adj.</div><div class="vocab-en">quiet</div><div class="vocab-example">又<em>安静</em>又舒服。<br><span style="color:#bbb">Both quiet and comfortable.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">选择</div><div class="vocab-pinyin">xuǎnzé</div><div class="vocab-pos">v.</div><div class="vocab-en">to choose</div><div class="vocab-example"><em>选择</em>好车站。<br><span style="color:#bbb">Choose the station.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">必须</div><div class="vocab-pinyin">bìxū</div><div class="vocab-pos">adv.</div><div class="vocab-en">have to; must</div><div class="vocab-example"><em>必须</em>带他们坐高铁。<br><span style="color:#bbb">Must take them on the high-speed train.</span></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:2rem">专有名词 · Proper Nouns</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">北京南站</div><div class="vocab-pinyin">Běijīng Nán Zhàn</div><div class="vocab-pos">place</div><div class="vocab-en">Beijing South Railway Station</div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">该</div>
+          <div class="wdh-info"><div class="wdh-pinyin">gāi</div><div class="wdh-en">should; ought to</div></div>
+          <div class="wdh-pos">mod.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"该" works like "应该", but is more colloquial. The pattern <strong>该 + V + 了</strong> means "it's time to V". Compare with 应该 (general "should").</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">该…了</span><span class="collocation-tag">该走了</span><span class="collocation-tag">该上课了</span><span class="collocation-tag">该睡觉了</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">咱们该买去上海的票了。</div><div class="en">It's time we bought tickets to Shanghai.</div></div>
+            <div class="wd-ex"><div class="zh">八点了，该上课了。</div><div class="en">It's 8 o'clock — time for class.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">打算</div>
+          <div class="wdh-info"><div class="wdh-pinyin">dǎsuàn</div><div class="wdh-en">to plan; intention</div></div>
+          <div class="wdh-pos">v. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">打</div><div class="char-meaning">dǎ · to make; to do</div></div>
+            <div class="wd-char"><div class="char">算</div><div class="char-meaning">suàn · to calculate; to plan</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">打算去</span><span class="collocation-tag">打算做</span><span class="collocation-tag">没打算</span><span class="collocation-tag">有什么打算</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你打算怎么去上海？</div><div class="en">How are you planning to get to Shanghai?</div></div>
+            <div class="wd-ex"><div class="zh">这个假期你有什么打算？</div><div class="en">Any plans for this holiday?</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">高铁</div>
+          <div class="wdh-info"><div class="wdh-pinyin">gāotiě</div><div class="wdh-en">high-speed train (高速铁路)</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">高</div><div class="char-meaning">gāo · high</div></div>
+            <div class="wd-char"><div class="char">铁</div><div class="char-meaning">tiě · iron; rail</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">坐高铁</span><span class="collocation-tag">高铁票</span><span class="collocation-tag">高铁站</span><span class="collocation-tag">高铁上</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">高铁又快又舒服。</div><div class="en">The high-speed train is both fast and comfortable.</div></div>
+            <div class="wd-ex"><div class="zh">从北京到上海的高铁很多。</div><div class="en">There are many high-speed trains from Beijing to Shanghai.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">小心</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xiǎoxīn</div><div class="wdh-en">be careful</div></div>
+          <div class="wdh-pos">v. / adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">小</div><div class="char-meaning">xiǎo · small</div></div>
+            <div class="wd-char"><div class="char">心</div><div class="char-meaning">xīn · heart</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">小心点儿</span><span class="collocation-tag">小心车</span><span class="collocation-tag">不小心</span><span class="collocation-tag">小心地</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这条路车很多，您小心点儿。</div><div class="en">There's a lot of traffic on this road — please be careful.</div></div>
+            <div class="wd-ex"><div class="zh">不小心走错路了。</div><div class="en">Accidentally took the wrong road.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">如果</div>
+          <div class="wdh-info"><div class="wdh-pinyin">rúguǒ</div><div class="wdh-en">if</div></div>
+          <div class="wdh-pos">conj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"如果" introduces a hypothesis. It usually pairs with "就" or "的话" in the result clause. The subject of the second clause comes <em>before</em> "就".</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">如果…就…</span><span class="collocation-tag">如果…的话</span><span class="collocation-tag">如果没…</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">如果没走错，二十分钟以前就到了。</div><div class="en">If I hadn't gone the wrong way, we'd have been there twenty minutes ago.</div></div>
+            <div class="wd-ex"><div class="zh">如果你需要帮忙，就给我打电话。</div><div class="en">If you need help, just call me.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">越来越</div>
+          <div class="wdh-info"><div class="wdh-pinyin">yuè lái yuè</div><div class="wdh-en">more and more…</div></div>
+          <div class="wdh-pos">phrase</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"越来越 + Adj/Psych-V" expresses a change in degree over time. Don't add a degree adverb (很/非常/挺) before the adjective — "越来越很冷" is wrong. Sentence-final 了 emphasizes the change.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">前面的人越来越多。</div><div class="en">There are more and more people up ahead.</div></div>
+            <div class="wd-ex"><div class="zh">现在喜欢坐高铁的人越来越多。</div><div class="en">More and more people like taking the high-speed train now.</div></div>
+            <div class="wd-ex"><div class="zh">我越来越喜欢这里的生活了。</div><div class="en">I like life here more and more.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">分开</div>
+          <div class="wdh-info"><div class="wdh-pinyin">fēnkāi</div><div class="wdh-en">to separate; split up</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">分</div><div class="char-meaning">fēn · to divide</div></div>
+            <div class="wd-char"><div class="char">开</div><div class="char-meaning">kāi · to open; apart</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">别分开</span><span class="collocation-tag">分开走</span><span class="collocation-tag">分开住</span><span class="collocation-tag">把…分开</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">咱们一起走，别分开。</div><div class="en">Let's stay together, don't get separated.</div></div>
+            <div class="wd-ex"><div class="zh">咱们的票是分开的。</div><div class="en">Our tickets are not together.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">必须</div>
+          <div class="wdh-info"><div class="wdh-pinyin">bìxū</div><div class="wdh-en">have to; must</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"必须" expresses strong necessity ("must"). Compare with "应该" (should — softer recommendation). The negative is usually "不必" or "不用" (need not), NOT "不必须".</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">必须带他们也坐一次高铁。</div><div class="en">I absolutely have to take them on the high-speed train.</div></div>
+            <div class="wd-ex"><div class="zh">飞机马上就要起飞了，你的手机必须关机了。</div><div class="en">The plane is about to take off — you have to turn off your phone.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">选择</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xuǎnzé</div><div class="wdh-en">to choose; to select</div></div>
+          <div class="wdh-pos">v. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">选</div><div class="char-meaning">xuǎn · to pick</div></div>
+            <div class="wd-char"><div class="char">择</div><div class="char-meaning">zé · to choose</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">选择车站</span><span class="collocation-tag">选择好</span><span class="collocation-tag">做选择</span><span class="collocation-tag">没有选择</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">只需要选择好车站和想吃的东西。</div><div class="en">You just need to pick a station and what you'd like to eat.</div></div>
+            <div class="wd-ex"><div class="zh">假期我想去北京，也想去上海，不知道怎么选。</div><div class="en">For the holiday I want to go to Beijing and Shanghai — don't know how to choose.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">放假</div>
+          <div class="wdh-info"><div class="wdh-pinyin">fàngjià</div><div class="wdh-en">to have a vacation; days off</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">放</div><div class="char-meaning">fàng · to release</div></div>
+            <div class="wd-char"><div class="char">假</div><div class="char-meaning">jià · holiday</div></div>
+          </div>
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"放假" is a verb-object compound: "to be given (放) leave (假)". Can be split: 放几天假 = take a few days off. Different from 假期 (jiàqī, the holiday itself, a noun).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这次放假，我去了北京和上海。</div><div class="en">This vacation, I went to Beijing and Shanghai.</div></div>
+            <div class="wd-ex"><div class="zh">下周我们放三天假。</div><div class="en">Next week we have three days off.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">"该…了"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">"如果…，就…"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">"越来越…"</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>固定格式"该…了" · "It's Time To…"</div>
+          <p class="grammar-desc">"该…了"表示到了应该做某事的时候，多用于口语，语气比"应该"更自然、随意。<br><span style="color:#888;font-size:0.85em;">"该…了" indicates that it's time to do something. Common in spoken Chinese — more casual than "应该". Sentence-final 了 marks the new situation ("now it's time").</span></p>
+          <div class="grammar-pattern">(主语) + <strong>该</strong> + V + (Obj) + <strong>了</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">咱们<strong>该</strong>买去上海的票<strong>了</strong>。</div><div class="en"><strong>It's time</strong> we bought tickets to Shanghai.</div></div>
+            <div class="grammar-ex"><div class="zh">八点了，<strong>该</strong>上课<strong>了</strong>。</div><div class="en">It's 8 o'clock — <strong>time for</strong> class.</div></div>
+            <div class="grammar-ex"><div class="zh">已经很晚了，我<strong>该</strong>睡觉<strong>了</strong>。</div><div class="en">It's late — I <strong>should</strong> go to bed.</div></div>
+            <div class="grammar-ex"><div class="zh">天已经黑了，<strong>该</strong>回家<strong>了</strong>。</div><div class="en">It's dark — <strong>time to</strong> head home.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>假设复句"如果…，就…" · Hypothetical Sentences</div>
+          <p class="grammar-desc">"如果"引出假设的情况，"就"引出在这种假设下产生的结果。要注意：第二个分句的主语必须放在"就"的前面，不能放在"就"的后面。<br><span style="color:#888;font-size:0.85em;">"如果…，就…" — the 如果 clause is the hypothesis; the 就 clause is the result. Important: any subject of the second clause must come <em>before</em> 就, not after.</span></p>
+          <div class="grammar-pattern"><strong>如果</strong> + Hypothesis，(Subj) + <strong>就</strong> + Result</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh"><strong>如果</strong>没走错，二十分钟以前<strong>就</strong>到了。</div><div class="en"><strong>If</strong> I hadn't gone wrong, we'd <strong>have</strong> arrived twenty minutes ago.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>如果</strong>你需要帮忙，<strong>就</strong>给我打电话。</div><div class="en"><strong>If</strong> you need help, <strong>just</strong> give me a call.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>如果</strong>有时间，我<strong>就</strong>去上海玩几天。</div><div class="en"><strong>If</strong> I have time, I'll go to Shanghai for a few days.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>如果</strong>明天下雨，咱们<strong>就</strong>不去爬山了。</div><div class="en"><strong>If</strong> it rains tomorrow, we won't go hiking.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>固定短语"越来越…" · "More and More…"</div>
+          <p class="grammar-desc">"越来越"后面加形容词或心理动词，表示随着时间的推移而在程度上发生变化。<strong>注意：形容词或心理动词前都不能再加程度副词</strong>（如：很、非常、挺）。<br><span style="color:#888;font-size:0.85em;">"越来越 + Adj / Psych-V" expresses an <em>increasing</em> change in degree over time. <strong>Do not</strong> add another degree adverb (很/非常/挺) before the adjective. Sentence-final 了 emphasizes the change.</span></p>
+          <div class="grammar-pattern"><strong>越来越</strong> + Adj / Psych-V (+ 了)</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">前面的人<strong>越来越多</strong>。</div><div class="en">There are <strong>more and more</strong> people up ahead.</div></div>
+            <div class="grammar-ex"><div class="zh">现在喜欢坐高铁的人<strong>越来越多</strong>。</div><div class="en"><strong>More and more</strong> people love taking the high-speed train.</div></div>
+            <div class="grammar-ex"><div class="zh">我<strong>越来越喜欢</strong>这里的生活了。</div><div class="en">I <strong>like</strong> life here <strong>more and more</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">她<strong>越来越高</strong>，也<strong>越来越漂亮</strong>了。</div><div class="en">She's getting <strong>taller</strong> and <strong>more beautiful</strong> by the day.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 李文和白家月打算怎么去上海？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>开车</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>坐飞机</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>坐高铁</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>坐火车</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 如果没走错路，他们什么时候到？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>马上就到</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>二十分钟以前就到了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>一个小时以前就到了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>已经迟到了</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 他们怎么检票进站？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>用纸票</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>刷护照</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>用手机App</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>找服务员</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 喜欢坐高铁的人多不多？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>不太多</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>有点儿多</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>越来越多</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>越来越少</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"该…了"完成句子：已经八点了，你______上课______。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l6-fill1" type="text" placeholder="该 … 了" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l6-fill1','该','l6-reveal1')">检查</button>
+        </div>
+        <div id="l6-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：已经八点了，你<strong>该</strong>上课<strong>了</strong>。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"如果…，就…"造句：______ 明天 下雨， 我们 ______ 不去 爬山。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l6-fill2" type="text" placeholder="如果 / 就" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l6-fill2','open','l6-reveal2')">检查</button>
+        </div>
+        <div id="l6-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>如果</strong>明天下雨，我们<strong>就</strong>不去爬山。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">7. 用"越来越"完成句子：现在喜欢坐高铁的人______多。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l6-fill3" type="text" placeholder="越来越" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:200px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l6-fill3','越来越','l6-reveal3')">检查</button>
+        </div>
+        <div id="l6-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：现在喜欢坐高铁的人<strong>越来越</strong>多。</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你坐过哪些交通工具（jiāotōng gōngjù, transportation）？</div>
+            <div>（2）你最喜欢哪种交通工具？为什么？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 课文里说"高铁上还可以点外卖"——你听说过吗？你觉得这种服务方便吗？<br><br>
+          <strong>（2）</strong> 白家月觉得"坐高铁跟坐在家里的沙发上一样"——你坐过的最舒服的交通工具是什么？<br><br>
+          <strong>（3）</strong> 刘明因为着急走错了路——你有没有"一急就出错"的经历？请讲一讲。
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 你国家有高铁吗？跟中国的高铁比，怎么样？<br><br>
+          <strong>（2）</strong> 长途旅行（chángtú lǚxíng, long-distance travel）你更喜欢坐飞机还是坐火车？为什么？<br><br>
+          <strong>（3）</strong> 你打算下次放假去哪儿？怎么去？
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">中国的高铁 <span class="pinyin">High-Speed Rail in China</span></div>
+        <div class="culture-zh">中国的高铁（高速铁路 gāosù tiělù）是世界上最大的高速铁路网，总长超过四万公里。最快的高铁时速可以达到350公里。从北京到上海一千多公里，坐高铁只需要四个半小时左右。买票可以用12306（官方App）或者别的旅行App，外国人可以用护照买票和检票进站。高铁站一般在城市的边上，但是有地铁、公交车等可以方便地到达。高铁车厢（chēxiāng, train carriage）里又安静又干净，还可以点外卖——只要选择停靠的车站，到站时服务员就会把饭送到你的座位上。</div>
+        <div class="culture-en">China's high-speed rail (高速铁路) is the world's largest network, with over 40,000 km of track. The fastest trains reach 350 km/h. From Beijing to Shanghai, more than 1,000 km, the high-speed train takes about 4½ hours. Tickets are bought via the official 12306 app or other travel apps; foreigners can use passports for booking and gate entry. Stations are usually on city outskirts but are well-connected by metro and bus. Train carriages are quiet and clean, and you can even order takeout — pick a station stop and your food is delivered to your seat when the train arrives.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">以前 vs 后来 <span class="pinyin">"Before" vs "Afterward"</span></div>
+        <div class="culture-zh">
+          <strong>共同点：</strong>都是表示时间的名词。<br><br>
+          <strong>不同点：</strong><br>
+          ① <strong>以前</strong>（yǐqián）：表示某个时间点之前。可以指过去，也可以指某个具体时间之前。<br>
+          例：二十分钟<em>以前</em>就到了。 / 我<em>以前</em>不喜欢坐火车。<br><br>
+          ② <strong>后来</strong>（hòulái）：表示某件过去的事情之后又发生了什么。<strong>只用于过去</strong>，不能指将来。<br>
+          例：这条路我走过一次，<em>后来</em>再也不走了。<br><br>
+          注意：表示"将来"的"以后"是<strong>以后</strong>（yǐhòu），不是"后来"。
+        </div>
+        <div class="culture-en">
+          <strong>Shared:</strong> Both are time nouns.<br><br>
+          <strong>Differences:</strong><br>
+          ① <strong>以前</strong>: "Before" — points in time before now or before another moment. Used for both past and reference points.<br>
+          E.g., 二十分钟以前就到了 — we'd have arrived 20 minutes ago. / 我以前不喜欢坐火车 — I used to dislike trains.<br><br>
+          ② <strong>后来</strong>: "Afterward" — what happened <em>after</em> something in the past. <strong>Past only</strong>, never future.<br>
+          E.g., 这条路我走过一次，后来再也不走了 — I took this road once and never again afterward.<br><br>
+          Note: For future "after / later", use <strong>以后 yǐhòu</strong>, NOT 后来.
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">"V + 上"表示实现目标 <span class="pinyin">"V + 上" — Achieving a Goal</span></div>
+        <div class="culture-zh">
+          除了第5课学过的"穿上、拿上"（动作的方向），动词后的"上"还可以表示实现某个目标或愿望。<br><br>
+          常用搭配：<br>
+          <strong>坐上</strong>高铁（finally got to ride the high-speed train）<br>
+          <strong>买上</strong>票（managed to buy a ticket）<br>
+          <strong>住上</strong>新房（got to live in a new home）<br>
+          <strong>用上</strong>新手机（finally using the new phone）<br><br>
+          例：早就听说过高铁，终于可以<strong>坐上</strong>了。
+        </div>
+        <div class="culture-en">
+          Beyond the directional "V + 上" from Lesson 5 (穿上, 拿上), 上 after a verb can mean <em>achieving a long-awaited goal or desire</em> — "finally getting to V".<br><br>
+          Common pairs:<br>
+          <strong>坐上</strong> — finally got to ride<br>
+          <strong>买上</strong> — managed to buy<br>
+          <strong>住上</strong> — got to live in (a new place)<br>
+          <strong>用上</strong> — finally using<br><br>
+          E.g., 早就听说过高铁，终于可以<strong>坐上</strong>了 — I've heard about high-speed rail forever; I finally get to ride it.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L6 -->
   </div><!-- end lesson-content data-lesson="6" -->
 
   <!-- ═══════════════ LESSON 7 ═══════════════ -->
