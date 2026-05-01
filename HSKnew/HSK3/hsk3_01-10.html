@@ -4075,9 +4075,834 @@
 
   <!-- ═══════════════ LESSON 5 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-5" data-lesson="5" data-watermark="五" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第五课 · Lesson 05</span>
+    </div>
+    <h1>这样的照片才好看</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Zhèyàng de zhàopiàn cái hǎokàn</p>
+    <p class="lesson-subtitle">Photos like these are the best</p>
   </div>
 
   <div class="lesson-content" data-lesson="5" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l5-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在街上</span>
+              <button class="dh-play-btn" id="l5-dhBtn1" onclick="dhPlay('l5-audioEl1','l5-dhBtn1')">
+                <svg id="l5-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l5-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l5-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">On the street — Bai Jiayue and Li Wen are chatting while walking</span>
+          </div>
+          <audio id="l5-audioEl1" src="audio/05-1.mp3" onended="dhEnded('l5-audioEl1','l5-dhBtn1','l5-dhIcon1')" ontimeupdate="dhUpdate('l5-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">这个星期总是阴天，今天终于晴了。</div>
+            <div class="line-pinyin">Zhège xīngqī zǒngshì yīntiān, jīntiān zhōngyú qíng le.</div>
+            <div class="line-en">It's been overcast all week — today it's finally sunny.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">现在天气好得很！我们去爬山怎么样？</div>
+            <div class="line-pinyin">Xiànzài tiānqì hǎo de hěn! Wǒmen qù pá shān zěnmeyàng?</div>
+            <div class="line-en">The weather is wonderful right now! How about going hiking?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">好啊！又能锻炼身体，又能照好看的照片。</div>
+            <div class="line-pinyin">Hǎo a! Yòu néng duànliàn shēntǐ, yòu néng zhào hǎokàn de zhàopiàn.</div>
+            <div class="line-en">Great! It's both exercise and a chance to take nice photos.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">那我带点儿水和吃的，咱们现在就去？</div>
+            <div class="line-pinyin">Nà wǒ dài diǎnr shuǐ hé chī de, zánmen xiànzài jiù qù?</div>
+            <div class="line-en">Then I'll bring some water and snacks — shall we head out right now?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我回去穿上运动鞋，拿上大衣。要不要叫一雪姐一起去？</div>
+            <div class="line-pinyin">Wǒ huíqù chuān shàng yùndòng xié, ná shàng dàyī. Yào bú yào jiào Yīxuě jiě yīqǐ qù?</div>
+            <div class="line-en">I'll go back to put on my running shoes and grab a coat. Should we ask Sister Yixue to come along?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">好主意。给她打个电话吧。</div>
+            <div class="line-pinyin">Hǎo zhǔyi. Gěi tā dǎ ge diànhuà ba.</div>
+            <div class="line-en">Good idea. Let's give her a call.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l5-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在出租车上</span>
+              <button class="dh-play-btn" id="l5-dhBtn2" onclick="dhPlay('l5-audioEl2','l5-dhBtn2')">
+                <svg id="l5-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l5-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l5-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the taxi — Wang Yixue and Bai Jiayue look at photos and chat</span>
+          </div>
+          <audio id="l5-audioEl2" src="audio/05-3.mp3" onended="dhEnded('l5-audioEl2','l5-dhBtn2','l5-dhIcon2')" ontimeupdate="dhUpdate('l5-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">这些照片是谁给您照的？张张都非常好看。</div>
+            <div class="line-pinyin">Zhèxiē zhàopiàn shì shéi gěi nín zhào de? Zhāng zhāng dōu fēicháng hǎokàn.</div>
+            <div class="line-en">Who took these photos of you? Every single one looks amazing.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">一飞。她对拍照一直很感兴趣，经常给我照相。</div>
+            <div class="line-pinyin">Yīfēi. Tā duì pāizhào yìzhí hěn gǎn xìngqù, jīngcháng gěi wǒ zhàoxiàng.</div>
+            <div class="line-en">Yifei. She's always been into photography — she takes pictures of me a lot.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我喜欢您大笑的这张，看起来很漂亮。</div>
+            <div class="line-pinyin">Wǒ xǐhuan nín dà xiào de zhè zhāng, kàn qǐlai hěn piàoliang.</div>
+            <div class="line-en">I love the one of you laughing — you look really beautiful.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">我觉得这张有点儿难看，那时候我不知道她在给我照相。</div>
+            <div class="line-pinyin">Wǒ juéde zhè zhāng yǒudiǎnr nánkàn, nà shíhou wǒ bù zhīdào tā zài gěi wǒ zhàoxiàng.</div>
+            <div class="line-en">I think this one is a bit unflattering — I had no idea she was taking my picture at the time.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">这样的照片才好看。我也喜欢拍照，爬山的时候我给您照几张照片吧。</div>
+            <div class="line-pinyin">Zhèyàng de zhàopiàn cái hǎokàn. Wǒ yě xǐhuan pāizhào, pá shān de shíhou wǒ gěi nín zhào jǐ zhāng zhàopiàn ba.</div>
+            <div class="line-en">It's exactly photos like these that look the best. I love photography too — let me take a few of you while we're hiking.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">好，我可以比较一下你们两个谁的水平高。</div>
+            <div class="line-pinyin">Hǎo, wǒ kěyǐ bǐjiào yīxià nǐmen liǎng ge shéi de shuǐpíng gāo.</div>
+            <div class="line-en">Sure — that way I can compare which of you two is the better photographer.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l5-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在山上</span>
+              <button class="dh-play-btn" id="l5-dhBtn3" onclick="dhPlay('l5-audioEl3','l5-dhBtn3')">
+                <svg id="l5-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l5-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l5-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">On the hill — taking photos among the trees</span>
+          </div>
+          <audio id="l5-audioEl3" src="audio/05-5.mp3" onended="dhEnded('l5-audioEl3','l5-dhBtn3','l5-dhIcon3')" ontimeupdate="dhUpdate('l5-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">家月，这里挺漂亮的，咱们在这里拍照吧。</div>
+            <div class="line-pinyin">Jiāyuè, zhèlǐ tǐng piàoliang de, zánmen zài zhèlǐ pāizhào ba.</div>
+            <div class="line-en">Jiayue, this spot is quite pretty — let's take photos here.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">这边没有太阳，咱们去那边吧。</div>
+            <div class="line-pinyin">Zhè biān méiyǒu tàiyáng, zánmen qù nà biān ba.</div>
+            <div class="line-en">There's no sun on this side — let's go over there.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">好。你觉得我站在这些树中间怎么样？</div>
+            <div class="line-pinyin">Hǎo. Nǐ juéde wǒ zhàn zài zhèxiē shù zhōngjiān zěnmeyàng?</div>
+            <div class="line-en">OK. How about I stand in the middle of these trees?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">挺好的。等一下，后边走过去两个人。</div>
+            <div class="line-pinyin">Tǐng hǎo de. Děng yīxià, hòubiān zǒu guòqù liǎng ge rén.</div>
+            <div class="line-en">Pretty nice. Hold on — two people just walked past behind you.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">我准备好了，你照的时候告诉我。</div>
+            <div class="line-pinyin">Wǒ zhǔnbèi hǎo le, nǐ zhào de shíhou gàosu wǒ.</div>
+            <div class="line-en">I'm ready — let me know when you're taking the shot.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">你不用看着我，想干什么都可以。</div>
+            <div class="line-pinyin">Nǐ bú yòng kàn zhe wǒ, xiǎng gàn shénme dōu kěyǐ.</div>
+            <div class="line-en">You don't need to look at me — do whatever you feel like.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">树上飞来了几只鸟，我就看它们吧。</div>
+            <div class="line-pinyin">Shù shàng fēi lái le jǐ zhī niǎo, wǒ jiù kàn tāmen ba.</div>
+            <div class="line-en">A few birds just flew into the tree — I'll look at them then.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">啊，手机没电了。</div>
+            <div class="line-pinyin">À, shǒujī méi diàn le.</div>
+            <div class="line-en">Ah — my phone's out of battery.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 (短文) -->
+      <div class="dialogue-block" id="l5-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 王一雪发的短信</span>
+              <button class="dh-play-btn" id="l5-dhBtn4" onclick="dhPlay('l5-audioEl4','l5-dhBtn4')">
+                <svg id="l5-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l5-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l5-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In a café — Wang Yixue sends a message to Bai Jiayue</span>
+          </div>
+          <audio id="l5-audioEl4" src="audio/05-7.mp3" onended="dhEnded('l5-audioEl4','l5-dhBtn4','l5-dhIcon4')" ontimeupdate="dhUpdate('l5-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              家月，我收到了你的那封邮件，也看到了你给我照的照片，张张都很漂亮。我已经告诉了一飞，你的拍照水平比她高，她难过得很，哈哈。不知道你对中国的音乐有没有兴趣？我送你一张明天下午音乐会的门票。音乐会七点多结束，你听完了音乐会就来我家吃饭，尝尝我做的中国菜。你觉得怎么样？
+            </div>
+            <div class="line-pinyin" style="color:var(--gold);font-size:0.85em;line-height:1.9;margin-top:0.5em;">
+              Jiāyuè, wǒ shōu dào le nǐ de nà fēng yóujiàn, yě kàn dào le nǐ gěi wǒ zhào de zhàopiàn, zhāng zhāng dōu hěn piàoliang. Wǒ yǐjīng gàosu le Yīfēi, nǐ de pāizhào shuǐpíng bǐ tā gāo, tā nánguò de hěn, hāhā. Bù zhīdào nǐ duì Zhōngguó de yīnyuè yǒu méiyǒu xìngqù? Wǒ sòng nǐ yī zhāng míngtiān xiàwǔ yīnyuèhuì de ménpiào. Yīnyuèhuì qī diǎn duō jiéshù, nǐ tīng wán le yīnyuèhuì jiù lái wǒ jiā chīfàn, chángchang wǒ zuò de Zhōngguó cài. Nǐ juéde zěnmeyàng?
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);">
+              Jiayue, I got your email and saw the photos you took of me — every single one is gorgeous. I've already told Yifei that your photography is better than hers — she's pretty bummed, haha. By the way, are you interested in Chinese music? I'm sending you a ticket to a concert tomorrow afternoon. It finishes around 7-something — once it ends, come over to my place for dinner and try the Chinese food I'll cook. What do you think?
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l5-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">总是</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zǒngshì</div><div class="fcs-en">always</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">终于</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhōngyú</div><div class="fcs-en">finally; at last</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">爬</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">pá</div><div class="fcs-en">to climb</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">山</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shān</div><div class="fcs-en">mountain; hill</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">锻炼</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">duànliàn</div><div class="fcs-en">to take exercise; to work out</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">照</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhào</div><div class="fcs-en">to take a picture</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">鞋</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xié</div><div class="fcs-en">shoe</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">大衣</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dàyī</div><div class="fcs-en">overcoat</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">拍照</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">pāizhào</div><div class="fcs-en">to take a picture</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">感兴趣</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gǎn xìngqù</div><div class="fcs-en">to be interested in</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">照相</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhàoxiàng</div><div class="fcs-en">to take a picture</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">难看</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">nánkàn</div><div class="fcs-en">bad-looking; ugly</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">比较</div><div class="fcs-pos">v./adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bǐjiào</div><div class="fcs-en">to compare; relatively</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">水平</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shuǐpíng</div><div class="fcs-en">level (skill, standard)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">太阳</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tàiyáng</div><div class="fcs-en">sun</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">树</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shù</div><div class="fcs-en">tree</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">干</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gàn</div><div class="fcs-en">to do</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">电</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">diàn</div><div class="fcs-en">electricity; battery</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">收到</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shōudào</div><div class="fcs-en">to receive</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">封</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fēng</div><div class="fcs-en">measure word for letters / mail</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">邮件</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yóujiàn</div><div class="fcs-en">email; mail</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">难过</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">nánguò</div><div class="fcs-en">sad; upset</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">哈哈</div><div class="fcs-pos">interj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hāhā</div><div class="fcs-en">haha (laughter)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">音乐</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yīnyuè</div><div class="fcs-en">music</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">兴趣</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xìngqù</div><div class="fcs-en">interest</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">会</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huì</div><div class="fcs-en">gathering; party (e.g. concert 音乐会)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">结束</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiéshù</div><div class="fcs-en">to finish; to end</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l5-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 27</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">总是</div><div class="vocab-pinyin">zǒngshì</div><div class="vocab-pos">adv.</div><div class="vocab-en">always</div><div class="vocab-example">这个星期<em>总是</em>阴天。<br><span style="color:#bbb">It's been overcast all week.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">终于</div><div class="vocab-pinyin">zhōngyú</div><div class="vocab-pos">adv.</div><div class="vocab-en">finally; at last</div><div class="vocab-example">今天<em>终于</em>晴了。<br><span style="color:#bbb">Today it's finally sunny.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">爬</div><div class="vocab-pinyin">pá</div><div class="vocab-pos">v.</div><div class="vocab-en">to climb</div><div class="vocab-example">去<em>爬</em>山怎么样？<br><span style="color:#bbb">How about going hiking?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">山</div><div class="vocab-pinyin">shān</div><div class="vocab-pos">n.</div><div class="vocab-en">mountain; hill</div><div class="vocab-example">爬<em>山</em>。<br><span style="color:#bbb">Climb a mountain.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">锻炼</div><div class="vocab-pinyin">duànliàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to take exercise</div><div class="vocab-example"><em>锻炼</em>身体。<br><span style="color:#bbb">Exercise the body.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">照</div><div class="vocab-pinyin">zhào</div><div class="vocab-pos">v.</div><div class="vocab-en">to take a picture</div><div class="vocab-example"><em>照</em>好看的照片。<br><span style="color:#bbb">Take nice photos.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">鞋</div><div class="vocab-pinyin">xié</div><div class="vocab-pos">n.</div><div class="vocab-en">shoe</div><div class="vocab-example">运动<em>鞋</em>。<br><span style="color:#bbb">Sports shoes / sneakers.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">大衣</div><div class="vocab-pinyin">dàyī</div><div class="vocab-pos">n.</div><div class="vocab-en">overcoat</div><div class="vocab-example">拿上<em>大衣</em>。<br><span style="color:#bbb">Grab a coat.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">拍照</div><div class="vocab-pinyin">pāizhào</div><div class="vocab-pos">v.</div><div class="vocab-en">to take a picture</div><div class="vocab-example">我喜欢<em>拍照</em>。<br><span style="color:#bbb">I love taking pictures.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">感兴趣</div><div class="vocab-pinyin">gǎn xìngqù</div><div class="vocab-pos">v.</div><div class="vocab-en">to be interested in</div><div class="vocab-example">对拍照<em>感兴趣</em>。<br><span style="color:#bbb">Be interested in photography.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">照相</div><div class="vocab-pinyin">zhàoxiàng</div><div class="vocab-pos">v.</div><div class="vocab-en">to take a picture</div><div class="vocab-example">给我<em>照相</em>。<br><span style="color:#bbb">Take a picture of me.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">难看</div><div class="vocab-pinyin">nánkàn</div><div class="vocab-pos">adj.</div><div class="vocab-en">bad-looking; ugly</div><div class="vocab-example">这张有点儿<em>难看</em>。<br><span style="color:#bbb">This one is a bit unflattering.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">比较</div><div class="vocab-pinyin">bǐjiào</div><div class="vocab-pos">v./adv.</div><div class="vocab-en">to compare; relatively</div><div class="vocab-example"><em>比较</em>谁的水平高。<br><span style="color:#bbb">Compare who is more skilled.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">水平</div><div class="vocab-pinyin">shuǐpíng</div><div class="vocab-pos">n.</div><div class="vocab-en">level</div><div class="vocab-example">拍照<em>水平</em>很高。<br><span style="color:#bbb">Photography skills are very high.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">太阳</div><div class="vocab-pinyin">tàiyáng</div><div class="vocab-pos">n.</div><div class="vocab-en">sun</div><div class="vocab-example">这边没有<em>太阳</em>。<br><span style="color:#bbb">There's no sun on this side.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">树</div><div class="vocab-pinyin">shù</div><div class="vocab-pos">n.</div><div class="vocab-en">tree</div><div class="vocab-example">站在<em>树</em>中间。<br><span style="color:#bbb">Stand among the trees.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">干</div><div class="vocab-pinyin">gàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to do</div><div class="vocab-example">想<em>干</em>什么都可以。<br><span style="color:#bbb">Do whatever you want.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">电</div><div class="vocab-pinyin">diàn</div><div class="vocab-pos">n.</div><div class="vocab-en">electricity; battery</div><div class="vocab-example">手机没<em>电</em>了。<br><span style="color:#bbb">The phone is out of battery.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">收到</div><div class="vocab-pinyin">shōudào</div><div class="vocab-pos">v.</div><div class="vocab-en">to receive</div><div class="vocab-example">我<em>收到</em>了你的邮件。<br><span style="color:#bbb">I got your email.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">封</div><div class="vocab-pinyin">fēng</div><div class="vocab-pos">m.</div><div class="vocab-en">measure word for letters/mail</div><div class="vocab-example">一<em>封</em>邮件。<br><span style="color:#bbb">An email.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">邮件</div><div class="vocab-pinyin">yóujiàn</div><div class="vocab-pos">n.</div><div class="vocab-en">email; mail</div><div class="vocab-example">收到了一封<em>邮件</em>。<br><span style="color:#bbb">Received an email.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">难过</div><div class="vocab-pinyin">nánguò</div><div class="vocab-pos">adj.</div><div class="vocab-en">sad; upset</div><div class="vocab-example">她<em>难过</em>得很。<br><span style="color:#bbb">She's pretty bummed.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">哈哈</div><div class="vocab-pinyin">hāhā</div><div class="vocab-pos">interj.</div><div class="vocab-en">haha</div><div class="vocab-example"><em>哈哈</em>，真有意思。<br><span style="color:#bbb">Haha, that's funny.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">音乐</div><div class="vocab-pinyin">yīnyuè</div><div class="vocab-pos">n.</div><div class="vocab-en">music</div><div class="vocab-example">中国<em>音乐</em>。<br><span style="color:#bbb">Chinese music.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">兴趣</div><div class="vocab-pinyin">xìngqù</div><div class="vocab-pos">n.</div><div class="vocab-en">interest</div><div class="vocab-example">对中国音乐有<em>兴趣</em>。<br><span style="color:#bbb">Have an interest in Chinese music.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">会</div><div class="vocab-pinyin">huì</div><div class="vocab-pos">n.</div><div class="vocab-en">gathering; party</div><div class="vocab-example">音乐<em>会</em>。<br><span style="color:#bbb">A concert.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">结束</div><div class="vocab-pinyin">jiéshù</div><div class="vocab-pos">v.</div><div class="vocab-en">to finish; to end</div><div class="vocab-example">音乐会七点多<em>结束</em>。<br><span style="color:#bbb">The concert ends after seven.</span></div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">总是</div>
+          <div class="wdh-info"><div class="wdh-pinyin">zǒngshì</div><div class="wdh-en">always</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"总是" describes a recurring or habitual situation — equivalent to "always / constantly". Often pairs with state verbs or stative descriptions. It can carry a slightly negative tone depending on context.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">总是阴天</span><span class="collocation-tag">总是迟到</span><span class="collocation-tag">总是这样</span><span class="collocation-tag">总是忘</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这个星期总是阴天。</div><div class="en">It's been cloudy all week.</div></div>
+            <div class="wd-ex"><div class="zh">他总是忘带钥匙。</div><div class="en">He's always forgetting his keys.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">终于</div>
+          <div class="wdh-info"><div class="wdh-pinyin">zhōngyú</div><div class="wdh-en">finally; at last</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"终于" expresses that something long-awaited or worked toward has finally happened. It usually pairs with positive outcomes and a feeling of relief or satisfaction.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">今天终于晴了。</div><div class="en">It's finally sunny today.</div></div>
+            <div class="wd-ex"><div class="zh">我终于学会了用筷子。</div><div class="en">I've finally learned how to use chopsticks.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">锻炼</div>
+          <div class="wdh-info"><div class="wdh-pinyin">duànliàn</div><div class="wdh-en">to take exercise; to work out</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">锻</div><div class="char-meaning">duàn · to forge</div></div>
+            <div class="wd-char"><div class="char">炼</div><div class="char-meaning">liàn · to refine; train</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">锻炼身体</span><span class="collocation-tag">每天锻炼</span><span class="collocation-tag">坚持锻炼</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">爬山又能锻炼身体，又能照好看的照片。</div><div class="en">Hiking is exercise AND a chance for nice photos.</div></div>
+            <div class="wd-ex"><div class="zh">他每天早上都去公园锻炼。</div><div class="en">He goes to the park to work out every morning.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">感兴趣</div>
+          <div class="wdh-info"><div class="wdh-pinyin">gǎn xìngqù</div><div class="wdh-en">to be interested in</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Always paired with the preposition "对": <strong>对 + (someone/something) + (很/不) + 感兴趣</strong>. The negative is "不感兴趣" — note the 不 goes inside, not before 对.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">对…感兴趣</span><span class="collocation-tag">很感兴趣</span><span class="collocation-tag">不感兴趣</span><span class="collocation-tag">一直感兴趣</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">她对拍照一直很感兴趣。</div><div class="en">She's always been into photography.</div></div>
+            <div class="wd-ex"><div class="zh">我对中国的音乐很感兴趣。</div><div class="en">I'm very interested in Chinese music.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">拍照 / 照相</div>
+          <div class="wdh-info"><div class="wdh-pinyin">pāizhào / zhàoxiàng</div><div class="wdh-en">to take a picture</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Both mean "to take a photo" and are roughly interchangeable. Both are <em>verb-object</em> compounds — you can split them: 拍一张照, 照几张相. "给/帮 + 人 + 照相" = "take a picture <em>for</em> someone".</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">她经常给我照相。</div><div class="en">She often takes pictures of me.</div></div>
+            <div class="wd-ex"><div class="zh">爬山的时候我给您照几张照片吧。</div><div class="en">Let me take a few photos of you while we're hiking.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">水平</div>
+          <div class="wdh-info"><div class="wdh-pinyin">shuǐpíng</div><div class="wdh-en">level (of skill, standard)</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">水</div><div class="char-meaning">shuǐ · water</div></div>
+            <div class="wd-char"><div class="char">平</div><div class="char-meaning">píng · level; flat</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">水平高</span><span class="collocation-tag">中文水平</span><span class="collocation-tag">拍照水平</span><span class="collocation-tag">提高水平</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你的拍照水平比她高。</div><div class="en">Your photography skills are better than hers.</div></div>
+            <div class="wd-ex"><div class="zh">他的中文水平很高。</div><div class="en">His Chinese level is very high.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">收到</div>
+          <div class="wdh-info"><div class="wdh-pinyin">shōudào</div><div class="wdh-en">to receive</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">收</div><div class="char-meaning">shōu · to collect</div></div>
+            <div class="wd-char"><div class="char">到</div><div class="char-meaning">dào · result complement (arrive)</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">收到邮件</span><span class="collocation-tag">收到信</span><span class="collocation-tag">收到礼物</span><span class="collocation-tag">没收到</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我收到了你的那封邮件。</div><div class="en">I received your email.</div></div>
+            <div class="wd-ex"><div class="zh">他收到了一个生日礼物。</div><div class="en">He received a birthday gift.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">难过</div>
+          <div class="wdh-info"><div class="wdh-pinyin">nánguò</div><div class="wdh-en">sad; upset</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"难过" describes feeling sad, upset, or distressed about something. Don't confuse with "难看" (ugly) or "难听" (sounds bad). The character "难" (difficult) appears in many emotion words: 难受 nánshòu (uncomfortable), 难为 nánwéi (embarrassed).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">她难过得很，哈哈。</div><div class="en">She's pretty bummed out, haha.</div></div>
+            <div class="wd-ex"><div class="zh">听到这个消息，我很难过。</div><div class="en">Hearing this news, I felt really sad.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">兴趣</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xìngqù</div><div class="wdh-en">interest</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">有兴趣</span><span class="collocation-tag">没兴趣</span><span class="collocation-tag">对…有兴趣</span><span class="collocation-tag">兴趣爱好</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">不知道你对中国的音乐有没有兴趣？</div><div class="en">I wonder if you're interested in Chinese music?</div></div>
+            <div class="wd-ex"><div class="zh">他对历史很有兴趣。</div><div class="en">He has a strong interest in history.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">结束</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jiéshù</div><div class="wdh-en">to finish; to end</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">结</div><div class="char-meaning">jié · to tie; conclude</div></div>
+            <div class="wd-char"><div class="char">束</div><div class="char-meaning">shù · to bind; gather</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">音乐会结束</span><span class="collocation-tag">课结束了</span><span class="collocation-tag">已经结束</span><span class="collocation-tag">快结束</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">音乐会七点多结束。</div><div class="en">The concert ends after 7.</div></div>
+            <div class="wd-ex"><div class="zh">考试已经结束了。</div><div class="en">The exam has already finished.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">程度补语"得很"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">量词重叠</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">存现句</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(3,this)">…了…就…</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>程度补语"得很" · Complement of Degree "得很"</div>
+          <p class="grammar-desc">"得很"用在形容词后面，表示程度高，相当于"很…"。这种说法常见于口语，比"很+形容词"语气更自然、强烈。<br><span style="color:#888;font-size:0.85em;">"得很" follows an adjective to indicate a high degree (≈ "very"). It's common in spoken Chinese and feels more natural / emphatic than the textbook "很+Adj".</span></p>
+          <div class="grammar-pattern">Adj + <strong>得很</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">现在天气<strong>好得很</strong>！</div><div class="en">The weather is <strong>wonderful</strong> right now!</div></div>
+            <div class="grammar-ex"><div class="zh">房间里面<strong>热得很</strong>。</div><div class="en">It's <strong>really hot</strong> inside the room.</div></div>
+            <div class="grammar-ex"><div class="zh">我觉得爬山<strong>累得很</strong>。</div><div class="en">I find hiking <strong>extremely tiring</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">她<strong>难过得很</strong>，哈哈。</div><div class="en">She's <strong>pretty bummed</strong>, haha.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>量词重叠 · Reduplication of Measure Words</div>
+          <p class="grammar-desc">汉语中很多量词可以重叠，用来强调"在某个范围内每一个成员都具有某种特征"，相当于"每一+量词"，后面常用"都"呼应。<br><span style="color:#888;font-size:0.85em;">Many Chinese measure words can be reduplicated to mean "every single one within the scope". Equivalent to "每一+M.W."; usually paired with 都. E.g. 张张 = 每张 = every (sheet/photo).</span></p>
+          <div class="grammar-pattern">M.W. + M.W. + <strong>都</strong> + V/Adj　≈　每一 + M.W. + 都 …</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">这些照片<strong>张张都</strong>非常好看。</div><div class="en"><strong>Every single one</strong> of these photos looks amazing.</div></div>
+            <div class="grammar-ex"><div class="zh">这些苹果<strong>个个都</strong>很大。</div><div class="en"><strong>Each and every</strong> one of these apples is big.</div></div>
+            <div class="grammar-ex"><div class="zh">我想出去拍照，但是<strong>天天都</strong>下雨。</div><div class="en">I want to go out and shoot photos, but it's been raining <strong>every day</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">这家饭馆的菜<strong>盘盘都</strong>好吃。</div><div class="en">At this restaurant, <strong>every single dish</strong> is delicious.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>存现句（3）· Existential Sentences (3)</div>
+          <p class="grammar-desc">存现句用来描述某个处所有人或事物的"出现"或"消失"。基本结构是：<strong>处所词语 + 动词 + 趋向／结果补语 +（动态助词"了"）+ 数量短语 + 人/物</strong>。<br><span style="color:#888;font-size:0.85em;">Existential sentences describe people or things <em>appearing</em> or <em>disappearing</em> at a location. Pattern: <strong>Place + Verb + Directional/Result Complement + (了) + Numeral-M.W. + Person/Thing</strong>. Note: the "subject" (the new person/thing) comes <em>last</em>.</span></p>
+          <div class="grammar-pattern">Place + V + Comp + (了) + Number-M.W. + N</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh"><strong>后边走过去</strong>两个人。</div><div class="en">Two people <strong>just walked past behind</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>树上飞来了</strong>几只鸟。</div><div class="en">A few birds <strong>flew into the tree</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>前面开过来</strong>很多车。</div><div class="en">A lot of cars <strong>are coming up ahead</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>楼上下来了</strong>几个人。</div><div class="en">A few people <strong>came down from upstairs</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法4 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">4</span>紧缩复句"…了…就…" · Two Actions in Immediate Succession</div>
+          <p class="grammar-desc">"V₁+了…就+V₂…"表示两个动作行为紧接着发生（一…就…）。如果第二个动作也已经完成，则在句尾再加一个"了"。<br><span style="color:#888;font-size:0.85em;">"V₁ + 了 … 就 + V₂ …" expresses that V₂ happens immediately after V₁ ("as soon as … then …"). If the whole sequence is completed, add a sentence-final 了.</span></p>
+          <div class="grammar-pattern">V₁ + <strong>了</strong> + …，<strong>就</strong> + V₂ + …（+ 了）</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">你<strong>听完了</strong>音乐会<strong>就</strong>来我家吃饭。</div><div class="en"><strong>As soon as the concert ends</strong>, come over to my place for dinner.</div></div>
+            <div class="grammar-ex"><div class="zh">我<strong>吃了</strong>早饭<strong>就</strong>去学校了。</div><div class="en">I went to school <strong>right after</strong> breakfast.</div></div>
+            <div class="grammar-ex"><div class="zh">昨天我们<strong>下了</strong>课<strong>就</strong>回家了。</div><div class="en">Yesterday we went home <strong>as soon as</strong> class ended.</div></div>
+            <div class="grammar-ex"><div class="zh">爸爸每次<strong>上了</strong>飞机<strong>就</strong>睡觉。</div><div class="en">Dad falls asleep <strong>the moment</strong> he boards the plane, every time.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 白家月为什么要给王一雪打电话？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>找她吃饭</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>问她天气</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>找她爬山</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>送她照片</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 王一雪为什么不喜欢自己大笑的那张照片？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>她觉得照得太漂亮</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>她觉得有点儿难看，那时候不知道在被照</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>她不喜欢一飞</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>那张照片不清楚</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 拍照的时候，白家月让王一雪干什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>看着她</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>看鸟</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>想干什么就干什么</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>站着不动</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 王一雪送给白家月什么了？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>一些照片</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>一张音乐会的门票</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>她做的中国菜</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>一封邮件</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"得很"完成句子：现在天气好______，咱们去爬山吧！</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l5-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l5-fill1','得很','l5-reveal1')">检查</button>
+        </div>
+        <div id="l5-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：现在天气好<strong>得很</strong>，咱们去爬山吧！</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"…了…就…"造句：你 ______ 了 课 ______ 来 我家 玩 吧。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l5-fill2" type="text" placeholder="下…就…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l5-fill2','open','l5-reveal2')">检查</button>
+        </div>
+        <div id="l5-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：你<strong>下</strong>了课<strong>就</strong>来我家玩吧。（V₁+了…就+V₂…）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你对什么事情感兴趣？为什么？</div>
+            <div>（2）你手机里最满意的照片是哪张？为什么？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 白家月说"这样的照片才好看"——你觉得"摆拍"（bǎi pāi, posed photos）好看，还是"抓拍"（zhuā pāi, candid shots）好看？为什么？<br><br>
+          <strong>（2）</strong> 在山上的时候，白家月让王一雪"想干什么都可以"——你被人拍照的时候喜欢看着相机，还是做自己的事？<br><br>
+          <strong>（3）</strong> 王一雪说"我可以比较一下你们两个谁的水平高"——你觉得朋友之间比较"水平"是好事吗？
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 你觉得拍照是一种锻炼眼睛、记录生活的好方法，还是只是浪费时间？<br><br>
+          <strong>（2）</strong> 现在很多人去旅游主要是为了拍照发朋友圈——你怎么看？<br><br>
+          <strong>（3）</strong> 你对中国的什么音乐感兴趣？传统音乐、流行歌还是别的？
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">爬山在中国 <span class="pinyin">Hiking Culture in China</span></div>
+        <div class="culture-zh">"爬山"是中国人非常喜欢的一种休闲活动，也是常见的锻炼方式。中国有很多名山——五岳（Wǔ Yuè, the Five Great Mountains）：东岳泰山、西岳华山、南岳衡山、北岳恒山、中岳嵩山。"登泰山而小天下"是孔子说过的一句有名的话。除了名山，每个城市附近一般也有"小山"，周末很多人会一家人或者跟朋友一起去爬。爬山时常见的活动有：拍照、野餐、看日出（rìchū, sunrise）、运动锻炼。</div>
+        <div class="culture-en">Hiking ("爬山") is a beloved leisure activity in China and a common form of exercise. China has many famous mountains — the "Five Great Mountains" (五岳): Mount Tai in the east, Hua in the west, Heng (Hunan) in the south, Heng (Shanxi) in the north, and Song in the center. Confucius is famously quoted as saying "Climb Mount Tai and the world feels small". Beyond the famous peaks, most cities have nearby smaller hills where families and friends hike on weekends. Typical hiking activities: taking photos, picnics, watching sunrises, and getting exercise.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">难看 vs 难过 vs 难听 <span class="pinyin">"Bad" + Different Senses</span></div>
+        <div class="culture-zh">
+          <strong>共同点：</strong>都是"难+感官／心情"的结构，表示"令人不愉快"。<br><br>
+          <strong>不同点：</strong><br>
+          ① <strong>难看</strong>（nánkàn）：用眼睛看，丑、不漂亮。<br>
+          例：这张照片有点儿难看。<br><br>
+          ② <strong>难听</strong>（nántīng）：用耳朵听，声音不好听。<br>
+          例：他唱歌真难听。<br><br>
+          ③ <strong>难过</strong>（nánguò）：心情不好、伤心。<br>
+          例：听到这个消息我很难过。
+        </div>
+        <div class="culture-en">
+          <strong>Shared:</strong> All follow the pattern "难 + sense / feeling" — "hard / unpleasant to ___".<br><br>
+          <strong>Differences:</strong><br>
+          ① <strong>难看</strong> = ugly, unflattering (visually).<br>
+          E.g., 这张照片有点儿难看 — this photo is a bit unflattering.<br><br>
+          ② <strong>难听</strong> = bad-sounding (auditorily).<br>
+          E.g., 他唱歌真难听 — his singing is really bad.<br><br>
+          ③ <strong>难过</strong> = sad, distressed (emotionally).<br>
+          E.g., 听到这个消息我很难过 — I felt sad hearing the news.
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">"V + 上"作结果补语 <span class="pinyin">"V + 上" — Putting On / Picking Up</span></div>
+        <div class="culture-zh">
+          动词 + "上"可以表示"穿戴上去"、"拿起来"或"添加上"等结果意义。<br><br>
+          常用搭配：<br>
+          <strong>穿上</strong>大衣／鞋（put on a coat/shoes）<br>
+          <strong>拿上</strong>钥匙／相机（grab a key / camera）<br>
+          <strong>戴上</strong>帽子／眼镜（put on a hat / glasses）<br>
+          <strong>带上</strong>水／吃的（bring along water / snacks）<br><br>
+          例：我回去穿上运动鞋，拿上大衣。
+        </div>
+        <div class="culture-en">
+          The complement "上" attached to a verb often signals the result of <em>putting something on</em>, <em>picking something up</em>, or <em>adding it on</em>.<br><br>
+          Common pairs:<br>
+          <strong>穿上</strong> — put on (coat/shoes)<br>
+          <strong>拿上</strong> — grab / pick up (keys, camera)<br>
+          <strong>戴上</strong> — put on (hat, glasses, watch)<br>
+          <strong>带上</strong> — bring along (water, snacks)<br><br>
+          E.g., 我回去穿上运动鞋，拿上大衣 — I'll go back, put on my sneakers, and grab a coat.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L5 -->
   </div><!-- end lesson-content data-lesson="5" -->
 
   <!-- ═══════════════ LESSON 6 ═══════════════ -->
