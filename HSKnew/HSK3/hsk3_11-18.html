@@ -1044,9 +1044,761 @@
   </div><!-- end content-area L11 -->
   </div><!-- end lesson-content data-lesson="11" -->
 
-  <!-- ═══════════════ LESSON 12 (stub) ═══════════════ -->
-  <div class="lesson-header" id="lesson-header-12" data-lesson="12" data-watermark="十二" style="display:none"></div>
-  <div class="lesson-content" data-lesson="12" style="display:none"></div>
+  <!-- ═══════════════ LESSON 12 ═══════════════ -->
+  <div class="lesson-header" id="lesson-header-12" data-lesson="12" data-watermark="十二" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> HSK 3</button>
+      <span class="lesson-tag-num">第十二课 · Lesson 12</span>
+    </div>
+    <h1>这个季节天气变化很快</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Zhège jìjié tiānqì biànhuà hěn kuài</p>
+    <p class="lesson-subtitle">The weather changes rapidly in this season</p>
+  </div>
+
+  <div class="lesson-content" data-lesson="12" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text',this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab',this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail',this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar',this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise',this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion',this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture',this)">🏮 更多</button>
+  </div>
+  <div class="content-area">
+
+  <!-- ══ 课文 TAB ══ -->
+  <div data-tab="text" class="tab-panel active">
+
+  <div class="dialogue-block" id="l12-block1">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 1 · 在街上</span>
+        <button class="dh-play-btn" id="l12-dhBtn1" onclick="dhPlay('l12-audioEl1','l12-dhBtn1')"><svg id="l12-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l12-block1')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l12-block1')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">On the street — spring flowers and plans to go boating</span>
+    </div></div>
+    <audio id="l12-audioEl1" src="audio/12-1.mp3" onended="dhEnded('l12-audioEl1','l12-dhBtn1','l12-dhIcon1')" ontimeupdate="dhUpdate('l12-audioEl1')"></audio>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">王老师，您看，这条街上的树都开花了。</span>
+      <span class="line-pinyin">Wáng lǎoshī, nín kàn, zhè tiáo jiē shàng de shù dōu kāihuā le.</span>
+      <span class="line-en">Teacher Wang, look — the trees on this whole street are in bloom.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">上周我去公园划船了，公园里的花也开了。</span>
+      <span class="line-pinyin">Shàng zhōu wǒ qù gōngyuán huáchuán le, gōngyuán lǐ de huā yě kāi le.</span>
+      <span class="line-en">Last week I went boating in the park — the flowers there are blooming too.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">天气这么好，下午我也想去公园划船。</span>
+      <span class="line-pinyin">Tiānqì zhème hǎo, xiàwǔ wǒ yě xiǎng qù gōngyuán huáchuán.</span>
+      <span class="line-en">The weather is so nice — I'd love to go boating this afternoon too.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">去吧！今天是工作日，人应该不多。</span>
+      <span class="line-pinyin">Qù ba! Jīntiān shì gōngzuòrì, rén yīnggāi bù duō.</span>
+      <span class="line-en">Go ahead! Today is a weekday — there probably won't be many people.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">您有时间吗？我想跟您一起去。</span>
+      <span class="line-pinyin">Nín yǒu shíjiān ma? Wǒ xiǎng gēn nín yīqǐ qù.</span>
+      <span class="line-en">Do you have time? I'd love to go with you.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">我今天下午有课，不能去太远的地方。</span>
+      <span class="line-pinyin">Wǒ jīntiān xiàwǔ yǒu kè, bù néng qù tài yuǎn de dìfang.</span>
+      <span class="line-en">I have class this afternoon — I can't go somewhere too far.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">那我们换一天？</span>
+      <span class="line-pinyin">Nà wǒmen huàn yī tiān?</span>
+      <span class="line-en">Shall we pick another day then?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">行。或者明天去，或者后天去，我给你打电话。</span>
+      <span class="line-pinyin">Xíng. Huòzhě míngtiān qù, huòzhě hòutiān qù, wǒ gěi nǐ dǎ diànhuà.</span>
+      <span class="line-en">Sure. Either tomorrow or the day after — I'll give you a call.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l12-block2">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 2 · 在街上</span>
+        <button class="dh-play-btn" id="l12-dhBtn2" onclick="dhPlay('l12-audioEl2','l12-dhBtn2')"><svg id="l12-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l12-block2')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l12-block2')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">On the street — sudden rain and a borrowed umbrella</span>
+    </div></div>
+    <audio id="l12-audioEl2" src="audio/12-3.mp3" onended="dhEnded('l12-audioEl2','l12-dhBtn2','l12-dhIcon2')" ontimeupdate="dhUpdate('l12-audioEl2')"></audio>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">刚才还是大晴天呢，怎么突然就刮起风来了？</span>
+      <span class="line-pinyin">Gāngcái hái shì dà qíngtiān ne, zěnme tūrán jiù guā qǐ fēng lái le?</span>
+      <span class="line-en">It was bright sunshine just a moment ago — how did the wind suddenly pick up?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">好像新闻里说今天有雨。</span>
+      <span class="line-pinyin">Hǎoxiàng xīnwén lǐ shuō jīntiān yǒu yǔ.</span>
+      <span class="line-en">I think the news said it might rain today.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">啊？我每天书包里都放着雨伞，就今天没带。</span>
+      <span class="line-pinyin">A? Wǒ měitiān shūbāo lǐ dōu fàngzhe yǔsǎn, jiù jīntiān méi dài.</span>
+      <span class="line-en">What? I always keep an umbrella in my bag — just today I didn't bring one.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">我可以借给你，我车里有一把伞和一件雨衣。</span>
+      <span class="line-pinyin">Wǒ kěyǐ jiè gěi nǐ, wǒ chē lǐ yǒu yī bǎ sǎn hé yī jiàn yǔyī.</span>
+      <span class="line-en">I can lend you one — I have an umbrella and a raincoat in my car.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">谢谢，希望下午天气能变好。</span>
+      <span class="line-pinyin">Xièxie, xīwàng xiàwǔ tiānqì néng biàn hǎo.</span>
+      <span class="line-en">Thank you. I hope the weather improves this afternoon.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">这个季节天气变化很快。</span>
+      <span class="line-pinyin">Zhège jìjié tiānqì biànhuà hěn kuài.</span>
+      <span class="line-en">The weather changes very rapidly this season.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">而且已经下起来了，咱们快找个地方躲吧。</span>
+      <span class="line-pinyin">Érqiě yǐjīng xià qǐlái le, zánmen kuài zhǎo gè dìfang duǒ ba.</span>
+      <span class="line-en">And it's already started — let's quickly find somewhere to shelter!</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l12-block3">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 3 · 在教室里</span>
+        <button class="dh-play-btn" id="l12-dhBtn3" onclick="dhPlay('l12-audioEl3','l12-dhBtn3')"><svg id="l12-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l12-block3')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l12-block3')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">In the classroom — adapting to Beijing's climate after a year</span>
+    </div></div>
+    <audio id="l12-audioEl3" src="audio/12-5.mp3" onended="dhEnded('l12-audioEl3','l12-dhBtn3','l12-dhIcon3')" ontimeupdate="dhUpdate('l12-audioEl3')"></audio>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">王老师，您来这里已经一年多了，习惯了吗？</span>
+      <span class="line-pinyin">Wáng lǎoshī, nín lái zhèlǐ yǐjīng yī nián duō le, xíguàn le ma?</span>
+      <span class="line-en">Teacher Wang, you've been here over a year — are you used to it now?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">差不多了，就是不习惯这里的冬天，太冷了。</span>
+      <span class="line-pinyin">Chàbuduō le, jiùshì bù xíguàn zhèlǐ de dōngtiān, tài lěng le.</span>
+      <span class="line-en">Pretty much — I just can't quite get used to the winters here, it's too cold.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">是吗？我今年特别喜欢冬天！常常下雪，太漂亮了。</span>
+      <span class="line-pinyin">Shì ma? Wǒ jīnnián tèbié xǐhuān dōngtiān! Chángcháng xià xuě, tài piàoliang le.</span>
+      <span class="line-en">Really? I absolutely love winter this year! It snows so often — it's so beautiful.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一飞</span><div class="line-content">
+      <span class="line-zh">你这么关心天气，每天都看天气预报吗？</span>
+      <span class="line-pinyin">Nǐ zhème guānxīn tiānqì, měitiān dōu kàn tiānqì yùbào ma?</span>
+      <span class="line-en">You care so much about the weather — do you check the forecast every day?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">家月</span><div class="line-content">
+      <span class="line-zh">对！这个季节变化快，不关心天气的话，出门就不知道穿什么了。</span>
+      <span class="line-pinyin">Duì! Zhège jìjié biànhuà kuài, bù guānxīn tiānqì de huà, chūmén jiù bù zhīdào chuān shénme le.</span>
+      <span class="line-en">Yes! This season changes so fast — if you don't pay attention, you won't know what to wear when you go out.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l12-block4">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 4 · 王一飞的日记</span>
+        <button class="dh-play-btn" id="l12-dhBtn4" onclick="dhPlay('l12-audioEl4','l12-dhBtn4')"><svg id="l12-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l12-block4')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l12-block4')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">Wang Yifei's diary — Beijing's four seasons through a newcomer's eyes</span>
+    </div></div>
+    <audio id="l12-audioEl4" src="audio/12-7.mp3" onended="dhEnded('l12-audioEl4','l12-dhBtn4','l12-dhIcon4')" ontimeupdate="dhUpdate('l12-audioEl4')"></audio>
+    <div class="dialogue-line"><span class="speaker">日记</span><div class="line-content">
+      <span class="line-zh">我来北京工作一年多了，这一年多住下来，我还是最喜欢北京的四季。</span>
+      <span class="line-pinyin">Wǒ lái Běijīng gōngzuò yī nián duō le, zhè yī nián duō zhù xià lái, wǒ hái shì zuì xǐhuān Běijīng de sìjì.</span>
+      <span class="line-en">I've been working in Beijing for over a year. After settling in through this year, I still love Beijing's four seasons most of all.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker"></span><div class="line-content">
+      <span class="line-zh">春天，天气变化快，一会儿冷，一会儿热，但是能看到满街的花，非常漂亮。</span>
+      <span class="line-pinyin">Chūntiān, tiānqì biànhuà kuài, yīhuìr lěng, yīhuìr rè, dànshì néng kàn dào mǎn jiē de huā, fēicháng piàoliang.</span>
+      <span class="line-en">In spring the weather changes fast — one moment cold, the next warm — but flowers bloom all along the streets. It's stunning.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker"></span><div class="line-content">
+      <span class="line-zh">夏天很热，常常下雨，偶尔下完雨之后，天气会凉快一些，出去散步也很舒服。</span>
+      <span class="line-pinyin">Xiàtiān hěn rè, chángcháng xià yǔ, ǒuěr xià wán yǔ zhīhòu, tiānqì huì liángkuai yīxiē, chūqù sànbù yě hěn shūfu.</span>
+      <span class="line-en">Summer is hot with frequent rain, but occasionally after a shower the air cools down pleasantly and it's lovely to go for a walk.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker"></span><div class="line-content">
+      <span class="line-zh">我最喜欢北京的秋天，天气不冷不热，舒服极了，树叶慢慢变成了红色和黄色，出去散步最合适了。</span>
+      <span class="line-pinyin">Wǒ zuì xǐhuān Běijīng de qiūtiān, tiānqì bù lěng bù rè, shūfu jí le, shùyè màn màn biàn chéng le hóngsè hé huángsè, chūqù sànbù zuì héshì le.</span>
+      <span class="line-en">I love Beijing's autumn most — neither cold nor hot, wonderfully comfortable. The leaves slowly turn red and yellow; perfect for a stroll.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker"></span><div class="line-content">
+      <span class="line-zh">冬天虽然很冷，但是北京常常下雪，今年就下了一次，白茫茫的，非常好看。每个人都有自己最喜欢的季节，你喜欢哪个季节？</span>
+      <span class="line-pinyin">Dōngtiān suīrán hěn lěng, dànshì Běijīng chángcháng xià xuě, jīnnián jiù xià le yī cì, báimángmáng de, fēicháng hǎokàn. Měi gè rén dōu yǒu zìjǐ zuì xǐhuān de jìjié, nǐ xǐhuān nǎ gè jìjié?</span>
+      <span class="line-en">Winter is cold, but Beijing often gets snow — this year there was just one snowfall, leaving everything white. Beautiful. Everyone has their favourite season — which is yours?</span>
+    </div></div>
+  </div>
+
+  </div><!-- end text tab -->
+
+  <!-- ══ 生词表 TAB ══ -->
+  <div data-tab="vocab" class="tab-panel">
+    <div class="fc-slider-wrap">
+      <div class="fc-row">
+        <div class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div>
+        <div class="fc-slider" id="l12-fcSlider">
+          <div class="fc-card active" id="l12-fc1" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">街</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">jiē</span><span class="fcs-en">street</span></div></div></div>
+          <div class="fc-card" id="l12-fc2" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">开花</span><span class="fcs-pos">v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">kāihuā</span><span class="fcs-en">to bloom</span></div></div></div>
+          <div class="fc-card" id="l12-fc3" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">公园</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">gōngyuán</span><span class="fcs-en">park</span></div></div></div>
+          <div class="fc-card" id="l12-fc4" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">划船</span><span class="fcs-pos">v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">huáchuán</span><span class="fcs-en">to row a boat</span></div></div></div>
+          <div class="fc-card" id="l12-fc5" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">工作日</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">gōngzuòrì</span><span class="fcs-en">weekday</span></div></div></div>
+          <div class="fc-card" id="l12-fc6" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">地方</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">dìfang</span><span class="fcs-en">place</span></div></div></div>
+          <div class="fc-card" id="l12-fc7" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">刚才</span><span class="fcs-pos">adv.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">gāngcái</span><span class="fcs-en">just now; a moment ago</span></div></div></div>
+          <div class="fc-card" id="l12-fc8" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">刮</span><span class="fcs-pos">v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">guā</span><span class="fcs-en">(wind) to blow</span></div></div></div>
+          <div class="fc-card" id="l12-fc9" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">风</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">fēng</span><span class="fcs-en">wind</span></div></div></div>
+          <div class="fc-card" id="l12-fc10" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">新闻</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">xīnwén</span><span class="fcs-en">news</span></div></div></div>
+          <div class="fc-card" id="l12-fc11" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">伞</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">sǎn</span><span class="fcs-en">umbrella</span></div></div></div>
+          <div class="fc-card" id="l12-fc12" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">借</span><span class="fcs-pos">v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">jiè</span><span class="fcs-en">lend; borrow</span></div></div></div>
+          <div class="fc-card" id="l12-fc13" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">把</span><span class="fcs-pos">m.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">bǎ</span><span class="fcs-en">m.w. for things with a handle</span></div></div></div>
+          <div class="fc-card" id="l12-fc14" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">雨衣</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">yǔyī</span><span class="fcs-en">raincoat</span></div></div></div>
+          <div class="fc-card" id="l12-fc15" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">变</span><span class="fcs-pos">v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">biàn</span><span class="fcs-en">to change</span></div></div></div>
+          <div class="fc-card" id="l12-fc16" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">季节</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">jìjié</span><span class="fcs-en">season</span></div></div></div>
+          <div class="fc-card" id="l12-fc17" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">变化</span><span class="fcs-pos">n/v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">biànhuà</span><span class="fcs-en">change; variation</span></div></div></div>
+          <div class="fc-card" id="l12-fc18" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">冬天</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">dōngtiān</span><span class="fcs-en">winter</span></div></div></div>
+          <div class="fc-card" id="l12-fc19" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">常常</span><span class="fcs-pos">adv.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">chángcháng</span><span class="fcs-en">often; frequently</span></div></div></div>
+          <div class="fc-card" id="l12-fc20" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">关心</span><span class="fcs-pos">v.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">guānxīn</span><span class="fcs-en">to care about; be attentive to</span></div></div></div>
+          <div class="fc-card" id="l12-fc21" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">四季</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">sìjì</span><span class="fcs-en">four seasons</span></div></div></div>
+          <div class="fc-card" id="l12-fc22" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">春天</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">chūntiān</span><span class="fcs-en">spring</span></div></div></div>
+          <div class="fc-card" id="l12-fc23" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">夏天</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">xiàtiān</span><span class="fcs-en">summer</span></div></div></div>
+          <div class="fc-card" id="l12-fc24" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">秋天</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">qiūtiān</span><span class="fcs-en">autumn</span></div></div></div>
+          <div class="fc-card" id="l12-fc25" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">舒服</span><span class="fcs-pos">adj.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">shūfu</span><span class="fcs-en">comfortable</span></div></div></div>
+          <div class="fc-card" id="l12-fc26" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><span class="fcs-zh">树叶</span><span class="fcs-pos">n.</span><span class="fcs-hint">tap to flip</span></div><div class="fc-back"><span class="fcs-pinyin">shùyè</span><span class="fcs-en">leaves (of a tree)</span></div></div></div>
+        </div>
+        <div class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="fc-counter" id="l12-fcCur">1 / 26</div>
+    </div>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vocab-zh">街</div><div class="vocab-pinyin">jiē</div><div class="vocab-pos">n.</div><div class="vocab-en">street</div><div class="vocab-example">这条<em>街</em>上的树都开花了。<br>The trees on this <em>street</em> are all in bloom.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">开花</div><div class="vocab-pinyin">kāihuā</div><div class="vocab-pos">v.</div><div class="vocab-en">to bloom; to blossom</div><div class="vocab-example">公园里的花也<em>开</em>了。<br>The flowers in the park have <em>bloomed</em> too.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">公园</div><div class="vocab-pinyin">gōngyuán</div><div class="vocab-pos">n.</div><div class="vocab-en">park</div><div class="vocab-example">今天是工作日，<em>公园</em>里人不多。<br>It's a weekday, so the <em>park</em> isn't crowded.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">划船</div><div class="vocab-pinyin">huáchuán</div><div class="vocab-pos">v.</div><div class="vocab-en">to row a boat</div><div class="vocab-example">上周我去公园<em>划船</em>了。<br>Last week I went <em>boating</em> in the park.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">工作日</div><div class="vocab-pinyin">gōngzuòrì</div><div class="vocab-pos">n.</div><div class="vocab-en">weekday</div><div class="vocab-example">今天是<em>工作日</em>，人应该不多。<br>Today is a <em>weekday</em> — there won't be many people.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">地方</div><div class="vocab-pinyin">dìfang</div><div class="vocab-pos">n.</div><div class="vocab-en">place; location</div><div class="vocab-example">咱们快找个<em>地方</em>躲吧。<br>Let's quickly find a <em>place</em> to shelter.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">刚才</div><div class="vocab-pinyin">gāngcái</div><div class="vocab-pos">adv.</div><div class="vocab-en">just now; a moment ago</div><div class="vocab-example"><em>刚才</em>还是大晴天呢。<br>It was bright sunshine <em>just a moment ago</em>.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">刮</div><div class="vocab-pinyin">guā</div><div class="vocab-pos">v.</div><div class="vocab-en">(wind) to blow</div><div class="vocab-example">突然就<em>刮</em>起风来了。<br>The wind suddenly <em>started blowing</em>.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">风</div><div class="vocab-pinyin">fēng</div><div class="vocab-pos">n.</div><div class="vocab-en">wind</div><div class="vocab-example">今天<em>风</em>很大，出门要注意。<br>The <em>wind</em> is strong today — be careful going out.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">新闻</div><div class="vocab-pinyin">xīnwén</div><div class="vocab-pos">n.</div><div class="vocab-en">news</div><div class="vocab-example"><em>新闻</em>里说今天有雨。<br>The <em>news</em> said it would rain today.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">伞</div><div class="vocab-pinyin">sǎn</div><div class="vocab-pos">n.</div><div class="vocab-en">umbrella</div><div class="vocab-example">我每天书包里都放着雨<em>伞</em>。<br>I always keep an <em>umbrella</em> in my bag.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">借</div><div class="vocab-pinyin">jiè</div><div class="vocab-pos">v.</div><div class="vocab-en">lend; borrow</div><div class="vocab-example">我可以<em>借</em>给你一把伞。<br>I can <em>lend</em> you an umbrella.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">把</div><div class="vocab-pinyin">bǎ</div><div class="vocab-pos">m.</div><div class="vocab-en">m.w. (handles, fans, etc.)</div><div class="vocab-example">我车里有一<em>把</em>伞。<br>I have an umbrella (one <em>—</em>) in my car.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">雨衣</div><div class="vocab-pinyin">yǔyī</div><div class="vocab-pos">n.</div><div class="vocab-en">raincoat</div><div class="vocab-example">我车里有一把伞和一件<em>雨衣</em>。<br>I have an umbrella and a <em>raincoat</em> in my car.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">变</div><div class="vocab-pinyin">biàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to change</div><div class="vocab-example">希望下午天气能<em>变</em>好。<br>I hope the weather <em>changes</em> for the better this afternoon.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">季节</div><div class="vocab-pinyin">jìjié</div><div class="vocab-pos">n.</div><div class="vocab-en">season</div><div class="vocab-example">这个<em>季节</em>天气变化很快。<br>The weather changes rapidly this <em>season</em>.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">变化</div><div class="vocab-pinyin">biànhuà</div><div class="vocab-pos">n/v.</div><div class="vocab-en">change; variation</div><div class="vocab-example">这个季节天气<em>变化</em>很快。<br>The weather <em>changes</em> very rapidly this season.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">冬天</div><div class="vocab-pinyin">dōngtiān</div><div class="vocab-pos">n.</div><div class="vocab-en">winter</div><div class="vocab-example">我还不习惯这里的<em>冬天</em>，太冷了。<br>I'm not used to the <em>winter</em> here — it's too cold.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">常常</div><div class="vocab-pinyin">chángcháng</div><div class="vocab-pos">adv.</div><div class="vocab-en">often; frequently</div><div class="vocab-example">北京<em>常常</em>下雪，太漂亮了。<br>Beijing <em>often</em> gets snow — it's so beautiful.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">关心</div><div class="vocab-pinyin">guānxīn</div><div class="vocab-pos">v.</div><div class="vocab-en">to care about; to pay attention to</div><div class="vocab-example">你这么<em>关心</em>天气，每天都看预报吗？<br>You <em>pay so much attention</em> to the weather — do you check it daily?</div></div>
+      <div class="vocab-card"><div class="vocab-zh">四季</div><div class="vocab-pinyin">sìjì</div><div class="vocab-pos">n.</div><div class="vocab-en">four seasons</div><div class="vocab-example">我最喜欢北京的<em>四季</em>。<br>I love Beijing's <em>four seasons</em> most.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">春天</div><div class="vocab-pinyin">chūntiān</div><div class="vocab-pos">n.</div><div class="vocab-en">spring</div><div class="vocab-example"><em>春天</em>能看到满街的花，非常漂亮。<br>In <em>spring</em> you can see flowers everywhere — it's beautiful.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">夏天</div><div class="vocab-pinyin">xiàtiān</div><div class="vocab-pos">n.</div><div class="vocab-en">summer</div><div class="vocab-example"><em>夏天</em>很热，但是公园里的荷花很漂亮。<br><em>Summer</em> is hot, but the lotus flowers in the park are beautiful.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">秋天</div><div class="vocab-pinyin">qiūtiān</div><div class="vocab-pos">n.</div><div class="vocab-en">autumn</div><div class="vocab-example">我最喜欢北京的<em>秋天</em>，天气不冷不热。<br>I love Beijing's <em>autumn</em> most — neither cold nor hot.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">舒服</div><div class="vocab-pinyin">shūfu</div><div class="vocab-pos">adj.</div><div class="vocab-en">comfortable</div><div class="vocab-example">秋天天气不冷不热，<em>舒服</em>极了。<br>The autumn weather is neither cold nor hot — incredibly <em>comfortable</em>.</div></div>
+      <div class="vocab-card"><div class="vocab-zh">树叶</div><div class="vocab-pinyin">shùyè</div><div class="vocab-pos">n.</div><div class="vocab-en">leaves (of a tree)</div><div class="vocab-example"><em>树叶</em>慢慢变成了红色和黄色。<br>The <em>leaves</em> slowly turned red and yellow.</div></div>
+    </div>
+  </div><!-- end vocab tab -->
+
+  <!-- ══ 词汇详解 TAB ══ -->
+  <div data-tab="worddetail" class="tab-panel">
+
+    <div class="word-detail">
+      <div class="word-detail-header">
+        <div class="wdh-zh">刚才</div>
+        <div class="wdh-info"><div class="wdh-pinyin">gāngcái</div><div class="wdh-en">just now; a moment ago</div></div>
+        <div class="wdh-pos">adv.</div>
+      </div>
+      <div class="word-detail-body">
+        <div class="wd-section-label">字形分析 · Characters</div>
+        <div class="wd-chars">
+          <div class="wd-char"><div class="char">刚</div><div class="char-meaning">just; rigid</div></div>
+          <div class="wd-char"><div class="char">才</div><div class="char-meaning">just; only then</div></div>
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          <strong style="color:var(--vermillion);">刚才</strong>：refers to a moment in the very recent past — "a moment ago" or "just now." Always describes something that already happened.<br>
+          <strong style="color:var(--gold);">刚</strong>：can stand alone before a verb to mean "just (did something)" — e.g. 我刚到 (I just arrived).<br>
+          <strong style="color:#888;">以前</strong>：refers to the general past — "before / in the past" — not necessarily recent.
+        </div>
+        <div class="wd-section-label">常用搭配 · Collocations</div>
+        <div class="wd-collocations">
+          <span class="collocation-tag">刚才还……呢</span><span class="collocation-tag">就在刚才</span><span class="collocation-tag">刚才发生了什么</span><span class="collocation-tag">刚才你说……</span>
+        </div>
+        <div class="wd-section-label">例句 · Examples</div>
+        <div class="wd-examples">
+          <div class="wd-ex"><div class="zh">刚才还是大晴天呢，怎么突然就下雨了？</div><div class="en">It was bright sunshine just a moment ago — how did it suddenly start raining?</div></div>
+          <div class="wd-ex"><div class="zh">刚才你说了什么？我没听清楚。</div><div class="en">What did you say just now? I didn't catch it.</div></div>
+          <div class="wd-ex"><div class="zh">他刚才还在这里，怎么不见了？</div><div class="en">He was here just a moment ago — where did he go?</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-detail">
+      <div class="word-detail-header">
+        <div class="wdh-zh">借</div>
+        <div class="wdh-info"><div class="wdh-pinyin">jiè</div><div class="wdh-en">lend; borrow</div></div>
+        <div class="wdh-pos">v.</div>
+      </div>
+      <div class="word-detail-body">
+        <div class="wd-section-label">字形分析 · Characters</div>
+        <div class="wd-chars">
+          <div class="wd-char"><div class="char">借</div><div class="char-meaning">lend / borrow</div></div>
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          Chinese uses <strong style="color:var(--vermillion);">借</strong> for both <em>lending</em> and <em>borrowing</em> — context and structure tell you which direction the object moves.<br><br>
+          <strong>借给</strong> (jiè gěi) = lend to someone (object moves away from you)<br>
+          我借给你一把伞。→ I lend you an umbrella.<br><br>
+          <strong>向……借 / 借……来</strong> = borrow from someone (object moves to you)<br>
+          我向图书馆借了一本书。→ I borrowed a book from the library.<br><br>
+          <strong>还 (huán)</strong> = return (what was borrowed)
+        </div>
+        <div class="wd-section-label">常用搭配 · Collocations</div>
+        <div class="wd-collocations">
+          <span class="collocation-tag">借给</span><span class="collocation-tag">向……借</span><span class="collocation-tag">借书</span><span class="collocation-tag">借伞</span><span class="collocation-tag">借钱</span><span class="collocation-tag">还（huán）</span>
+        </div>
+        <div class="wd-section-label">例句 · Examples</div>
+        <div class="wd-examples">
+          <div class="wd-ex"><div class="zh">我可以借给你，我车里有一把伞。</div><div class="en">I can lend you one — I have an umbrella in my car.</div></div>
+          <div class="wd-ex"><div class="zh">我想向你借一本词典，可以吗？</div><div class="en">I'd like to borrow a dictionary from you — is that okay?</div></div>
+          <div class="wd-ex"><div class="zh">你上次借给我的书，我已经还给你了。</div><div class="en">The book you lent me last time — I've already returned it to you.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-detail">
+      <div class="word-detail-header">
+        <div class="wdh-zh">变 · 变化</div>
+        <div class="wdh-info"><div class="wdh-pinyin">biàn · biànhuà</div><div class="wdh-en">change (v.) · change / variation (n./v.)</div></div>
+        <div class="wdh-pos">v. / n/v.</div>
+      </div>
+      <div class="word-detail-body">
+        <div class="wd-section-label">字形分析 · Characters</div>
+        <div class="wd-chars">
+          <div class="wd-char"><div class="char">变</div><div class="char-meaning">change</div></div>
+          <div class="wd-char"><div class="char">化</div><div class="char-meaning">transform; -ize</div></div>
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          <strong style="color:var(--vermillion);">变 (biàn)</strong>：verb — something undergoes a change. Often followed by an adjective or 成 (into).<br>
+          例：天气变好了 / 树叶变成了红色<br><br>
+          <strong style="color:var(--gold);">变化 (biànhuà)</strong>：can be a noun ("a change / variation") or a verb ("to change, shift"). Describes the process or degree of change.<br>
+          例：天气变化很快 (the weather changes fast) / 这里变化很大 (big changes here)
+        </div>
+        <div class="wd-section-label">常用搭配 · Collocations</div>
+        <div class="wd-collocations">
+          <span class="collocation-tag">变好/坏</span><span class="collocation-tag">变成</span><span class="collocation-tag">天气变化</span><span class="collocation-tag">变化很大/快</span><span class="collocation-tag">发生变化</span>
+        </div>
+        <div class="wd-section-label">例句 · Examples</div>
+        <div class="wd-examples">
+          <div class="wd-ex"><div class="zh">这个季节天气变化很快。</div><div class="en">The weather changes very rapidly this season.</div></div>
+          <div class="wd-ex"><div class="zh">树叶慢慢变成了红色和黄色。</div><div class="en">The leaves slowly turned red and yellow.</div></div>
+          <div class="wd-ex"><div class="zh">这座城市变化很大，我都不认识了。</div><div class="en">This city has changed so much — I barely recognise it.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-detail">
+      <div class="word-detail-header">
+        <div class="wdh-zh">常常</div>
+        <div class="wdh-info"><div class="wdh-pinyin">chángcháng</div><div class="wdh-en">often; frequently</div></div>
+        <div class="wdh-pos">adv.</div>
+      </div>
+      <div class="word-detail-body">
+        <div class="wd-section-label">字形分析 · Characters</div>
+        <div class="wd-chars">
+          <div class="wd-char"><div class="char">常</div><div class="char-meaning">often; usual</div></div>
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          Both <strong style="color:var(--vermillion);">常常</strong> and <strong style="color:var(--gold);">经常 (jīngcháng)</strong> mean "often/frequently" and are largely interchangeable.<br><br>
+          <strong>常常</strong>：slightly more literary; often used in written descriptions and narratives.<br>
+          <strong>经常</strong>：more colloquial; emphasises habitual or regular action, often implies a pattern.<br><br>
+          Practical rule: you can usually swap them safely in speech.
+        </div>
+        <div class="wd-section-label">常用搭配 · Collocations</div>
+        <div class="wd-collocations">
+          <span class="collocation-tag">常常下雪/下雨</span><span class="collocation-tag">常常迟到</span><span class="collocation-tag">不常常</span><span class="collocation-tag">偶尔（occasionally）</span>
+        </div>
+        <div class="wd-section-label">例句 · Examples</div>
+        <div class="wd-examples">
+          <div class="wd-ex"><div class="zh">北京冬天常常下雪，今年就下了一次。</div><div class="en">Beijing often gets snow in winter — this year there was just one snowfall.</div></div>
+          <div class="wd-ex"><div class="zh">我经常来这家餐厅吃饭。</div><div class="en">I often come to this restaurant to eat.</div></div>
+          <div class="wd-ex"><div class="zh">她常常忘记带伞，所以总是被雨淋到。</div><div class="en">She often forgets to bring an umbrella, so she always gets caught in the rain.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-detail">
+      <div class="word-detail-header">
+        <div class="wdh-zh">关心</div>
+        <div class="wdh-info"><div class="wdh-pinyin">guānxīn</div><div class="wdh-en">to care about; to be attentive to</div></div>
+        <div class="wdh-pos">v.</div>
+      </div>
+      <div class="word-detail-body">
+        <div class="wd-section-label">字形分析 · Characters</div>
+        <div class="wd-chars">
+          <div class="wd-char"><div class="char">关</div><div class="char-meaning">concern; close</div></div>
+          <div class="wd-char"><div class="char">心</div><div class="char-meaning">heart; mind</div></div>
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          <strong style="color:var(--vermillion);">关心</strong>：to care about someone/something — an emotional or practical concern. Often used for people, weather, news, studies.<br><br>
+          Compare with <strong style="color:var(--gold);">关注 (guānzhù)</strong>：to follow/pay attention to — more formal, often for news, topics, or social issues rather than personal care.
+        </div>
+        <div class="wd-section-label">常用搭配 · Collocations</div>
+        <div class="wd-collocations">
+          <span class="collocation-tag">关心天气</span><span class="collocation-tag">关心朋友/家人</span><span class="collocation-tag">很关心</span><span class="collocation-tag">感谢你的关心</span><span class="collocation-tag">不关心</span>
+        </div>
+        <div class="wd-section-label">例句 · Examples</div>
+        <div class="wd-examples">
+          <div class="wd-ex"><div class="zh">你这么关心天气，每天都看天气预报吗？</div><div class="en">You pay so much attention to the weather — do you check the forecast every day?</div></div>
+          <div class="wd-ex"><div class="zh">妈妈很关心我的学习情况。</div><div class="en">My mum really cares about how my studies are going.</div></div>
+          <div class="wd-ex"><div class="zh">谢谢你的关心，我已经好多了。</div><div class="en">Thank you for your concern — I'm much better now.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-detail">
+      <div class="word-detail-header">
+        <div class="wdh-zh">季节</div>
+        <div class="wdh-info"><div class="wdh-pinyin">jìjié</div><div class="wdh-en">season</div></div>
+        <div class="wdh-pos">n.</div>
+      </div>
+      <div class="word-detail-body">
+        <div class="wd-section-label">字形分析 · Characters</div>
+        <div class="wd-chars">
+          <div class="wd-char"><div class="char">季</div><div class="char-meaning">season; quarterly</div></div>
+          <div class="wd-char"><div class="char">节</div><div class="char-meaning">festival; section; joint</div></div>
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          The four seasons in Chinese:<br>
+          春天/春季 (chūntiān/chūnjì) — spring<br>
+          夏天/夏季 (xiàtiān/xiàjì) — summer<br>
+          秋天/秋季 (qiūtiān/qiūjì) — autumn<br>
+          冬天/冬季 (dōngtiān/dōngjì) — winter<br><br>
+          天 is casual; 季 is more formal/written. 换季 (huànjì) = seasonal transition.
+        </div>
+        <div class="wd-section-label">常用搭配 · Collocations</div>
+        <div class="wd-collocations">
+          <span class="collocation-tag">四季</span><span class="collocation-tag">这个季节</span><span class="collocation-tag">换季</span><span class="collocation-tag">季节变化</span><span class="collocation-tag">每个季节</span>
+        </div>
+        <div class="wd-section-label">例句 · Examples</div>
+        <div class="wd-examples">
+          <div class="wd-ex"><div class="zh">这个季节天气变化很快。</div><div class="en">The weather changes very rapidly this season.</div></div>
+          <div class="wd-ex"><div class="zh">你最喜欢哪个季节？</div><div class="en">Which season do you like best?</div></div>
+          <div class="wd-ex"><div class="zh">每个季节都有自己的特点。</div><div class="en">Every season has its own characteristics.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end worddetail tab -->
+
+  <!-- ══ 语法 TAB ══ -->
+  <div data-tab="grammar" class="tab-panel">
+
+    <div class="grammar-switcher">
+      <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">① 还是/或者</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">② V + 起来</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">③ 就</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(3,this)">④ V + 下来</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="grammar-panel active">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">1</span>还是/或者 — Alternative Complex Sentence</div>
+        <div class="grammar-desc">Chinese offers two ways to express "either … or …" — one for questions, one for statements. Getting them right is essential for natural-sounding Chinese.</div>
+        <div class="grammar-pattern">
+          Questions: option A ＋ <strong>还是</strong> ＋ option B ？<br>
+          Statements: <strong>或者</strong> ＋ option A ，<strong>或者</strong> ＋ option B
+        </div>
+        <div style="background:#fff8f5;border-radius:8px;padding:0.8rem 1rem;font-size:0.88rem;color:#555;line-height:1.8;margin-bottom:1rem;">
+          <strong style="color:var(--vermillion);">还是</strong> is used in questions when asking the listener to choose between two options.<br>
+          <strong style="color:var(--gold);">或者</strong> is used in statements to present two equal alternatives (either is fine).<br><br>
+          ❌ 你想去公园<em>或者</em>游泳池？(wrong — question needs 还是)<br>
+          ✓ 你想去公园<em>还是</em>游泳池？
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">开会的时候，咱们用会议室的电脑<strong>还是</strong>自己的笔记本？</div><div class="en"><strong>Either</strong> the meeting room computer <strong>or</strong> our own laptops — which should we use?</div></div>
+          <div class="grammar-ex"><div class="zh"><strong>或者</strong>明天去，<strong>或者</strong>后天去，我给你打电话。</div><div class="en"><strong>Either</strong> tomorrow <strong>or</strong> the day after — I'll call you.</div></div>
+          <div class="grammar-ex"><div class="zh">你想喝茶<strong>还是</strong>咖啡？</div><div class="en">Would you like tea <strong>or</strong> coffee?</div></div>
+          <div class="grammar-ex"><div class="zh">周末我们可以去爬山，<strong>或者</strong>去划船，你们决定。</div><div class="en">On the weekend we can go hiking <strong>or</strong> boating — you decide.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">2</span>V + 起来 — Start of an Action</div>
+        <div class="grammar-desc">The directional complement <strong>起来</strong> placed after a verb indicates that an action or state is <em>beginning to happen</em> — it "starts up." If there is an object, it goes between 起 and 来.</div>
+        <div class="grammar-pattern">
+          V ＋ 起来（了）<br>
+          V ＋ 起 ＋ [object] ＋ 来（了）
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">怎么突然就<strong>刮起风来</strong>了？</div><div class="en">How did the wind suddenly <strong>start blowing</strong>?</div></div>
+          <div class="grammar-ex"><div class="zh">已经<strong>下起来</strong>了，咱们快找个地方躲吧。</div><div class="en">It's already <strong>started raining</strong> — let's find somewhere to shelter.</div></div>
+          <div class="grammar-ex"><div class="zh">他们<strong>唱起歌来</strong>了。</div><div class="en">They <strong>started singing</strong>.</div></div>
+          <div class="grammar-ex"><div class="zh">大家<strong>聊起天来</strong>，忘记了时间。</div><div class="en">Everyone <strong>started chatting</strong> and lost track of time.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">3</span>就 — Adverb of Scope (Small Quantity)</div>
+        <div class="grammar-desc">When placed before a verb with a quantity expression, <strong>就</strong> signals that the amount, frequency, or duration is <em>small, low, or short</em> — often implying surprise or a contrasting emphasis.</div>
+        <div class="grammar-pattern">
+          就 ＋ V ＋ 数量 （small amount）<br>
+          就 ＋ [time/condition] ＋ 没/不 ＋ V （exception）
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">北京冬天常常下雪，今年<strong>就</strong>下了一次。</div><div class="en">Beijing often gets snow in winter — this year there was <strong>only</strong> one snowfall.</div></div>
+          <div class="grammar-ex"><div class="zh">我每天带着雨伞，<strong>就</strong>今天没带。</div><div class="en">I carry an umbrella every day — <strong>just</strong> today I didn't.</div></div>
+          <div class="grammar-ex"><div class="zh">他每天学习很多，今天<strong>就</strong>看了十分钟书。</div><div class="en">He studies a lot every day — today he <strong>only</strong> read for ten minutes.</div></div>
+          <div class="grammar-ex"><div class="zh">北京常常下雪，我<strong>就</strong>见过一次。</div><div class="en">Beijing often gets snow, but I've <strong>only</strong> seen it once.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">4</span>V + 下来 — Completion Through Effort</div>
+        <div class="grammar-desc">The complement <strong>下来</strong> after a verb indicates that an action has been completed or persisted through to the end — often involving time, difficulty, or sustained effort. The sense is "managed to get through it."</div>
+        <div class="grammar-pattern">
+          V ＋ 下来（了）
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">这一年多<strong>住下来</strong>，我还是最喜欢北京的四季。</div><div class="en">Having <strong>settled in</strong> through this past year, I still love Beijing's four seasons most.</div></div>
+          <div class="grammar-ex"><div class="zh">5000米的长跑比赛，没想到我<strong>跑下来</strong>了。</div><div class="en">I didn't expect to actually <strong>make it through</strong> the 5,000-metre race.</div></div>
+          <div class="grammar-ex"><div class="zh">这本书太难了，但是我终于<strong>看下来</strong>了。</div><div class="en">The book was very hard, but I <strong>managed to read through</strong> it in the end.</div></div>
+          <div class="grammar-ex"><div class="zh">感谢大家坚持<strong>下来</strong>了！</div><div class="en">Thank you all for <strong>seeing it through</strong>!</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grammar tab -->
+
+  <!-- ══ 练习 TAB ══ -->
+  <div data-tab="exercise" class="tab-panel">
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">1. 选择正确的词语：你今天想吃面条______饺子？</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">A</span>还是</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">B</span>或者</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>虽然</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>而且</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">2. 选择正确的词语：周末我们可以去爬山，______去公园划船，你们自己决定。</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>还是</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>或者</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>不过</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>所以</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">3. 选择正确的句子，体现"就"表示小数量的用法：</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>我就来了，你别着急。（just / right away）</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>北京常常下雪，今年就下了一次。（only once）</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>就你一个人来吗？（only you）</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>就是他！（it's exactly him）</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">4. 根据课文4日记，王一飞最喜欢北京哪个季节？</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>春天</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">B</span>夏天</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">C</span>秋天</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>冬天</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">填空题 · Fill in the Blank</div>
+      <div class="exercise-q">5. 用"起来"完成句子：天气太好了，大家都______了。（大家开始唱歌）</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        <input id="l12-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:300px;outline:none;">
+        <button class="check-btn" onclick="checkFill('l12-fill1','open','l12-reveal1')">检查</button>
+      </div>
+      <div id="l12-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：天气太好了，大家都<strong>唱起歌来</strong>了。（答案不唯一，用 V+起来 即可）</div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">填空题 · Fill in the Blank</div>
+      <div class="exercise-q">6. 用"下来"改写句子：这门课很难，但是他从头到尾都学完了。→ 这门课很难，但是他______。</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        <input id="l12-fill2" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:320px;outline:none;">
+        <button class="check-btn" onclick="checkFill('l12-fill2','open','l12-reveal2')">检查</button>
+      </div>
+      <div id="l12-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：这门课很难，但是他<strong>学下来了</strong>。（强调克服困难完成了整个过程）</div>
+    </div>
+
+    <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+      <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+        onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+        onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+        🔄 重新作答
+      </button>
+    </div>
+
+  </div><!-- end exercise tab -->
+
+  <!-- ══ 话题讨论 TAB ══ -->
+  <div data-tab="discussion" class="tab-panel">
+
+    <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+      <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+        <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+      </div>
+      <div style="padding:1rem 1.5rem;">
+        <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+          <div>（1）你最喜欢哪个季节？为什么？</div>
+          <div>（2）你的国家一年有几个季节？和北京的四季有什么不同？</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head"><div class="culture-tag">💬 贴近课文 · Text-Based Questions</div></div>
+      <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+      <div class="culture-zh">
+        <strong>（1）</strong> 白家月说"我每天书包里都放着雨伞，就今天没带"。你有没有类似的经历？遇到这种情况你会怎么做？<br><br>
+        <strong>（2）</strong> 王一飞在日记里说她最喜欢北京的秋天。你觉得她为什么最喜欢秋天？你同意她的看法吗？<br><br>
+        <strong>（3）</strong> 王一飞还不习惯北京的冬天，觉得太冷了。如果你的朋友第一次来你的城市过冬，你会给他们什么建议？
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head"><div class="culture-tag">🌏 延展话题 · Extended Discussion</div></div>
+      <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+      <div class="culture-zh">
+        <strong>（1）</strong> 天气会影响你的心情吗？什么样的天气让你最开心？请用"对我来说"表达你的观点。<br><br>
+        <strong>（2）</strong> 在你住的地方，哪个季节的天气变化最快？你会怎么应对这种变化？<br><br>
+        <strong>（3）</strong> 如果让你向外国朋友介绍北京的四季，你会怎么介绍？请用本课的生词造几个句子。
+      </div>
+    </div>
+
+  </div><!-- end discussion tab -->
+
+  <!-- ══ 更多 TAB ══ -->
+  <div data-tab="culture" class="tab-panel">
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">🏮 Culture · 文化</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">北京的四季 <span class="pinyin">Beijing's Four Seasons</span></div>
+      <div class="culture-zh">北京位于中国北方，属于典型的温带大陆性气候，四季分明。春天（三月至五月）天气变化快，早晚温差大，沙尘暴（shāchén bào）偶尔出现，但樱花（yīnghuā）和玉兰花（yùlán huā）盛开，非常漂亮。夏天（六月至八月）炎热多雨，七八月常有"雷阵雨（léizhènyǔ）"。秋天（九月至十一月）被很多人认为是北京最美的季节，天高云淡，香山（Xiāng Shān）的红叶特别有名。冬天（十二月至二月）寒冷干燥，下雪时景色很美，但雾霾（wùmái）也是困扰北京的一个问题。</div>
+      <div class="culture-en">Beijing, in northern China, has a typical temperate continental climate with four distinct seasons. Spring (March–May) brings rapid temperature swings and occasional sandstorms, but cherry blossoms and magnolias make it beautiful. Summer (June–August) is hot and rainy, with frequent thunderstorms in July and August. Autumn (September–November) is considered by many to be Beijing's most beautiful season — the sky is crisp and clear, and the red leaves at Fragrant Hills Park are especially famous. Winter (December–February) is cold and dry; snowfall creates gorgeous scenery, though smog (haze) remains a challenge for the city.</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">⚖️ Compare · 比一比</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">起来 vs 下来 vs 下去 <span class="pinyin">Three Direction Complements</span></div>
+      <div class="culture-zh">
+        三个趋向补语的引申用法经常让学习者感到困惑：<br><br>
+        <strong>① V + 起来</strong>：动作开始发生，强调"开始"。<br>
+        例：下起雨来了。（It started raining.）| 唱起歌来了。（started singing）<br><br>
+        <strong>② V + 下来</strong>：动作完成，强调经过努力、克服困难"坚持到底"。<br>
+        例：这本书我终于看下来了。（managed to finish the book）| 住下来了。（settled in）<br><br>
+        <strong>③ V + 下去</strong>：动作继续进行，强调"持续下去"（不一定结束）。<br>
+        例：继续说下去。（keep talking）| 这样下去不行。（can't keep going like this）<br><br>
+        <strong>口诀：</strong>起来=开始，下来=完成，下去=继续。
+      </div>
+      <div class="culture-en">
+        Three extended directional complements that often confuse learners:<br><br>
+        <strong>① V + 起来</strong>: An action is beginning to happen — emphasis on <em>starting</em>.<br>
+        E.g., It started raining. | They started singing.<br><br>
+        <strong>② V + 下来</strong>: An action has been completed — emphasis on persisting through difficulty to <em>finish</em>.<br>
+        E.g., I finally managed to read through the whole book. | She settled in.<br><br>
+        <strong>③ V + 下去</strong>: An action continues — emphasis on keeping going (not necessarily finishing).<br>
+        E.g., Keep talking. | We can't go on like this.<br><br>
+        <strong>Rule of thumb:</strong> 起来 = start, 下来 = complete, 下去 = continue.
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">✏️ Grammar · 语言点</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">中文天气表达 <span class="pinyin">Weather Expressions in Chinese</span></div>
+      <div class="culture-zh">
+        描述天气时，中文有一套固定的表达方式：<br><br>
+        <strong>下雨/下雪</strong> (xià yǔ/xuě)：rain / snow falls。注意：中文用"下"，不用"落"。<br>
+        <strong>刮风</strong> (guāfēng)：the wind blows。"刮"是动词，专门用于风。<br>
+        <strong>晴天/大晴天</strong> (qíngtiān)：sunny / bright sunshine day<br>
+        <strong>阴天</strong> (yīntiān)：overcast / cloudy day<br>
+        <strong>打雷</strong> (dǎléi) / <strong>闪电</strong> (shǎndiàn)：thunder / lightning<br><br>
+        <strong>语法提示：</strong>表示天气现象时，主语常省略：<br>
+        ✓ 今天下雨了。（It's raining today.）<br>
+        ✓ 外面刮风呢。（It's windy outside.）
+      </div>
+      <div class="culture-en">
+        Chinese weather expressions follow fixed patterns:<br><br>
+        <strong>下雨/下雪</strong>: rain/snow "falls" — 下 (down) is the verb used, not 落.<br>
+        <strong>刮风</strong>: the wind blows — 刮 is the verb specifically used for wind.<br>
+        <strong>晴天/大晴天</strong>: sunny day / bright sunshine<br>
+        <strong>阴天</strong>: overcast/cloudy day<br>
+        <strong>打雷 / 闪电</strong>: thunder / lightning<br><br>
+        <strong>Grammar tip:</strong> For weather phenomena, the subject is often omitted:<br>
+        ✓ 今天下雨了。(It's raining today.)<br>
+        ✓ 外面刮风呢。(It's windy outside.)
+      </div>
+    </div>
+
+  </div><!-- end culture tab -->
+
+  </div><!-- end content-area L12 -->
+  </div><!-- end lesson-content data-lesson="12" -->
 
   <!-- ═══════════════ LESSON 13 (stub) ═══════════════ -->
   <div class="lesson-header" id="lesson-header-13" data-lesson="13" data-watermark="十三" style="display:none"></div>
