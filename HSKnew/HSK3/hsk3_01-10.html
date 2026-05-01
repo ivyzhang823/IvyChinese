@@ -7459,9 +7459,750 @@
 
   <!-- ═══════════════ LESSON 9 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-9" data-lesson="9" data-watermark="九" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第九课 · Lesson 09</span>
+    </div>
+    <h1>打不好没关系</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Dǎ bù hǎo méi guānxi</p>
+    <p class="lesson-subtitle">It doesn't matter if you don't play well</p>
   </div>
 
   <div class="lesson-content" data-lesson="9" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l9-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在图书馆门口</span>
+              <button class="dh-play-btn" id="l9-dhBtn1" onclick="dhPlay('l9-audioEl1','l9-dhBtn1')">
+                <svg id="l9-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l9-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l9-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At the library entrance — Li Wen runs toward Bai Jiayue</span>
+          </div>
+          <audio id="l9-audioEl1" src="audio/09-1.mp3" onended="dhEnded('l9-audioEl1','l9-dhBtn1','l9-dhIcon1')" ontimeupdate="dhUpdate('l9-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">家月，对不起，我昨天忘了还你校园卡了。</div>
+            <div class="line-pinyin">Jiāyuè, duìbuqǐ, wǒ zuótiān wàng le huán nǐ xiàoyuán kǎ le.</div>
+            <div class="line-en">Jiayue, sorry — I forgot to return your campus card yesterday.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">没关系。你怎么这么快就过来了？</div>
+            <div class="line-pinyin">Méi guānxi. Nǐ zěnme zhème kuài jiù guòlái le?</div>
+            <div class="line-en">No worries. How did you get here so quickly?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">我正在球场打球呢，接了你的电话就跑过来了。</div>
+            <div class="line-pinyin">Wǒ zhèng zài qiúchǎng dǎ qiú ne, jiē le nǐ de diànhuà jiù pǎo guòlái le.</div>
+            <div class="line-en">I was playing at the court — as soon as I got your call, I ran straight over.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">听说为了准备运动会，你们几个男生每天都练球。</div>
+            <div class="line-pinyin">Tīng shuō wèile zhǔnbèi yùndònghuì, nǐmen jǐ gè nánshēng měitiān dōu liàn qiú.</div>
+            <div class="line-en">I heard that to get ready for the sports meet, you boys have been practising every day.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">是啊！你打算参加运动会吗？</div>
+            <div class="line-pinyin">Shì a! Nǐ dǎsuàn cānjiā yùndònghuì ma?</div>
+            <div class="line-en">Yes! Are you planning to take part in the sports meet?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我想参加网球比赛，最近一直在练习。</div>
+            <div class="line-pinyin">Wǒ xiǎng cānjiā wǎngqiú bǐsài, zuìjìn yīzhí zài liànxí.</div>
+            <div class="line-en">I want to enter the tennis competition — I've been practising non-stop lately.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">好，到时候我去看你的比赛。</div>
+            <div class="line-pinyin">Hǎo, dào shíhou wǒ qù kàn nǐ de bǐsài.</div>
+            <div class="line-en">Great, I'll come watch your match when the time comes.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l9-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在校园里</span>
+              <button class="dh-play-btn" id="l9-dhBtn2" onclick="dhPlay('l9-audioEl2','l9-dhBtn2')">
+                <svg id="l9-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l9-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l9-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">On campus — Li Wen invites Bai Jiayue to play badminton</span>
+          </div>
+          <audio id="l9-audioEl2" src="audio/09-3.mp3" onended="dhEnded('l9-audioEl2','l9-dhBtn2','l9-dhIcon2')" ontimeupdate="dhUpdate('l9-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">家月，你跟我们一起打羽毛球吧？</div>
+            <div class="line-pinyin">Jiāyuè, nǐ gēn wǒmen yīqǐ dǎ yǔmáoqiú ba?</div>
+            <div class="line-en">Jiayue, why don't you join us for badminton?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我好多年没打羽毛球了，几乎忘了怎么打了。</div>
+            <div class="line-pinyin">Wǒ hǎoduō nián méi dǎ yǔmáoqiú le, jīhū wàng le zěnme dǎ le.</div>
+            <div class="line-en">I haven't played badminton in many years — I've almost forgotten how.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">不是比赛，打不好没关系。</div>
+            <div class="line-pinyin">Bù shì bǐsài, dǎ bù hǎo méi guānxi.</div>
+            <div class="line-en">It's not a competition — it doesn't matter if you don't play well.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">这么多同学一起打，如果总是接不住球，就太不好意思了。</div>
+            <div class="line-pinyin">Zhème duō tóngxué yīqǐ dǎ, rúguǒ zǒngshì jiē bù zhù qiú, jiù tài bù hǎoyìsi le.</div>
+            <div class="line-en">With so many classmates playing together, if I keep failing to return the shuttlecock, I'd be too embarrassed.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">你想得太多了！大家打球只是为了锻炼身体。</div>
+            <div class="line-pinyin">Nǐ xiǎng de tài duō le! Dàjiā dǎ qiú zhǐshì wèile duànliàn shēntǐ.</div>
+            <div class="line-en">You're overthinking it! We're just playing to keep fit.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">我先自己练练吧，下周再跟你们一起打。</div>
+            <div class="line-pinyin">Wǒ xiān zìjǐ liàn liàn ba, xià zhōu zài gēn nǐmen yīqǐ dǎ.</div>
+            <div class="line-en">Let me practise on my own first — I'll join you next week.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">我在教天中打羽毛球，你可以过来跟我们一起练。</div>
+            <div class="line-pinyin">Wǒ zài jiāo Tiānzhōng dǎ yǔmáoqiú, nǐ kěyǐ guòlái gēn wǒmen yīqǐ liàn.</div>
+            <div class="line-en">I'm teaching Tianzhong badminton — you're welcome to come practise with us.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l9-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在李文家</span>
+              <button class="dh-play-btn" id="l9-dhBtn3" onclick="dhPlay('l9-audioEl3','l9-dhBtn3')">
+                <svg id="l9-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l9-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l9-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At Li Wen's home — watching a football match on TV</span>
+          </div>
+          <audio id="l9-audioEl3" src="audio/09-5.mp3" onended="dhEnded('l9-audioEl3','l9-dhBtn3','l9-dhIcon3')" ontimeupdate="dhUpdate('l9-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">足球比赛已经开始了，快过来看吧！</div>
+            <div class="line-pinyin">Zúqiú bǐsài yǐjīng kāishǐ le, kuài guòlái kàn ba!</div>
+            <div class="line-en">The football match has already started — come watch!</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">你们先看，冰箱里有啤酒和饮料，我去拿一下。</div>
+            <div class="line-pinyin">Nǐmen xiān kàn, bīngxiāng lǐ yǒu píjiǔ hé yǐnliào, wǒ qù ná yīxià.</div>
+            <div class="line-en">You watch first — there are beers and drinks in the fridge, I'll go grab them.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">今天怎么回事？总是踢不进去！</div>
+            <div class="line-pinyin">Jīntiān zěnme huí shì? Zǒngshì tī bù jìnqù!</div>
+            <div class="line-en">What's going on today? They keep failing to score!</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">几个老球员生病了，新球员第一次参加这么重要的比赛，太紧张了。</div>
+            <div class="line-pinyin">Jǐ gè lǎo qiúyuán shēngbìng le, xīn qiúyuán dì yī cì cānjiā zhème zhòngyào de bǐsài, tài jǐnzhāng le.</div>
+            <div class="line-en">Several veteran players are sick, and the new players are incredibly nervous competing in such an important match for the first time.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">是啊，主要的球员没参加比赛，所以大家也都受到影响了。</div>
+            <div class="line-pinyin">Shì a, zhǔyào de qiúyuán méi cānjiā bǐsài, suǒyǐ dàjiā yě dōu shòudào yǐngxiǎng le.</div>
+            <div class="line-en">Right — the key players aren't in the match, so the whole team has been affected.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">越看越着急。我不看了，你们告诉我得分吧。</div>
+            <div class="line-pinyin">Yuè kàn yuè zhāojí. Wǒ bù kàn le, nǐmen gàosu wǒ défēn ba.</div>
+            <div class="line-en">The more I watch, the more anxious I get. I'm done — just tell me the score.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 -->
+      <div class="dialogue-block" id="l9-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 在家里</span>
+              <button class="dh-play-btn" id="l9-dhBtn4" onclick="dhPlay('l9-audioEl4','l9-dhBtn4')">
+                <svg id="l9-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l9-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l9-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Li Wen prepares a speech about the Olympics</span>
+          </div>
+          <audio id="l9-audioEl4" src="audio/09-7.mp3" onended="dhEnded('l9-audioEl4','l9-dhBtn4','l9-dhIcon4')" ontimeupdate="dhUpdate('l9-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker" style="visibility:hidden;">—</div>
+          <div class="line-content">
+            <div class="line-zh">我喜欢看体育比赛，最爱看的就是奥运会。奥运会是世界上影响最大的体育比赛。从1896年到2024年，每次奥运会都有非常多的运动员参加。第一位参加奥运会的中国运动员是刘长春，他1932年参加了100米和200米短跑比赛。虽然他没有得到好成绩，但是他让世界认识了中国。</div>
+            <div class="line-pinyin">Wǒ xǐhuan kàn tǐyù bǐsài, zuì ài kàn de jiùshì Àoyùnhuì. Àoyùnhuì shì shìjiè shàng yǐngxiǎng zuì dà de tǐyù bǐsài. Cóng 1896 nián dào 2024 nián, měi cì Àoyùnhuì dōu yǒu fēicháng duō de yùndòngyuán cānjiā. Dì yī wèi cānjiā Àoyùnhuì de Zhōngguó yùndòngyuán shì Liú Chángchūn, tā 1932 nián cānjiā le 100 mǐ hé 200 mǐ duǎnpǎo bǐsài. Suīrán tā méiyǒu dédào hǎo chéngjì, dànshì tā ràng shìjiè rènshi le Zhōngguó.</div>
+            <div class="line-en">I love watching sports competitions, and the one I love most is the Olympics. The Olympics are the most influential sports event in the world. From 1896 to 2024, each Games has attracted enormous numbers of athletes. The first Chinese athlete to compete in the Olympics was Liu Changchun — he took part in the 100 m and 200 m sprints in 1932. Although he didn't achieve a good result, he introduced China to the world.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end text tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l9-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">校园</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiàoyuán</div><div class="fcs-en">campus</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">卡</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kǎ</div><div class="fcs-en">card</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">球场</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qiúchǎng</div><div class="fcs-en">court; sports ground</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">为了</div><div class="fcs-pos">prep.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wèile</div><div class="fcs-en">for; in order to</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">运动会</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yùndònghuì</div><div class="fcs-en">sports meet</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">男生</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">nánshēng</div><div class="fcs-en">boy student</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">练</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">liàn</div><div class="fcs-en">to practise</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">参加</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">cānjiā</div><div class="fcs-en">join; take part in</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">网球</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wǎngqiú</div><div class="fcs-en">tennis</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">比赛</div><div class="fcs-pos">n./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bǐsài</div><div class="fcs-en">match; to compete</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">练习</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">liànxí</div><div class="fcs-en">to practise; exercise</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">好多</div><div class="fcs-pos">num.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hǎoduō</div><div class="fcs-en">a lot of; many</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">几乎</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jīhū</div><div class="fcs-en">almost; nearly</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">只是</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhǐshì</div><div class="fcs-en">just; only</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">啤酒</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">píjiǔ</div><div class="fcs-en">beer</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">回</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huí</div><div class="fcs-en">(measure word for events)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">紧张</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jǐnzhāng</div><div class="fcs-en">nervous; tense</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">主要</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhǔyào</div><div class="fcs-en">main; major</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">受到</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shòudào</div><div class="fcs-en">be subjected to; receive</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">影响</div><div class="fcs-pos">n./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǐngxiǎng</div><div class="fcs-en">effect; affect</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">得分</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">défēn</div><div class="fcs-en">to score; score (points)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">体育</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tǐyù</div><div class="fcs-en">sports; physical education</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">世界</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shìjiè</div><div class="fcs-en">world</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">运动员</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yùndòngyuán</div><div class="fcs-en">athlete; sportsperson</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">得到</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dédào</div><div class="fcs-en">to get; to obtain</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">成绩</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chéngjì</div><div class="fcs-en">result; achievement</div></div></div></div>
+          </div>
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="fc-counter"><span id="l9-fcCur">1</span> / <span id="l9-fcTotal">26</span></div>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">校园</div><div class="vocab-pinyin">xiàoyuán</div><div class="vocab-pos">n.</div><div class="vocab-en">campus</div><div class="vocab-example">在<em>校园</em>里聊天。<br><span style="color:#bbb">Chatting on campus.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">卡</div><div class="vocab-pinyin">kǎ</div><div class="vocab-pos">n.</div><div class="vocab-en">card</div><div class="vocab-example">还你校园<em>卡</em>。<br><span style="color:#bbb">Return your campus card.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">球场</div><div class="vocab-pinyin">qiúchǎng</div><div class="vocab-pos">n.</div><div class="vocab-en">court; sports ground</div><div class="vocab-example">在<em>球场</em>打球。<br><span style="color:#bbb">Playing at the court.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">为了</div><div class="vocab-pinyin">wèile</div><div class="vocab-pos">prep.</div><div class="vocab-en">for; in order to</div><div class="vocab-example"><em>为了</em>准备运动会。<br><span style="color:#bbb">In order to prepare for the sports meet.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">运动会</div><div class="vocab-pinyin">yùndònghuì</div><div class="vocab-pos">n.</div><div class="vocab-en">sports meet</div><div class="vocab-example">参加<em>运动会</em>。<br><span style="color:#bbb">Take part in the sports meet.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">男生</div><div class="vocab-pinyin">nánshēng</div><div class="vocab-pos">n.</div><div class="vocab-en">boy student</div><div class="vocab-example">几个<em>男生</em>每天练球。<br><span style="color:#bbb">A few boys practise every day.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">练</div><div class="vocab-pinyin">liàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to practise</div><div class="vocab-example">每天都<em>练</em>球。<br><span style="color:#bbb">Practise every day.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">参加</div><div class="vocab-pinyin">cānjiā</div><div class="vocab-pos">v.</div><div class="vocab-en">join; take part in</div><div class="vocab-example"><em>参加</em>比赛。<br><span style="color:#bbb">Take part in a match.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">网球</div><div class="vocab-pinyin">wǎngqiú</div><div class="vocab-pos">n.</div><div class="vocab-en">tennis</div><div class="vocab-example">打<em>网球</em>比赛。<br><span style="color:#bbb">Play a tennis match.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">比赛</div><div class="vocab-pinyin">bǐsài</div><div class="vocab-pos">n./v.</div><div class="vocab-en">match; to compete</div><div class="vocab-example">看足球<em>比赛</em>。<br><span style="color:#bbb">Watch a football match.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">练习</div><div class="vocab-pinyin">liànxí</div><div class="vocab-pos">v./n.</div><div class="vocab-en">to practise; exercise</div><div class="vocab-example">一直在<em>练习</em>。<br><span style="color:#bbb">Been practising non-stop.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">好多</div><div class="vocab-pinyin">hǎoduō</div><div class="vocab-pos">num.</div><div class="vocab-en">a lot of; many</div><div class="vocab-example"><em>好多</em>年没打了。<br><span style="color:#bbb">Haven't played in many years.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">几乎</div><div class="vocab-pinyin">jīhū</div><div class="vocab-pos">adv.</div><div class="vocab-en">almost; nearly</div><div class="vocab-example"><em>几乎</em>忘了怎么打。<br><span style="color:#bbb">Almost forgotten how to play.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">只是</div><div class="vocab-pinyin">zhǐshì</div><div class="vocab-pos">adv.</div><div class="vocab-en">just; only</div><div class="vocab-example"><em>只是</em>为了锻炼身体。<br><span style="color:#bbb">Just to exercise.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">啤酒</div><div class="vocab-pinyin">píjiǔ</div><div class="vocab-pos">n.</div><div class="vocab-en">beer</div><div class="vocab-example">冰箱里有<em>啤酒</em>。<br><span style="color:#bbb">There's beer in the fridge.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">回</div><div class="vocab-pinyin">huí</div><div class="vocab-pos">m.</div><div class="vocab-en">(measure for events)</div><div class="vocab-example">怎么<em>回</em>事？<br><span style="color:#bbb">What's going on?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">紧张</div><div class="vocab-pinyin">jǐnzhāng</div><div class="vocab-pos">adj.</div><div class="vocab-en">nervous; tense</div><div class="vocab-example">太<em>紧张</em>了。<br><span style="color:#bbb">Too nervous.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">主要</div><div class="vocab-pinyin">zhǔyào</div><div class="vocab-pos">adj.</div><div class="vocab-en">main; major</div><div class="vocab-example"><em>主要</em>的球员。<br><span style="color:#bbb">The key players.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">受到</div><div class="vocab-pinyin">shòudào</div><div class="vocab-pos">v.</div><div class="vocab-en">be subjected to; receive</div><div class="vocab-example"><em>受到</em>影响了。<br><span style="color:#bbb">Has been affected.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">影响</div><div class="vocab-pinyin">yǐngxiǎng</div><div class="vocab-pos">n./v.</div><div class="vocab-en">effect; affect</div><div class="vocab-example">受到天气<em>影响</em>。<br><span style="color:#bbb">Affected by the weather.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">得分</div><div class="vocab-pinyin">défēn</div><div class="vocab-pos">v./n.</div><div class="vocab-en">to score; score (points)</div><div class="vocab-example">告诉我<em>得分</em>。<br><span style="color:#bbb">Tell me the score.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">体育</div><div class="vocab-pinyin">tǐyù</div><div class="vocab-pos">n.</div><div class="vocab-en">sports; physical education</div><div class="vocab-example">看<em>体育</em>比赛。<br><span style="color:#bbb">Watch sports events.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">世界</div><div class="vocab-pinyin">shìjiè</div><div class="vocab-pos">n.</div><div class="vocab-en">world</div><div class="vocab-example"><em>世界</em>上影响最大的比赛。<br><span style="color:#bbb">The most influential event in the world.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">运动员</div><div class="vocab-pinyin">yùndòngyuán</div><div class="vocab-pos">n.</div><div class="vocab-en">athlete; sportsperson</div><div class="vocab-example">中国<em>运动员</em>。<br><span style="color:#bbb">Chinese athlete.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">得到</div><div class="vocab-pinyin">dédào</div><div class="vocab-pos">v.</div><div class="vocab-en">to get; to obtain</div><div class="vocab-example">没有<em>得到</em>好成绩。<br><span style="color:#bbb">Didn't achieve a good result.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">成绩</div><div class="vocab-pinyin">chéngjì</div><div class="vocab-pos">n.</div><div class="vocab-en">result; achievement</div><div class="vocab-example">得到好<em>成绩</em>。<br><span style="color:#bbb">Achieve a good result.</span></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:2rem">专有名词 · Proper Nouns</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">奥运会</div><div class="vocab-pinyin">Àoyùnhuì</div><div class="vocab-pos">n.</div><div class="vocab-en">Olympic Games</div></div>
+        <div class="vocab-card"><div class="vocab-zh">刘长春</div><div class="vocab-pinyin">Liú Chángchūn</div><div class="vocab-pos">name</div><div class="vocab-en">Liu Changchun (first Chinese Olympian, 1932)</div></div>
+        <div class="vocab-card"><div class="vocab-zh">白家月</div><div class="vocab-pinyin">Bái Jiāyuè</div><div class="vocab-pos">name</div><div class="vocab-en">Bai Jiayue (character in the story)</div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">为了</div>
+          <div class="wdh-info"><div class="wdh-pinyin">wèile</div><div class="wdh-en">for; in order to</div></div>
+          <div class="wdh-pos">prep.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"为了" introduces a purpose clause. The structure is "为了 + purpose, + action". Unlike 为 (for / on behalf of), "为了" always marks a goal or aim. Don't confuse with 因为 (because) — 为了 looks forward toward a goal; 因为 looks backward at a cause.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">为了准备</span><span class="collocation-tag">为了练习</span><span class="collocation-tag">为了锻炼身体</span><span class="collocation-tag">只是为了</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">为了准备运动会，他每天练球。</div><div class="en">In order to prepare for the sports meet, he practises every day.</div></div>
+            <div class="wd-ex"><div class="zh">大家打球只是为了锻炼身体。</div><div class="en">Everyone is playing just to keep fit.</div></div>
+            <div class="wd-ex"><div class="zh">为了早点儿到家，我打算坐飞机回去。</div><div class="en">To get home sooner, I'm planning to fly back.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">参加</div>
+          <div class="wdh-info"><div class="wdh-pinyin">cānjiā</div><div class="wdh-en">to join; take part in</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"参加" takes a noun object: a competition, meeting, or event. It cannot be followed directly by a person (use 加入 for joining a group or organisation). Common collocations: 参加比赛, 参加运动会, 参加活动 (activity), 参加会议 (meeting).</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">参加比赛</span><span class="collocation-tag">参加运动会</span><span class="collocation-tag">参加活动</span><span class="collocation-tag">参加会议</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你打算参加运动会吗？</div><div class="en">Are you planning to take part in the sports meet?</div></div>
+            <div class="wd-ex"><div class="zh">他1932年参加了100米短跑比赛。</div><div class="en">He competed in the 100 m sprint in 1932.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">练 vs 练习</div>
+          <div class="wdh-info"><div class="wdh-pinyin">liàn / liànxí</div><div class="wdh-en">to practise</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Both mean "to practise". 练 is a single-character verb that directly takes an object (练球, 练功夫). 练习 is a compound that acts as both verb and noun: 练习汉语 (practise Chinese) or 做练习 (do exercises). When used without a specific object, 练习 sounds more natural.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我最近一直在练习。</div><div class="en">I've been practising non-stop lately.</div></div>
+            <div class="wd-ex"><div class="zh">我先自己练练吧。</div><div class="en">Let me practise a bit on my own first.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">紧张</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jǐnzhāng</div><div class="wdh-en">nervous; tense</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"紧张" covers two English ideas: (1) emotionally nervous or anxious before an event; (2) tight / in short supply (时间紧张 — time is tight). In this lesson it means nervous. The opposite is 放松 (relaxed). Common intensifiers: 非常紧张, 太紧张了.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">太紧张了</span><span class="collocation-tag">非常紧张</span><span class="collocation-tag">时间紧张</span><span class="collocation-tag">放松/紧张</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">新球员第一次参加这么重要的比赛，太紧张了。</div><div class="en">The new players are so nervous competing in such an important match for the first time.</div></div>
+            <div class="wd-ex"><div class="zh">我考试前总是很紧张。</div><div class="en">I always get very nervous before exams.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">影响</div>
+          <div class="wdh-info"><div class="wdh-pinyin">yǐngxiǎng</div><div class="wdh-en">effect; affect</div></div>
+          <div class="wdh-pos">n. / v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">As a noun: 影响 means "influence / effect". As a verb: 影响 + object = "to affect / influence someone or something". Fixed pattern: 受到影响 (be affected, come under the influence of). Also used in: 有影响 (have an impact), 影响很大 (great influence).</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">受到影响</span><span class="collocation-tag">有影响</span><span class="collocation-tag">影响健康</span><span class="collocation-tag">影响很大</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">大家也都受到影响了。</div><div class="en">Everyone has been affected too.</div></div>
+            <div class="wd-ex"><div class="zh">他让世界认识了中国，影响很大。</div><div class="en">He introduced China to the world — his impact was enormous.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">成绩</div>
+          <div class="wdh-info"><div class="wdh-pinyin">chéngjì</div><div class="wdh-en">result; achievement; score</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"成绩" is used for academic grades (考试成绩 — exam score) and sports results (比赛成绩 — competition result). Don't confuse with 得分 (défēn) — 得分 is the live score during a game, while 成绩 is the final achieved result or accomplishment.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">好成绩</span><span class="collocation-tag">考试成绩</span><span class="collocation-tag">得到成绩</span><span class="collocation-tag">成绩不好</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">虽然他没有得到好成绩，但是他让世界认识了中国。</div><div class="en">Although he didn't achieve a good result, he introduced China to the world.</div></div>
+            <div class="wd-ex"><div class="zh">为了得到好成绩，他每天练十多个小时。</div><div class="en">To achieve good results, he practises for over ten hours a day.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">目的复句"为了"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">可能补语</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">"越A越B"</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>目的复句"为了……，……" · Purpose Complex Sentence</div>
+          <p class="grammar-desc">目的复句"为了……，……"中，"为了"后面的小句表示目的，另一个小句表示为了达到目的采取的行动。<br><span style="color:#888;font-size:0.85em;">The clause after "为了" states the <em>goal</em>; the other clause states the <em>action taken</em> to reach that goal. Think: "In order to … , (someone) …"</span></p>
+          <div class="grammar-pattern"><strong>为了</strong> + Purpose Clause，+ Action Clause</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh"><strong>为了</strong>准备运动会，你们几个男生每天都练球。</div><div class="en"><strong>In order to</strong> prepare for the sports meet, you boys practise every day.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>为了</strong>考上大学，她每天努力学习。</div><div class="en"><strong>In order to</strong> get into university, she studies hard every day.</div></div>
+            <div class="grammar-ex"><div class="zh">大家打球只是<strong>为了</strong>锻炼身体。</div><div class="en">Everyone is playing just <strong>to</strong> stay fit.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>为了</strong>早点儿到家，我打算坐飞机回去。</div><div class="en"><strong>To</strong> get home earlier, I'm planning to fly back.</div></div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:#888;background:#fff8f5;padding:0.7rem 1rem;border-radius:8px;border-left:3px solid var(--gold);">⚠️ 区别：<strong>因为…所以…</strong>（cause → result）vs <strong>为了…，…</strong>（goal → action）: 因为 looks backward at causes; 为了 looks forward at purposes.</p>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>可能补语 · Complement of Potentiality</div>
+          <p class="grammar-desc">在动词和结果补语或趋向补语之间插入"得"或"不"，构成可能补语，表示条件是否允许实现某种结果。肯定式：动词＋得＋补语；否定式：动词＋不＋补语。<br><span style="color:#888;font-size:0.85em;">Insert "得" or "不" between a verb and its result/direction complement to form a potentiality complement — it tells you whether conditions allow the result to be achieved.</span></p>
+          <div class="grammar-pattern">Affirmative: V + <strong>得</strong> + Complement　｜　Negative: V + <strong>不</strong> + Complement<br>Question: V＋得＋C＋V＋不＋C？　or　V＋得＋C＋吗？</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">打<strong>不</strong>好没关系。（打＋不＋好）</div><div class="en">It doesn't matter if you <strong>can't play well</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">如果总是接<strong>不</strong>住球，就太不好意思了。（接＋不＋住）</div><div class="en">If you keep <strong>failing to catch</strong> the shuttlecock, it'll be embarrassing.</div></div>
+            <div class="grammar-ex"><div class="zh">总是踢<strong>不</strong>进去！（踢＋不＋进去）</div><div class="en">They keep <strong>failing to kick it in</strong>!</div></div>
+            <div class="grammar-ex"><div class="zh">这本书你看<strong>得</strong>懂看<strong>不</strong>懂？</div><div class="en">Can you understand this book or not?</div></div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:#888;background:#fff8f5;padding:0.7rem 1rem;border-radius:8px;border-left:3px solid var(--gold);">💡 比较：<strong>结果补语</strong>（V＋好）表示已实现的结果；<strong>可能补语</strong>（V＋得/不＋好）表示能否实现该结果。</p>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>固定格式"越A越B" · "The more … the more …"</div>
+          <p class="grammar-desc">固定格式"越A越B"的句子中，A和B可以都是动词性短语或形容词性短语，也可以一个是动词性短语，另一个是形容词性短语，表示B随着A的变化而变化。<br><span style="color:#888;font-size:0.85em;">Both A and B can be verbal or adjectival phrases, or one each. B changes in proportion to A — equivalent to "the more A, the more B".</span></p>
+          <div class="grammar-pattern"><strong>越</strong> A <strong>越</strong> B　（B changes as A changes）</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh"><strong>越</strong>看<strong>越</strong>着急。</div><div class="en"><strong>The more</strong> I watch, <strong>the more</strong> anxious I get.</div></div>
+            <div class="grammar-ex"><div class="zh">妈妈<strong>越</strong>说，他<strong>越</strong>不高兴。</div><div class="en"><strong>The more</strong> mum talks, <strong>the more</strong> unhappy he gets.</div></div>
+            <div class="grammar-ex"><div class="zh">我想认识中国朋友，<strong>越</strong>多<strong>越</strong>好。</div><div class="en">I want to make Chinese friends — <strong>the more the better</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">天气<strong>越来越</strong>热了。</div><div class="en">The weather is getting <strong>hotter and hotter</strong>.</div></div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:#888;background:#fff8f5;padding:0.7rem 1rem;border-radius:8px;border-left:3px solid var(--gold);">✏️ 固定搭配：<strong>越来越 + Adj/V</strong> = "more and more …" — expresses a continuing trend. e.g. 越来越好 (better and better), 越来越多 (more and more).</p>
+        </div>
+      </div>
+
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 白家月为什么不想马上去打羽毛球？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>她不喜欢羽毛球</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>她怕接不住球，太不好意思</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>她要准备运动会</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>她没有时间</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 足球队今天踢不好的主要原因是什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>天气不好</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>球场太小</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>几个主要球员生病了，没参加比赛</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>球员们不喜欢这个比赛</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 刘长春是谁？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>第一位参加奥运会的中国教练</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>第一位参加奥运会的中国运动员</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>1896年奥运会的冠军</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>中国体育历史最好的运动员</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 根据课文，下面哪句话是正确的？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>白家月想参加足球比赛</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>刘长春得到了很好的成绩</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>奥运会从1896年到2024年每次都有很多运动员参加</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>李文不想去看白家月的网球比赛</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用可能补语完成句子：如果总是___球，就太不好意思了。（接…住）</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l9-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:220px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l9-fill1','接不住','l9-reveal1')">检查</button>
+        </div>
+        <div id="l9-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：如果总是<strong>接不住</strong>球，就太不好意思了。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"越A越B"造句：今天的足球比赛，我___看___着急。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l9-fill2" type="text" placeholder="越…越…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:260px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l9-fill2','越看越着急','l9-reveal2')">检查</button>
+        </div>
+        <div id="l9-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：今天的足球比赛，我<strong>越看越着急</strong>。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">7. 翻译：In order to prepare for the tennis match, she has been practising every day.</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l9-fill3" type="text" placeholder="写出中文答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:340px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l9-fill3','open','l9-reveal3')">检查</button>
+        </div>
+        <div id="l9-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>为了准备网球比赛，她每天都在练习。</strong>（答案不唯一）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你喜欢什么运动？你参加过什么比赛？</div>
+            <div>（2）你看过体育比赛吗？介绍一下你看过的比赛。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 多人活动 · Group Discussion</div>
+        </div>
+        <div class="culture-title">介绍你熟悉的运动 <span class="pinyin">Talk about a sport you know</span></div>
+        <div class="culture-zh">
+          四人一组，介绍自己熟悉的运动，使用本课所学的词语和语言点。<br><br>
+          <strong>（1）</strong> 你最喜欢的运动是什么？为什么？<br><br>
+          <strong>（2）</strong> 你是受到谁的影响开始喜欢这个运动的？<br><br>
+          <strong>（3）</strong> 你多久练习一次？每次练习多长时间？<br><br>
+          <strong>（4）</strong> 这个运动对你有什么影响？<br><br>
+          <strong>（5）</strong> 你参加过什么体育比赛？成绩怎么样？<br><br>
+          <strong>（6）</strong> 你成绩最好的一次比赛是什么？
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 白家月不想去打羽毛球，因为她怕"不好意思"。你会有这样的感觉吗？在什么情况下？<br><br>
+          <strong>（2）</strong> 李文说"打不好没关系，大家只是为了锻炼身体"——你同意吗？成绩重要，还是参与重要？<br><br>
+          <strong>（3）</strong> 刘长春1932年参加奥运会，虽然没有得到好成绩，但是影响很大。你觉得"参与"比"成绩"更重要吗？
+        </div>
+      </div>
+
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">体育与中国 <span class="pinyin">Sports and China</span></div>
+        <div class="culture-zh">体育在中国人的日常生活中非常重要。从早上在公园打太极拳的老人，到放学后在球场踢足球的学生，运动已经是中国人生活的一部分。中国人特别喜欢的运动包括：乒乓球（pīngpāngqiú）——被称为中国的"国球"；羽毛球（yǔmáoqiú）；篮球（lánqiú）；和足球（zúqiú）。奥运会是对中国非常重要的活动。2008年北京奥运会让世界认识了一个更开放的中国。中国的运动员们每次都努力为国家争取好成绩。</div>
+        <div class="culture-en">Sport is a big part of daily life in China. From elderly people practising tai chi in the park in the morning, to students kicking a football after school, exercise is woven into everyday Chinese life. Particularly popular sports include table tennis (called China's "national ball"), badminton, basketball, and football. The Olympics are hugely important to China. The 2008 Beijing Games introduced the world to a more open China. Chinese athletes always strive to achieve the best results for their country.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">得分 vs 成绩 <span class="pinyin">Live score vs. achieved result</span></div>
+        <div class="culture-zh">
+          两个词都与比赛结果有关，但用法不同：<br><br>
+          ① <strong>得分</strong>（défēn）：动词/名词，表示<em>在比赛中得到的分数</em>，常用于进行中的比赛。<br>
+          例：你们告诉我<em>得分</em>吧。（Tell me the score.）/ 今天的比赛他<em>得了</em>20分。<br><br>
+          ② <strong>成绩</strong>（chéngjì）：名词，表示<em>最终取得的结果或成就</em>，可以用于比赛、考试、学业等。<br>
+          例：虽然他没有得到好<em>成绩</em>，但是他让世界认识了中国。<br><br>
+          简单来说：得分 = the score during / after a game；成绩 = the achievement / result overall.
+        </div>
+        <div class="culture-en">
+          Both relate to competition results, but they're used differently:<br><br>
+          ① <strong>得分</strong> (défēn): verb/noun — the points scored during a match or game, often used in live situations.<br>
+          E.g., 你们告诉我得分吧 (Tell me the score). / 今天他得了20分 (He scored 20 points today).<br><br>
+          ② <strong>成绩</strong> (chéngjì): noun only — the overall result or achievement, used in sports, exams, academics, etc.<br>
+          E.g., 虽然他没有得到好成绩，但是他让世界认识了中国 (Although he didn't achieve a good result, he introduced China to the world).<br><br>
+          Quick rule: 得分 = live/final score; 成绩 = overall achievement.
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">可能补语 vs 程度补语 <span class="pinyin">Potentiality vs Degree Complement</span></div>
+        <div class="culture-zh">
+          两种补语结构相似，但含义完全不同：<br><br>
+          ① <strong>程度补语</strong>（Degree Complement）：V + 得 + Adj → 描述动作做得<em>怎么样</em>（已实现）。<br>
+          例：他打<em>得很好</em>。（He plays well — describes the quality of his playing.）<br><br>
+          ② <strong>可能补语</strong>（Potentiality Complement）：V + 得/不 + Result → 表示<em>能否</em>实现某种结果。<br>
+          例：他打<em>得好</em>吗？（Can he play well? — asks about ability or conditions.）<br>
+          例：打<em>不好</em>没关系。（It doesn't matter if you can't play well.）<br><br>
+          关键区别：程度补语描述<em>已完成动作的质量</em>；可能补语表达<em>能力或可能性</em>。
+        </div>
+        <div class="culture-en">
+          Two complement types look similar but mean very different things:<br><br>
+          ① <strong>Degree Complement</strong>: V + 得 + Adj → describes <em>how</em> an action was performed (result already achieved).<br>
+          E.g., 他打得很好 (He plays well — describes quality).<br><br>
+          ② <strong>Potentiality Complement</strong>: V + 得/不 + Result → asks or states <em>whether</em> a result is achievable.<br>
+          E.g., 他打得好吗? (Can he play well? — ability/conditions); 打不好没关系 (It doesn't matter if you can't play well).<br><br>
+          Key rule: degree complements describe a <em>completed quality</em>; potentiality complements express <em>ability or possibility</em>.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L9 -->
   </div><!-- end lesson-content data-lesson="9" -->
 
   <!-- ═══════════════ LESSON 10 ═══════════════ -->
