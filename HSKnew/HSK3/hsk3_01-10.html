@@ -3232,9 +3232,845 @@
 
   <!-- ═══════════════ LESSON 4 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-4" data-lesson="4" data-watermark="四" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第四课 · Lesson 04</span>
+    </div>
+    <h1>这家宾馆跟别的都不一样</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Zhè jiā bīnguǎn gēn bié de dōu bù yīyàng</p>
+    <p class="lesson-subtitle">This hotel is unlike any other</p>
   </div>
 
   <div class="lesson-content" data-lesson="4" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l4-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在家客厅聊天儿</span>
+              <button class="dh-play-btn" id="l4-dhBtn1" onclick="dhPlay('l4-audioEl1','l4-dhBtn1')">
+                <svg id="l4-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l4-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l4-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In Wang Yifei's living room — Yang Tongle and Wang Yifei are chatting about a trip</span>
+          </div>
+          <audio id="l4-audioEl1" src="audio/04-1.mp3" onended="dhEnded('l4-audioEl1','l4-dhBtn1','l4-dhIcon1')" ontimeupdate="dhUpdate('l4-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">这个假期咱们去哪儿玩玩吧。</div>
+            <div class="line-pinyin">Zhège jiàqī zánmen qù nǎr wánwan ba.</div>
+            <div class="line-en">Let's go somewhere to enjoy this holiday.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一飞</div>
+          <div class="line-content">
+            <div class="line-zh">好啊，你想去哪儿，咱们就去哪儿。</div>
+            <div class="line-pinyin">Hǎo a, nǐ xiǎng qù nǎr, zánmen jiù qù nǎr.</div>
+            <div class="line-en">Sure — wherever you want to go, we'll go.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">你喜欢海，找个海边住几天，怎么样？</div>
+            <div class="line-pinyin">Nǐ xǐhuan hǎi, zhǎo ge hǎibiān zhù jǐ tiān, zěnmeyàng?</div>
+            <div class="line-en">You like the sea — how about finding a place by the sea for a few days?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一飞</div>
+          <div class="line-content">
+            <div class="line-zh">现在去海边有点儿冷。</div>
+            <div class="line-pinyin">Xiànzài qù hǎibiān yǒudiǎnr lěng.</div>
+            <div class="line-en">It's a bit cold to go to the seaside right now.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">那去草原吧？草原一点儿也不冷。</div>
+            <div class="line-pinyin">Nà qù cǎoyuán ba? Cǎoyuán yīdiǎnr yě bù lěng.</div>
+            <div class="line-en">Then how about the grasslands? They're not cold at all.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一飞</div>
+          <div class="line-content">
+            <div class="line-zh">这个主意好！我好久没骑马了。</div>
+            <div class="line-pinyin">Zhège zhǔyi hǎo! Wǒ hǎojiǔ méi qí mǎ le.</div>
+            <div class="line-en">That's a great idea! I haven't ridden a horse in ages.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">对，在草原上骑马、吃羊肉、看月亮，一定很有意思。</div>
+            <div class="line-pinyin">Duì, zài cǎoyuán shàng qí mǎ, chī yángròu, kàn yuèliang, yídìng hěn yǒu yìsi.</div>
+            <div class="line-en">Right — riding horses on the grasslands, eating lamb, watching the moon — it'll definitely be fun.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l4-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 准备行程</span>
+              <button class="dh-play-btn" id="l4-dhBtn2" onclick="dhPlay('l4-audioEl2','l4-dhBtn2')">
+                <svg id="l4-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l4-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l4-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">Getting ready — checking flights, hotel, and what to pack</span>
+          </div>
+          <audio id="l4-audioEl2" src="audio/04-3.mp3" onended="dhEnded('l4-audioEl2','l4-dhBtn2','l4-dhIcon2')" ontimeupdate="dhUpdate('l4-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">出去玩的机票买好了吗？</div>
+            <div class="line-pinyin">Chūqù wán de jīpiào mǎi hǎo le ma?</div>
+            <div class="line-en">Have you bought the plane tickets for the trip?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一飞</div>
+          <div class="line-content">
+            <div class="line-zh">买好了。星期六上午十点一刻起飞。</div>
+            <div class="line-pinyin">Mǎi hǎo le. Xīngqīliù shàngwǔ shí diǎn yī kè qǐfēi.</div>
+            <div class="line-en">Yes, all done. We take off at 10:15 Saturday morning.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">宾馆也选好了吗？</div>
+            <div class="line-pinyin">Bīnguǎn yě xuǎn hǎo le ma?</div>
+            <div class="line-en">Have you picked the hotel too?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一飞</div>
+          <div class="line-content">
+            <div class="line-zh">是的，这家宾馆很特别，跟别的都不一样，一出门就能看见牛和羊！</div>
+            <div class="line-pinyin">Shì de, zhè jiā bīnguǎn hěn tèbié, gēn bié de dōu bù yīyàng, yī chūmén jiù néng kànjiàn niú hé yáng!</div>
+            <div class="line-en">Yes — this hotel is really special, totally unlike any other. Step out the door and you can see cattle and sheep!</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">太好了！你看看要带什么东西？</div>
+            <div class="line-pinyin">Tài hǎo le! Nǐ kànkan yào dài shénme dōngxi?</div>
+            <div class="line-en">That's great! Have a look — what do we need to bring?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一飞</div>
+          <div class="line-content">
+            <div class="line-zh">我们不用带太多东西，别忘了拿上新买的相机。</div>
+            <div class="line-pinyin">Wǒmen bú yòng dài tài duō dōngxi, bié wàng le ná shàng xīn mǎi de xiàngjī.</div>
+            <div class="line-en">We don't need to bring too much — just don't forget the camera we just bought.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">一定不会忘带的。我现在就去准备行李。</div>
+            <div class="line-pinyin">Yídìng bú huì wàng dài de. Wǒ xiànzài jiù qù zhǔnbèi xíngli.</div>
+            <div class="line-en">I definitely won't forget. I'll go pack my luggage right now.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l4-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在机场见司机</span>
+              <button class="dh-play-btn" id="l4-dhBtn3" onclick="dhPlay('l4-audioEl3','l4-dhBtn3')">
+                <svg id="l4-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l4-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l4-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At the airport — meeting Xiao Li, the driver-guide</span>
+          </div>
+          <audio id="l4-audioEl3" src="audio/04-5.mp3" onended="dhEnded('l4-audioEl3','l4-dhBtn3','l4-dhIcon3')" ontimeupdate="dhUpdate('l4-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">小李</div>
+          <div class="line-content">
+            <div class="line-zh">欢迎你们！我是你们的司机，我姓李，叫我小李就可以。</div>
+            <div class="line-pinyin">Huānyíng nǐmen! Wǒ shì nǐmen de sījī, wǒ xìng Lǐ, jiào wǒ Xiǎo Lǐ jiù kěyǐ.</div>
+            <div class="line-en">Welcome! I'm your driver — my surname is Li, just call me Xiao Li.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">您好！不好意思，飞机晚点了，让您久等了。</div>
+            <div class="line-pinyin">Nín hǎo! Bù hǎoyìsi, fēijī wǎndiǎn le, ràng nín jiǔ děng le.</div>
+            <div class="line-en">Hello! Sorry — the flight was delayed, we made you wait a long time.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">小李</div>
+          <div class="line-content">
+            <div class="line-zh">没关系。除了这个行李箱以外，还有别的东西吗？</div>
+            <div class="line-pinyin">Méi guānxi. Chúle zhège xínglixiāng yǐwài, hái yǒu bié de dōngxi ma?</div>
+            <div class="line-en">No worries. Besides this suitcase, do you have anything else?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">还有一个包，我自己拿就可以。</div>
+            <div class="line-pinyin">Hái yǒu yī ge bāo, wǒ zìjǐ ná jiù kěyǐ.</div>
+            <div class="line-en">There's also a bag — I can carry it myself.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">小李</div>
+          <div class="line-content">
+            <div class="line-zh">车在一层，请跟我来。</div>
+            <div class="line-pinyin">Chē zài yī céng, qǐng gēn wǒ lái.</div>
+            <div class="line-en">The car is on the ground floor — please follow me.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">杨同乐</div>
+          <div class="line-content">
+            <div class="line-zh">我们住的宾馆离机场远吗？</div>
+            <div class="line-pinyin">Wǒmen zhù de bīnguǎn lí jīchǎng yuǎn ma?</div>
+            <div class="line-en">Is the hotel we're staying at far from the airport?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">小李</div>
+          <div class="line-content">
+            <div class="line-zh">不远，三十分钟就能到。两位到了可以先休息休息，晚饭的时候我叫你们。</div>
+            <div class="line-pinyin">Bù yuǎn, sānshí fēnzhōng jiù néng dào. Liǎng wèi dào le kěyǐ xiān xiūxi xiūxi, wǎnfàn de shíhou wǒ jiào nǐmen.</div>
+            <div class="line-en">Not far — we'll be there in thirty minutes. Once you arrive you can rest a bit first; I'll let you know at dinner time.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 (短文) -->
+      <div class="dialogue-block" id="l4-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 王一飞的日记</span>
+              <button class="dh-play-btn" id="l4-dhBtn4" onclick="dhPlay('l4-audioEl4','l4-dhBtn4')">
+                <svg id="l4-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l4-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l4-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">Wang Yifei's diary — first day of the trip</span>
+          </div>
+          <audio id="l4-audioEl4" src="audio/04-7.mp3" onended="dhEnded('l4-audioEl4','l4-dhBtn4','l4-dhIcon4')" ontimeupdate="dhUpdate('l4-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              今天是我们旅游的第一天。我们很早就起床去机场了，没想到飞机晚点了。我们到的时候，天已经黑了，但是司机小李一直在机场等我们，一点儿也没着急。他特别热情，路上给我们介绍了很多东西，还准备了水果。宾馆的房间跟我想的一样漂亮，又大又干净，我非常满意。
+            </div>
+            <div class="line-pinyin" style="color:var(--gold);font-size:0.85em;line-height:1.9;margin-top:0.5em;">
+              Jīntiān shì wǒmen lǚyóu de dì yī tiān. Wǒmen hěn zǎo jiù qǐchuáng qù jīchǎng le, méi xiǎng dào fēijī wǎndiǎn le. Wǒmen dào de shíhou, tiān yǐjīng hēi le, dànshì sījī Xiǎo Lǐ yìzhí zài jīchǎng děng wǒmen, yīdiǎnr yě méi zháojí. Tā tèbié rèqíng, lùshang gěi wǒmen jièshào le hěn duō dōngxi, hái zhǔnbèi le shuǐguǒ. Bīnguǎn de fángjiān gēn wǒ xiǎng de yīyàng piàoliang, yòu dà yòu gānjìng, wǒ fēicháng mǎnyì.
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);">
+              Today is the first day of our trip. We got up super early to head to the airport, but to our surprise the flight was delayed. By the time we arrived, it was already dark — but our driver Xiao Li had been waiting at the airport the whole time without showing the slightest impatience. He's incredibly warm; on the way over he told us all about the area and even had fruit ready for us. The hotel room is exactly as pretty as I'd imagined — both spacious and clean. I'm absolutely thrilled.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l4-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">假期</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiàqī</div><div class="fcs-en">vacation; holiday</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">海</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hǎi</div><div class="fcs-en">sea</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">草原</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">cǎoyuán</div><div class="fcs-en">grassland; prairie</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">主意</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhǔyi</div><div class="fcs-en">idea</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">骑</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qí</div><div class="fcs-en">to ride (horse, bike, etc.)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">马</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mǎ</div><div class="fcs-en">horse</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">羊</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yáng</div><div class="fcs-en">sheep; goat</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">月亮</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yuèliang</div><div class="fcs-en">moon</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">一定</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yídìng</div><div class="fcs-en">certainly; surely; definitely</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">刻</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kè</div><div class="fcs-en">quarter (of an hour)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">起飞</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qǐfēi</div><div class="fcs-en">to take off (plane)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">宾馆</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bīnguǎn</div><div class="fcs-en">hotel</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">特别</div><div class="fcs-pos">adj./adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tèbié</div><div class="fcs-en">special; especially</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">别的</div><div class="fcs-pos">pron.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">biéde</div><div class="fcs-en">other; else</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">一样</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yíyàng</div><div class="fcs-en">the same</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">牛</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">niú</div><div class="fcs-en">cattle; cow</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">相机</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiàngjī</div><div class="fcs-en">camera</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">欢迎</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huānyíng</div><div class="fcs-en">to welcome</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">司机</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">sījī</div><div class="fcs-en">driver</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">晚点</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wǎndiǎn</div><div class="fcs-en">to be late (train, flight, etc.)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">久</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiǔ</div><div class="fcs-en">long (time)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">除了</div><div class="fcs-pos">prep.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chúle</div><div class="fcs-en">besides; except</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">以外</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǐwài</div><div class="fcs-en">other than; except</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">先</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiān</div><div class="fcs-en">first; before</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">一直</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yìzhí</div><div class="fcs-en">all along; continuously</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">干净</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gānjìng</div><div class="fcs-en">clean</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">满意</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mǎnyì</div><div class="fcs-en">to be satisfied; pleased</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l4-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 27</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">假期</div><div class="vocab-pinyin">jiàqī</div><div class="vocab-pos">n.</div><div class="vocab-en">vacation; holiday</div><div class="vocab-example">这个<em>假期</em>去哪儿玩？<br><span style="color:#bbb">Where to go this holiday?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">海</div><div class="vocab-pinyin">hǎi</div><div class="vocab-pos">n.</div><div class="vocab-en">sea</div><div class="vocab-example">去<em>海</em>边住几天。<br><span style="color:#bbb">Stay by the sea for a few days.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">草原</div><div class="vocab-pinyin">cǎoyuán</div><div class="vocab-pos">n.</div><div class="vocab-en">grassland</div><div class="vocab-example"><em>草原</em>一点儿也不冷。<br><span style="color:#bbb">The grassland isn't cold at all.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">主意</div><div class="vocab-pinyin">zhǔyi</div><div class="vocab-pos">n.</div><div class="vocab-en">idea</div><div class="vocab-example">这个<em>主意</em>好！<br><span style="color:#bbb">That's a great idea!</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">骑</div><div class="vocab-pinyin">qí</div><div class="vocab-pos">v.</div><div class="vocab-en">to ride</div><div class="vocab-example">好久没<em>骑</em>马了。<br><span style="color:#bbb">Haven't ridden a horse in ages.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">马</div><div class="vocab-pinyin">mǎ</div><div class="vocab-pos">n.</div><div class="vocab-en">horse</div><div class="vocab-example">骑<em>马</em>。<br><span style="color:#bbb">Ride a horse.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">羊</div><div class="vocab-pinyin">yáng</div><div class="vocab-pos">n.</div><div class="vocab-en">sheep; goat</div><div class="vocab-example">吃<em>羊</em>肉。<br><span style="color:#bbb">Eat lamb.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">月亮</div><div class="vocab-pinyin">yuèliang</div><div class="vocab-pos">n.</div><div class="vocab-en">moon</div><div class="vocab-example">看<em>月亮</em>。<br><span style="color:#bbb">Look at the moon.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">一定</div><div class="vocab-pinyin">yídìng</div><div class="vocab-pos">adv.</div><div class="vocab-en">certainly; definitely</div><div class="vocab-example"><em>一定</em>很有意思。<br><span style="color:#bbb">Will definitely be fun.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">刻</div><div class="vocab-pinyin">kè</div><div class="vocab-pos">m.</div><div class="vocab-en">quarter (of an hour)</div><div class="vocab-example">十点一<em>刻</em>。<br><span style="color:#bbb">10:15.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">起飞</div><div class="vocab-pinyin">qǐfēi</div><div class="vocab-pos">v.</div><div class="vocab-en">to take off</div><div class="vocab-example">飞机十点<em>起飞</em>。<br><span style="color:#bbb">The flight takes off at 10.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">宾馆</div><div class="vocab-pinyin">bīnguǎn</div><div class="vocab-pos">n.</div><div class="vocab-en">hotel</div><div class="vocab-example">这家<em>宾馆</em>很特别。<br><span style="color:#bbb">This hotel is very special.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">特别</div><div class="vocab-pinyin">tèbié</div><div class="vocab-pos">adj./adv.</div><div class="vocab-en">special; especially</div><div class="vocab-example">他<em>特别</em>热情。<br><span style="color:#bbb">He's especially warm.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">别的</div><div class="vocab-pinyin">biéde</div><div class="vocab-pos">pron.</div><div class="vocab-en">other; else</div><div class="vocab-example">还有<em>别的</em>东西吗？<br><span style="color:#bbb">Anything else?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">一样</div><div class="vocab-pinyin">yíyàng</div><div class="vocab-pos">adj.</div><div class="vocab-en">the same</div><div class="vocab-example">跟别的都不<em>一样</em>。<br><span style="color:#bbb">Unlike any other.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">牛</div><div class="vocab-pinyin">niú</div><div class="vocab-pos">n.</div><div class="vocab-en">cattle; cow</div><div class="vocab-example">看见<em>牛</em>和羊。<br><span style="color:#bbb">See cattle and sheep.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">相机</div><div class="vocab-pinyin">xiàngjī</div><div class="vocab-pos">n.</div><div class="vocab-en">camera</div><div class="vocab-example">新买的<em>相机</em>。<br><span style="color:#bbb">A newly-bought camera.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">欢迎</div><div class="vocab-pinyin">huānyíng</div><div class="vocab-pos">v.</div><div class="vocab-en">to welcome</div><div class="vocab-example"><em>欢迎</em>你们！<br><span style="color:#bbb">Welcome!</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">司机</div><div class="vocab-pinyin">sījī</div><div class="vocab-pos">n.</div><div class="vocab-en">driver</div><div class="vocab-example">我是你们的<em>司机</em>。<br><span style="color:#bbb">I'm your driver.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">晚点</div><div class="vocab-pinyin">wǎndiǎn</div><div class="vocab-pos">v.</div><div class="vocab-en">to be late (transport)</div><div class="vocab-example">飞机<em>晚点</em>了。<br><span style="color:#bbb">The flight is delayed.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">久</div><div class="vocab-pinyin">jiǔ</div><div class="vocab-pos">adj.</div><div class="vocab-en">long (time)</div><div class="vocab-example">让您<em>久</em>等了。<br><span style="color:#bbb">Sorry to keep you waiting so long.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">除了</div><div class="vocab-pinyin">chúle</div><div class="vocab-pos">prep.</div><div class="vocab-en">besides; except</div><div class="vocab-example"><em>除了</em>这个箱子还有别的吗？<br><span style="color:#bbb">Besides this case, anything else?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">以外</div><div class="vocab-pinyin">yǐwài</div><div class="vocab-pos">n.</div><div class="vocab-en">other than; except</div><div class="vocab-example">除了我<em>以外</em>大家都来了。<br><span style="color:#bbb">Everyone except me came.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">先</div><div class="vocab-pinyin">xiān</div><div class="vocab-pos">adv.</div><div class="vocab-en">first; before</div><div class="vocab-example">可以<em>先</em>休息休息。<br><span style="color:#bbb">You can rest first.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">一直</div><div class="vocab-pinyin">yìzhí</div><div class="vocab-pos">adv.</div><div class="vocab-en">all along; continuously</div><div class="vocab-example"><em>一直</em>在等我们。<br><span style="color:#bbb">Has been waiting for us all along.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">干净</div><div class="vocab-pinyin">gānjìng</div><div class="vocab-pos">adj.</div><div class="vocab-en">clean</div><div class="vocab-example">又大又<em>干净</em>。<br><span style="color:#bbb">Both spacious and clean.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">满意</div><div class="vocab-pinyin">mǎnyì</div><div class="vocab-pos">v.</div><div class="vocab-en">to be satisfied</div><div class="vocab-example">非常<em>满意</em>。<br><span style="color:#bbb">Extremely satisfied.</span></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:2rem">专有名词 · Proper Nouns</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">杨同乐</div><div class="vocab-pinyin">Yáng Tónglè</div><div class="vocab-pos">name</div><div class="vocab-en">Yang Tongle</div></div>
+        <div class="vocab-card"><div class="vocab-zh">王一飞</div><div class="vocab-pinyin">Wáng Yīfēi</div><div class="vocab-pos">name</div><div class="vocab-en">Wang Yifei</div></div>
+        <div class="vocab-card"><div class="vocab-zh">小李</div><div class="vocab-pinyin">Xiǎo Lǐ</div><div class="vocab-pos">name</div><div class="vocab-en">Xiao Li (the driver)</div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">假期</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jiàqī</div><div class="wdh-en">vacation; holiday</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">假</div><div class="char-meaning">jià · leave; holiday</div></div>
+            <div class="wd-char"><div class="char">期</div><div class="char-meaning">qī · period; time</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">这个假期</span><span class="collocation-tag">放假期</span><span class="collocation-tag">假期计划</span><span class="collocation-tag">长假期</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这个假期咱们去哪儿玩玩吧。</div><div class="en">Let's go somewhere to enjoy this holiday.</div></div>
+            <div class="wd-ex"><div class="zh">假期一共有七天。</div><div class="en">The holiday is seven days in total.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">主意</div>
+          <div class="wdh-info"><div class="wdh-pinyin">zhǔyi</div><div class="wdh-en">idea</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">主</div><div class="char-meaning">zhǔ · main; chief</div></div>
+            <div class="wd-char"><div class="char">意</div><div class="char-meaning">yì · meaning; thought</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">好主意</span><span class="collocation-tag">这个主意</span><span class="collocation-tag">出主意</span><span class="collocation-tag">想主意</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这个主意好！我好久没骑马了。</div><div class="en">Great idea! I haven't ridden a horse in ages.</div></div>
+            <div class="wd-ex"><div class="zh">谁的主意？真不错。</div><div class="en">Whose idea? Really nice.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">特别</div>
+          <div class="wdh-info"><div class="wdh-pinyin">tèbié</div><div class="wdh-en">special; especially</div></div>
+          <div class="wdh-pos">adj. / adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"特别" can be either an adjective ("special, distinctive") or an adverb of degree ("especially, particularly"). As an adverb it intensifies an adjective or another verb.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">特别热情</span><span class="collocation-tag">很特别</span><span class="collocation-tag">特别喜欢</span><span class="collocation-tag">特别地（adv.）</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这家宾馆很特别，跟别的都不一样。</div><div class="en">This hotel is really special, unlike any other.</div></div>
+            <div class="wd-ex"><div class="zh">他特别热情，路上给我们介绍了很多东西。</div><div class="en">He's especially warm — told us about lots of things along the way.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">一样</div>
+          <div class="wdh-info"><div class="wdh-pinyin">yíyàng</div><div class="wdh-en">the same</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">A 跟 B 一样</span><span class="collocation-tag">不一样</span><span class="collocation-tag">一样大</span><span class="collocation-tag">一样高</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这家宾馆跟别的都不一样。</div><div class="en">This hotel is unlike any other.</div></div>
+            <div class="wd-ex"><div class="zh">他买的新手机跟我的一样。</div><div class="en">The new phone he bought is the same as mine.</div></div>
+            <div class="wd-ex"><div class="zh">这个房间跟那个房间一样大。</div><div class="en">This room is the same size as that one.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">晚点</div>
+          <div class="wdh-info"><div class="wdh-pinyin">wǎndiǎn</div><div class="wdh-en">to be late (train, flight, etc.)</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">晚</div><div class="char-meaning">wǎn · late</div></div>
+            <div class="wd-char"><div class="char">点</div><div class="char-meaning">diǎn · time; point</div></div>
+          </div>
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"晚点" specifically refers to scheduled transport (planes, trains, ships) running behind time — not for general "being late". For a person being late, use "迟到 (chídào)".</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">飞机晚点了，让您久等了。</div><div class="en">The flight was delayed — sorry to keep you waiting so long.</div></div>
+            <div class="wd-ex"><div class="zh">火车晚点了三十分钟。</div><div class="en">The train is thirty minutes behind schedule.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">除了…(以外)</div>
+          <div class="wdh-info"><div class="wdh-pinyin">chúle…(yǐwài)</div><div class="wdh-en">besides; except</div></div>
+          <div class="wdh-pos">prep.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"除了…以外" defines a scope. Pair it with "都" for exclusion ("everyone except…"), or with "还/也" for addition ("besides X, also Y"). "以外" is optional and often dropped.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">除了…以外，都…</span><span class="collocation-tag">除了…以外，还…</span><span class="collocation-tag">除了…，也…</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">除了这个行李箱以外，还有别的东西吗？</div><div class="en">Besides this suitcase, do you have anything else?</div></div>
+            <div class="wd-ex"><div class="zh">除了我以外，大家都在玩手机。</div><div class="en">Everyone except me is on their phone.</div></div>
+            <div class="wd-ex"><div class="zh">除了唱歌以外，他也喜欢跳舞。</div><div class="en">Besides singing, he also likes dancing.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">先</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xiān</div><div class="wdh-en">first; before (something else)</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">先…再…</span><span class="collocation-tag">先休息</span><span class="collocation-tag">先去</span><span class="collocation-tag">我先</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">两位到了可以先休息休息。</div><div class="en">Once you arrive, you can rest a bit first.</div></div>
+            <div class="wd-ex"><div class="zh">咱们先吃饭，再去看电影。</div><div class="en">Let's eat first, then go see a movie.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">一直</div>
+          <div class="wdh-info"><div class="wdh-pinyin">yìzhí</div><div class="wdh-en">all along; continuously</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">一</div><div class="char-meaning">yī · one</div></div>
+            <div class="wd-char"><div class="char">直</div><div class="char-meaning">zhí · straight</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">一直在</span><span class="collocation-tag">一直等</span><span class="collocation-tag">一直走</span><span class="collocation-tag">一直没</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">司机小李一直在机场等我们。</div><div class="en">Driver Xiao Li had been waiting for us at the airport the whole time.</div></div>
+            <div class="wd-ex"><div class="zh">这个问题我一直没忘。</div><div class="en">I've never forgotten this question.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">满意</div>
+          <div class="wdh-info"><div class="wdh-pinyin">mǎnyì</div><div class="wdh-en">to be satisfied; pleased</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">满</div><div class="char-meaning">mǎn · full</div></div>
+            <div class="wd-char"><div class="char">意</div><div class="char-meaning">yì · intent; mood</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">非常满意</span><span class="collocation-tag">不满意</span><span class="collocation-tag">对…满意</span><span class="collocation-tag">满意的</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">宾馆的房间又大又干净，我非常满意。</div><div class="en">The hotel room is spacious and clean — I'm very satisfied.</div></div>
+            <div class="wd-ex"><div class="zh">我对这里的服务非常满意。</div><div class="en">I'm very satisfied with the service here.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">欢迎</div>
+          <div class="wdh-info"><div class="wdh-pinyin">huānyíng</div><div class="wdh-en">to welcome</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">欢</div><div class="char-meaning">huān · happy; joyful</div></div>
+            <div class="wd-char"><div class="char">迎</div><div class="char-meaning">yíng · to greet; receive</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">欢迎你们</span><span class="collocation-tag">欢迎光临</span><span class="collocation-tag">欢迎来</span><span class="collocation-tag">受欢迎</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">欢迎你们！我是你们的司机。</div><div class="en">Welcome! I'm your driver.</div></div>
+            <div class="wd-ex"><div class="zh">欢迎下次再来！</div><div class="en">Welcome to come again next time!</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">一…也/都+不/没…</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">A 跟 B 一样</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">除了…(以外)，…</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>固定格式"一…也/都+不/没…" · Fixed Pattern for Complete Negation</div>
+          <p class="grammar-desc">"一…也／都+不／没…"表示完全否定——"一点也不／没…"。"一+量词" 也可换成"一点儿"。当谓语是形容词时，常用"一点儿也／都+不／没+形容词"。<br><span style="color:#888;font-size:0.85em;">The pattern "一 + Measure Word + 也/都 + 不/没 + Verb" expresses complete negation ("not at all"). The "一 + measure word" can be replaced by "一点儿". With an adjective predicate, "一点儿也／都 + 不/没 + Adj" is the typical form.</span></p>
+          <div class="grammar-pattern">一 + M.W. + <strong>也/都</strong> + 不/没 + V　／　一点儿 + <strong>也/都</strong> + 不/没 + Adj</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">草原<strong>一点儿也不</strong>冷。</div><div class="en">The grassland is <strong>not cold at all</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">司机小李<strong>一点儿也没</strong>着急。</div><div class="en">Driver Xiao Li <strong>wasn't impatient at all</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">她<strong>一件衣服都不</strong>想买。</div><div class="en">She <strong>doesn't want to buy a single</strong> piece of clothing.</div></div>
+            <div class="grammar-ex"><div class="zh">我<strong>一个中国电影也没</strong>看过。</div><div class="en">I <strong>haven't seen a single</strong> Chinese movie.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>比较句"A 跟 B 一样" · Comparative Sentences with 一样</div>
+          <p class="grammar-desc">"A 跟 B 一样"表示比较后两者相同。后面可加形容词说明比较的方面。否定形式在"一样"前加"不"，即"A 跟 B 不一样"。<br><span style="color:#888;font-size:0.85em;">"A 跟 B 一样" expresses that A and B are the same. An adjective can follow "一样" to specify the dimension being compared. Negation: place 不 before 一样 ("A 跟 B 不一样" = A is different from B).</span></p>
+          <div class="grammar-pattern">A + 跟 + B + <strong>(不)一样</strong> + (Adj)</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">这家宾馆跟别的都<strong>不一样</strong>。</div><div class="en">This hotel is <strong>unlike</strong> any other.</div></div>
+            <div class="grammar-ex"><div class="zh">他买的新手机跟我的<strong>一样</strong>。</div><div class="en">The new phone he bought is <strong>the same as</strong> mine.</div></div>
+            <div class="grammar-ex"><div class="zh">这个房间跟那个房间<strong>一样大</strong>。</div><div class="en">This room is <strong>the same size as</strong> that one.</div></div>
+            <div class="grammar-ex"><div class="zh">宾馆的房间跟我想的<strong>一样</strong>漂亮。</div><div class="en">The hotel room is <strong>just as</strong> pretty <strong>as</strong> I imagined.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>"除了…(以外)，…都／还／也…" · Exclusion vs. Addition</div>
+          <p class="grammar-desc">"除了…(以外)，…都…"表示在某个范围内排除一部分，其他都一样。"除了…(以外)，…还／也…"表示排除一部分，再补充其他。"以外"可省略。<br><span style="color:#888;font-size:0.85em;">"除了…(以外)，…都…" excludes one part and notes that all others share the same situation ("everyone except…"). "除了…(以外)，…还/也…" excludes one part and adds another ("besides X, also Y"). The 以外 is optional.</span></p>
+          <div class="grammar-pattern">除了 X (以外)，… <strong>都</strong> …　／　除了 X (以外)，… <strong>还／也</strong> …</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh"><strong>除了</strong>我<strong>以外</strong>，大家<strong>都</strong>在玩手机。</div><div class="en"><strong>Everyone except me</strong> is on their phone.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>除了</strong>这个汉字，别的汉字我<strong>都</strong>会写。</div><div class="en"><strong>Apart from this character</strong>, I can write <strong>all</strong> the others.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>除了</strong>这个行李箱<strong>以外</strong>，<strong>还</strong>有别的东西吗？</div><div class="en"><strong>Besides</strong> this suitcase, do you have anything <strong>else</strong>?</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>除了</strong>唱歌<strong>以外</strong>，他<strong>也</strong>喜欢跳舞。</div><div class="en"><strong>Besides</strong> singing, he <strong>also</strong> likes dancing.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 王一飞为什么不想去海边？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>她不喜欢海</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>现在去海边有点儿冷</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>海边太远</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>没有时间</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 王一飞觉得这次出去玩要带什么东西？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>什么都不用带</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>带新买的相机</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>要带很多东西</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>带很多衣服</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 小李是谁？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>同乐的朋友</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>他们的司机</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>宾馆的服务员</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>飞机的驾驶员</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 根据课文4，下面哪个说法是对的？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>飞机准时起飞了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>司机一直在着急</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>宾馆的房间又大又干净</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>他们没找到司机</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"一点儿也不"完成句子：草原______冷，咱们去吧！</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l4-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l4-fill1','一点儿也不','l4-reveal1')">检查</button>
+        </div>
+        <div id="l4-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：草原<strong>一点儿也不</strong>冷，咱们去吧！</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"除了…以外，还…"造句描述你的爱好（hobby）。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l4-fill2" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:340px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l4-fill2','open','l4-reveal2')">检查</button>
+        </div>
+        <div id="l4-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>除了</strong>看电影<strong>以外</strong>，我<strong>还</strong>喜欢听音乐和看书。（答案不唯一）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你喜欢旅游吗？为什么？</div>
+            <div>（2）下一个假期，你打算去哪儿旅游？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 王一飞和杨同乐为什么决定去草原而不去海边？你呢，更喜欢去山、海还是草原？<br><br>
+          <strong>（2）</strong> 课文里说这家宾馆"跟别的都不一样"——你住过的最特别的宾馆是什么样的？<br><br>
+          <strong>（3</strong>） 飞机晚点的时候你会做什么？你觉得司机小李"一直在等""一点儿也没着急"是不是特别难得？
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 旅游的时候，你觉得最重要的是什么？看风景、吃美食、还是认识新朋友？<br><br>
+          <strong>（2）</strong> 你觉得跟团旅游和自由行（zìyóu xíng, independent travel）哪一个更好？<br><br>
+          <strong>（3）</strong> 你打算给朋友介绍你国家的什么地方？请用本课的词描述。
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">中国的草原旅游 <span class="pinyin">Grassland Tourism in China</span></div>
+        <div class="culture-zh">中国北方有非常美丽的大草原，最有名的是内蒙古（Nèi Měnggǔ, Inner Mongolia）的呼伦贝尔（Hūlúnbèi'ěr）和锡林郭勒（Xīlínguōlè）草原。每年六到九月是草原旅游的最好时间——天气不冷不热，草绿花开。游客可以骑马、住"蒙古包"（Měnggǔbāo, yurt）、吃羊肉、喝奶茶、晚上看星星和月亮。这种"草原游"已经成了中国人最受欢迎的国内旅游路线之一。</div>
+        <div class="culture-en">Northern China is home to vast and beautiful grasslands. The most famous are in Inner Mongolia — Hulunbuir and Xilingol. The best season for grassland tourism is June through September: weather is mild, the grass is green, and flowers bloom. Travelers can ride horses, sleep in yurts (蒙古包), eat lamb, drink milk tea, and watch the stars and the moon at night. "草原游" (grassland trips) has become one of the most popular domestic travel options in China.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">晚点 vs 迟到 <span class="pinyin">"Delayed" vs "Late"</span></div>
+        <div class="culture-zh">
+          <strong>相同点：</strong>都和"比预定时间晚"有关。<br><br>
+          <strong>不同点：</strong><br>
+          ① <strong>晚点</strong>：用于交通工具（飞机、火车、轮船等）比预定的时间晚。<br>
+          例：飞机晚点了三十分钟。<br><br>
+          ② <strong>迟到</strong>：用于人比预定时间晚到达约会、上课、上班等。<br>
+          例：他今天上课迟到了。
+        </div>
+        <div class="culture-en">
+          <strong>Similarity:</strong> Both relate to being later than scheduled.<br><br>
+          <strong>Differences:</strong><br>
+          ① <strong>晚点</strong>: Used for <em>transport</em> (planes, trains, boats) running behind schedule.<br>
+          E.g., 飞机晚点了三十分钟 — the flight is 30 minutes late.<br><br>
+          ② <strong>迟到</strong>: Used for <em>a person</em> arriving late to an appointment, class, or work.<br>
+          E.g., 他今天上课迟到了 — he was late to class today.
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">说时间："X点 + 一刻 / 半 / 三刻" <span class="pinyin">Telling Time with 一刻, 半, 三刻</span></div>
+        <div class="culture-zh">
+          中文表示时间常用的"分钟"说法：<br><br>
+          <strong>一刻</strong>（yī kè）= 15 minutes（quarter past）<br>
+          <strong>半</strong>（bàn）= 30 minutes（half past）<br>
+          <strong>三刻</strong>（sān kè）= 45 minutes（quarter to）<br><br>
+          例：<br>
+          十点一刻 = 10:15<br>
+          十点半 = 10:30<br>
+          十点三刻 = 10:45<br>
+          差一刻十一点 = 10:45（"差" chà = "short of"）
+        </div>
+        <div class="culture-en">
+          Chinese has a special vocabulary for telling time:<br><br>
+          <strong>一刻</strong> = 15 minutes (a quarter)<br>
+          <strong>半</strong> = 30 minutes (half)<br>
+          <strong>三刻</strong> = 45 minutes (three quarters)<br><br>
+          Examples:<br>
+          十点一刻 = 10:15<br>
+          十点半 = 10:30<br>
+          十点三刻 = 10:45<br>
+          差一刻十一点 = 10:45 ("差" = short of)
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L4 -->
   </div><!-- end lesson-content data-lesson="4" -->
 
   <!-- ═══════════════ LESSON 5 ═══════════════ -->
