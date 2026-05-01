@@ -682,19 +682,17 @@
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown-menu">
-        <!-- HSK 1–3: 3.0 版本 -->
+        <!-- HSK 1–3: 3.0 (新 HSK) -->
         <div class="hsk-group">
           <div class="hsk-group-header" onclick="toggleHSK(this)">HSK 1<svg class="hsk-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           <div class="hsk-sub">
             <a class="sub-item" href="../HSK1/hsk1_01-10.html">Lesson 01–10</a>
-            <a class="sub-item" href="../HSK1/hsk1_11-15.html">Lesson 11–15</a>
           </div>
         </div>
         <div class="hsk-group">
           <div class="hsk-group-header" onclick="toggleHSK(this)">HSK 2<svg class="hsk-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           <div class="hsk-sub">
             <a class="sub-item" href="../HSK2/hsk2_01-10.html">Lesson 01–10</a>
-            <a class="sub-item" href="../HSK2/hsk2_11-15.html">Lesson 11–15</a>
           </div>
         </div>
         <div class="hsk-group">
@@ -704,16 +702,16 @@
             <a class="sub-item" href="hsk3_11-18.html">Lesson 11–18</a>
           </div>
         </div>
-        <!-- HSK 4–6: 直接跳转 -->
-        <a class="hsk-group-header" href="../HSK4/hsk4_01-10.html" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;">
+        <!-- HSK 4–6: 2.0 (ancien HSK) -->
+        <a class="hsk-group-header" href="../../HSK/HSK4/hsk4_01-10.html" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;">
           HSK 4
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <a class="hsk-group-header" href="../HSK5/hsk5_01-10.html" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;">
+        <a class="hsk-group-header" href="../../HSK/HSK5/hsk5_01-10.html" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;">
           HSK 5
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <a class="hsk-group-header" href="../HSK6/hsk6_01-10.html" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;">
+        <a class="hsk-group-header" href="../../HSK/HSK6/hsk6_01-10.html" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;">
           HSK 6
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
@@ -1587,9 +1585,824 @@
   <!-- ═══════════════ LESSON 2 ═══════════════ -->
 
   <div class="lesson-header" id="lesson-header-2" data-lesson="2" data-watermark="二" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第二课 · Lesson 02</span>
+    </div>
+    <h1>你们想吃什么就点什么</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Nǐmen xiǎng chī shénme jiù diǎn shénme</p>
+    <p class="lesson-subtitle">You can order whatever you feel like</p>
   </div>
+
   <div class="lesson-content" data-lesson="2" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
   </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l2-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在饭馆</span>
+              <button class="dh-play-btn" id="l2-dhBtn1" onclick="dhPlay('l2-audioEl1','l2-dhBtn1')">
+                <svg id="l2-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l2-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l2-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At the restaurant — Wang Yixue, Liu Ming, Bai Jiayue, and Li Wen are deciding what to order</span>
+          </div>
+          <audio id="l2-audioEl1" src="audio/02-1.mp3" onended="dhEnded('l2-audioEl1','l2-dhBtn1','l2-dhIcon1')" ontimeupdate="dhUpdate('l2-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">家月、李文，你们看看菜单，想吃点儿什么？</div>
+            <div class="line-pinyin">Jiāyuè, Lǐ Wén, nǐmen kànkan càidān, xiǎng chī diǎnr shénme?</div>
+            <div class="line-en">Jiayue, Li Wen, take a look at the menu — what would you like to eat?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">谢谢一雪姐，我都可以，你们点吧。</div>
+            <div class="line-pinyin">Xièxie Yīxuě jiě, wǒ dōu kěyǐ, nǐmen diǎn ba.</div>
+            <div class="line-en">Thanks Sister Yixue — anything's fine for me, you guys order.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">飞了这么远，现在还真是又饿又渴。</div>
+            <div class="line-pinyin">Fēi le zhème yuǎn, xiànzài hái zhēn shì yòu è yòu kě.</div>
+            <div class="line-en">After flying such a long way, I'm really both hungry and thirsty now.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">那多点点儿，别客气。你们喝什么饮料？</div>
+            <div class="line-pinyin">Nà duō diǎn diǎnr, bié kèqi. Nǐmen hē shénme yǐnliào?</div>
+            <div class="line-en">Then order plenty — don't be shy. What would you like to drink?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">好久没喝中国茶了，也好久没吃饺子了。我想喝绿茶、吃饺子，可以吗？</div>
+            <div class="line-pinyin">Hǎojiǔ méi hē Zhōngguó chá le, yě hǎojiǔ méi chī jiǎozi le. Wǒ xiǎng hē lǜchá, chī jiǎozi, kěyǐ ma?</div>
+            <div class="line-en">It's been ages since I had Chinese tea, and just as long since I had dumplings. I'd love some green tea and dumplings — is that okay?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">没问题。你们看看还想吃什么。</div>
+            <div class="line-pinyin">Méi wèntí. Nǐmen kànkan hái xiǎng chī shénme.</div>
+            <div class="line-en">No problem. Have a look — what else would you like?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l2-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在饭馆吃饭</span>
+              <button class="dh-play-btn" id="l2-dhBtn2" onclick="dhPlay('l2-audioEl2','l2-dhBtn2')">
+                <svg id="l2-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l2-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l2-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">Having a meal — asking for chopsticks, a spoon, and a bowl</span>
+          </div>
+          <audio id="l2-audioEl2" src="audio/02-3.mp3" onended="dhEnded('l2-audioEl2','l2-dhBtn2','l2-dhIcon2')" ontimeupdate="dhUpdate('l2-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">服务员，再给我们拿一双筷子、一个勺子和一个碗。</div>
+            <div class="line-pinyin">Fúwùyuán, zài gěi wǒmen ná yī shuāng kuàizi, yī ge sháozi hé yī ge wǎn.</div>
+            <div class="line-en">Waiter, could you bring us another pair of chopsticks, a spoon, and a bowl.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">服务员</div>
+          <div class="line-content">
+            <div class="line-zh">好的，请等一下，我马上去拿。</div>
+            <div class="line-pinyin">Hǎo de, qǐng děng yīxià, wǒ mǎshàng qù ná.</div>
+            <div class="line-en">Sure, one moment please — I'll get them right away.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">这家饭馆的服务很热情，菜也都做得很好吃。你们尝尝，看喜不喜欢这些菜。</div>
+            <div class="line-pinyin">Zhè jiā fànguǎn de fúwù hěn rèqíng, cài yě dōu zuò de hěn hǎochī. Nǐmen chángchang, kàn xǐ bu xǐhuan zhèxiē cài.</div>
+            <div class="line-en">The service here is very warm, and the food is all really delicious. Give them a taste — see if you like these dishes.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">哪个菜都好吃。您点的这些菜真不错。</div>
+            <div class="line-pinyin">Nǎge cài dōu hǎochī. Nín diǎn de zhèxiē cài zhēn bú cuò.</div>
+            <div class="line-en">Every single dish is delicious. The ones you ordered are really great.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">这里的饭菜又便宜又好吃，我们经常来，服务员都记住我们爱吃的菜了。</div>
+            <div class="line-pinyin">Zhèlǐ de fàncài yòu piányi yòu hǎochī, wǒmen jīngcháng lái, fúwùyuán dōu jì zhù wǒmen ài chī de cài le.</div>
+            <div class="line-en">The food here is both cheap and delicious — we come often, and the staff have already memorized our favourite dishes.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">服务员</div>
+          <div class="line-content">
+            <div class="line-zh">王姐，您经常来吃饭，今天送您一些水果，请慢用。</div>
+            <div class="line-pinyin">Wáng jiě, nín jīngcháng lái chīfàn, jīntiān sòng nín yīxiē shuǐguǒ, qǐng màn yòng.</div>
+            <div class="line-en">Sister Wang, since you come so often, today some fruit is on the house — enjoy your meal.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l2-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 边吃边聊</span>
+              <button class="dh-play-btn" id="l2-dhBtn3" onclick="dhPlay('l2-audioEl3','l2-dhBtn3')">
+                <svg id="l2-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l2-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l2-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">Chatting over the meal — about takeout and ordering on the phone</span>
+          </div>
+          <audio id="l2-audioEl3" src="audio/02-5.mp3" onended="dhEnded('l2-audioEl3','l2-dhBtn3','l2-dhIcon3')" ontimeupdate="dhUpdate('l2-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">这个鸡肉饭太好吃了，我要再来吃一次。</div>
+            <div class="line-pinyin">Zhège jīròu fàn tài hǎochī le, wǒ yào zài lái chī yī cì.</div>
+            <div class="line-en">This chicken rice is so good — I want to come back and have it again.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">你可以拿走这张菜单，看看下次还吃点儿什么。</div>
+            <div class="line-pinyin">Nǐ kěyǐ názǒu zhè zhāng càidān, kànkan xiàcì hái chī diǎnr shénme.</div>
+            <div class="line-en">You can take this menu with you and see what else to try next time.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">不用拿菜单，在手机上就能看到，也可选好了让他们给你送。</div>
+            <div class="line-pinyin">Búyòng ná càidān, zài shǒujī shàng jiù néng kàn dào, yě kě xuǎn hǎo le ràng tāmen gěi nǐ sòng.</div>
+            <div class="line-en">No need to take the menu — you can see it on your phone, and even pick what you want and have them deliver it to you.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">他们家还能送外卖？</div>
+            <div class="line-pinyin">Tāmen jiā hái néng sòng wàimài?</div>
+            <div class="line-en">They do takeout delivery too?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">对，现在很多饭馆都能送外卖，想吃什么就点什么。</div>
+            <div class="line-pinyin">Duì, xiànzài hěn duō fànguǎn dōu néng sòng wàimài, xiǎng chī shénme jiù diǎn shénme.</div>
+            <div class="line-en">Yes — these days lots of restaurants do takeout. You just order whatever you feel like.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">白家月</div>
+          <div class="line-content">
+            <div class="line-zh">那真是太方便了！</div>
+            <div class="line-pinyin">Nà zhēn shì tài fāngbiàn le!</div>
+            <div class="line-en">That's really convenient!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 (短文) -->
+      <div class="dialogue-block" id="l2-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 李文的日记</span>
+              <button class="dh-play-btn" id="l2-dhBtn4" onclick="dhPlay('l2-audioEl4','l2-dhBtn4')">
+                <svg id="l2-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l2-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l2-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">Li Wen's diary — about food abroad and being home again</span>
+          </div>
+          <audio id="l2-audioEl4" src="audio/02-7.mp3" onended="dhEnded('l2-audioEl4','l2-dhBtn4','l2-dhIcon4')" ontimeupdate="dhUpdate('l2-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              这些年在国外，我很少自己做饭。早饭我吃一个面包，有时候吃一块蛋糕，再喝一杯咖啡。午饭和晚饭也都在外面吃。快要考试的时候又忙又累，没时间出去吃饭，家里又什么吃的都没有，我可能好几天只吃方便面。现在回到中国了，每天能吃到妈妈做的饭，我真是太高兴了！有时候妈妈只做几个简单的菜，我也非常爱吃，因为什么都没有妈妈做的饭好吃。
+            </div>
+            <div class="line-pinyin" style="color:var(--gold);font-size:0.85em;line-height:1.9;margin-top:0.5em;">
+              Zhèxiē nián zài guówài, wǒ hěn shǎo zìjǐ zuòfàn. Zǎofàn wǒ chī yī ge miànbāo, yǒushíhou chī yī kuài dàngāo, zài hē yī bēi kāfēi. Wǔfàn hé wǎnfàn yě dōu zài wàimiàn chī. Kuàiyào kǎoshì de shíhou yòu máng yòu lèi, méi shíjiān chūqù chīfàn, jiā lǐ yòu shénme chī de dōu méiyǒu, wǒ kěnéng hǎo jǐ tiān zhǐ chī fāngbiànmiàn. Xiànzài huí dào Zhōngguó le, měi tiān néng chī dào māma zuò de fàn, wǒ zhēn shì tài gāoxìng le! Yǒushíhou māma zhǐ zuò jǐ ge jiǎndān de cài, wǒ yě fēicháng ài chī, yīnwèi shénme dōu méiyǒu māma zuò de fàn hǎochī.
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);">
+              All those years abroad, I rarely cooked for myself. For breakfast I'd have a piece of bread, sometimes a slice of cake, and a cup of coffee. Lunch and dinner I also ate out. Around exam time I was so busy and tired I had no time to go out, and there was nothing to eat at home — I might survive on instant noodles for several days in a row. Now that I'm back in China, I get to eat Mom's cooking every day — I'm just so happy! Sometimes Mom only makes a few simple dishes, and I love them just as much, because nothing tastes as good as Mom's home cooking.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l2-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">菜单</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">càidān</div><div class="fcs-en">menu</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">又</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yòu</div><div class="fcs-en">and; both… and…</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">饿</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">è</div><div class="fcs-en">hungry</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">渴</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kě</div><div class="fcs-en">thirsty</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">客气</div><div class="fcs-pos">v./adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kèqi</div><div class="fcs-en">be polite; polite</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">饮料</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǐnliào</div><div class="fcs-en">drink; beverage</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">好久</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">hǎojiǔ</div><div class="fcs-en">for a long time</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">服务</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fúwù</div><div class="fcs-en">to serve; service</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">员</div><div class="fcs-pos">suf.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yuán</div><div class="fcs-en">suffix indicating a person (e.g. staff, member)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">双</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shuāng</div><div class="fcs-en">pair (measure word)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">筷子</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kuàizi</div><div class="fcs-en">chopsticks</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">勺子</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">sháozi</div><div class="fcs-en">spoon</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">碗</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wǎn</div><div class="fcs-en">bowl</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">马上</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mǎshàng</div><div class="fcs-en">immediately; right away</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">热情</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">rèqíng</div><div class="fcs-en">warm; enthusiastic; hospitable</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">尝</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">cháng</div><div class="fcs-en">to taste; to try (food)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">记</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jì</div><div class="fcs-en">to remember; to memorize</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">用</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yòng</div><div class="fcs-en">to eat; to drink; to use</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">鸡</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jī</div><div class="fcs-en">chicken</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">张</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhāng</div><div class="fcs-en">measure word for paper, sheets, paintings, etc.</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">不用</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">búyòng</div><div class="fcs-en">need not; no need to</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">选</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xuǎn</div><div class="fcs-en">to choose; to select</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">外卖</div><div class="fcs-pos">n./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wàimài</div><div class="fcs-en">takeout; to offer takeout service</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">方便</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fāngbiàn</div><div class="fcs-en">convenient</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">蛋糕</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dàngāo</div><div class="fcs-en">cake</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">只</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhǐ</div><div class="fcs-en">only; just</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">方便面</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fāngbiànmiàn</div><div class="fcs-en">instant noodles</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">简单</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiǎndān</div><div class="fcs-en">simple</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l2-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 28</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">菜单</div><div class="vocab-pinyin">càidān</div><div class="vocab-pos">n.</div><div class="vocab-en">menu</div><div class="vocab-example">你们看看<em>菜单</em>。<br><span style="color:#bbb">Take a look at the menu.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">又</div><div class="vocab-pinyin">yòu</div><div class="vocab-pos">adv.</div><div class="vocab-en">and; both… and…</div><div class="vocab-example"><em>又</em>饿<em>又</em>渴。<br><span style="color:#bbb">Both hungry and thirsty.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">饿</div><div class="vocab-pinyin">è</div><div class="vocab-pos">adj.</div><div class="vocab-en">hungry</div><div class="vocab-example">我有点儿<em>饿</em>。<br><span style="color:#bbb">I'm a bit hungry.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">渴</div><div class="vocab-pinyin">kě</div><div class="vocab-pos">adj.</div><div class="vocab-en">thirsty</div><div class="vocab-example">很<em>渴</em>，想喝水。<br><span style="color:#bbb">Very thirsty, want some water.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">客气</div><div class="vocab-pinyin">kèqi</div><div class="vocab-pos">v./adj.</div><div class="vocab-en">be polite; polite</div><div class="vocab-example">别<em>客气</em>。<br><span style="color:#bbb">Don't be shy / polite.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">饮料</div><div class="vocab-pinyin">yǐnliào</div><div class="vocab-pos">n.</div><div class="vocab-en">drink; beverage</div><div class="vocab-example">喝什么<em>饮料</em>？<br><span style="color:#bbb">What would you like to drink?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">好久</div><div class="vocab-pinyin">hǎojiǔ</div><div class="vocab-pos">adj.</div><div class="vocab-en">for a long time</div><div class="vocab-example"><em>好久</em>没喝中国茶了。<br><span style="color:#bbb">Haven't had Chinese tea for a long time.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">服务</div><div class="vocab-pinyin">fúwù</div><div class="vocab-pos">v.</div><div class="vocab-en">to serve; service</div><div class="vocab-example">这家饭馆的<em>服务</em>很热情。<br><span style="color:#bbb">The service at this restaurant is very warm.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">员</div><div class="vocab-pinyin">yuán</div><div class="vocab-pos">suf.</div><div class="vocab-en">suffix for a person (staff, member)</div><div class="vocab-example">服务<em>员</em>。<br><span style="color:#bbb">Waiter / server.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">双</div><div class="vocab-pinyin">shuāng</div><div class="vocab-pos">m.</div><div class="vocab-en">pair (measure word)</div><div class="vocab-example">一<em>双</em>筷子。<br><span style="color:#bbb">A pair of chopsticks.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">筷子</div><div class="vocab-pinyin">kuàizi</div><div class="vocab-pos">n.</div><div class="vocab-en">chopsticks</div><div class="vocab-example">用<em>筷子</em>吃饭。<br><span style="color:#bbb">Eat with chopsticks.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">勺子</div><div class="vocab-pinyin">sháozi</div><div class="vocab-pos">n.</div><div class="vocab-en">spoon</div><div class="vocab-example">一个<em>勺子</em>。<br><span style="color:#bbb">A spoon.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">碗</div><div class="vocab-pinyin">wǎn</div><div class="vocab-pos">n.</div><div class="vocab-en">bowl</div><div class="vocab-example">一个<em>碗</em>。<br><span style="color:#bbb">A bowl.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">马上</div><div class="vocab-pinyin">mǎshàng</div><div class="vocab-pos">adv.</div><div class="vocab-en">immediately; right away</div><div class="vocab-example">我<em>马上</em>去拿。<br><span style="color:#bbb">I'll go get it right away.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">热情</div><div class="vocab-pinyin">rèqíng</div><div class="vocab-pos">adj.</div><div class="vocab-en">warm; hospitable</div><div class="vocab-example">服务很<em>热情</em>。<br><span style="color:#bbb">The service is very warm.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">尝</div><div class="vocab-pinyin">cháng</div><div class="vocab-pos">v.</div><div class="vocab-en">to taste; to try (food)</div><div class="vocab-example">你们<em>尝尝</em>这些菜。<br><span style="color:#bbb">Give these dishes a taste.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">记</div><div class="vocab-pinyin">jì</div><div class="vocab-pos">v.</div><div class="vocab-en">to remember</div><div class="vocab-example">服务员都<em>记</em>住了。<br><span style="color:#bbb">The waiter has memorized it.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">用</div><div class="vocab-pinyin">yòng</div><div class="vocab-pos">v.</div><div class="vocab-en">to eat; to drink; to use</div><div class="vocab-example">请慢<em>用</em>。<br><span style="color:#bbb">Enjoy your meal.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">鸡</div><div class="vocab-pinyin">jī</div><div class="vocab-pos">n.</div><div class="vocab-en">chicken</div><div class="vocab-example"><em>鸡</em>肉饭。<br><span style="color:#bbb">Chicken rice.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">张</div><div class="vocab-pinyin">zhāng</div><div class="vocab-pos">m.</div><div class="vocab-en">measure word for paper, etc.</div><div class="vocab-example">一<em>张</em>菜单。<br><span style="color:#bbb">A menu (one sheet).</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">不用</div><div class="vocab-pinyin">búyòng</div><div class="vocab-pos">adv.</div><div class="vocab-en">need not; no need to</div><div class="vocab-example"><em>不用</em>拿菜单。<br><span style="color:#bbb">No need to take the menu.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">选</div><div class="vocab-pinyin">xuǎn</div><div class="vocab-pos">v.</div><div class="vocab-en">to choose; to select</div><div class="vocab-example"><em>选</em>好了让他们送。<br><span style="color:#bbb">Pick what you want and they'll deliver.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">外卖</div><div class="vocab-pinyin">wàimài</div><div class="vocab-pos">n./v.</div><div class="vocab-en">takeout</div><div class="vocab-example">送<em>外卖</em>。<br><span style="color:#bbb">To deliver takeout.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">方便</div><div class="vocab-pinyin">fāngbiàn</div><div class="vocab-pos">adj.</div><div class="vocab-en">convenient</div><div class="vocab-example">太<em>方便</em>了！<br><span style="color:#bbb">So convenient!</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">蛋糕</div><div class="vocab-pinyin">dàngāo</div><div class="vocab-pos">n.</div><div class="vocab-en">cake</div><div class="vocab-example">一块<em>蛋糕</em>。<br><span style="color:#bbb">A slice of cake.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">只</div><div class="vocab-pinyin">zhǐ</div><div class="vocab-pos">adv.</div><div class="vocab-en">only; just</div><div class="vocab-example"><em>只</em>吃方便面。<br><span style="color:#bbb">Only eat instant noodles.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">方便面</div><div class="vocab-pinyin">fāngbiànmiàn</div><div class="vocab-pos">n.</div><div class="vocab-en">instant noodles</div><div class="vocab-example">好几天只吃<em>方便面</em>。<br><span style="color:#bbb">Several days of just instant noodles.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">简单</div><div class="vocab-pinyin">jiǎndān</div><div class="vocab-pos">adj.</div><div class="vocab-en">simple</div><div class="vocab-example">几个<em>简单</em>的菜。<br><span style="color:#bbb">A few simple dishes.</span></div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">菜单</div>
+          <div class="wdh-info"><div class="wdh-pinyin">càidān</div><div class="wdh-en">menu</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">菜</div><div class="char-meaning">cài · dish; food</div></div>
+            <div class="wd-char"><div class="char">单</div><div class="char-meaning">dān · list; sheet</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">看菜单</span><span class="collocation-tag">点菜单</span><span class="collocation-tag">一张菜单</span><span class="collocation-tag">手机菜单</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你们看看菜单，想吃点儿什么？</div><div class="en">Take a look at the menu — what would you like?</div></div>
+            <div class="wd-ex"><div class="zh">不用拿菜单，在手机上就能看到。</div><div class="en">No need to take the menu — you can see it on the phone.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">客气</div>
+          <div class="wdh-info"><div class="wdh-pinyin">kèqi</div><div class="wdh-en">be polite; polite</div></div>
+          <div class="wdh-pos">v. / adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">客</div><div class="char-meaning">kè · guest</div></div>
+            <div class="wd-char"><div class="char">气</div><div class="char-meaning">qì · air; manner</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">别客气</span><span class="collocation-tag">不客气</span><span class="collocation-tag">很客气</span><span class="collocation-tag">太客气了</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">那多点点儿，别客气。</div><div class="en">Then order plenty — don't be shy.</div></div>
+            <div class="wd-ex"><div class="zh">谢谢！— 不客气。</div><div class="en">Thank you! — You're welcome.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">好久</div>
+          <div class="wdh-info"><div class="wdh-pinyin">hǎojiǔ</div><div class="wdh-en">for a long time</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">好</div><div class="char-meaning">hǎo · quite; very (intensifier)</div></div>
+            <div class="wd-char"><div class="char">久</div><div class="char-meaning">jiǔ · long (time)</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">好久没</span><span class="collocation-tag">好久不见</span><span class="collocation-tag">好久以前</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">好久没喝中国茶了。</div><div class="en">It's been ages since I had Chinese tea.</div></div>
+            <div class="wd-ex"><div class="zh">好久不见，你最近怎么样？</div><div class="en">Long time no see — how have you been?</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">服务</div>
+          <div class="wdh-info"><div class="wdh-pinyin">fúwù</div><div class="wdh-en">to serve; service</div></div>
+          <div class="wdh-pos">v. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">服</div><div class="char-meaning">fú · to serve</div></div>
+            <div class="wd-char"><div class="char">务</div><div class="char-meaning">wù · affair; task</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">服务员</span><span class="collocation-tag">服务台</span><span class="collocation-tag">服务很好</span><span class="collocation-tag">服务热情</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这家饭馆的服务很热情。</div><div class="en">The service at this restaurant is very warm.</div></div>
+            <div class="wd-ex"><div class="zh">服务员，再给我们拿一双筷子。</div><div class="en">Waiter, please bring us another pair of chopsticks.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">马上</div>
+          <div class="wdh-info"><div class="wdh-pinyin">mǎshàng</div><div class="wdh-en">immediately; right away</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">马</div><div class="char-meaning">mǎ · horse</div></div>
+            <div class="wd-char"><div class="char">上</div><div class="char-meaning">shàng · on; up</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">马上去</span><span class="collocation-tag">马上来</span><span class="collocation-tag">马上就到</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">请等一下，我马上去拿。</div><div class="en">Just a moment please, I'll get it right away.</div></div>
+            <div class="wd-ex"><div class="zh">他马上就到。</div><div class="en">He'll be here any moment.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">热情</div>
+          <div class="wdh-info"><div class="wdh-pinyin">rèqíng</div><div class="wdh-en">warm; enthusiastic; hospitable</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">热</div><div class="char-meaning">rè · hot; warm</div></div>
+            <div class="wd-char"><div class="char">情</div><div class="char-meaning">qíng · feeling</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">很热情</span><span class="collocation-tag">服务热情</span><span class="collocation-tag">热情地接待</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这家饭馆的服务很热情。</div><div class="en">The service at this restaurant is very warm.</div></div>
+            <div class="wd-ex"><div class="zh">中国朋友对我很热情。</div><div class="en">My Chinese friends are very warm towards me.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">尝</div>
+          <div class="wdh-info"><div class="wdh-pinyin">cháng</div><div class="wdh-en">to taste; to try (food)</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">尝尝</span><span class="collocation-tag">尝一下</span><span class="collocation-tag">尝一口</span><span class="collocation-tag">尝尝看</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你们尝尝，看喜不喜欢这些菜。</div><div class="en">Give them a taste — see if you like these dishes.</div></div>
+            <div class="wd-ex"><div class="zh">这是我妈妈做的饺子，你尝一下。</div><div class="en">These are dumplings my mom made — try one.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">外卖</div>
+          <div class="wdh-info"><div class="wdh-pinyin">wàimài</div><div class="wdh-en">takeout; to offer takeout service</div></div>
+          <div class="wdh-pos">n. / v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">外</div><div class="char-meaning">wài · outside</div></div>
+            <div class="wd-char"><div class="char">卖</div><div class="char-meaning">mài · to sell</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">点外卖</span><span class="collocation-tag">送外卖</span><span class="collocation-tag">叫外卖</span><span class="collocation-tag">外卖APP</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">现在很多饭馆都能送外卖。</div><div class="en">These days many restaurants offer takeout delivery.</div></div>
+            <div class="wd-ex"><div class="zh">今天太累了，我们叫外卖吧。</div><div class="en">I'm too tired today — let's order takeout.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">方便</div>
+          <div class="wdh-info"><div class="wdh-pinyin">fāngbiàn</div><div class="wdh-en">convenient</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">方</div><div class="char-meaning">fāng · way; method</div></div>
+            <div class="wd-char"><div class="char">便</div><div class="char-meaning">biàn · easy; convenient</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">很方便</span><span class="collocation-tag">太方便了</span><span class="collocation-tag">方便面</span><span class="collocation-tag">方便的话</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">那真是太方便了！</div><div class="en">That's really so convenient!</div></div>
+            <div class="wd-ex"><div class="zh">用筷子吃面条很方便。</div><div class="en">Eating noodles with chopsticks is very convenient.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">简单</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jiǎndān</div><div class="wdh-en">simple</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">简</div><div class="char-meaning">jiǎn · simple; brief</div></div>
+            <div class="wd-char"><div class="char">单</div><div class="char-meaning">dān · single</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">很简单</span><span class="collocation-tag">简单的菜</span><span class="collocation-tag">简单一点儿</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">妈妈只做几个简单的菜。</div><div class="en">Mom only made a few simple dishes.</div></div>
+            <div class="wd-ex"><div class="zh">这道题太简单了。</div><div class="en">This question is way too easy.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">又…又…</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">疑问代词非疑问用法（2）</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">想…就…／哪…就…</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>并列复句"又…又…" · Coordinate Sentence "又…又…"</div>
+          <p class="grammar-desc">"又…又…"用在形容词前，表示一个人或事物同时具有两种特点；也可用在动词前，表示同时进行的两种动作或状态。<br><span style="color:#888;font-size:0.85em;">"又…又…" appears before adjectives (or verbs) to indicate that a person or thing has two qualities — or is performing two actions — at the same time.</span></p>
+          <div class="grammar-pattern">又 + Adj₁ + 又 + Adj₂　／　又 + V₁ + 又 + V₂</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">现在还真是<strong>又饿又渴</strong>。</div><div class="en">Right now I'm really <strong>both hungry and thirsty</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">这里的饭菜<strong>又便宜又好吃</strong>。</div><div class="en">The food here is <strong>both cheap and delicious</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">那个女孩儿<strong>又高又漂亮</strong>。</div><div class="en">That girl is <strong>both tall and beautiful</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">快要考试的时候<strong>又忙又累</strong>。</div><div class="en">Around exam time, I'm <strong>both busy and tired</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>疑问代词的非疑问用法（2）· Non-Interrogative Use of Question Words (2)</div>
+          <p class="grammar-desc">疑问代词"哪、哪儿、什么、谁、怎么"等可以用来表示"任指"——指任何一个人、东西、地方、方式或时间。句中常用副词"都"与之呼应。<br><span style="color:#888;font-size:0.85em;">Question words like 哪, 哪儿, 什么, 谁, 怎么 can express <em>general / arbitrary reference</em> — "any person / anything / anywhere / any way." The adverb 都 is usually used to echo them.</span></p>
+          <div class="grammar-pattern">疑问代词 + …… + <strong>都</strong> + V / Adj</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh"><strong>哪个</strong>菜<strong>都</strong>好吃。</div><div class="en"><strong>Every</strong> dish is delicious.</div></div>
+            <div class="grammar-ex"><div class="zh">这次旅游，我去<strong>哪儿都</strong>可以。</div><div class="en">For this trip, I'm fine going <strong>anywhere</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">我下午有时间，你<strong>什么</strong>时候来<strong>都</strong>没问题。</div><div class="en">I'm free in the afternoon — you can come <strong>any time</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">家里<strong>什么</strong>吃的<strong>都</strong>没有。</div><div class="en">There's <strong>nothing at all</strong> to eat at home.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>"想…就…" / 两个相同疑问代词的呼应 · Echoing Question Words</div>
+          <p class="grammar-desc">两个相同的疑问代词前后呼应，表示任指——指同一个人、同一件事、同一个地点、同一种方式等。当主语相同时，第二个主语可省略；不同时，第二个主语放在"就"前面。<br><span style="color:#888;font-size:0.85em;">Two identical question words echo each other to refer to the same person / thing / place / manner. If the two clauses share a subject, the second is dropped; otherwise, place the second subject before 就.</span></p>
+          <div class="grammar-pattern">疑问代词 + V₁ + ……，<strong>就</strong> + V₂ + 同一疑问代词</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">你们想吃<strong>什么</strong>就点<strong>什么</strong>。</div><div class="en">Order <strong>whatever</strong> you feel like.</div></div>
+            <div class="grammar-ex"><div class="zh">你觉得<strong>哪个</strong>好看就买<strong>哪个</strong>。</div><div class="en">Buy <strong>whichever one</strong> you think looks good.</div></div>
+            <div class="grammar-ex"><div class="zh">你想去<strong>哪儿</strong>，我们就去<strong>哪儿</strong>。</div><div class="en">We'll go <strong>wherever</strong> you want to go.</div></div>
+            <div class="grammar-ex"><div class="zh">你<strong>什么时候</strong>来都行，我<strong>什么时候</strong>都在家。</div><div class="en">Come <strong>whenever</strong> — I'm home <strong>any time</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 白家月想喝什么、吃什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>红茶和包子</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>绿茶和饺子</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>咖啡和面条儿</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>奶茶和蛋糕</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 王一雪让服务员拿什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>筷子和碗</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>勺子和筷子</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>勺子、筷子和碗</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>菜单和水果</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 王一雪为什么说"不用拿菜单"？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>她已经有菜单了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>她不想再来这家饭馆</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>在手机上就能看到菜单</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>菜单太重了不好拿</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 根据课文4，下面哪个说法是对的？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>李文在国外经常自己做饭</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>李文不喜欢妈妈做的菜</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>考试的时候李文好几天只吃方便面</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>李文每天早上吃饺子</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"又…又…"完成句子：这里的饭菜______便宜______好吃。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l2-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l2-fill1','又','l2-reveal1')">检查</button>
+        </div>
+        <div id="l2-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：这里的饭菜<strong>又</strong>便宜<strong>又</strong>好吃。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"想…就…"造句：你______吃______吃。（用"什么"完成）</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l2-fill2" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:320px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l2-fill2','open','l2-reveal2')">检查</button>
+        </div>
+        <div id="l2-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：你<strong>想</strong>吃<strong>什么就</strong>吃<strong>什么</strong>。（答案不唯一，只要符合"想…就…"句式即可）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你经常点外卖吗？你什么时候一定会点外卖？</div>
+            <div>（2）有外国朋友来中国，你想带他／她去吃什么？为什么？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 王一雪为什么说这家饭馆"服务很热情，菜也都做得很好吃"？你身边有这样的饭馆吗？<br><br>
+          <strong>（2）</strong> 课文里说"想吃什么就点什么"——你觉得这种点外卖的方式方便吗？你最常用哪个外卖APP？<br><br>
+          <strong>（3）</strong> 李文回到中国后觉得"什么都没有妈妈做的饭好吃"——你最想念家里的哪一道菜？
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 在饭馆吃饭、点外卖和自己做饭，你更喜欢哪一种？为什么？<br><br>
+          <strong>（2）</strong> 你国家的饭馆服务和中国饭馆的服务有什么不同？<br><br>
+          <strong>（3）</strong> 你会用筷子吃饭吗？你觉得用筷子方便还是用刀叉（dāochā, knife &amp; fork）方便？
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">筷子 <span class="pinyin">Chopsticks</span></div>
+        <div class="culture-zh">筷子是中国人最常用的餐具，已经有三千多年的历史。中式筷子一般比较长，上方下圆，多用木头或竹子做成。中国人用筷子有不少"礼貌规矩"：不能把筷子直直地插在饭里（很像祭拜的样子），也不能用筷子敲碗、用筷子指着别人。在饭桌上，主人通常会很热情地给客人夹菜，说"多吃点儿，别客气"，这是中国饮食文化里非常常见的表达。</div>
+        <div class="culture-en">Chopsticks have been the main eating utensil in China for over three thousand years. Chinese chopsticks are typically longer than Japanese or Korean ones, square at the top and round at the bottom, and most often made of wood or bamboo. There are several etiquette rules: never stick chopsticks straight up in a bowl of rice (it resembles incense at funerals), never tap the bowl with chopsticks, and never point at people with them. At the table, hosts often warmly serve food to guests, saying things like "eat more, don't be shy" — a hallmark of Chinese dining culture.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">又 vs 再 <span class="pinyin">"Both/Again" — Different Roles</span></div>
+        <div class="culture-zh">
+          <strong>相同点：</strong>都和"重复、添加"有关，但用法完全不同。<br><br>
+          <strong>不同点：</strong><br>
+          ① <strong>又</strong>：常用于"又…又…"结构，表示两种特点或两种动作同时存在；也可以表示一个动作"已经"重复发生了。<br>
+          例：又饿又渴。 / 他又来了。<br><br>
+          ② <strong>再</strong>：表示动作"将要"重复，常和未来动作连用。<br>
+          例：我要再来吃一次。 / 请再说一遍。
+        </div>
+        <div class="culture-en">
+          <strong>Similarity:</strong> Both relate to repetition or addition, but their use is very different.<br><br>
+          <strong>Differences:</strong><br>
+          ① <strong>又</strong>: Used in the "又…又…" pattern to express two simultaneous features/actions; can also indicate a repetition that has <em>already</em> happened.<br>
+          E.g., 又饿又渴 (both hungry and thirsty); 他又来了 (he came again).<br><br>
+          ② <strong>再</strong>: Marks a repetition that is going to happen — used with future actions.<br>
+          E.g., 我要再来吃一次 (I want to come back and eat again); 请再说一遍 (please say it again).
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">"上／下 + 量词"表时间 <span class="pinyin">"上 / 下 + Measure Word" for Time</span></div>
+        <div class="culture-zh">
+          "上／下 + 量词"主要用来表示时间顺序：<strong>"上"</strong>表示过去，<strong>"下"</strong>表示将来。<br><br>
+          常用搭配：<br>
+          上次（last time） / 下次（next time）<br>
+          上周（last week） / 下周（next week）<br>
+          上个星期（last week） / 下个星期（next week）<br>
+          上个月（last month） / 下个月（next month）<br><br>
+          例：你可以拿走这张菜单，看看<strong>下次</strong>还吃点儿什么。<br>
+          　　<strong>上次</strong>你点的那个菜真不错。
+        </div>
+        <div class="culture-en">
+          The structure <strong>上 / 下 + measure word</strong> indicates time sequence: <strong>上</strong> = past, <strong>下</strong> = future.<br><br>
+          Common pairs:<br>
+          上次 (last time) / 下次 (next time)<br>
+          上周 / 下周 (last/next week)<br>
+          上个星期 / 下个星期 (last/next week)<br>
+          上个月 / 下个月 (last/next month)<br><br>
+          E.g., 你可以拿走这张菜单，看看<strong>下次</strong>还吃点儿什么 (Take the menu and see what to try <strong>next time</strong>).<br>
+          　　<strong>上次</strong>你点的那个菜真不错 (That dish you ordered <strong>last time</strong> was great).
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L2 -->
+  </div><!-- end lesson-content data-lesson="2" -->
 
   <!-- ═══════════════ LESSON 3 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-3" data-lesson="3" data-watermark="三" style="display:none">
@@ -2009,6 +2822,13 @@
     if (panel) panel.classList.add('active');
     if (btn) {
       btn.classList.add('active');
+      // Scroll back to the top of the lesson when the user changes section
+      const header = document.querySelector('.lesson-header[data-lesson="' + currentLesson + '"]');
+      const target = header || document.getElementById('page-lesson');
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.pageYOffset - 60;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
     } else {
       // When called programmatically (e.g. from showLesson), highlight the first tab
       const firstBtn = container.querySelector('.tab-btn');
