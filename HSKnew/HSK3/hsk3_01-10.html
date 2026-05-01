@@ -5761,9 +5761,834 @@
 
   <!-- ═══════════════ LESSON 7 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-7" data-lesson="7" data-watermark="七" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第七课 · Lesson 07</span>
+    </div>
+    <h1>那条裙子比短裤更好看</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn</p>
+    <p class="lesson-subtitle">That skirt looks better than the shorts</p>
   </div>
 
   <div class="lesson-content" data-lesson="7" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l7-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在家里商量去买东西</span>
+              <button class="dh-play-btn" id="l7-dhBtn1" onclick="dhPlay('l7-audioEl1','l7-dhBtn1')">
+                <svg id="l7-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l7-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l7-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Wang Yixue and Liu Ming discuss going shopping for a new bike</span>
+          </div>
+          <audio id="l7-audioEl1" src="audio/07-1.mp3" onended="dhEnded('l7-audioEl1','l7-dhBtn1','l7-dhIcon1')" ontimeupdate="dhUpdate('l7-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">这辆自行车是小雪八岁的时候买的，看起来有点儿旧了。</div>
+            <div class="line-pinyin">Zhè liàng zìxíngchē shì Xiǎoxuě bā suì de shíhou mǎi de, kàn qǐlai yǒudiǎnr jiù le.</div>
+            <div class="line-en">This bicycle was bought when Xiaoxue was eight — it's looking a bit old now.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">是啊，她现在长高了，这辆车已经太矮了。</div>
+            <div class="line-pinyin">Shì a, tā xiànzài zhǎng gāo le, zhè liàng chē yǐjīng tài ǎi le.</div>
+            <div class="line-en">Yeah, she's grown taller — this bike is already too low.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">商场里开了一家自行车店，咱们给她买辆新的吧。</div>
+            <div class="line-pinyin">Shāngchǎng lǐ kāi le yī jiā zìxíngchē diàn, zánmen gěi tā mǎi liàng xīn de ba.</div>
+            <div class="line-en">A new bike shop opened up at the mall — let's buy her a new one.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">好，咱们带小雪一起去，让她试一下。</div>
+            <div class="line-pinyin">Hǎo, zánmen dài Xiǎoxuě yīqǐ qù, ràng tā shì yīxià.</div>
+            <div class="line-en">OK — let's bring Xiaoxue along so she can try them out.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">那今天就去吧！我也想再看看衣服。咱们怎么去？</div>
+            <div class="line-pinyin">Nà jīntiān jiù qù ba! Wǒ yě xiǎng zài kànkan yīfu. Zánmen zěnme qù?</div>
+            <div class="line-en">Then let's go today! I also want to take another look at clothes. How shall we get there?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">商场不远，咱们可以走着去。</div>
+            <div class="line-pinyin">Shāngchǎng bù yuǎn, zánmen kěyǐ zǒu zhe qù.</div>
+            <div class="line-en">The mall isn't far — we can walk there.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l7-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在商场挑选衣服</span>
+              <button class="dh-play-btn" id="l7-dhBtn2" onclick="dhPlay('l7-audioEl2','l7-dhBtn2')">
+                <svg id="l7-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l7-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l7-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At the mall — choosing between shorts and a skirt</span>
+          </div>
+          <audio id="l7-audioEl2" src="audio/07-3.mp3" onended="dhEnded('l7-audioEl2','l7-dhBtn2','l7-dhIcon2')" ontimeupdate="dhUpdate('l7-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">你看我穿这条黄色的短裤好看吗？</div>
+            <div class="line-pinyin">Nǐ kàn wǒ chuān zhè tiáo huángsè de duǎnkù hǎokàn ma?</div>
+            <div class="line-en">Look — do these yellow shorts look good on me?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">大小合适，但我觉得那条裙子比短裤更好看。</div>
+            <div class="line-pinyin">Dàxiǎo héshì, dàn wǒ juéde nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn.</div>
+            <div class="line-en">The size fits, but I think that skirt looks even better than the shorts.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">裙子比短裤贵一点儿。</div>
+            <div class="line-pinyin">Qúnzi bǐ duǎnkù guì yīdiǎnr.</div>
+            <div class="line-en">The skirt is a bit more expensive than the shorts.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">贵多少？</div>
+            <div class="line-pinyin">Guì duōshao?</div>
+            <div class="line-en">How much more?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">裙子480，短裤400。</div>
+            <div class="line-pinyin">Qúnzi sì bǎi bā shí, duǎnkù sì bǎi.</div>
+            <div class="line-en">The skirt is 480, the shorts are 400.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">刘明</div>
+          <div class="line-content">
+            <div class="line-zh">裙子不比短裤贵多少，还是买裙子吧，你穿裙子更好看。</div>
+            <div class="line-pinyin">Qúnzi bù bǐ duǎnkù guì duōshao, hái shì mǎi qúnzi ba, nǐ chuān qúnzi gèng hǎokàn.</div>
+            <div class="line-en">The skirt isn't really that much more — let's go with the skirt; you look better in skirts.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">我多看看再决定。你看，那边有买二送一！</div>
+            <div class="line-pinyin">Wǒ duō kànkan zài juédìng. Nǐ kàn, nà biān yǒu mǎi èr sòng yī!</div>
+            <div class="line-en">I'll look around a bit more before deciding. Look — over there it's "buy two get one free"!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l7-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在水果店</span>
+              <button class="dh-play-btn" id="l7-dhBtn3" onclick="dhPlay('l7-audioEl3','l7-dhBtn3')">
+                <svg id="l7-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l7-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l7-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At a fruit stall — buying watermelon and bananas, haggling a bit</span>
+          </div>
+          <audio id="l7-audioEl3" src="audio/07-5.mp3" onended="dhEnded('l7-audioEl3','l7-dhBtn3','l7-dhIcon3')" ontimeupdate="dhUpdate('l7-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">店员</div>
+          <div class="line-content">
+            <div class="line-zh">西瓜又大又新鲜，不甜不要钱！</div>
+            <div class="line-pinyin">Xīguā yòu dà yòu xīnxiān, bù tián bú yào qián!</div>
+            <div class="line-en">Watermelons — big and fresh! Free if not sweet!</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">西瓜看起来不错，怎么卖？</div>
+            <div class="line-pinyin">Xīguā kàn qǐlai bú cuò, zěnme mài?</div>
+            <div class="line-en">The watermelon looks great — how much?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">店员</div>
+          <div class="line-content">
+            <div class="line-zh">五块钱一公斤。来，您先尝尝这块冰西瓜，甜极了！</div>
+            <div class="line-pinyin">Wǔ kuài qián yī gōngjīn. Lái, nín xiān chángchang zhè kuài bīng xīguā, tián jí le!</div>
+            <div class="line-en">Five yuan a kilo. Here, try a piece of this chilled watermelon — incredibly sweet!</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">是挺甜的！帮我选个大点儿的，再来两斤香蕉。</div>
+            <div class="line-pinyin">Shì tǐng tián de! Bāng wǒ xuǎn ge dà diǎnr de, zài lái liǎng jīn xiāngjiāo.</div>
+            <div class="line-en">It really is sweet! Pick me a bigger one, and add two jin of bananas too.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">店员</div>
+          <div class="line-content">
+            <div class="line-zh">一共五十八块五毛。</div>
+            <div class="line-pinyin">Yīgòng wǔshí bā kuài wǔ máo.</div>
+            <div class="line-en">That's 58 yuan 50 fen in all.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">王一雪</div>
+          <div class="line-content">
+            <div class="line-zh">我买了这么多，便宜点儿吧。</div>
+            <div class="line-pinyin">Wǒ mǎi le zhème duō, piányi diǎnr ba.</div>
+            <div class="line-en">I'm buying so much — could you give me a bit of a discount?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">店员</div>
+          <div class="line-content">
+            <div class="line-zh">您给我五十五吧，不能再便宜了。</div>
+            <div class="line-pinyin">Nín gěi wǒ wǔshí wǔ ba, bù néng zài piányi le.</div>
+            <div class="line-en">55 yuan — can't go any lower.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 -->
+      <div class="dialogue-block" id="l7-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 刘明的日记</span>
+              <button class="dh-play-btn" id="l7-dhBtn4" onclick="dhPlay('l7-audioEl4','l7-dhBtn4')">
+                <svg id="l7-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l7-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l7-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Liu Ming's note about shopping for a new TV online</span>
+          </div>
+          <audio id="l7-audioEl4" src="audio/07-7.mp3" onended="dhEnded('l7-audioEl4','l7-dhBtn4','l7-dhIcon4')" ontimeupdate="dhUpdate('l7-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              这几天我们在新家坐着看电视的时候，又发现了新问题。房子大了，电视看起来就有点儿小。这个电视是我们结婚时买的，是时候换个新电视了。今天我一直在网上选电视，没想到，现在的电视不但便宜，而且用着非常方便，有的电视叫它一声就能开机。我看了好几个，都很满意，晚上让一雪来决定吧。
+            </div>
+            <div class="line-pinyin" style="color:var(--gold);font-size:0.85em;line-height:1.9;margin-top:0.5em;">
+              Zhè jǐ tiān wǒmen zài xīn jiā zuò zhe kàn diànshì de shíhou, yòu fāxiàn le xīn wèntí. Fángzi dà le, diànshì kàn qǐlai jiù yǒudiǎnr xiǎo. Zhège diànshì shì wǒmen jiéhūn shí mǎi de, shì shíhou huàn ge xīn diànshì le. Jīntiān wǒ yìzhí zài wǎng shàng xuǎn diànshì, méi xiǎngdào, xiànzài de diànshì búdàn piányi, érqiě yòng zhe fēicháng fāngbiàn, yǒu de diànshì jiào tā yī shēng jiù néng kāijī. Wǒ kàn le hǎo jǐ ge, dōu hěn mǎnyì, wǎnshang ràng Yīxuě lái juédìng ba.
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);">
+              These past few days while we've been sitting in the new house watching TV, I noticed another issue. Now that the place is bigger, the TV looks a bit small. This TV was bought when we got married — it's time to switch to a new one. I've been browsing online for TVs all day. To my surprise, today's TVs aren't only cheap, they're really easy to use too — some of them turn on with a single voice command. I've found several I'm happy with — I'll let Yixue decide tonight.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l7-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">辆</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">liàng</div><div class="fcs-en">measure word for vehicles</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">自行车</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zìxíngchē</div><div class="fcs-en">bicycle; bike</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">旧</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiù</div><div class="fcs-en">old (used; not new)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">矮</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">ǎi</div><div class="fcs-en">low; short (in stature)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">试</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shì</div><div class="fcs-en">to try; to test out</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">黄色</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">huángsè</div><div class="fcs-en">yellow (color)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">短裤</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">duǎnkù</div><div class="fcs-en">shorts</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">大小</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dàxiǎo</div><div class="fcs-en">size</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">合适</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">héshì</div><div class="fcs-en">suitable; fitting</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">裙子</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qúnzi</div><div class="fcs-en">skirt</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">更</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gèng</div><div class="fcs-en">more; even more</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">决定</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">juédìng</div><div class="fcs-en">to decide; decision</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">西瓜</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xīguā</div><div class="fcs-en">watermelon</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">新鲜</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xīnxiān</div><div class="fcs-en">fresh</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">甜</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tián</div><div class="fcs-en">sweet</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">公斤</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gōngjīn</div><div class="fcs-en">kilogram (kg)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">冰</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bīng</div><div class="fcs-en">ice; to freeze; chilled</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">极</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jí</div><div class="fcs-en">extremely (used in 极了)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">斤</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jīn</div><div class="fcs-en">jin (= 500 g; Chinese pound)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">香蕉</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiāngjiāo</div><div class="fcs-en">banana</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">一共</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yígòng</div><div class="fcs-en">in all; altogether</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">毛</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">máo</div><div class="fcs-en">mao (= 1/10 yuan; "ten cents")</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">结婚</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiéhūn</div><div class="fcs-en">to marry; get married</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">不但</div><div class="fcs-pos">conj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">búdàn</div><div class="fcs-en">not only</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">而且</div><div class="fcs-pos">conj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">érqiě</div><div class="fcs-en">and; but also</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">声</div><div class="fcs-pos">m./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shēng</div><div class="fcs-en">measure word for sounds; sound</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">开机</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kāijī</div><div class="fcs-en">to power on; start (a device)</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l7-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 27</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">辆</div><div class="vocab-pinyin">liàng</div><div class="vocab-pos">m.</div><div class="vocab-en">m.w. for vehicles</div><div class="vocab-example">这<em>辆</em>自行车。<br><span style="color:#bbb">This bicycle.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">自行车</div><div class="vocab-pinyin">zìxíngchē</div><div class="vocab-pos">n.</div><div class="vocab-en">bicycle</div><div class="vocab-example">买一辆<em>自行车</em>。<br><span style="color:#bbb">Buy a bicycle.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">旧</div><div class="vocab-pinyin">jiù</div><div class="vocab-pos">adj.</div><div class="vocab-en">old (used)</div><div class="vocab-example">看起来有点儿<em>旧</em>。<br><span style="color:#bbb">Looks a bit old.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">矮</div><div class="vocab-pinyin">ǎi</div><div class="vocab-pos">adj.</div><div class="vocab-en">low; short</div><div class="vocab-example">这辆车太<em>矮</em>了。<br><span style="color:#bbb">This bike is too low.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">试</div><div class="vocab-pinyin">shì</div><div class="vocab-pos">v.</div><div class="vocab-en">to try; test out</div><div class="vocab-example">让她<em>试</em>一下。<br><span style="color:#bbb">Let her try it.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">黄色</div><div class="vocab-pinyin">huángsè</div><div class="vocab-pos">n.</div><div class="vocab-en">yellow</div><div class="vocab-example"><em>黄色</em>的短裤。<br><span style="color:#bbb">Yellow shorts.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">短裤</div><div class="vocab-pinyin">duǎnkù</div><div class="vocab-pos">n.</div><div class="vocab-en">shorts</div><div class="vocab-example">这条<em>短裤</em>。<br><span style="color:#bbb">These shorts.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">大小</div><div class="vocab-pinyin">dàxiǎo</div><div class="vocab-pos">n.</div><div class="vocab-en">size</div><div class="vocab-example"><em>大小</em>合适。<br><span style="color:#bbb">The size fits.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">合适</div><div class="vocab-pinyin">héshì</div><div class="vocab-pos">adj.</div><div class="vocab-en">suitable</div><div class="vocab-example">大小<em>合适</em>。<br><span style="color:#bbb">The size is right.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">裙子</div><div class="vocab-pinyin">qúnzi</div><div class="vocab-pos">n.</div><div class="vocab-en">skirt</div><div class="vocab-example">那条<em>裙子</em>更好看。<br><span style="color:#bbb">That skirt is even better.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">更</div><div class="vocab-pinyin">gèng</div><div class="vocab-pos">adv.</div><div class="vocab-en">even more</div><div class="vocab-example">裙子比短裤<em>更</em>好看。<br><span style="color:#bbb">The skirt looks even better than the shorts.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">决定</div><div class="vocab-pinyin">juédìng</div><div class="vocab-pos">v./n.</div><div class="vocab-en">to decide; decision</div><div class="vocab-example">多看看再<em>决定</em>。<br><span style="color:#bbb">Look more before deciding.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">西瓜</div><div class="vocab-pinyin">xīguā</div><div class="vocab-pos">n.</div><div class="vocab-en">watermelon</div><div class="vocab-example"><em>西瓜</em>又大又新鲜。<br><span style="color:#bbb">The watermelon is big and fresh.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">新鲜</div><div class="vocab-pinyin">xīnxiān</div><div class="vocab-pos">adj.</div><div class="vocab-en">fresh</div><div class="vocab-example">水果很<em>新鲜</em>。<br><span style="color:#bbb">The fruit is very fresh.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">甜</div><div class="vocab-pinyin">tián</div><div class="vocab-pos">adj.</div><div class="vocab-en">sweet</div><div class="vocab-example">这块西瓜<em>甜</em>极了！<br><span style="color:#bbb">This watermelon is incredibly sweet!</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">公斤</div><div class="vocab-pinyin">gōngjīn</div><div class="vocab-pos">m.</div><div class="vocab-en">kilogram</div><div class="vocab-example">五块钱一<em>公斤</em>。<br><span style="color:#bbb">Five yuan per kilogram.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">冰</div><div class="vocab-pinyin">bīng</div><div class="vocab-pos">v./n.</div><div class="vocab-en">ice; chilled; to freeze</div><div class="vocab-example">这块<em>冰</em>西瓜。<br><span style="color:#bbb">This piece of chilled watermelon.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">极</div><div class="vocab-pinyin">jí</div><div class="vocab-pos">adv.</div><div class="vocab-en">extremely</div><div class="vocab-example">甜<em>极</em>了！<br><span style="color:#bbb">Extremely sweet!</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">斤</div><div class="vocab-pinyin">jīn</div><div class="vocab-pos">m.</div><div class="vocab-en">jin (500 g)</div><div class="vocab-example">两<em>斤</em>香蕉。<br><span style="color:#bbb">Two jin of bananas.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">香蕉</div><div class="vocab-pinyin">xiāngjiāo</div><div class="vocab-pos">n.</div><div class="vocab-en">banana</div><div class="vocab-example">来两斤<em>香蕉</em>。<br><span style="color:#bbb">Two jin of bananas, please.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">一共</div><div class="vocab-pinyin">yígòng</div><div class="vocab-pos">adv.</div><div class="vocab-en">in all; altogether</div><div class="vocab-example"><em>一共</em>五十八块五。<br><span style="color:#bbb">58.5 yuan in all.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">毛</div><div class="vocab-pinyin">máo</div><div class="vocab-pos">m.</div><div class="vocab-en">mao (1/10 yuan)</div><div class="vocab-example">五块五<em>毛</em>。<br><span style="color:#bbb">5 yuan 50 fen.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">结婚</div><div class="vocab-pinyin">jiéhūn</div><div class="vocab-pos">v.</div><div class="vocab-en">to get married</div><div class="vocab-example">我们<em>结婚</em>时买的。<br><span style="color:#bbb">Bought when we got married.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">不但</div><div class="vocab-pinyin">búdàn</div><div class="vocab-pos">conj.</div><div class="vocab-en">not only</div><div class="vocab-example"><em>不但</em>便宜，而且方便。<br><span style="color:#bbb">Not only cheap, but also convenient.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">而且</div><div class="vocab-pinyin">érqiě</div><div class="vocab-pos">conj.</div><div class="vocab-en">and; but also</div><div class="vocab-example">不但便宜，<em>而且</em>方便。<br><span style="color:#bbb">Not only cheap, but also convenient.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">声</div><div class="vocab-pinyin">shēng</div><div class="vocab-pos">m./n.</div><div class="vocab-en">m.w. for sounds; sound</div><div class="vocab-example">叫一<em>声</em>就能开机。<br><span style="color:#bbb">Turns on with one voice command.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">开机</div><div class="vocab-pinyin">kāijī</div><div class="vocab-pos">v.</div><div class="vocab-en">to power on</div><div class="vocab-example">叫一声就能<em>开机</em>。<br><span style="color:#bbb">Turns on with a voice command.</span></div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">辆</div>
+          <div class="wdh-info"><div class="wdh-pinyin">liàng</div><div class="wdh-en">measure word for vehicles</div></div>
+          <div class="wdh-pos">m.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"辆" is the measure word for wheeled vehicles: 自行车 (bike), 汽车 (car), 出租车 (taxi), 公交车 (bus). For trains: 列 (liè), for boats: 艘 (sōu), for planes: 架 (jià).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这辆自行车是小雪八岁的时候买的。</div><div class="en">This bike was bought when Xiaoxue was 8.</div></div>
+            <div class="wd-ex"><div class="zh">他买了一辆新车。</div><div class="en">He bought a new car.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">合适</div>
+          <div class="wdh-info"><div class="wdh-pinyin">héshì</div><div class="wdh-en">suitable; fitting</div></div>
+          <div class="wdh-pos">adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">合</div><div class="char-meaning">hé · to fit; combine</div></div>
+            <div class="wd-char"><div class="char">适</div><div class="char-meaning">shì · suitable</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">大小合适</span><span class="collocation-tag">很合适</span><span class="collocation-tag">不合适</span><span class="collocation-tag">合适的</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">大小合适，但我觉得那条裙子更好看。</div><div class="en">The size is right, but that skirt looks even better.</div></div>
+            <div class="wd-ex"><div class="zh">这双鞋很合适。</div><div class="en">These shoes fit well.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">更</div>
+          <div class="wdh-info"><div class="wdh-pinyin">gèng</div><div class="wdh-en">even more; still more</div></div>
+          <div class="wdh-pos">adv.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">In comparative sentences (A 比 B + Adj), adding "更" or "还" before the adjective deepens the contrast: "even more". 还 sounds slightly milder; 更 stronger.</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">A 比 B 更…</span><span class="collocation-tag">更好</span><span class="collocation-tag">更喜欢</span><span class="collocation-tag">更方便</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">那条裙子比短裤更好看。</div><div class="en">That skirt looks even better than the shorts.</div></div>
+            <div class="wd-ex"><div class="zh">你穿裙子更好看。</div><div class="en">You look even better in skirts.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">决定</div>
+          <div class="wdh-info"><div class="wdh-pinyin">juédìng</div><div class="wdh-en">to decide; decision</div></div>
+          <div class="wdh-pos">v. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">决</div><div class="char-meaning">jué · to decide</div></div>
+            <div class="wd-char"><div class="char">定</div><div class="char-meaning">dìng · to fix; settle</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">做决定</span><span class="collocation-tag">决定去</span><span class="collocation-tag">还没决定</span><span class="collocation-tag">让她来决定</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我多看看再决定。</div><div class="en">I'll look more before deciding.</div></div>
+            <div class="wd-ex"><div class="zh">晚上让一雪来决定吧。</div><div class="en">Let Yixue make the decision tonight.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">极了</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jí le</div><div class="wdh-en">extremely (used after Adj)</div></div>
+          <div class="wdh-pos">complement</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"极了" follows an adjective or psych verb to indicate an <em>extremely</em> high degree. Stronger than 得很. Note: "好极了" (excellent), "热极了" (boiling hot), "喜欢极了" (love it).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这块冰西瓜甜极了！</div><div class="en">This chilled watermelon is incredibly sweet!</div></div>
+            <div class="wd-ex"><div class="zh">今年夏天热极了。</div><div class="en">This summer is boiling hot.</div></div>
+            <div class="wd-ex"><div class="zh">这本书我喜欢极了。</div><div class="en">I love this book.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">斤 / 公斤</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jīn / gōngjīn</div><div class="wdh-en">jin (500g) / kilogram</div></div>
+          <div class="wdh-pos">m.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;"><strong>1 公斤 = 1 kg = 2 斤</strong>. "斤" is the traditional Chinese half-kilo unit, very common at markets. "公斤" is the metric kilogram, more formal. Both are used everyday — fruit/vegetables are most often priced per 斤.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">五块钱一公斤。</div><div class="en">Five yuan per kilogram.</div></div>
+            <div class="wd-ex"><div class="zh">来两斤香蕉。</div><div class="en">Two jin of bananas, please.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">毛 / 块 / 元</div>
+          <div class="wdh-info"><div class="wdh-pinyin">máo / kuài / yuán</div><div class="wdh-en">fen / yuan currency units</div></div>
+          <div class="wdh-pos">m.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;"><strong>Spoken vs. written:</strong> 块 (kuài) and 毛 (máo) are spoken; 元 (yuán) and 角 (jiǎo) are formal/written. <strong>1 元 = 1 块 = 10 角 = 10 毛</strong>. So "5.5 元" is read "五块五毛" or just "五块五" in conversation.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">一共五十八块五毛。</div><div class="en">58 yuan 50 fen in all.</div></div>
+            <div class="wd-ex"><div class="zh">您给我五十五吧。</div><div class="en">Give me 55 yuan.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">不但…，而且…</div>
+          <div class="wdh-info"><div class="wdh-pinyin">búdàn… érqiě…</div><div class="wdh-en">not only…, but also…</div></div>
+          <div class="wdh-pos">conj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Used to add information that builds on what was just said.<br><strong>Same subject:</strong> Subject + 不但 + V₁，而且 + V₂.<br><strong>Different subjects:</strong> 不但 + Subject₁ + V₁，而且 + Subject₂ + V₂.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">现在的电视不但便宜，而且用着非常方便。</div><div class="en">Today's TVs aren't only cheap — they're very easy to use.</div></div>
+            <div class="wd-ex"><div class="zh">不但家月会说汉语，而且天中也会说汉语。</div><div class="en">Not only does Jiayue speak Chinese, but Tianzhong does too.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">结婚</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jiéhūn</div><div class="wdh-en">to get married</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"结婚" is a verb-object compound (literally "tie marriage"). Don't add another object after it. To say "marry someone", use "跟 X 结婚" — e.g., 她跟王明结婚了 (she married Wang Ming).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">这个电视是我们结婚时买的。</div><div class="en">This TV was bought when we got married.</div></div>
+            <div class="wd-ex"><div class="zh">他们去年结婚了。</div><div class="en">They got married last year.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">声</div>
+          <div class="wdh-info"><div class="wdh-pinyin">shēng</div><div class="wdh-en">m.w. for sounds; sound</div></div>
+          <div class="wdh-pos">m. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"声" is used as a measure word for vocal/calling sounds: 叫一声 (let out a call/yell), 喊一声 (give a shout). As a noun: 声音 (shēngyīn, sound), 大声 (loudly), 小声 (quietly).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">叫它一声就能开机。</div><div class="en">A single voice command turns it on.</div></div>
+            <div class="wd-ex"><div class="zh">他在外面笑了一声。</div><div class="en">He let out a laugh outside.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">连动句"V着"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">"A 不比 B…"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">程度补语"极了"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(3,this)">"不但…，而且…"</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>连动句"V₁着 + V₂" · Manner of an Action</div>
+          <p class="grammar-desc">动态助词"着"用在连动句的第一个动词后面，表示进行第二个动作时的<strong>状态或方式</strong>——回答"以什么方式做V₂？"<br><span style="color:#888;font-size:0.85em;">The aspect particle "着" follows V₁ in a serial-verb sentence to indicate the <em>state / manner</em> of doing V₂. Answers "in what way is V₂ done?"</span></p>
+          <div class="grammar-pattern">V₁ + <strong>着</strong> + (Obj₁) + V₂ + (Obj₂)</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">咱们可以<strong>走着去</strong>。</div><div class="en">We can <strong>go on foot</strong>. (V₁=走, V₂=去)</div></div>
+            <div class="grammar-ex"><div class="zh">弟弟<strong>吃着苹果</strong>写作业。</div><div class="en">My little brother does his homework <strong>while eating an apple</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">他们<strong>坐着</strong>看电视。</div><div class="en">They watch TV <strong>sitting down</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">我们<strong>坐着</strong>看电视的时候，发现了新问题。</div><div class="en">While <strong>sitting</strong> watching TV, we noticed a new problem.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>比较句（10）"A 不比 B + Adj" · "Not Really More…"</div>
+          <p class="grammar-desc">"A 不比 B + 形容词"表示 A 和 B 差不多——常用于强调两者接近，或反驳别人的说法。注意：这与"A 没有 B + 形容词"（A 不如 B）不同。<br><span style="color:#888;font-size:0.85em;">"A 不比 B + Adj" emphasizes that A and B are <em>about the same</em> — used to push back against an exaggeration ("not really that much more…"). Different from 没有 (A 没有 B Adj = A is less than B).</span></p>
+          <div class="grammar-pattern">A + <strong>不比</strong> + B + Adj (+ 多少／…)</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">裙子<strong>不比</strong>短裤贵多少。</div><div class="en">The skirt <strong>isn't really that much more expensive</strong> than the shorts.</div></div>
+            <div class="grammar-ex"><div class="zh">他的中文<strong>不比</strong>你好。</div><div class="en">His Chinese <strong>isn't really better</strong> than yours.</div></div>
+            <div class="grammar-ex"><div class="zh">他跑得<strong>不比</strong>我快多少。</div><div class="en">He runs <strong>only marginally faster</strong> than me.</div></div>
+            <div class="grammar-ex"><div class="zh">这个<strong>不比</strong>那个新。</div><div class="en">This one <strong>isn't really newer</strong> than that one.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>程度补语"极了" · Complement of Degree "极了"</div>
+          <p class="grammar-desc">程度补语"极了"用在形容词或心理动词后面，表示程度达到"极高"。<strong>注意：不能与"很/非常/挺"等程度副词同时使用。</strong><br><span style="color:#888;font-size:0.85em;">"极了" follows an adjective or psych-verb to mark an <em>extremely high</em> degree ("…to the extreme"). <strong>Cannot</strong> combine with another degree adverb like 很/非常/挺.</span></p>
+          <div class="grammar-pattern">Adj / Psych-V + <strong>极了</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">这块冰西瓜<strong>甜极了</strong>！</div><div class="en">This chilled watermelon is <strong>incredibly sweet</strong>!</div></div>
+            <div class="grammar-ex"><div class="zh">今年夏天<strong>热极了</strong>。</div><div class="en">This summer is <strong>boiling hot</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">这本书我<strong>喜欢极了</strong>。</div><div class="en">I <strong>absolutely love</strong> this book.</div></div>
+            <div class="grammar-ex"><div class="zh">她做的中国菜<strong>好吃极了</strong>。</div><div class="en">The Chinese food she makes is <strong>extremely delicious</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法4 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">4</span>递进复句"不但…，而且…" · "Not Only…, But Also…"</div>
+          <p class="grammar-desc">"不但…，而且…"连接两个分句，表示<strong>递进关系</strong>。<br><strong>主语相同时</strong>："不但"放在第一个主语<em>后面</em>。<br><strong>主语不同时</strong>："不但"放在第一个主语<em>前面</em>。<br><span style="color:#888;font-size:0.85em;">"不但 X, 而且 Y" = "not only X, but also Y" — Y is a step further than X. Subject placement: same subject → 不但 after subject; different subjects → 不但 before subject.</span></p>
+          <div class="grammar-pattern">… <strong>不但</strong> X，<strong>而且</strong> Y</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">现在的电视<strong>不但</strong>便宜，<strong>而且</strong>用着非常方便。</div><div class="en">Today's TVs <strong>aren't only</strong> cheap, <strong>they're also</strong> very easy to use.</div></div>
+            <div class="grammar-ex"><div class="zh">家月<strong>不但</strong>喜欢唱歌，<strong>而且</strong>唱得很好听。</div><div class="en">Jiayue <strong>not only</strong> loves to sing — she sings well too.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>不但</strong>家月会说汉语，<strong>而且</strong>天中也会说汉语。</div><div class="en"><strong>Not only</strong> Jiayue speaks Chinese, <strong>but also</strong> Tianzhong does.</div></div>
+            <div class="grammar-ex"><div class="zh">这家饭馆<strong>不但</strong>菜好吃，<strong>而且</strong>服务也很热情。</div><div class="en">This restaurant <strong>not only</strong> has great food <strong>but also</strong> warm service.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 王一雪和刘明为什么想给小雪买新自行车？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>因为旧车太贵</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>因为旧车看起来旧了，而且太矮</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>因为小雪不喜欢这辆</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>因为商场打折</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 课文里说，下面哪个更贵？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>短裤</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>裙子</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>运动鞋</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>自行车</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 王一雪一共花了多少钱买水果？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>五十五块</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>五十八块</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>五十八块五毛（店员算价），最后给了五十五块</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>六十块</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 刘明为什么觉得新电视用着方便？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>因为电视很大</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>因为可以网上买</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>因为叫一声就能开机</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>因为电视很便宜</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"V着"完成句子：商场不远，咱们可以______去。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l7-fill1" type="text" placeholder="走着" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:240px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l7-fill1','走着','l7-reveal1')">检查</button>
+        </div>
+        <div id="l7-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：商场不远，咱们可以<strong>走着</strong>去。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"极了"完成句子：这块冰西瓜______，您尝尝！</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l7-fill2" type="text" placeholder="甜极了" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:240px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l7-fill2','甜极了','l7-reveal2')">检查</button>
+        </div>
+        <div id="l7-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：这块冰西瓜<strong>甜极了</strong>，您尝尝！</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">7. 用"不但…，而且…"造句描述高铁。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l7-fill3" type="text" placeholder="高铁不但…，而且…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:340px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l7-fill3','open','l7-reveal3')">检查</button>
+        </div>
+        <div id="l7-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：高铁<strong>不但</strong>又快又舒服，<strong>而且</strong>上面还能点外卖。（答案不唯一）</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你喜欢在网上买东西吗？为什么？</div>
+            <div>（2）你会去商店买什么东西？为什么？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 王一雪买衣服的时候在裙子和短裤之间犹豫——你买衣服的时候，价格、款式（kuǎnshì, style）和"穿着好不好看"哪个最重要？<br><br>
+          <strong>（2）</strong> 课文里店员说"不甜不要钱"——你在你国家买水果会跟店员"砍价"（kǎn jià, haggle）吗？<br><br>
+          <strong>（3）</strong> 刘明发现现在的电视"不但便宜，而且用着方便"——你最近买过什么"让你很满意"的东西？为什么满意？
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 你买东西的时候更喜欢"网购"还是"逛商场"？为什么？<br><br>
+          <strong>（2）</strong> "买二送一""买一送一"在你国家常见吗？你觉得这种打折是真的便宜吗？<br><br>
+          <strong>（3）</strong> 现在很多产品（chǎnpǐn, product）都越来越"智能"（zhìnéng, smart）——你觉得这是好事吗？
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">中国人的购物方式 <span class="pinyin">Shopping in China</span></div>
+        <div class="culture-zh">中国人的购物方式这些年变化非常大。以前大家都去商场、菜市场（càishìchǎng, wet market）买东西；现在网购（wǎnggòu, online shopping）已经成了大部分人的主要方式。淘宝、京东、拼多多等是最大的购物平台（píngtái, platform）。每年的"双十一"（11月11日）和"618"（6月18日）是中国最大的购物节，很多商品打折非常厉害。在水果店、菜市场买东西时还可以"砍价"，但商场和网店的价格一般是固定的。手机支付（zhīfù, payment）非常方便——用微信或支付宝扫码就能付钱，几乎不用带现金。</div>
+        <div class="culture-en">Chinese shopping habits have changed enormously. People once shopped mostly at malls and wet markets; now online shopping is the main mode for most. Taobao, JD.com, and Pinduoduo are the largest platforms. The biggest shopping festivals are "Double 11" (Nov 11) and "618" (June 18) — huge discounts. At fruit stalls and wet markets you can still haggle a bit, but malls and online stores have fixed prices. Mobile payment is everywhere: a quick WeChat or Alipay QR-code scan and you're done — almost no one carries cash anymore.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">比较句的家族 <span class="pinyin">The 比 / 没有 / 不比 / 跟…一样 Family</span></div>
+        <div class="culture-zh">
+          <strong>① A 比 B + Adj：</strong>A 大于 B（A&gt;B）。<br>
+          例：裙子<em>比</em>短裤<em>贵</em>。（Skirt &gt; shorts）<br><br>
+          <strong>② A 比 B + 更/还 + Adj：</strong>同样大于，但程度更深。<br>
+          例：那条裙子<em>比</em>短裤<em>更</em>好看。<br><br>
+          <strong>③ A 没有 B + Adj：</strong>A 小于 B（A&lt;B）。<br>
+          例：我<em>没有</em>他<em>高</em>。（I &lt; him）<br><br>
+          <strong>④ A 不比 B + Adj：</strong>A 和 B 差不多（强调"不见得多"）。<br>
+          例：他的中文<em>不比</em>你<em>好</em>。<br><br>
+          <strong>⑤ A 跟 B 一样 (+ Adj)：</strong>A 等于 B。<br>
+          例：这家宾馆<em>跟</em>别的<em>不一样</em>。
+        </div>
+        <div class="culture-en">
+          <strong>① A 比 B + Adj</strong> — A is more (A &gt; B). <em>Skirt is more expensive than shorts.</em><br><br>
+          <strong>② A 比 B 更/还 + Adj</strong> — same direction, even more so. <em>That skirt is even prettier than the shorts.</em><br><br>
+          <strong>③ A 没有 B + Adj</strong> — A is less (A &lt; B). <em>I'm not as tall as him.</em><br><br>
+          <strong>④ A 不比 B + Adj</strong> — A and B are about the same (push-back / "not really more"). <em>His Chinese isn't really better than yours.</em><br><br>
+          <strong>⑤ A 跟 B 一样 (+ Adj)</strong> — A equals B. <em>This hotel is unlike any other (i.e. NOT the same).</em>
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">"买二送一"打折表达 <span class="pinyin">Discount Expressions</span></div>
+        <div class="culture-zh">
+          中国商店常见的打折说法：<br><br>
+          <strong>买二送一</strong>（mǎi èr sòng yī）= Buy 2, get 1 free<br>
+          <strong>买一送一</strong> = Buy 1, get 1 free<br>
+          <strong>八折</strong>（bā zhé）= 20% off（中文打几折表示"付百分之几十"）<br>
+          <strong>五折</strong> = half price（50%）<br>
+          <strong>第二件半价</strong>（dì èr jiàn bàn jià）= second item half price<br>
+          <strong>不甜不要钱</strong> = "free if not sweet" — typical fruit-stall slogan<br><br>
+          注意："打折"用的折数是<strong>付的部分</strong>，不是"减掉的部分"。打八折=付80%（不是减80%）。
+        </div>
+        <div class="culture-en">
+          Common Chinese discount slogans:<br><br>
+          <strong>买二送一</strong> — buy 2, get 1 free<br>
+          <strong>买一送一</strong> — buy 1, get 1 free<br>
+          <strong>八折</strong> — 20% off (literally "pay eighty percent")<br>
+          <strong>五折</strong> — half price<br>
+          <strong>第二件半价</strong> — second item half price<br>
+          <strong>不甜不要钱</strong> — "free if not sweet" — classic fruit-stall slogan<br><br>
+          Important: 打X折 means you <strong>pay</strong> X×10%, not "take off" X×10%. So 八折 = pay 80% (i.e. 20% off), not 80% off.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L7 -->
   </div><!-- end lesson-content data-lesson="7" -->
 
   <!-- ═══════════════ LESSON 8 ═══════════════ -->
