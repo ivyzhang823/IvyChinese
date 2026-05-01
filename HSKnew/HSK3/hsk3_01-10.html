@@ -6593,9 +6593,868 @@
 
   <!-- ═══════════════ LESSON 8 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-8" data-lesson="8" data-watermark="八" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 3
+      </button>
+      <span class="lesson-tag-num">第八课 · Lesson 08</span>
+    </div>
+    <h1>今天我出院了</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Jīntiān wǒ chūyuàn le</p>
+    <p class="lesson-subtitle">Today I was discharged from the hospital</p>
   </div>
 
   <div class="lesson-content" data-lesson="8" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion', this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ══ 课文 TAB ══ -->
+    <div data-tab="text" class="tab-panel active">
+
+      <!-- 课文1 -->
+      <div class="dialogue-block" id="l8-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 1 · 在体育馆</span>
+              <button class="dh-play-btn" id="l8-dhBtn1" onclick="dhPlay('l8-audioEl1','l8-dhBtn1')">
+                <svg id="l8-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l8-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l8-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At the school gym — Li Wen runs into Chen Tianzhong</span>
+          </div>
+          <audio id="l8-audioEl1" src="audio/08-1.mp3" onended="dhEnded('l8-audioEl1','l8-dhBtn1','l8-dhIcon1')" ontimeupdate="dhUpdate('l8-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">天中，最近常看见你来体育馆。</div>
+            <div class="line-pinyin">Tiānzhōng, zuìjìn cháng kànjiàn nǐ lái tǐyùguǎn.</div>
+            <div class="line-en">Tianzhong, lately I keep seeing you at the gym.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">我每天下午都来跑一个小时步。</div>
+            <div class="line-pinyin">Wǒ měi tiān xiàwǔ dōu lái pǎo yī ge xiǎoshí bù.</div>
+            <div class="line-en">I come every afternoon for an hour-long run.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">你的运动习惯真不错。</div>
+            <div class="line-pinyin">Nǐ de yùndòng xíguàn zhēn bú cuò.</div>
+            <div class="line-en">Your exercise habit is really impressive.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">因为我今年胖了十多斤，不能再胖下去了，有点儿不健康。</div>
+            <div class="line-pinyin">Yīnwèi wǒ jīnnián pàng le shí duō jīn, bù néng zài pàng xiàqù le, yǒudiǎnr bù jiànkāng.</div>
+            <div class="line-en">Because I've gained over ten jin this year — I can't keep getting heavier, it's not very healthy.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">我下课以后常去打羽毛球，你也来玩吧。</div>
+            <div class="line-pinyin">Wǒ xiàkè yǐhòu cháng qù dǎ yǔmáoqiú, nǐ yě lái wán ba.</div>
+            <div class="line-en">After class I often play badminton — come join us!</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">我知道，但是你们的水平太高了，我打得不怎么样。</div>
+            <div class="line-pinyin">Wǒ zhīdào, dànshì nǐmen de shuǐpíng tài gāo le, wǒ dǎ de bù zěnmeyàng.</div>
+            <div class="line-en">I know, but you guys are at a really high level — I don't play that well.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">李文</div>
+          <div class="line-content">
+            <div class="line-zh">没关系，我可以教你。</div>
+            <div class="line-pinyin">Méi guānxi, wǒ kěyǐ jiāo nǐ.</div>
+            <div class="line-en">No worries — I can teach you.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文2 -->
+      <div class="dialogue-block" id="l8-block2">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 2 · 在教室</span>
+              <button class="dh-play-btn" id="l8-dhBtn2" onclick="dhPlay('l8-audioEl2','l8-dhBtn2')">
+                <svg id="l8-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l8-block2')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l8-block2')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the classroom — Annie expresses concern for Chen Tianzhong</span>
+          </div>
+          <audio id="l8-audioEl2" src="audio/08-3.mp3" onended="dhEnded('l8-audioEl2','l8-dhBtn2','l8-dhIcon2')" ontimeupdate="dhUpdate('l8-audioEl2')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">你怎么了？看上去有点儿不舒服。</div>
+            <div class="line-pinyin">Nǐ zěnme le? Kàn shàngqù yǒudiǎnr bù shūfu.</div>
+            <div class="line-en">What's wrong? You don't look so well.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">昨天游完泳以后，耳朵一直有点儿疼。</div>
+            <div class="line-pinyin">Zuótiān yóu wán yǒng yǐhòu, ěrduo yìzhí yǒudiǎnr téng.</div>
+            <div class="line-en">After I finished swimming yesterday, my ear has been hurting a bit.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">是不是感冒了？发烧吗？</div>
+            <div class="line-pinyin">Shì bú shì gǎnmào le? Fāshāo ma?</div>
+            <div class="line-en">Could you have caught a cold? Any fever?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">好像发低烧了。</div>
+            <div class="line-pinyin">Hǎoxiàng fā dī shāo le.</div>
+            <div class="line-en">I think I have a slight fever.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">我送你去医院，让医生检查一下吧。</div>
+            <div class="line-pinyin">Wǒ sòng nǐ qù yīyuàn, ràng yīshēng jiǎnchá yīxià ba.</div>
+            <div class="line-en">Let me take you to the hospital so a doctor can check you.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">我先回去睡一觉，可能休息休息就好了。</div>
+            <div class="line-pinyin">Wǒ xiān huíqù shuì yī jiào, kěnéng xiūxi xiūxi jiù hǎo le.</div>
+            <div class="line-en">I'll go home and sleep first — a little rest might fix it.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">好吧，如果下午还发烧，就一定要去看医生。</div>
+            <div class="line-pinyin">Hǎo ba, rúguǒ xiàwǔ hái fāshāo, jiù yīdìng yào qù kàn yīshēng.</div>
+            <div class="line-en">OK — but if you still have a fever this afternoon, you have to see a doctor.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">谢谢关心，我会注意的。</div>
+            <div class="line-pinyin">Xièxie guānxīn, wǒ huì zhùyì de.</div>
+            <div class="line-en">Thanks for caring — I'll be careful.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文3 -->
+      <div class="dialogue-block" id="l8-block3">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 3 · 在医院病房</span>
+              <button class="dh-play-btn" id="l8-dhBtn3" onclick="dhPlay('l8-audioEl3','l8-dhBtn3')">
+                <svg id="l8-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l8-block3')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l8-block3')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">In the hospital ward — Annie visits Chen Tianzhong</span>
+          </div>
+          <audio id="l8-audioEl3" src="audio/08-5.mp3" onended="dhEnded('l8-audioEl3','l8-dhBtn3','l8-dhIcon3')" ontimeupdate="dhUpdate('l8-audioEl3')"></audio>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">你怎么突然住院了？大家都很担心你。</div>
+            <div class="line-pinyin">Nǐ zěnme tūrán zhùyuàn le? Dàjiā dōu hěn dānxīn nǐ.</div>
+            <div class="line-en">How come you ended up in the hospital so suddenly? Everyone's been worried about you.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">我的腿疼了几个星期了，医生说需要住院做检查。</div>
+            <div class="line-pinyin">Wǒ de tuǐ téng le jǐ ge xīngqī le, yīshēng shuō xūyào zhùyuàn zuò jiǎnchá.</div>
+            <div class="line-en">My leg has been hurting for a few weeks — the doctor said I need to be admitted for tests.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">你看起来一点儿也不像病人。</div>
+            <div class="line-pinyin">Nǐ kàn qǐlai yīdiǎnr yě bú xiàng bìngrén.</div>
+            <div class="line-en">You don't look like a patient at all.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">是啊，我很少生病。我上次来医院已经过去差不多两年了。</div>
+            <div class="line-pinyin">Shì a, wǒ hěn shǎo shēngbìng. Wǒ shàng cì lái yīyuàn yǐjīng guòqù chàbuduō liǎng nián le.</div>
+            <div class="line-en">Yeah, I rarely get sick. It's been almost two years since I last came to the hospital.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">你每天跑步，有时候还去游泳，是不是运动太多了？</div>
+            <div class="line-pinyin">Nǐ měi tiān pǎobù, yǒu shíhou hái qù yóuyǒng, shì bú shì yùndòng tài duō le?</div>
+            <div class="line-en">You run every day and sometimes swim too — could you be over-exercising?</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">医生也这么说，但是还得做完检查才能知道。</div>
+            <div class="line-pinyin">Yīshēng yě zhème shuō, dànshì hái děi zuò wán jiǎnchá cái néng zhīdào.</div>
+            <div class="line-en">The doctor said the same thing, but we'll only know once the tests are done.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">安妮</div>
+          <div class="line-content">
+            <div class="line-zh">别担心！听医生的话，好好休息，你的腿一定能好。</div>
+            <div class="line-pinyin">Bié dānxīn! Tīng yīshēng de huà, hǎohao xiūxi, nǐ de tuǐ yídìng néng hǎo.</div>
+            <div class="line-en">Don't worry! Follow the doctor's advice and rest well — your leg will definitely get better.</div>
+          </div>
+        </div>
+        <div class="dialogue-line">
+          <div class="speaker">陈天中</div>
+          <div class="line-content">
+            <div class="line-zh">谢谢。有人来看我，我就开心多了。</div>
+            <div class="line-pinyin">Xièxie. Yǒu rén lái kàn wǒ, wǒ jiù kāixīn duō le.</div>
+            <div class="line-en">Thanks. Having someone visit me really cheers me up.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课文4 -->
+      <div class="dialogue-block" id="l8-block4">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">Text 4 · 出院日记</span>
+              <button class="dh-play-btn" id="l8-dhBtn4" onclick="dhPlay('l8-audioEl4','l8-dhBtn4')">
+                <svg id="l8-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l8-block4')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l8-block4')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">At home — Chen Tianzhong's diary entry on the day he leaves the hospital</span>
+          </div>
+          <audio id="l8-audioEl4" src="audio/08-7.mp3" onended="dhEnded('l8-audioEl4','l8-dhBtn4','l8-dhIcon4')" ontimeupdate="dhUpdate('l8-audioEl4')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              今天我出院了。出院前，医生给我开了几种药，而且告诉了我吃药的方法。有一种药需要每天睡前吃一次，其他几种每天吃三次，饭后吃。除了吃药，医生还说最重要的是多休息。我都记在心里了，回家以后一定会多注意。希望我的腿能快一点儿好。
+            </div>
+            <div class="line-pinyin" style="color:var(--gold);font-size:0.85em;line-height:1.9;margin-top:0.5em;">
+              Jīntiān wǒ chūyuàn le. Chūyuàn qián, yīshēng gěi wǒ kāi le jǐ zhǒng yào, érqiě gàosu le wǒ chī yào de fāngfǎ. Yǒu yī zhǒng yào xūyào měi tiān shuì qián chī yī cì, qítā jǐ zhǒng měi tiān chī sān cì, fàn hòu chī. Chúle chī yào, yīshēng hái shuō zuì zhòngyào de shì duō xiūxi. Wǒ dōu jì zài xīnlǐ le, huí jiā yǐhòu yídìng huì duō zhùyì. Xīwàng wǒ de tuǐ néng kuài yīdiǎnr hǎo.
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);">
+              I left the hospital today. Before discharging me, the doctor prescribed several kinds of medicine and told me how to take them. One needs to be taken once a day before bed; the others, three times a day after meals. Besides taking the medicine, the doctor also said the most important thing is to rest a lot. I've taken it all to heart — once I'm home, I'll be extra careful. I hope my leg gets better soon.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 课文 tab -->
+
+    <!-- ══ 生词表 TAB ══ -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l8-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">最近</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zuìjìn</div><div class="fcs-en">lately; recently</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">常</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">cháng</div><div class="fcs-en">often</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">体育馆</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tǐyùguǎn</div><div class="fcs-en">gymnasium</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">习惯</div><div class="fcs-pos">n./v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xíguàn</div><div class="fcs-en">habit; to be used to</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">胖</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">pàng</div><div class="fcs-en">fat</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">健康</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiànkāng</div><div class="fcs-en">healthy</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">以后</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǐhòu</div><div class="fcs-en">after; afterward</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">羽毛球</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǔmáoqiú</div><div class="fcs-en">badminton</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">耳朵</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">ěrduo</div><div class="fcs-en">ear</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">感冒</div><div class="fcs-pos">v./n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gǎnmào</div><div class="fcs-en">to catch a cold; cold</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">发烧</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fāshāo</div><div class="fcs-en">to have a fever</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">低</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dī</div><div class="fcs-en">low</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">关心</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">guānxīn</div><div class="fcs-en">to be concerned about</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">注意</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhùyì</div><div class="fcs-en">to pay attention to</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">突然</div><div class="fcs-pos">adj./adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tūrán</div><div class="fcs-en">sudden; suddenly</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">住院</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhùyuàn</div><div class="fcs-en">to be in hospital</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">担心</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dānxīn</div><div class="fcs-en">to worry</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">腿</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tuǐ</div><div class="fcs-en">leg</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">病人</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bìngrén</div><div class="fcs-en">patient</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">差不多</div><div class="fcs-pos">adv./adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chàbuduō</div><div class="fcs-en">almost; similar</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">得</div><div class="fcs-pos">mod.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">děi</div><div class="fcs-en">need to; have to</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">开心</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kāixīn</div><div class="fcs-en">happy; glad</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">出院</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chūyuàn</div><div class="fcs-en">to leave hospital; be discharged</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">开</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kāi</div><div class="fcs-en">to prescribe (medicine)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">种</div><div class="fcs-pos">m.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhǒng</div><div class="fcs-en">kind; type (measure word)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">方法</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fāngfǎ</div><div class="fcs-en">method; way</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">其他</div><div class="fcs-pos">pron.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qítā</div><div class="fcs-en">other; the rest</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">心里</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xīnlǐ</div><div class="fcs-en">mind; heart</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l8-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 28</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;transition:background 0.2s,border-color 0.2s;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#4255FF"/>
+          <text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text>
+        </svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+
+      <div class="sec-title">生词 · New Words</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">最近</div><div class="vocab-pinyin">zuìjìn</div><div class="vocab-pos">n.</div><div class="vocab-en">lately; recently</div><div class="vocab-example"><em>最近</em>常看见你。<br><span style="color:#bbb">Lately I keep seeing you.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">常</div><div class="vocab-pinyin">cháng</div><div class="vocab-pos">adv.</div><div class="vocab-en">often</div><div class="vocab-example">下课以后<em>常</em>去打球。<br><span style="color:#bbb">After class I often play ball.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">体育馆</div><div class="vocab-pinyin">tǐyùguǎn</div><div class="vocab-pos">n.</div><div class="vocab-en">gymnasium</div><div class="vocab-example">每天来<em>体育馆</em>。<br><span style="color:#bbb">Come to the gym every day.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">习惯</div><div class="vocab-pinyin">xíguàn</div><div class="vocab-pos">n./v.</div><div class="vocab-en">habit; be used to</div><div class="vocab-example">运动<em>习惯</em>真不错。<br><span style="color:#bbb">A great exercise habit.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">胖</div><div class="vocab-pinyin">pàng</div><div class="vocab-pos">adj.</div><div class="vocab-en">fat</div><div class="vocab-example">今年<em>胖</em>了十多斤。<br><span style="color:#bbb">Gained over 10 jin this year.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">健康</div><div class="vocab-pinyin">jiànkāng</div><div class="vocab-pos">adj.</div><div class="vocab-en">healthy</div><div class="vocab-example">不<em>健康</em>。<br><span style="color:#bbb">Not healthy.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">以后</div><div class="vocab-pinyin">yǐhòu</div><div class="vocab-pos">n.</div><div class="vocab-en">after; afterward</div><div class="vocab-example">下课<em>以后</em>。<br><span style="color:#bbb">After class.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">羽毛球</div><div class="vocab-pinyin">yǔmáoqiú</div><div class="vocab-pos">n.</div><div class="vocab-en">badminton</div><div class="vocab-example">打<em>羽毛球</em>。<br><span style="color:#bbb">Play badminton.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">耳朵</div><div class="vocab-pinyin">ěrduo</div><div class="vocab-pos">n.</div><div class="vocab-en">ear</div><div class="vocab-example"><em>耳朵</em>有点儿疼。<br><span style="color:#bbb">My ear hurts a bit.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">感冒</div><div class="vocab-pinyin">gǎnmào</div><div class="vocab-pos">v./n.</div><div class="vocab-en">to catch a cold</div><div class="vocab-example">是不是<em>感冒</em>了？<br><span style="color:#bbb">Did you catch a cold?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">发烧</div><div class="vocab-pinyin">fāshāo</div><div class="vocab-pos">v.</div><div class="vocab-en">to have a fever</div><div class="vocab-example"><em>发</em>低<em>烧</em>了。<br><span style="color:#bbb">Have a slight fever.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">低</div><div class="vocab-pinyin">dī</div><div class="vocab-pos">adj.</div><div class="vocab-en">low</div><div class="vocab-example">发<em>低</em>烧。<br><span style="color:#bbb">Have a slight fever.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">关心</div><div class="vocab-pinyin">guānxīn</div><div class="vocab-pos">v.</div><div class="vocab-en">be concerned about</div><div class="vocab-example">谢谢<em>关心</em>。<br><span style="color:#bbb">Thanks for caring.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">注意</div><div class="vocab-pinyin">zhùyì</div><div class="vocab-pos">v.</div><div class="vocab-en">pay attention to</div><div class="vocab-example">我会<em>注意</em>的。<br><span style="color:#bbb">I'll be careful.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">突然</div><div class="vocab-pinyin">tūrán</div><div class="vocab-pos">adj./adv.</div><div class="vocab-en">sudden; suddenly</div><div class="vocab-example"><em>突然</em>住院了。<br><span style="color:#bbb">Suddenly hospitalized.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">住院</div><div class="vocab-pinyin">zhùyuàn</div><div class="vocab-pos">v.</div><div class="vocab-en">be in hospital</div><div class="vocab-example">需要<em>住院</em>做检查。<br><span style="color:#bbb">Need to be admitted for tests.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">担心</div><div class="vocab-pinyin">dānxīn</div><div class="vocab-pos">v.</div><div class="vocab-en">to worry</div><div class="vocab-example">大家都很<em>担心</em>你。<br><span style="color:#bbb">Everyone is worried about you.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">腿</div><div class="vocab-pinyin">tuǐ</div><div class="vocab-pos">n.</div><div class="vocab-en">leg</div><div class="vocab-example">我的<em>腿</em>疼了几个星期。<br><span style="color:#bbb">My leg has hurt for weeks.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">病人</div><div class="vocab-pinyin">bìngrén</div><div class="vocab-pos">n.</div><div class="vocab-en">patient</div><div class="vocab-example">不像<em>病人</em>。<br><span style="color:#bbb">Doesn't look like a patient.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">差不多</div><div class="vocab-pinyin">chàbuduō</div><div class="vocab-pos">adv./adj.</div><div class="vocab-en">almost; similar</div><div class="vocab-example"><em>差不多</em>两年了。<br><span style="color:#bbb">It's been almost two years.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">得</div><div class="vocab-pinyin">děi</div><div class="vocab-pos">mod.</div><div class="vocab-en">need; have to</div><div class="vocab-example">还<em>得</em>做完检查。<br><span style="color:#bbb">Still need to finish the tests.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">开心</div><div class="vocab-pinyin">kāixīn</div><div class="vocab-pos">adj.</div><div class="vocab-en">happy</div><div class="vocab-example">我就<em>开心</em>多了。<br><span style="color:#bbb">I feel much happier.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">出院</div><div class="vocab-pinyin">chūyuàn</div><div class="vocab-pos">v.</div><div class="vocab-en">leave hospital</div><div class="vocab-example">今天我<em>出院</em>了。<br><span style="color:#bbb">Today I left the hospital.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">开</div><div class="vocab-pinyin">kāi</div><div class="vocab-pos">v.</div><div class="vocab-en">to prescribe</div><div class="vocab-example">医生给我<em>开</em>了几种药。<br><span style="color:#bbb">The doctor prescribed me several meds.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">种</div><div class="vocab-pinyin">zhǒng</div><div class="vocab-pos">m.</div><div class="vocab-en">kind; type</div><div class="vocab-example">几<em>种</em>药。<br><span style="color:#bbb">Several kinds of medicine.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">方法</div><div class="vocab-pinyin">fāngfǎ</div><div class="vocab-pos">n.</div><div class="vocab-en">method</div><div class="vocab-example">吃药的<em>方法</em>。<br><span style="color:#bbb">How to take the medicine.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">其他</div><div class="vocab-pinyin">qítā</div><div class="vocab-pos">pron.</div><div class="vocab-en">other</div><div class="vocab-example"><em>其他</em>几种每天吃三次。<br><span style="color:#bbb">The other kinds, three times a day.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">心里</div><div class="vocab-pinyin">xīnlǐ</div><div class="vocab-pos">n.</div><div class="vocab-en">mind; heart</div><div class="vocab-example">记在<em>心里</em>。<br><span style="color:#bbb">Take to heart.</span></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:2rem">专有名词 · Proper Nouns</div>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">陈天中</div><div class="vocab-pinyin">Chén Tiānzhōng</div><div class="vocab-pos">name</div><div class="vocab-en">Chen Tianzhong</div></div>
+        <div class="vocab-card"><div class="vocab-zh">安妮</div><div class="vocab-pinyin">Ānnī</div><div class="vocab-pos">name</div><div class="vocab-en">Annie</div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- ══ 词汇详解 TAB ══ -->
+    <div data-tab="worddetail" class="tab-panel">
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">习惯</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xíguàn</div><div class="wdh-en">habit; to be used to</div></div>
+          <div class="wdh-pos">n. / v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">As a noun: "habit". As a verb: "to be used to / accustomed to" (the negation is 不习惯). Common patterns: 好/坏习惯 (good/bad habit), 习惯了 (have got used to it).</p>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">好习惯</span><span class="collocation-tag">运动习惯</span><span class="collocation-tag">习惯了</span><span class="collocation-tag">不习惯</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">你的运动习惯真不错。</div><div class="en">Your exercise habit is really good.</div></div>
+            <div class="wd-ex"><div class="zh">我已经习惯了北京的天气。</div><div class="en">I'm already used to Beijing's weather.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">健康</div>
+          <div class="wdh-info"><div class="wdh-pinyin">jiànkāng</div><div class="wdh-en">healthy; health</div></div>
+          <div class="wdh-pos">adj. / n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">健</div><div class="char-meaning">jiàn · strong</div></div>
+            <div class="wd-char"><div class="char">康</div><div class="char-meaning">kāng · well; healthy</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">不健康</span><span class="collocation-tag">很健康</span><span class="collocation-tag">健康的生活</span><span class="collocation-tag">注意健康</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">不能再胖下去了，有点儿不健康。</div><div class="en">I can't keep gaining weight — it's a bit unhealthy.</div></div>
+            <div class="wd-ex"><div class="zh">每天锻炼对健康很好。</div><div class="en">Daily exercise is very good for your health.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">不怎么样</div>
+          <div class="wdh-info"><div class="wdh-pinyin">bù zěnmeyàng</div><div class="wdh-en">not very good; just so-so</div></div>
+          <div class="wdh-pos">phrase</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"不怎么样" is a colloquial expression meaning "not very good / just average / so-so". It carries a tone of modesty when describing oneself, or a polite low evaluation of something.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我打得不怎么样。</div><div class="en">I don't play that well. (modest)</div></div>
+            <div class="wd-ex"><div class="zh">这家店的菜不怎么样。</div><div class="en">The food at this place isn't great.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">关心</div>
+          <div class="wdh-info"><div class="wdh-pinyin">guānxīn</div><div class="wdh-en">to care about; show concern</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">关</div><div class="char-meaning">guān · to close; relate</div></div>
+            <div class="wd-char"><div class="char">心</div><div class="char-meaning">xīn · heart</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">谢谢关心</span><span class="collocation-tag">关心你</span><span class="collocation-tag">关心家人</span><span class="collocation-tag">不关心</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">谢谢关心，我会注意的。</div><div class="en">Thanks for your concern, I'll be careful.</div></div>
+            <div class="wd-ex"><div class="zh">妈妈很关心我的健康。</div><div class="en">My mom cares a lot about my health.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">担心</div>
+          <div class="wdh-info"><div class="wdh-pinyin">dānxīn</div><div class="wdh-en">to worry</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">字义分解 · Character Breakdown</div>
+          <div class="wd-chars">
+            <div class="wd-char"><div class="char">担</div><div class="char-meaning">dān · to carry; bear</div></div>
+            <div class="wd-char"><div class="char">心</div><div class="char-meaning">xīn · heart</div></div>
+          </div>
+          <div class="wd-section-label">常见搭配 · Collocations</div>
+          <div class="wd-collocations"><span class="collocation-tag">别担心</span><span class="collocation-tag">担心你</span><span class="collocation-tag">很担心</span><span class="collocation-tag">不用担心</span></div>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">大家都很担心你。</div><div class="en">Everyone is worried about you.</div></div>
+            <div class="wd-ex"><div class="zh">别担心！你一定能好。</div><div class="en">Don't worry! You'll definitely get better.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">差不多</div>
+          <div class="wdh-info"><div class="wdh-pinyin">chàbuduō</div><div class="wdh-en">almost; about; similar</div></div>
+          <div class="wdh-pos">adv. / adj.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">As an adverb: "approximately, almost". As an adjective: "similar, about the same". Very common in casual estimates of time, quantity, or quality.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">差不多两年了。</div><div class="en">It's been about two years.</div></div>
+            <div class="wd-ex"><div class="zh">这两个差不多。</div><div class="en">These two are about the same.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">得</div>
+          <div class="wdh-info"><div class="wdh-pinyin">děi</div><div class="wdh-en">need to; have to (modal)</div></div>
+          <div class="wdh-pos">mod.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"得" (děi) expresses obligation or necessity — "have to / must". <strong>Important:</strong> the same character has three readings: <strong>de</strong> (structural particle 跑得快), <strong>dé</strong> (to obtain 得到), <strong>děi</strong> (must, here). The negative of 得 (děi) is "不用" or "不必".</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">还得做完检查才能知道。</div><div class="en">We have to finish the tests before we know.</div></div>
+            <div class="wd-ex"><div class="zh">你病了，得多休息。</div><div class="en">You're sick — you need to rest more.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">住院 / 出院</div>
+          <div class="wdh-info"><div class="wdh-pinyin">zhùyuàn / chūyuàn</div><div class="wdh-en">to be hospitalized / discharged</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">Both are <strong>separable verbs</strong> (V + O): 住-院 ("stay in hospital"), 出-院 ("leave hospital"). You can split them: 住了三天院 (stayed in hospital 3 days). Don't put another object directly after.</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">医生说需要住院做检查。</div><div class="en">The doctor said I need to be admitted for tests.</div></div>
+            <div class="wd-ex"><div class="zh">今天我出院了。</div><div class="en">Today I was discharged.</div></div>
+            <div class="wd-ex"><div class="zh">他住了一个星期院。</div><div class="en">He spent a week in the hospital.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">开</div>
+          <div class="wdh-info"><div class="wdh-pinyin">kāi</div><div class="wdh-en">to prescribe (medicine)</div></div>
+          <div class="wdh-pos">v.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"开" has many meanings — "to open", "to drive", "to turn on", and (in medical context) "to prescribe / write out". Pattern: 给 + person + 开 + 药/方子. Also: 开发票 (issue a receipt), 开会 (hold a meeting).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">医生给我开了几种药。</div><div class="en">The doctor prescribed me several kinds of medicine.</div></div>
+            <div class="wd-ex"><div class="zh">您可以给我开个发票吗？</div><div class="en">Could you write me a receipt?</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="word-detail">
+        <div class="word-detail-header">
+          <div class="wdh-zh">心里</div>
+          <div class="wdh-info"><div class="wdh-pinyin">xīnlǐ</div><div class="wdh-en">in (one's) mind / heart</div></div>
+          <div class="wdh-pos">n.</div>
+        </div>
+        <div class="word-detail-body">
+          <div class="wd-section-label">用法说明 · Usage Note</div>
+          <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0.6rem;">"心里" literally means "inside the heart" — used metaphorically for "in one's mind / inwardly". Common collocations: 记在心里 (commit to memory), 心里想 (think to oneself), 心里高兴 (feel happy inside).</p>
+          <div class="wd-section-label">例句 · Example Sentences</div>
+          <div class="wd-examples">
+            <div class="wd-ex"><div class="zh">我都记在心里了。</div><div class="en">I've taken it all to heart.</div></div>
+            <div class="wd-ex"><div class="zh">他心里很高兴。</div><div class="en">He feels really happy inside.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end worddetail tab -->
+
+    <!-- ══ 语法 TAB ══ -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">"V/Adj + 下去"</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">离合词补语</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">时量补语（2）</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(3,this)">"以前/以后/前/后"</button>
+      </div>
+
+      <!-- 语法1 -->
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>趋向补语的引申用法（1）"V/Adj + 下去" · "Keep …ing"</div>
+          <p class="grammar-desc">趋向补语"下去"用在动词或形容词后面，表示已经开始的<strong>动作或状态还要继续</strong>。带有"持续到将来"的意思。<br><span style="color:#888;font-size:0.85em;">"下去" after a verb or adjective means "to keep doing / keep being …" — the action or state has already begun and is to <em>continue into the future</em>.</span></p>
+          <div class="grammar-pattern">V / Adj + <strong>下去</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">我今年胖了十多斤，<strong>不能再胖下去</strong>了。</div><div class="en">I've gained over 10 jin this year — <strong>can't keep getting heavier</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">她读完了第一个问题，后面的你<strong>读下去</strong>。</div><div class="en">She finished question 1; you <strong>keep reading</strong> from there.</div></div>
+            <div class="grammar-ex"><div class="zh">这几天太热了，如果再<strong>热下去</strong>就不能出门了。</div><div class="en">It's been so hot these days — if it <strong>keeps being this hot</strong> we can't go out.</div></div>
+            <div class="grammar-ex"><div class="zh">这本书太有意思了，我想一直<strong>看下去</strong>。</div><div class="en">This book is so interesting — I want to <strong>keep reading</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法2 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>离合词（2）补语的位置 · Separable Verbs + Complement</div>
+          <p class="grammar-desc">离合词（如：游泳、住院、结婚、跑步、感冒）一般<strong>不能直接加宾语</strong>。如果句中有补语（结果补语、时量补语、动量补语等），<strong>补语要放在离合词的中间</strong>。<br><span style="color:#888;font-size:0.85em;">Separable verbs (e.g. 游-泳, 住-院, 结-婚, 跑-步) cannot directly take an object. Complements (result, duration, count) <strong>go between the two parts</strong>, not after.</span></p>
+          <div class="grammar-pattern">V₁ + <strong>Complement</strong> + V₂　(where V₁V₂ = a separable verb)</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">昨天<strong>游完泳</strong>以后，耳朵一直有点儿疼。</div><div class="en">After <strong>finishing swimming</strong> yesterday, my ear has been hurting. (游 + 完 + 泳)</div></div>
+            <div class="grammar-ex"><div class="zh">今年夏天只<strong>下了两次雨</strong>。</div><div class="en">It only <strong>rained twice</strong> this summer. (下 + 两次 + 雨)</div></div>
+            <div class="grammar-ex"><div class="zh">小张下个月跟他女朋友<strong>结婚</strong>。</div><div class="en">Next month Little Zhang is <strong>getting married</strong> to his girlfriend.</div></div>
+            <div class="grammar-ex"><div class="zh">他<strong>住了一个星期院</strong>。</div><div class="en">He spent <strong>a week in the hospital</strong>. (住 + 一个星期 + 院)</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法3 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>时量补语（2）"动作完成后的时长" · Time Elapsed Since Completion</div>
+          <p class="grammar-desc">时量补语用在动词后面，表示动作或状态持续的时长。如果动词表示<strong>不能持续的动作</strong>（来、去、出院、毕业…），动词后的时量补语表示<strong>动作完成到说话时已过去多久</strong>。<br><span style="color:#888;font-size:0.85em;">For non-durative verbs (come, go, leave hospital, graduate…), the duration after the verb tells you <em>how long ago the action was completed</em> — i.e. how much time has passed <strong>since</strong>.</span></p>
+          <div class="grammar-pattern">V + (object) + <strong>Time Phrase</strong> + 了</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">我上次<strong>来医院</strong>已经过去<strong>差不多两年了</strong>。</div><div class="en">It's been <strong>almost 2 years</strong> since I last <strong>came to the hospital</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">她<strong>回家两个月了</strong>。</div><div class="en">She <strong>went home two months ago</strong>. (= 2 months have passed since she went home)</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>开学</strong>已经<strong>三个多星期了</strong>。</div><div class="en">It's been <strong>over three weeks since school started</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">你<strong>来中国多长时间了</strong>？</div><div class="en"><strong>How long has it been since you came</strong> to China?</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 语法4 -->
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">4</span>固定格式"…以前/以后/前/后" · Before / After</div>
+          <p class="grammar-desc">"时间/事件 + 以前／前"表示某个时间或事件<strong>之前</strong>；"时间/事件 + 以后／后"表示某个时间或事件<strong>之后</strong>。短形式（前/后）多用于固定搭配，如"睡前、饭后、出院前、下班后"。<br><span style="color:#888;font-size:0.85em;">Time/Event + <strong>以前/前</strong> = before; Time/Event + <strong>以后/后</strong> = after. The short forms (前/后) are common in fixed expressions like 睡前 (before bed), 饭后 (after a meal), 出院前 (before discharge).</span></p>
+          <div class="grammar-pattern">Time/Event + <strong>以前 / 前</strong>　|　Time/Event + <strong>以后 / 后</strong></div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">这种药需要每天<strong>睡前</strong>吃一次。</div><div class="en">This medicine needs to be taken once a day <strong>before bed</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">其他几种每天吃三次，<strong>饭后</strong>吃。</div><div class="en">The others, three times a day, <strong>after meals</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh">我们决定<strong>下班后</strong>一起去看个电影。</div><div class="en">We decided to go see a movie together <strong>after work</strong>.</div></div>
+            <div class="grammar-ex"><div class="zh"><strong>考完试以后</strong>，咱们一起去旅游吧。</div><div class="en"><strong>After we finish the exams</strong>, let's travel together.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- ══ 练习 TAB ══ -->
+    <div data-tab="exercise" class="tab-panel">
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 陈天中为什么每天运动？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>他喜欢跑步</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>他要学打羽毛球</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>他不想再胖下去了</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>他想认识新朋友</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 陈天中怎么了？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>头疼</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>发高烧</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>耳朵疼，发低烧</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>腿疼</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 陈天中上次来医院是什么时候？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>几个星期前</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>一个月前</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>差不多两年前</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>去年</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">4. 医生说什么最重要？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>多走路</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>多休息</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>吃药的方法</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>多锻炼</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"V下去"完成句子：这本书太有意思了，我想一直______。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l8-fill1" type="text" placeholder="看下去" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:240px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l8-fill1','看下去','l8-reveal1')">检查</button>
+        </div>
+        <div id="l8-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：这本书太有意思了，我想一直<strong>看下去</strong>。</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用离合词练习：把"我游泳了一个小时"改写成正确的句子。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l8-fill2" type="text" placeholder="正确答案" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:300px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l8-fill2','我游了一个小时泳','l8-reveal2')">检查</button>
+        </div>
+        <div id="l8-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>我游了一个小时泳。</strong>（时量补语放在离合词中间）</div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">7. 用"以前/以后"完成句子：______，请大家检查自己的行李。（出门）</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l8-fill3" type="text" placeholder="出门以前" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:240px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l8-fill3','出门以前','l8-reveal3')">检查</button>
+        </div>
+        <div id="l8-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>出门以前</strong>，请大家检查自己的行李。</div>
+      </div>
+
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+        <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+          onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+          onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+          🔄 重新作答
+        </button>
+      </div>
+
+    </div><!-- end exercise tab -->
+
+    <!-- ══ 话题讨论 TAB ══ -->
+    <div data-tab="discussion" class="tab-panel">
+
+      <!-- 热身引子 -->
+      <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+        <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+          <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+        </div>
+        <div style="padding:1rem 1.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+            <div>（1）你有哪些健康的生活习惯？</div>
+            <div>（2）身体不舒服的时候，你会怎么办？你会去看医生吗？</div>
+          </div>
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+        </div>
+        <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 陈天中说"我打得不怎么样"——这是中文里很常见的"谦虚"（qiānxū, modesty）。你国家的人也喜欢说自己"不怎么样"吗？<br><br>
+          <strong>（2）</strong> 课文里安妮说"听医生的话，好好休息"——你生病的时候是听医生的，还是自己上网查？<br><br>
+          <strong>（3）</strong> 陈天中说"有人来看我，我就开心多了"——你觉得"探望病人"（tànwàng bìngrén, visiting a sick person）重要吗？
+        </div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+        </div>
+        <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+        <div class="culture-zh">
+          <strong>（1）</strong> 你怎么锻炼身体？每周锻炼几次？每次锻炼多长时间？<br><br>
+          <strong>（2）</strong> 有人说胖一点儿健康，有人说瘦一点儿好看，你怎么看？<br><br>
+          <strong>（3）</strong> 你最近一次去医院是什么时候？为什么去？感觉怎么样？
+        </div>
+      </div>
+    </div><!-- end discussion tab -->
+
+    <!-- ══ 更多 TAB ══ -->
+    <div data-tab="culture" class="tab-panel">
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 文化</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">在中国看病 <span class="pinyin">Going to the Doctor in China</span></div>
+        <div class="culture-zh">在中国，"看病"一般要去"医院"，而不是去医生的"小诊所"（zhěnsuǒ, clinic）。中国的大医院分"门诊"（ménzhěn, outpatient）和"住院部"。看病前要先"挂号"（guàhào, register / get a number），然后才能见医生。检查、买药、做手术等都在医院里完成。中国的看病费用比一些西方国家便宜，但是大医院常常人很多，等的时间也长。最近，"在线挂号"和"网上看病"也越来越方便了。除了西医，很多中国人还会去看"中医"（Zhōngyī, Traditional Chinese Medicine），喝中药、做针灸（zhēnjiǔ, acupuncture）。</div>
+        <div class="culture-en">In China, "seeing a doctor" usually means going to a hospital, not a small clinic. Big Chinese hospitals are split between 门诊 (outpatient) and 住院部 (inpatient). You first need to "挂号" (register / get a queue number) before you can see a doctor. Check-ups, medication and surgery all happen in the hospital. Costs are often lower than in many Western countries, but big hospitals are crowded and waits can be long. Online registration and even online consultations are increasingly common. Besides Western medicine, many Chinese also use 中医 (Traditional Chinese Medicine) — herbal medicine and acupuncture.</div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 比一比</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">关心 vs 担心 <span class="pinyin">"Concerned About" vs "Worried"</span></div>
+        <div class="culture-zh">
+          <strong>共同点：</strong>都和"关注某人/某事"有关。<br><br>
+          <strong>不同点：</strong><br>
+          ① <strong>关心</strong>（guānxīn）：表示<em>关爱、注意、感兴趣</em>，是<strong>积极的感情</strong>。<br>
+          例：妈妈很<em>关心</em>我的健康。 / 谢谢你的<em>关心</em>。<br><br>
+          ② <strong>担心</strong>（dānxīn）：表示<em>担忧、害怕出问题</em>，是<strong>带焦虑的</strong>感情。<br>
+          例：大家都很<em>担心</em>你。 / 别<em>担心</em>！<br><br>
+          简单来说：关心 = "care about"（积极）；担心 = "worry"（紧张）。
+        </div>
+        <div class="culture-en">
+          <strong>Shared:</strong> Both involve attention to someone/something.<br><br>
+          <strong>Differences:</strong><br>
+          ① <strong>关心</strong>: positive feeling — to care about, take an interest in.<br>
+          E.g., 妈妈很关心我的健康 — Mom cares about my health. / 谢谢你的关心 — thanks for your concern.<br><br>
+          ② <strong>担心</strong>: anxious feeling — to worry that something bad may happen.<br>
+          E.g., 大家都很担心你 — everyone's worried about you. / 别担心 — don't worry.<br><br>
+          Quick rule: 关心 = "care about" (positive); 担心 = "worry" (anxious).
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">✏️ Grammar · 语言点</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">三种"得"的读音 <span class="pinyin">Three Readings of 得</span></div>
+        <div class="culture-zh">
+          汉字"得"有<strong>三种读音</strong>，意思和用法都不同：<br><br>
+          ① <strong>de</strong>（轻声）：结构助词，连接动词和补语。<br>
+          例：他跑<em>得</em>很快。 / 她说<em>得</em>太好了。<br><br>
+          ② <strong>dé</strong>：动词"得到、获得"。<br>
+          例：他<em>得</em>了第一名。 / 我没<em>得</em>到答案。<br><br>
+          ③ <strong>děi</strong>（本课）：助动词"应该、必须"。<br>
+          例：你病了，<em>得</em>多休息。 / 还<em>得</em>做完检查才能知道。
+        </div>
+        <div class="culture-en">
+          The character <strong>得</strong> has three different readings, each with a different meaning and use:<br><br>
+          ① <strong>de</strong> (neutral tone): structural particle linking verb and complement.<br>
+          E.g., 他跑得很快 (he runs fast); 她说得太好了 (she speaks beautifully).<br><br>
+          ② <strong>dé</strong>: verb "to obtain, to get".<br>
+          E.g., 他得了第一名 (he got first place); 我没得到答案 (I didn't get the answer).<br><br>
+          ③ <strong>děi</strong> (this lesson): modal "should, must, have to".<br>
+          E.g., 你病了，得多休息 — you're sick, you need to rest more. / 还得做完检查才能知道 — we have to finish tests first.
+        </div>
+      </div>
+
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L8 -->
   </div><!-- end lesson-content data-lesson="8" -->
 
   <!-- ═══════════════ LESSON 9 ═══════════════ -->
