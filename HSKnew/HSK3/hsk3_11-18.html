@@ -3197,9 +3197,710 @@
   </div><!-- end content-area L14 -->
   </div><!-- end lesson-content data-lesson="14" -->
 
-  <!-- ═══════════════ LESSON 15 (stub) ═══════════════ -->
-  <div class="lesson-header" id="lesson-header-15" data-lesson="15" data-watermark="十五" style="display:none"></div>
-  <div class="lesson-content" data-lesson="15" style="display:none"></div>
+  <!-- ═══════════════ LESSON 15 ═══════════════ -->
+  <div class="lesson-header" id="lesson-header-15" data-lesson="15" data-watermark="十五" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> HSK 3</button>
+      <span class="lesson-tag-num">第十五课 · Lesson 15</span>
+    </div>
+    <h1>我是半个南京人</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Wǒ shì bàn ge Nánjīng rén</p>
+    <p class="lesson-subtitle">I am basically half a Nanjing local</p>
+  </div>
+
+  <div class="lesson-content" data-lesson="15" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text',this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab',this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail',this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar',this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise',this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion',this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture',this)">🏮 更多</button>
+  </div>
+  <div class="content-area">
+
+  <!-- ══ 课文 TAB ══ -->
+  <div data-tab="text" class="tab-panel active">
+
+  <div class="dialogue-block" id="l15-block1">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 1 · 在办公室</span>
+        <button class="dh-play-btn" id="l15-dhBtn1" onclick="dhPlay('l15-audioEl1','l15-dhBtn1')"><svg id="l15-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l15-block1')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l15-block1')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">In the office — the Blue Sky Community and its residents</span>
+    </div></div>
+    <audio id="l15-audioEl1" src="audio/15-1.mp3" onended="dhEnded('l15-audioEl1','l15-dhBtn1','l15-dhIcon1')" ontimeupdate="dhUpdate('l15-audioEl1')"></audio>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">同乐，蓝天小区在哪里？去那里方便吗？</span>
+      <span class="line-pinyin">Tónglè, Lántiān Xiǎoqū zài nǎlǐ? Qù nàlǐ fāngbiàn ma?</span>
+      <span class="line-en">Tónglè, where is the Blue Sky Community? Is it convenient to get there?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">就在公司旁边，沿着这条路走两段，过了马路就到了。</span>
+      <span class="line-pinyin">Jiù zài gōngsī pángbiān, yánzhe zhè tiáo lù zǒu liǎng duàn, guò le mǎlù jiù dào le.</span>
+      <span class="line-en">It's right next to our company — go two sections along this road, cross the street, and you're there.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">那里的环境怎么样？</span>
+      <span class="line-pinyin">Nàlǐ de huánjìng zěnmeyàng?</span>
+      <span class="line-en">What's the environment like there?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">挺不错的。小区里有很多老人，平时他们就在小区里下棋、聊天儿。</span>
+      <span class="line-pinyin">Tǐng bùcuò de. Xiǎoqū lǐ yǒu hěn duō lǎorén, píngshí tāmen jiù zài xiǎoqū lǐ xià qí, liáo tiānr.</span>
+      <span class="line-en">Pretty nice. There are many elderly residents, and in their daily lives they play chess and chat in the community.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">小区里的孩子们呢？放学以后做什么？</span>
+      <span class="line-pinyin">Xiǎoqū lǐ de háizimen ne? Fàngxué yǐhòu zuò shénme?</span>
+      <span class="line-en">What about the children in the community? What do they do after school?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">放学以后就在小区里玩游戏。根据我的了解，这里的居民都觉得这个小区的环境非常好。</span>
+      <span class="line-pinyin">Fàngxué yǐhòu jiù zài xiǎoqū lǐ wán yóuxì. Gēnjù wǒ de liǎojiě, zhèlǐ de jūmín dōu juéde zhège xiǎoqū de huánjìng fēicháng hǎo.</span>
+      <span class="line-en">They play games in the community after school. Based on what I know, all the residents feel the environment here is excellent.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">在老人们看来，住在这样的小区里一定很舒服吧。</span>
+      <span class="line-pinyin">Zài lǎorénmen kànlái, zhù zài zhèyàng de xiǎoqū lǐ yīdìng hěn shūfu ba.</span>
+      <span class="line-en">From the elderly residents' perspective, living in a community like this must be very comfortable.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">是的！以后有时间的话，你也可以去参观一下。</span>
+      <span class="line-pinyin">Shì de! Yǐhòu yǒu shíjiān de huà, nǐ yě kěyǐ qù cānguān yīxià.</span>
+      <span class="line-en">Exactly! If you have time later, you should go and have a look too.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l15-block2">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 2 · 在办公室</span>
+        <button class="dh-play-btn" id="l15-dhBtn2" onclick="dhPlay('l15-audioEl2','l15-dhBtn2')"><svg id="l15-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l15-block2')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l15-block2')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">In the office — Nanjing, ancient city with over 2,000 years of history</span>
+    </div></div>
+    <audio id="l15-audioEl2" src="audio/15-3.mp3" onended="dhEnded('l15-audioEl2','l15-dhBtn2','l15-dhIcon2')" ontimeupdate="dhUpdate('l15-audioEl2')"></audio>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">同乐，你说你是半个南京人，是什么意思？</span>
+      <span class="line-pinyin">Tónglè, nǐ shuō nǐ shì bàn ge Nánjīng rén, shì shénme yìsi?</span>
+      <span class="line-en">Tónglè, you said you're "half a Nanjing local" — what do you mean?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">我不是南京人，但是我在南京住了好几年，可以说是半个南京人了。</span>
+      <span class="line-pinyin">Wǒ bù shì Nánjīng rén, dànshì wǒ zài Nánjīng zhù le hǎo jǐ nián, kěyǐ shuō shì bàn ge Nánjīng rén le.</span>
+      <span class="line-en">I'm not from Nanjing, but I lived there for several years — so you could say I'm half a Nanjing local.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">那你对南京了解多少？</span>
+      <span class="line-pinyin">Nà nǐ duì Nánjīng liǎojiě duōshǎo?</span>
+      <span class="line-en">So how much do you know about Nanjing?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">南京有两千年以上的历史，是一座非常著名的城市，有很多著名景点，游客也很多。</span>
+      <span class="line-pinyin">Nánjīng yǒu liǎng qiān nián yǐshàng de lìshǐ, shì yī zuò fēicháng zhùmíng de chéngshì, yǒu hěn duō zhùmíng jǐngdiǎn, yóukè yě hěn duō.</span>
+      <span class="line-en">Nanjing has over 2,000 years of history. It's a very famous city with many well-known scenic spots and lots of tourists.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">除了这些以外呢？</span>
+      <span class="line-pinyin">Chúle zhèxiē yǐwài ne?</span>
+      <span class="line-en">What else, apart from all that?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">另外，我还知道一些当地人才知道的好地方，不止一两个呢！</span>
+      <span class="line-pinyin">Lìngwài, wǒ hái zhīdào yīxiē dāngdì rén cái zhīdào de hǎo dìfang, bù zhǐ yī liǎng ge ne!</span>
+      <span class="line-en">On top of that, I also know some great spots that only locals know — more than just one or two!</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">太好了，我们有机会一起去南京吧！旅行的时候，你给我当导游。</span>
+      <span class="line-pinyin">Tài hǎo le, wǒmen yǒu jīhuì yīqǐ qù Nánjīng ba! Lǚxíng de shíhòu, nǐ gěi wǒ dāng dǎoyóu.</span>
+      <span class="line-en">Wonderful — let's go to Nanjing together sometime! You can be my guide on the trip.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">行，旅游后我请你喝一杯咖啡，聊聊以前在南京的故事。</span>
+      <span class="line-pinyin">Xíng, lǚyóu hòu wǒ qǐng nǐ hē yī bēi kāfēi, liáoliao yǐqián zài Nánjīng de gùshi.</span>
+      <span class="line-en">Deal — after the trip I'll treat you to a coffee and tell you about my old Nanjing days.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l15-block3">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 3 · 在家里</span>
+        <button class="dh-play-btn" id="l15-dhBtn3" onclick="dhPlay('l15-audioEl3','l15-dhBtn3')"><svg id="l15-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l15-block3')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l15-block3')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">At home — the Yellow River, mother of Chinese civilization</span>
+    </div></div>
+    <audio id="l15-audioEl3" src="audio/15-5.mp3" onended="dhEnded('l15-audioEl3','l15-dhBtn3','l15-dhIcon3')" ontimeupdate="dhUpdate('l15-audioEl3')"></audio>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">小明，你在查什么资料？</span>
+      <span class="line-pinyin">Xiǎo Míng, nǐ zài chá shénme zīliào?</span>
+      <span class="line-en">Xiǎo Míng, what are you looking up?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">小明</span><div class="line-content">
+      <span class="line-zh">我在查中国的河。中国有一条大河，它的名字跟颜色有关，你知道是什么吗？</span>
+      <span class="line-pinyin">Wǒ zài chá Zhōngguó de hé. Zhōngguó yǒu yī tiáo dà hé, tā de míngzi gēn yánsè yǒuguān, nǐ zhīdào shì shénme ma?</span>
+      <span class="line-en">I'm researching China's rivers. There's a great river whose name is related to a color — do you know which one?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">我知道，是黄河！因为河水是黄色的，所以叫黄河。</span>
+      <span class="line-pinyin">Wǒ zhīdào, shì Huáng Hé! Yīnwèi héshuǐ shì huángsè de, suǒyǐ jiào Huáng Hé.</span>
+      <span class="line-en">I know — the Yellow River! Because the water is yellow, it's called the Yellow River.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">小明</span><div class="line-content">
+      <span class="line-zh">对！你知道黄河是中国最长的河吗？</span>
+      <span class="line-pinyin">Duì! Nǐ zhīdào Huáng Hé shì Zhōngguó zuì cháng de hé ma?</span>
+      <span class="line-en">Right! Do you know if the Yellow River is China's longest river?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">黄河不是最长的河，可是在历史上非常重要。很久以前，很多中国人都在黄河边上生活。</span>
+      <span class="line-pinyin">Huáng Hé bù shì zuì cháng de hé, kěshì zài lìshǐ shàng fēicháng zhòngyào. Hěn jiǔ yǐqián, hěn duō Zhōngguó rén dōu zài Huáng Hé biān shàng shēnghuó.</span>
+      <span class="line-en">The Yellow River isn't the longest, but it's hugely important in history. Long ago, many Chinese people lived along its banks.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">小明</span><div class="line-content">
+      <span class="line-zh">这我知道！很久以前，很多中国人都在黄河边上住。</span>
+      <span class="line-pinyin">Zhè wǒ zhīdào! Hěn jiǔ yǐqián, hěn duō Zhōngguó rén dōu zài Huáng Hé biān shàng zhù.</span>
+      <span class="line-en">I know that! Long, long ago, many Chinese people lived along the Yellow River.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">对，从中国人来看，黄河像母亲一样，养了我们几千年。</span>
+      <span class="line-pinyin">Duì, cóng Zhōngguó rén lái kàn, Huáng Hé xiàng mǔqīn yīyàng, yǎng le wǒmen jǐ qiān nián.</span>
+      <span class="line-en">Exactly — from a Chinese perspective, the Yellow River is like a mother who has nourished us for thousands of years.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l15-block4">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 4 · 日记</span>
+        <button class="dh-play-btn" id="l15-dhBtn4" onclick="dhPlay('l15-audioEl4','l15-dhBtn4')"><svg id="l15-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l15-block4')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l15-block4')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">Diary — a beloved river from childhood in northwest Beijing</span>
+    </div></div>
+    <audio id="l15-audioEl4" src="audio/15-7.mp3" onended="dhEnded('l15-audioEl4','l15-dhBtn4','l15-dhIcon4')" ontimeupdate="dhUpdate('l15-audioEl4')"></audio>
+    <div class="dialogue-line"><span class="speaker">日记</span><div class="line-content">
+      <span class="line-zh">我小时候住在北京的西北边，有一条非常有名的河经过那里。我家住在河边，那里有高高的大树和绿绿的草地。春天，河边的花都开了，看起来特别漂亮。还记得小时候，一到夏天我就去河里游泳。长大以后，遇到什么不开心的事情，我就去河边的树下坐着，听听鸟叫，看着河水，跟遇见的朋友聊聊天儿。难过的事情不一会儿就忘了。那是我最喜欢的地方。</span>
+      <span class="line-pinyin">Wǒ xiǎoshíhòu zhù zài Běijīng de xīběi biān, yǒu yī tiáo fēicháng yǒumíng de hé jīngguò nàlǐ. Wǒ jiā zhù zài hé biān, nàlǐ yǒu gāogāo de dà shù hé lǜlǜ de cǎodì. Chūntiān, hé biān de huā dōu kāi le, kàn qǐlái tèbié piàoliang. Hái jìde xiǎoshíhòu, yī dào xiàtiān wǒ jiù qù hé lǐ yóuyǒng. Zhǎng dà yǐhòu, yùdào shénme bù kāixīn de shìqing, wǒ jiù qù hé biān de shù xià zuò zhe, tīngtīng niǎo jiào, kànzhe héshuǐ, gēn yùjiàn de péngyou liáoliao tiānr. Nánguò de shìqing bù yīhuìr jiù wàng le. Nà shì wǒ zuì xǐhuan de dìfang.</span>
+      <span class="line-en">As a child I lived in the northwest of Beijing, where a famous river ran through the area. My home was by the riverbank, surrounded by tall trees and green meadows. In spring, flowers bloomed all along the bank — it was especially beautiful. I still remember how, as a child, I'd go swimming in the river every summer. When I grew up, whenever something was bothering me, I'd go sit under the trees by the river, listen to the birds, watch the water flow, and chat with friends I'd run into. Any sadness would fade away in no time at all. That was my favorite place.</span>
+    </div></div>
+  </div>
+
+  </div><!-- end text tab -->
+
+  <!-- ══ 生词表 TAB ══ -->
+  <div data-tab="vocab" class="tab-panel">
+
+    <div class="flashcard-wrap">
+      <div class="fc-slider" id="l15-fcSlider">
+        <!-- Card 1 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">半</div><div class="fc-pinyin">bàn</div></div>
+          <div class="fc-back"><div class="fc-en">half; semi-; partly</div></div>
+        </div>
+        <!-- Card 2 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">以</div><div class="fc-pinyin">yǐ</div></div>
+          <div class="fc-back"><div class="fc-en">used to indicate a standard, extent, or boundary (e.g. 以上 = above/more than)</div></div>
+        </div>
+        <!-- Card 3 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">段</div><div class="fc-pinyin">duàn</div></div>
+          <div class="fc-back"><div class="fc-en">section; segment; stretch (measure word for roads, time, etc.)</div></div>
+        </div>
+        <!-- Card 4 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">平时</div><div class="fc-pinyin">píngshí</div></div>
+          <div class="fc-back"><div class="fc-en">normally; in ordinary times; usually</div></div>
+        </div>
+        <!-- Card 5 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">放学</div><div class="fc-pinyin">fàng xué</div></div>
+          <div class="fc-back"><div class="fc-en">(of school) to let out; to finish school for the day</div></div>
+        </div>
+        <!-- Card 6 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">老人</div><div class="fc-pinyin">lǎorén</div></div>
+          <div class="fc-back"><div class="fc-en">elderly person; old people</div></div>
+        </div>
+        <!-- Card 7 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">根据</div><div class="fc-pinyin">gēnjù</div></div>
+          <div class="fc-back"><div class="fc-en">according to; based on; on the basis of</div></div>
+        </div>
+        <!-- Card 8 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">环境</div><div class="fc-pinyin">huánjìng</div></div>
+          <div class="fc-back"><div class="fc-en">environment; surroundings; setting</div></div>
+        </div>
+        <!-- Card 9 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">了解</div><div class="fc-pinyin">liǎojiě</div></div>
+          <div class="fc-back"><div class="fc-en">to understand; to know (about); to find out</div></div>
+        </div>
+        <!-- Card 10 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">不止</div><div class="fc-pinyin">bùzhǐ</div></div>
+          <div class="fc-back"><div class="fc-en">more than; not just; not limited to</div></div>
+        </div>
+        <!-- Card 11 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">以上</div><div class="fc-pinyin">yǐshàng</div></div>
+          <div class="fc-back"><div class="fc-en">above; more than; over (a number)</div></div>
+        </div>
+        <!-- Card 12 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">著名</div><div class="fc-pinyin">zhùmíng</div></div>
+          <div class="fc-back"><div class="fc-en">famous; well-known; celebrated</div></div>
+        </div>
+        <!-- Card 13 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">景点</div><div class="fc-pinyin">jǐngdiǎn</div></div>
+          <div class="fc-back"><div class="fc-en">scenic spot; tourist attraction; point of interest</div></div>
+        </div>
+        <!-- Card 14 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">游客</div><div class="fc-pinyin">yóukè</div></div>
+          <div class="fc-back"><div class="fc-en">tourist; visitor; sightseer</div></div>
+        </div>
+        <!-- Card 15 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">另外</div><div class="fc-pinyin">lìngwài</div></div>
+          <div class="fc-back"><div class="fc-en">in addition; moreover; besides; another</div></div>
+        </div>
+        <!-- Card 16 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">聊</div><div class="fc-pinyin">liáo</div></div>
+          <div class="fc-back"><div class="fc-en">to chat; to talk casually</div></div>
+        </div>
+        <!-- Card 17 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">河</div><div class="fc-pinyin">hé</div></div>
+          <div class="fc-back"><div class="fc-en">river</div></div>
+        </div>
+        <!-- Card 18 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">颜色</div><div class="fc-pinyin">yánsè</div></div>
+          <div class="fc-back"><div class="fc-en">color; hue</div></div>
+        </div>
+        <!-- Card 19 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">养</div><div class="fc-pinyin">yǎng</div></div>
+          <div class="fc-back"><div class="fc-en">to nourish; to raise; to keep; to support</div></div>
+        </div>
+        <!-- Card 20 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">黄河</div><div class="fc-pinyin">Huáng Hé</div></div>
+          <div class="fc-back"><div class="fc-en">the Yellow River (China's second longest river)</div></div>
+        </div>
+        <!-- Card 21 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">西北</div><div class="fc-pinyin">xīběi</div></div>
+          <div class="fc-back"><div class="fc-en">northwest</div></div>
+        </div>
+        <!-- Card 22 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">经过</div><div class="fc-pinyin">jīngguò</div></div>
+          <div class="fc-back"><div class="fc-en">to pass by; to go through; to experience</div></div>
+        </div>
+        <!-- Card 23 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">遇见</div><div class="fc-pinyin">yùjiàn</div></div>
+          <div class="fc-back"><div class="fc-en">to meet; to run into; to come across</div></div>
+        </div>
+        <!-- Card 24 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">草地</div><div class="fc-pinyin">cǎodì</div></div>
+          <div class="fc-back"><div class="fc-en">meadow; lawn; grassland</div></div>
+        </div>
+      </div><!-- end fc-slider -->
+      <div class="fc-controls">
+        <button class="fc-nav-btn" onclick="fcNav('l15-fcSlider','l15-fcCur',-1)">‹</button>
+        <span class="fc-counter"><span id="l15-fcCur">1</span> / 24</span>
+        <button class="fc-nav-btn" onclick="fcNav('l15-fcSlider','l15-fcCur',1)">›</button>
+      </div>
+    </div><!-- end flashcard-wrap -->
+
+    <!-- Vocab grid -->
+    <div class="vocab-grid">
+      <div class="vocab-item"><span class="vocab-zh">半</span><span class="vocab-pinyin">bàn</span><span class="vocab-en">half; semi-</span></div>
+      <div class="vocab-item"><span class="vocab-zh">以</span><span class="vocab-pinyin">yǐ</span><span class="vocab-en">used to mark standard/boundary</span></div>
+      <div class="vocab-item"><span class="vocab-zh">段</span><span class="vocab-pinyin">duàn</span><span class="vocab-en">section; stretch (mw)</span></div>
+      <div class="vocab-item"><span class="vocab-zh">平时</span><span class="vocab-pinyin">píngshí</span><span class="vocab-en">normally; usually</span></div>
+      <div class="vocab-item"><span class="vocab-zh">放学</span><span class="vocab-pinyin">fàng xué</span><span class="vocab-en">(school) let out</span></div>
+      <div class="vocab-item"><span class="vocab-zh">老人</span><span class="vocab-pinyin">lǎorén</span><span class="vocab-en">elderly people</span></div>
+      <div class="vocab-item"><span class="vocab-zh">根据</span><span class="vocab-pinyin">gēnjù</span><span class="vocab-en">according to; based on</span></div>
+      <div class="vocab-item"><span class="vocab-zh">环境</span><span class="vocab-pinyin">huánjìng</span><span class="vocab-en">environment; surroundings</span></div>
+      <div class="vocab-item"><span class="vocab-zh">了解</span><span class="vocab-pinyin">liǎojiě</span><span class="vocab-en">to understand; to know about</span></div>
+      <div class="vocab-item"><span class="vocab-zh">不止</span><span class="vocab-pinyin">bùzhǐ</span><span class="vocab-en">more than; not just</span></div>
+      <div class="vocab-item"><span class="vocab-zh">以上</span><span class="vocab-pinyin">yǐshàng</span><span class="vocab-en">above; more than</span></div>
+      <div class="vocab-item"><span class="vocab-zh">著名</span><span class="vocab-pinyin">zhùmíng</span><span class="vocab-en">famous; well-known</span></div>
+      <div class="vocab-item"><span class="vocab-zh">景点</span><span class="vocab-pinyin">jǐngdiǎn</span><span class="vocab-en">scenic spot; attraction</span></div>
+      <div class="vocab-item"><span class="vocab-zh">游客</span><span class="vocab-pinyin">yóukè</span><span class="vocab-en">tourist; visitor</span></div>
+      <div class="vocab-item"><span class="vocab-zh">另外</span><span class="vocab-pinyin">lìngwài</span><span class="vocab-en">in addition; moreover</span></div>
+      <div class="vocab-item"><span class="vocab-zh">聊</span><span class="vocab-pinyin">liáo</span><span class="vocab-en">to chat; to talk</span></div>
+      <div class="vocab-item"><span class="vocab-zh">河</span><span class="vocab-pinyin">hé</span><span class="vocab-en">river</span></div>
+      <div class="vocab-item"><span class="vocab-zh">颜色</span><span class="vocab-pinyin">yánsè</span><span class="vocab-en">color; hue</span></div>
+      <div class="vocab-item"><span class="vocab-zh">养</span><span class="vocab-pinyin">yǎng</span><span class="vocab-en">to nourish; to raise; to keep</span></div>
+      <div class="vocab-item"><span class="vocab-zh">黄河</span><span class="vocab-pinyin">Huáng Hé</span><span class="vocab-en">the Yellow River</span></div>
+      <div class="vocab-item"><span class="vocab-zh">西北</span><span class="vocab-pinyin">xīběi</span><span class="vocab-en">northwest</span></div>
+      <div class="vocab-item"><span class="vocab-zh">经过</span><span class="vocab-pinyin">jīngguò</span><span class="vocab-en">to pass by; to go through</span></div>
+      <div class="vocab-item"><span class="vocab-zh">遇见</span><span class="vocab-pinyin">yùjiàn</span><span class="vocab-en">to meet; to run into</span></div>
+      <div class="vocab-item"><span class="vocab-zh">草地</span><span class="vocab-pinyin">cǎodì</span><span class="vocab-en">meadow; lawn; grassland</span></div>
+    </div>
+
+  </div><!-- end vocab tab -->
+
+  <!-- ══ 词汇详解 TAB ══ -->
+  <div data-tab="worddetail" class="tab-panel">
+
+    <div class="wd-block">
+      <div class="wd-title">1 · 半 — Half, Semi-, Partly</div>
+      <div class="wd-desc"><strong>半</strong> (bàn) means "half" and can combine with nouns, measure words, and time expressions. It can appear before a noun (<strong>半个</strong>南京人 = half a Nanjing local), before a time word (<strong>半</strong>年 = half a year, <strong>一个半</strong> = one and a half), or in set expressions like <strong>半天</strong> (a long time; half a day). Note: 一个半 = 1.5, 两个半 = 2.5.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">我是<strong>半个</strong>南京人。</span><span class="wd-en">I'm <strong>half</strong> a Nanjing local.</span></div>
+        <div class="wd-ex"><span class="wd-zh">我已经等了<strong>半个</strong>小时了。</span><span class="wd-en">I've already been waiting for <strong>half</strong> an hour.</span></div>
+        <div class="wd-ex"><span class="wd-zh">她解释了<strong>半天</strong>，我还是不明白。</span><span class="wd-en">She explained for <strong>a long time</strong> but I still don't understand.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">2 · 平时 vs 有时 vs 以前 — Three Time Expressions</div>
+      <div class="wd-desc"><strong>平时</strong> (píngshí) means "in ordinary times / usually / on a regular day" — it's about habitual, everyday situations, not right now. <strong>有时</strong> (yǒushí) means "sometimes / occasionally" — less frequent. <strong>以前</strong> (yǐqián) means "before / in the past" — refers to a time before now, often contrasted with 现在.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh"><strong>平时</strong>老人们在小区里下棋、聊天儿。</span><span class="wd-en">The elderly residents <strong>usually</strong> play chess and chat in the community.</span></div>
+        <div class="wd-ex"><span class="wd-zh">我<strong>有时</strong>骑车，<strong>有时</strong>坐地铁去上班。</span><span class="wd-en">I <strong>sometimes</strong> cycle and <strong>sometimes</strong> take the subway to work.</span></div>
+        <div class="wd-ex"><span class="wd-zh"><strong>以前</strong>我住在北京，现在住在上海。</span><span class="wd-en"><strong>Before</strong>, I lived in Beijing — now I live in Shanghai.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">3 · 根据 vs 按照 — Both Mean "According to"</div>
+      <div class="wd-desc">Both are prepositions meaning "according to / based on," but with subtle differences. <strong>根据</strong> (gēnjù) emphasizes using something as a <em>basis for inference or judgment</em> — often used with facts, data, or observations. <strong>按照</strong> (ànzhào) emphasizes <em>following rules, instructions, or standards</em> in doing something. Both come before the reference point, followed by the action.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh"><strong>根据</strong>我的了解，这里的环境非常好。</span><span class="wd-en"><strong>Based on</strong> what I know, the environment here is excellent. (inference)</span></div>
+        <div class="wd-ex"><span class="wd-zh"><strong>按照</strong>规定，大家都要准时到。</span><span class="wd-en"><strong>According to</strong> the rules, everyone must arrive on time. (following rules)</span></div>
+        <div class="wd-ex"><span class="wd-zh"><strong>根据</strong>天气预报，明天会下雨。</span><span class="wd-en"><strong>According to</strong> the weather forecast, it will rain tomorrow.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">4 · 了解 vs 知道 — Depth of Knowing</div>
+      <div class="wd-desc">Both mean "to know," but at different levels. <strong>知道</strong> (zhīdào) means to <em>know a fact</em> — simple awareness that something is true. <strong>了解</strong> (liǎojiě) means to <em>understand in depth / be familiar with</em> — it implies more thorough knowledge, often gained through experience or research. 了解 can also be used as a verb meaning "to find out about" (actively learning).</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">我<strong>知道</strong>黄河是中国的一条大河。</span><span class="wd-en">I <strong>know</strong> the Yellow River is one of China's great rivers. (basic fact)</span></div>
+        <div class="wd-ex"><span class="wd-zh">我对南京不太<strong>了解</strong>，你能介绍一下吗？</span><span class="wd-en">I don't know much <strong>about</strong> Nanjing — could you tell me more? (deep knowledge)</span></div>
+        <div class="wd-ex"><span class="wd-zh">我想<strong>了解</strong>一下这里的历史。</span><span class="wd-en">I'd like to <strong>learn more about</strong> the history of this place.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">5 · 著名 vs 有名 vs 出名 — Three Ways to Say "Famous"</div>
+      <div class="wd-desc">All three mean "famous," but with differences in register and usage. <strong>著名</strong> (zhùmíng) is the most formal and literary — used for cities, historical figures, works of art. <strong>有名</strong> (yǒumíng) is neutral and everyday — used for people, places, and things. <strong>出名</strong> (chūmíng) means "to become famous" or "famous" with a connotation of rising to prominence — often carries a sense of earned reputation.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">南京是中国一座非常<strong>著名</strong>的城市。</span><span class="wd-en">Nanjing is a very <strong>famous</strong> city in China. (formal)</span></div>
+        <div class="wd-ex"><span class="wd-zh">这家餐厅很<strong>有名</strong>，常常坐满了人。</span><span class="wd-en">This restaurant is very <strong>well-known</strong> — it's always full. (everyday)</span></div>
+        <div class="wd-ex"><span class="wd-zh">他唱歌以后，一下子就<strong>出名</strong>了。</span><span class="wd-en">After performing, he became <strong>famous</strong> overnight. (rose to fame)</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">6 · 另外 — In Addition / Besides / Another</div>
+      <div class="wd-desc"><strong>另外</strong> (lìngwài) has two main uses: ① as a conjunction / sentence adverb meaning "in addition; besides; moreover" — introducing extra information; ② as a determiner before nouns meaning "another / a different." It is more formal than 还 and 也, and signals a <em>new</em> separate point rather than continuation of the same point.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh"><strong>另外</strong>，我还知道一些当地人才知道的景点。</span><span class="wd-en"><strong>In addition</strong>, I also know some spots only locals know about.</span></div>
+        <div class="wd-ex"><span class="wd-zh">这个问题很有意思，<strong>另外</strong>还有一个更有趣的问题。</span><span class="wd-en">This question is interesting — <strong>besides</strong>, there is an even more interesting one.</span></div>
+        <div class="wd-ex"><span class="wd-zh">我去了一家店，<strong>另外</strong>一家还没去。</span><span class="wd-en">I went to one shop — I haven't been to the <strong>other</strong> one yet.</span></div>
+      </div>
+    </div>
+
+  </div><!-- end worddetail tab -->
+
+  <!-- ══ 语法 TAB ══ -->
+  <div data-tab="grammar" class="tab-panel">
+
+    <div class="grammar-switcher">
+      <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">① 根据</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">② 数量词重叠</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">③ 在……看来</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(3,this)">④ 不一会儿</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="grammar-panel active">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">1</span>介词"根据" — Preposition "According to / Based on"</div>
+        <div class="grammar-desc">The preposition <strong>根据</strong> (gēnjù) introduces the <em>basis or source</em> for an action, judgment, or conclusion. It places what you're relying on before the main verb. It answers the question "on what basis?" Unlike 按照 (which follows rules), 根据 is used for facts, observations, data, or personal knowledge as a foundation for reasoning.</div>
+        <div class="grammar-pattern">
+          根据 ＋ [Basis/Source] ，[Subject] ＋ [Action / Conclusion]
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh"><strong>根据</strong>我的了解，这里的居民都很喜欢这个小区的环境。</div><div class="en"><strong>Based on</strong> what I know, all the residents love the environment of this community.</div></div>
+          <div class="grammar-ex"><div class="zh"><strong>根据</strong>要求，我们应该参加明天的会议。</div><div class="en"><strong>According to</strong> the requirements, we should attend tomorrow's meeting.</div></div>
+          <div class="grammar-ex"><div class="zh">老师<strong>根据</strong>每个学生的兴趣，选择了不一样的书。</div><div class="en">The teacher chose different books for each student <strong>based on</strong> their interests.</div></div>
+          <div class="grammar-ex"><div class="zh"><strong>根据</strong>天气预报，明天有大雨。</div><div class="en"><strong>According to</strong> the weather forecast, there will be heavy rain tomorrow.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">2</span>数量词重叠 — Reduplication of Numeral-Measure Word Phrases</div>
+        <div class="grammar-desc">Repeating a <em>numeral + measure word</em> combination creates an adverbial that typically means <em>one by one / bit by bit / gradually</em>. It describes the manner of an action vividly — often suggesting slow, incremental, or methodical progress. The structure can optionally be followed by 地 before the verb.</div>
+        <div class="grammar-pattern">
+          数词 ＋ 量词 ＋ 数词 ＋ 量词 ＋（地）＋ 动词<br>
+          e.g. 一点儿一点儿（地）, 一段一段（地）, 一个一个（地）
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">我的汉语水平<strong>一天一天地</strong>提高了。</div><div class="en">My Chinese level improved <strong>day by day</strong>.</div></div>
+          <div class="grammar-ex"><div class="zh">他们<strong>两个两个地</strong>走进教室。</div><div class="en">They walked into the classroom <strong>two by two</strong>.</div></div>
+          <div class="grammar-ex"><div class="zh">你可以<strong>一点儿一点儿地</strong>练习，不用着急。</div><div class="en">You can practice <strong>little by little</strong> — no need to rush.</div></div>
+          <div class="grammar-ex"><div class="zh">老师给我们<strong>一个一个地</strong>讲解了这道题。</div><div class="en">The teacher explained this problem to us <strong>one by one</strong>.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">3</span>固定短语 "在……看来" — "In sb.'s View / From sb.'s Perspective"</div>
+        <div class="grammar-desc">The set phrase <strong>在……看来</strong> (zài … kànlái) expresses the viewpoint of a specific person or group. The subject who holds the opinion goes between 在 and 看来. It is often used sentence-initially to frame the rest of the sentence as a subjective opinion rather than objective fact. Unlike 看来 alone (which signals the speaker's own inference), 在……看来 can attribute the view to <em>any</em> person or group.</div>
+        <div class="grammar-pattern">
+          在 ＋ [Person/Group] ＋ 看来，[Opinion / Conclusion]
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh"><strong>在我看来</strong>，时间比钱更重要。</div><div class="en"><strong>In my view</strong>, time is more important than money.</div></div>
+          <div class="grammar-ex"><div class="zh"><strong>在老人们看来</strong>，住在这里非常舒服。</div><div class="en"><strong>From the elderly residents' perspective</strong>, living here is very comfortable.</div></div>
+          <div class="grammar-ex"><div class="zh"><strong>在很多游客看来</strong>，南京是中国最美的城市之一。</div><div class="en"><strong>In the eyes of many tourists</strong>, Nanjing is one of China's most beautiful cities.</div></div>
+          <div class="grammar-ex"><div class="zh"><strong>在他看来</strong>，每天运动对身体很好。</div><div class="en"><strong>In his opinion</strong>, exercising every day is very good for one's health.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">4</span>固定短语 "不一会儿" — "In No Time / Very Soon / Before Long"</div>
+        <div class="grammar-desc"><strong>不一会儿</strong> (bù yīhuìr) is a colloquial set phrase meaning "in a very short time / in no time at all." It functions as a time adverbial in sentences and is used to emphasize that something happened or will happen quickly — often with an element of surprise. It typically precedes the verb or appears at the start of the clause.</div>
+        <div class="grammar-pattern">
+          [Context]，[Subject] ＋ 不一会儿 ＋ 就 ＋ V + 了
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">难过的事情<strong>不一会儿</strong>就忘了。</div><div class="en">Any sadness faded away <strong>in no time</strong>.</div></div>
+          <div class="grammar-ex"><div class="zh">我收拾了<strong>不一会儿</strong>，已经收拾完十多本书了。</div><div class="en">I had only been tidying for <strong>a short while</strong> and had already sorted over ten books.</div></div>
+          <div class="grammar-ex"><div class="zh">你稍等，他<strong>不一会儿</strong>就回来了。</div><div class="en">Wait a moment — he'll be back <strong>very soon</strong>.</div></div>
+          <div class="grammar-ex"><div class="zh">她<strong>不一会儿</strong>就学会了这首歌。</div><div class="en">She learned this song <strong>in no time at all</strong>.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grammar tab -->
+
+  <!-- ══ 练习 TAB ══ -->
+  <div data-tab="exercise" class="tab-panel">
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">1. 根据课文，南京有多少年以上的历史？</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>一千年</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>两千年</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>五百年</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>三千年</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">2. 选择正确词语：______我的了解，这个小区的环境非常好。</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>按照</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>根据</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>因为</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>虽然</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">3. 用"在……看来"选出最正确的句子：</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>在看来我，时间很重要。</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">B</span>我在看来，时间很重要。</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">C</span>在我看来，时间很重要。</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>在我来看，时间很重要。</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">4. "难过的事情不一会儿就忘了"中，"不一会儿"的意思是？</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>很久以后</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">B</span>永远</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">C</span>很短的时间内</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>一会儿也没有</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">填空题 · Fill in the Blank</div>
+      <div class="exercise-q">5. 用"一……一……地"完成句子：学汉语要有耐心，______（一点儿）练习，不用着急。</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        <input id="l15-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:320px;outline:none;">
+        <button class="check-btn" onclick="checkFill('l15-fill1','open','l15-reveal1')">检查</button>
+      </div>
+      <div id="l15-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：学汉语要有耐心，<strong>一点儿一点儿地</strong>练习，不用着急。（重叠形式加"地"作副词）</div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">填空题 · Fill in the Blank</div>
+      <div class="exercise-q">6. 用"在……看来"写一个表达你个人观点的句子（话题自选，如学习、旅游、环境等）。</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        <input id="l15-fill2" type="text" placeholder="写出你的观点…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:360px;outline:none;">
+        <button class="check-btn" onclick="checkFill('l15-fill2','open','l15-reveal2')">检查</button>
+      </div>
+      <div id="l15-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：在我看来，<strong>学好一门外语需要每天坚持练习</strong>。（答案不唯一，关键是使用"在……看来"结构）</div>
+    </div>
+
+    <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+      <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+        onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+        onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+        🔄 重新作答
+      </button>
+    </div>
+
+  </div><!-- end exercise tab -->
+
+  <!-- ══ 话题讨论 TAB ══ -->
+  <div data-tab="discussion" class="tab-panel">
+
+    <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+      <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+        <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+      </div>
+      <div style="padding:1rem 1.5rem;">
+        <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+          <div>（1）你觉得什么样的城市环境最适合居住？请描述一下你理想中的居住环境。</div>
+          <div>（2）如果你有机会在另一个城市住几年，你会选择哪里？为什么？</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+      </div>
+      <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+      <div class="culture-zh">
+        <strong>（1）</strong> 同乐说他是"半个南京人"，因为他在南京住了好几年。你有没有在某个地方住过很久，感觉自己像是那里的人？请用"半个……人"说说你的经历。<br><br>
+        <strong>（2）</strong> 课文说黄河"养了中国人几千年"。在你的国家，有没有类似的河流或自然景观，对人们来说非常重要、有历史意义？<br><br>
+        <strong>（3）</strong> 日记中，一雪说去河边的树下坐着，难过的事情"不一会儿就忘了"。你有没有这样一个特别喜欢的地方，可以让你忘掉烦恼？那是哪里？
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+      </div>
+      <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+      <div class="culture-zh">
+        <strong>（1）</strong> 同乐介绍南京时说"不止一两个"好地方。请用"在我看来"和"根据……"介绍一个你熟悉的城市或景点，说说为什么推荐去那里。<br><br>
+        <strong>（2）</strong> 你觉得了解一个城市的历史对旅游有多重要？用"在……看来"表达你的观点，并举例说明。<br><br>
+        <strong>（3）</strong> 你的中文学习进步了吗？请用"一点儿一点儿地"或"一天一天地"描述你的学习进步。
+      </div>
+    </div>
+
+  </div><!-- end discussion tab -->
+
+  <!-- ══ 更多 TAB ══ -->
+  <div data-tab="culture" class="tab-panel">
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">🏮 Culture · 文化</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">南京：历史古城 <span class="pinyin">Nanjing: An Ancient Capital</span></div>
+      <div class="culture-zh">南京（Nánjīng）位于中国东部，是江苏省的省会，有超过两千年的历史。南京曾经是多个朝代的都城（dūchéng），包括明朝和中华民国时期。南京的著名景点很多，包括中山陵（Zhōngshān Líng，孙中山陵墓）、南京长江大桥、秦淮河（Qínhuái Hé）夜游，以及南京博物馆等。南京也是中国著名的"火炉城市"之一，夏天非常热。南京的美食也很有特色，著名的有盐水鸭（yánshuǐ yā）、小笼包和各种汤类食物。"我是半个南京人"这句话常常被在南京住过一段时间的外地人用来表示对这座城市的感情和认同感。</div>
+      <div class="culture-en">Nanjing, located in eastern China, is the capital of Jiangsu Province with over 2,000 years of history. Nanjing served as the capital of several dynasties, including the Ming Dynasty and the Republic of China period. Famous attractions include the Sun Yat-sen Mausoleum, the Nanjing Yangtze River Bridge, night boat tours on the Qinhuai River, and the Nanjing Museum. Nanjing is also one of China's famously hot "furnace cities" in summer. The local cuisine is distinctive, with salted duck, xiaolongbao dumplings, and various soups among the highlights. The phrase "I'm half a Nanjing local" is commonly used by people who lived there for a period to express their attachment and identification with the city.</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">⚖️ Compare · 比一比</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">长江 vs 黄河 <span class="pinyin">The Yangtze vs The Yellow River</span></div>
+      <div class="culture-zh">
+        <strong>长江 (Cháng Jiāng)</strong>：中国最长的河，全长约6,300公里，也是亚洲最长的河流。长江流经中国中部，是中国重要的经济通道，沿岸城市包括重庆、武汉、南京和上海。<br><br>
+        <strong>黄河 (Huáng Hé)</strong>：中国第二长的河，全长约5,464公里。因河水含大量黄色泥沙而得名。黄河被称为"中华民族的母亲河"，是中华文明的发源地之一。<br><br>
+        <strong>文化意义：</strong>长江代表经济繁荣和商业发展；黄河代表中国文明的根源和历史传承。两条河流都在中国历史和文化中占有极为重要的地位。
+      </div>
+      <div class="culture-en">
+        <strong>The Yangtze River</strong>: China's longest river at approximately 6,300 km — also Asia's longest. It flows through central China and is a vital economic artery. Major cities along its banks include Chongqing, Wuhan, Nanjing, and Shanghai.<br><br>
+        <strong>The Yellow River</strong>: China's second longest river at approximately 5,464 km. It gets its name from the large amounts of yellow silt it carries. Known as "the mother river of the Chinese nation," it is one of the cradles of Chinese civilization.<br><br>
+        <strong>Cultural significance:</strong> The Yangtze represents economic prosperity and commerce; the Yellow River represents the roots of Chinese civilization and historical heritage. Both rivers hold a place of enormous importance in Chinese history and culture.
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">✏️ Grammar · 语言点</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">了解 vs 知道 vs 认识 <span class="pinyin">Three Ways to "Know"</span></div>
+      <div class="culture-zh">
+        三个词都与"知晓"有关，但侧重点不同：<br><br>
+        <strong>知道 (zhīdào)</strong>：最基础，意思是知道某个事实或信息，不需要深度理解。<br>
+        例：我知道他叫什么名字。<br><br>
+        <strong>了解 (liǎojiě)</strong>：比知道深，意思是对某事有较全面或深入的了解，常常需要经历或研究。<br>
+        例：我对中国历史有一定的了解。<br><br>
+        <strong>认识 (rènshi)</strong>：主要用于"认识人"或"认识字"，表示知晓并能辨认。<br>
+        例：我认识他，他是我同学。/ 我不认识这个字。<br><br>
+        <strong>总结：</strong>事实用知道，深度理解用了解，人/字用认识。
+      </div>
+      <div class="culture-en">
+        All three relate to "knowing," but with different emphases:<br><br>
+        <strong>知道 (zhīdào)</strong>: Most basic — knowing a fact or piece of information, no deep understanding required.<br>
+        E.g.: I know what his name is.<br><br>
+        <strong>了解 (liǎojiě)</strong>: Deeper than 知道 — having a thorough or comprehensive understanding, often requiring experience or research.<br>
+        E.g.: I have a certain understanding of Chinese history.<br><br>
+        <strong>认识 (rènshi)</strong>: Primarily used for recognizing people or characters — knowing and being able to identify.<br>
+        E.g.: I know him — he's my classmate. / I don't recognize this character.<br><br>
+        <strong>Summary:</strong> Use 知道 for facts, 了解 for deep understanding, 认识 for people/characters.
+      </div>
+    </div>
+
+  </div><!-- end culture tab -->
+
+  </div><!-- end content-area L15 -->
+  </div><!-- end lesson-content data-lesson="15" -->
 
   <!-- ═══════════════ LESSON 16 (stub) ═══════════════ -->
   <div class="lesson-header" id="lesson-header-16" data-lesson="16" data-watermark="十六" style="display:none"></div>
