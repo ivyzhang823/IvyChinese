@@ -4116,7 +4116,8 @@
   function flipCard(card) { card.classList.toggle('flipped'); }
 
   document.querySelectorAll('.fc-slider').forEach(slider => {
-    const counter = slider.closest('.fc-slider-wrap').querySelector('.fc-counter');
+    const wrap = slider.closest('.fc-slider-wrap') || slider.closest('.flashcard-wrap');
+    const counter = wrap ? wrap.querySelector('.fc-counter') : null;
     fcInit(slider.id, counter ? counter.id : null);
   });
 
