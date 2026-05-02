@@ -1800,9 +1800,721 @@
   </div><!-- end content-area L12 -->
   </div><!-- end lesson-content data-lesson="12" -->
 
-  <!-- ═══════════════ LESSON 13 (stub) ═══════════════ -->
-  <div class="lesson-header" id="lesson-header-13" data-lesson="13" data-watermark="十三" style="display:none"></div>
-  <div class="lesson-content" data-lesson="13" style="display:none"></div>
+  <!-- ═══════════════ LESSON 13 ═══════════════ -->
+  <div class="lesson-header" id="lesson-header-13" data-lesson="13" data-watermark="十三" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> HSK 3</button>
+      <span class="lesson-tag-num">第十三课 · Lesson 13</span>
+    </div>
+    <h1>我的新邻居来自英国</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Wǒ de xīn línjū lái zì Yīngguó</p>
+    <p class="lesson-subtitle">My new neighbors come from the UK</p>
+  </div>
+
+  <div class="lesson-content" data-lesson="13" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text',this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab',this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail',this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar',this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise',this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('discussion',this)">💬 话题讨论</button>
+    <button class="tab-btn" onclick="switchTab('culture',this)">🏮 更多</button>
+  </div>
+  <div class="content-area">
+
+  <!-- ══ 课文 TAB ══ -->
+  <div data-tab="text" class="tab-panel active">
+
+  <div class="dialogue-block" id="l13-block1">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 1 · 在饭馆</span>
+        <button class="dh-play-btn" id="l13-dhBtn1" onclick="dhPlay('l13-audioEl1','l13-dhBtn1')"><svg id="l13-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l13-block1')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l13-block1')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">At the restaurant — hosting dinner and planning to invite new neighbors</span>
+    </div></div>
+    <audio id="l13-audioEl1" src="audio/13-1.mp3" onended="dhEnded('l13-audioEl1','l13-dhBtn1','l13-dhIcon1')" ontimeupdate="dhUpdate('l13-audioEl1')"></audio>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">今天我请客，大家随便点，想吃什么就点什么。</span>
+      <span class="line-pinyin">Jīntiān wǒ qǐng kè, dàjiā suíbiàn diǎn, xiǎng chī shénme jiù diǎn shénme.</span>
+      <span class="line-en">Tonight is my treat — everyone order freely, whatever you'd like.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">谢谢你，同乐！这家饭馆做的是南方菜还是北方菜？</span>
+      <span class="line-pinyin">Xièxie nǐ, Tónglè! Zhè jiā fànguǎn zuò de shì nánfāng cài háishi běifāng cài?</span>
+      <span class="line-en">Thank you, Tónglè! Does this restaurant serve southern or northern cuisine?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">两种都有。南方菜和北方菜的做法不同，味道也不一样。</span>
+      <span class="line-pinyin">Liǎng zhǒng dōu yǒu. Nánfāng cài hé běifāng cài de zuòfǎ bùtóng, wèidào yě bù yīyàng.</span>
+      <span class="line-en">Both kinds. Southern and northern dishes have different cooking methods and different flavors.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">刘明</span><div class="line-content">
+      <span class="line-zh">我比较喜欢北方菜，味道浓，我吃得惯。</span>
+      <span class="line-pinyin">Wǒ bǐjiào xǐhuan běifāng cài, wèidào nóng, wǒ chī de guàn.</span>
+      <span class="line-en">I prefer northern cuisine — the bold flavors suit me well.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">如果有机会的话，希望你也请我们尝尝正宗的南方菜。</span>
+      <span class="line-pinyin">Rúguǒ yǒu jīhuì de huà, xīwàng nǐ yě qǐng wǒmen cháng cháng zhèngzōng de nánfāng cài.</span>
+      <span class="line-en">If you ever get the chance, I hope you'll treat us to some authentic southern food too.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">没问题！一雪，你说你有新邻居了，打算请他们来家里做客吗？</span>
+      <span class="line-pinyin">Méi wèntí! Yīxuě, nǐ shuō nǐ yǒu xīn línjū le, dǎsuàn qǐng tāmen lái jiālǐ zuò kè ma?</span>
+      <span class="line-en">Of course! Yīxuě, you said you have new neighbors — do you plan to invite them over?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">是的，我打算这个周末请他们来家里做客。他们来自英国，对中国文化很感兴趣。</span>
+      <span class="line-pinyin">Shì de, wǒ dǎsuàn zhège zhōumò qǐng tāmen lái jiālǐ zuò kè. Tāmen lái zì Yīngguó, duì Zhōngguó wénhuà hěn gǎn xìngqù.</span>
+      <span class="line-en">Yes, I plan to invite them this weekend. They come from the UK and are very interested in Chinese culture.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">同乐</span><div class="line-content">
+      <span class="line-zh">那太好了！如果他们喜欢中国菜的话，你就多做几道拿手菜。</span>
+      <span class="line-pinyin">Nà tài hǎo le! Rúguǒ tāmen xǐhuan Zhōngguó cài de huà, nǐ jiù duō zuò jǐ dào náshǒu cài.</span>
+      <span class="line-en">Wonderful! If they like Chinese food, just make a few of your best dishes.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l13-block2">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 2 · 在家里</span>
+        <button class="dh-play-btn" id="l13-dhBtn2" onclick="dhPlay('l13-audioEl2','l13-dhBtn2')"><svg id="l13-dhIcon2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l13-block2')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l13-block2')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">At home — preparing for the birthday party</span>
+    </div></div>
+    <audio id="l13-audioEl2" src="audio/13-3.mp3" onended="dhEnded('l13-audioEl2','l13-dhBtn2','l13-dhIcon2')" ontimeupdate="dhUpdate('l13-audioEl2')"></audio>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">刘明，你来帮我，把这张桌子搬到客厅中间。</span>
+      <span class="line-pinyin">Liú Míng, nǐ lái bāng wǒ, bǎ zhè zhāng zhuōzi bān dào kètīng zhōngjiān.</span>
+      <span class="line-en">Liú Míng, help me move this table to the middle of the living room.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">刘明</span><div class="line-content">
+      <span class="line-zh">好。这瓶酒放到哪儿？</span>
+      <span class="line-pinyin">Hǎo. Zhè píng jiǔ fàng dào nǎr?</span>
+      <span class="line-en">Sure. Where should I put this bottle of wine?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">把酒放到桌子上，把那些盘子也放好，一会儿要用。</span>
+      <span class="line-pinyin">Bǎ jiǔ fàng dào zhuōzi shàng, bǎ nàxiē pánzi yě fàng hǎo, yīhuìr yào yòng.</span>
+      <span class="line-en">Put the wine on the table, and set out those plates neatly — we'll need them soon.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">刘明</span><div class="line-content">
+      <span class="line-zh">小明的生日蛋糕呢？</span>
+      <span class="line-pinyin">Xiǎo Míng de shēngrì dàngāo ne?</span>
+      <span class="line-en">What about Xiǎo Míng's birthday cake?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">把蛋糕放到冰箱里，等大家都来了再拿出来。</span>
+      <span class="line-pinyin">Bǎ dàngāo fàng dào bīngxiāng lǐ, děng dàjiā dōu lái le zài ná chūlái.</span>
+      <span class="line-en">Put the cake in the fridge — we'll take it out when everyone has arrived.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">刘明</span><div class="line-content">
+      <span class="line-zh">邻居今晚也来吗？</span>
+      <span class="line-pinyin">Línjū jīn wǎn yě lái ma?</span>
+      <span class="line-en">Are the neighbors coming tonight too?</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">来的！他们说要带礼物，小明一定会很高兴的。</span>
+      <span class="line-pinyin">Lái de! Tāmen shuō yào dài lǐwù, Xiǎo Míng yīdìng huì hěn gāoxìng de.</span>
+      <span class="line-en">Yes! They said they'd bring a gift — Xiǎo Míng will be thrilled.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l13-block3">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 3 · 在家里</span>
+        <button class="dh-play-btn" id="l13-dhBtn3" onclick="dhPlay('l13-audioEl3','l13-dhBtn3')"><svg id="l13-dhIcon3" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l13-block3')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l13-block3')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">Birthday party — British neighbors bring a gift for Xiǎo Míng</span>
+    </div></div>
+    <audio id="l13-audioEl3" src="audio/13-5.mp3" onended="dhEnded('l13-audioEl3','l13-dhBtn3','l13-dhIcon3')" ontimeupdate="dhUpdate('l13-audioEl3')"></audio>
+    <div class="dialogue-line"><span class="speaker">（门铃响）</span><div class="line-content">
+      <span class="line-zh">（门铃响了）</span>
+      <span class="line-pinyin">(Ménlíng xiǎng le)</span>
+      <span class="line-en">(The doorbell rings)</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">欢迎！欢迎！快请进！</span>
+      <span class="line-pinyin">Huānyíng! Huānyíng! Kuài qǐng jìn!</span>
+      <span class="line-en">Welcome, welcome! Please come in!</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">邻居太太</span><div class="line-content">
+      <span class="line-zh">晚上好！这是送给小明的礼物——一套画板和画笔。</span>
+      <span class="line-pinyin">Wǎnshang hǎo! Zhè shì sòng gěi Xiǎo Míng de lǐwù — yī tào huàbǎn hé huàbǐ.</span>
+      <span class="line-en">Good evening! This is a gift for Xiǎo Míng — a set of drawing board and paintbrushes.</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">一雪</span><div class="line-content">
+      <span class="line-zh">哇，太好了！小明，快来谢谢叔叔阿姨！</span>
+      <span class="line-pinyin">Wa, tài hǎo le! Xiǎo Míng, kuài lái xièxie shūshu āyí!</span>
+      <span class="line-en">Wow, how wonderful! Xiǎo Míng, come say thank you to uncle and auntie!</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">小明</span><div class="line-content">
+      <span class="line-zh">谢谢叔叔！谢谢阿姨！我喜欢画画儿，以后我可以一边听音乐，一边画画儿了！</span>
+      <span class="line-pinyin">Xièxie shūshu! Xièxie āyí! Wǒ xǐhuan huà huàr, yǐhòu wǒ kěyǐ yībiān tīng yīnyuè, yībiān huà huàr le!</span>
+      <span class="line-en">Thank you, uncle! Thank you, auntie! I love drawing — now I can listen to music and draw at the same time!</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">邻居先生</span><div class="line-content">
+      <span class="line-zh">我们听说小明喜欢画画儿，希望他以后能成为一个画家！</span>
+      <span class="line-pinyin">Wǒmen tīng shuō Xiǎo Míng xǐhuan huà huàr, xīwàng tā yǐhòu néng chéngwéi yī ge huàjiā!</span>
+      <span class="line-en">We heard Xiǎo Míng loves drawing — we hope he'll become a painter someday!</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">刘明</span><div class="line-content">
+      <span class="line-zh">来，来！我们一边吃饭，一边聊吧。请坐！</span>
+      <span class="line-pinyin">Lái, lái! Wǒmen yībiān chīfàn, yībiān liáo ba. Qǐng zuò!</span>
+      <span class="line-en">Come, come! Let's eat and chat. Please sit down!</span>
+    </div></div>
+    <div class="dialogue-line"><span class="speaker">邻居太太</span><div class="line-content">
+      <span class="line-zh">菜的味道真好！这和我们英国的做法完全不同。</span>
+      <span class="line-pinyin">Cài de wèidào zhēn hǎo! Zhè hé wǒmen Yīngguó de zuòfǎ wánquán bùtóng.</span>
+      <span class="line-en">The food tastes amazing! It's completely different from how we cook in England.</span>
+    </div></div>
+  </div>
+
+  <div class="dialogue-block" id="l13-block4">
+    <div class="dialogue-header"><div class="dialogue-title-wrap">
+      <div class="dialogue-title-row">
+        <span class="dialogue-title">Text 4 · 日记</span>
+        <button class="dh-play-btn" id="l13-dhBtn4" onclick="dhPlay('l13-audioEl4','l13-dhBtn4')"><svg id="l13-dhIcon4" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <span style="flex:1;"></span>
+        <div class="toggle-btns">
+          <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l13-block4')"><span class="dot"></span>PY</button>
+          <button class="toggle-btn" onclick="toggleBlock(this,'en','l13-block4')"><span class="dot"></span>EN</button>
+        </div>
+      </div>
+      <span class="dialogue-title-en">Diary — the British couple and their love of Eastern culture</span>
+    </div></div>
+    <audio id="l13-audioEl4" src="audio/13-7.mp3" onended="dhEnded('l13-audioEl4','l13-dhBtn4','l13-dhIcon4')" ontimeupdate="dhUpdate('l13-audioEl4')"></audio>
+    <div class="dialogue-line"><span class="speaker">日记</span><div class="line-content">
+      <span class="line-zh">我们的新邻居是一对英国夫妻，他们来自英国，在中国已经住了两年了。他们家的墙上挂着一张很大的世界地图，地图上有很多红点，那些都是他们旅游过的地方。他们告诉我，他们对东方文化很感兴趣，特别喜欢喝中国的红茶。他们来中国，是因为想更好地了解东方的文化和生活方式。我感到，和来自不同国家的人成为邻居是一件很有意思的事情。下次，我打算邀请他们再来家里做客，给他们多做几道中国菜。</span>
+      <span class="line-pinyin">Wǒmen de xīn línjū shì yī duì Yīngguó fūqī, tāmen lái zì Yīngguó, zài Zhōngguó yǐjīng zhù le liǎng nián le. Tāmen jiā de qiáng shàng guà zhe yī zhāng hěn dà de shìjiè dìtú, dìtú shàng yǒu hěn duō hóng diǎn, nàxiē dōu shì tāmen lǚyóu guò de dìfang. Tāmen gàosu wǒ, tāmen duì dōngfāng wénhuà hěn gǎn xìngqù, tèbié xǐhuan hē Zhōngguó de hóngchá. Tāmen lái Zhōngguó, shì yīnwèi xiǎng gèng hǎo de liǎojiě dōngfāng de wénhuà hé shēnghuó fāngshì. Wǒ gǎndào, hé lái zì bùtóng guójiā de rén chéngwéi línjū shì yī jiàn hěn yǒu yìsi de shìqing. Xià cì, wǒ dǎsuàn yāoqǐng tāmen zài lái jiālǐ zuò kè, gěi tāmen duō zuò jǐ dào Zhōngguó cài.</span>
+      <span class="line-en">Our new neighbors are a British couple who come from the UK and have been living in China for two years. On the wall of their home hangs a large world map with many red dots — every place they have ever visited. They told me they are very interested in Eastern culture and especially love drinking Chinese black tea. They came to China because they wanted to better understand Eastern culture and ways of life. I feel that having neighbors from a different country is a very interesting thing. Next time, I plan to invite them over again and cook them more Chinese dishes.</span>
+    </div></div>
+  </div>
+
+  </div><!-- end text tab -->
+
+  <!-- ══ 生词表 TAB ══ -->
+  <div data-tab="vocab" class="tab-panel">
+
+    <div class="flashcard-wrap">
+      <div class="fc-slider" id="l13-fcSlider">
+        <!-- Card 1 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">请客</div><div class="fc-pinyin">qǐng kè</div></div>
+          <div class="fc-back"><div class="fc-en">to treat (invite sb. to dinner at one's expense)</div></div>
+        </div>
+        <!-- Card 2 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">做法</div><div class="fc-pinyin">zuòfǎ</div></div>
+          <div class="fc-back"><div class="fc-en">way of doing / cooking method</div></div>
+        </div>
+        <!-- Card 3 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">不同</div><div class="fc-pinyin">bùtóng</div></div>
+          <div class="fc-back"><div class="fc-en">different; not the same</div></div>
+        </div>
+        <!-- Card 4 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">如果</div><div class="fc-pinyin">rúguǒ</div></div>
+          <div class="fc-back"><div class="fc-en">if; in case</div></div>
+        </div>
+        <!-- Card 5 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">打算</div><div class="fc-pinyin">dǎsuàn</div></div>
+          <div class="fc-back"><div class="fc-en">to plan; to intend; plan</div></div>
+        </div>
+        <!-- Card 6 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">做客</div><div class="fc-pinyin">zuò kè</div></div>
+          <div class="fc-back"><div class="fc-en">to be a guest; to visit someone's home</div></div>
+        </div>
+        <!-- Card 7 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">邻居</div><div class="fc-pinyin">línjū</div></div>
+          <div class="fc-back"><div class="fc-en">neighbor</div></div>
+        </div>
+        <!-- Card 8 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">酒</div><div class="fc-pinyin">jiǔ</div></div>
+          <div class="fc-back"><div class="fc-en">wine; alcohol; liquor</div></div>
+        </div>
+        <!-- Card 9 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">放</div><div class="fc-pinyin">fàng</div></div>
+          <div class="fc-back"><div class="fc-en">to put; to place; to let go</div></div>
+        </div>
+        <!-- Card 10 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">晚会</div><div class="fc-pinyin">wǎnhuì</div></div>
+          <div class="fc-back"><div class="fc-en">evening party; soirée</div></div>
+        </div>
+        <!-- Card 11 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">礼物</div><div class="fc-pinyin">lǐwù</div></div>
+          <div class="fc-back"><div class="fc-en">gift; present</div></div>
+        </div>
+        <!-- Card 12 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">画</div><div class="fc-pinyin">huà</div></div>
+          <div class="fc-back"><div class="fc-en">to draw; to paint; painting; picture</div></div>
+        </div>
+        <!-- Card 13 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">画家</div><div class="fc-pinyin">huàjiā</div></div>
+          <div class="fc-back"><div class="fc-en">painter; artist</div></div>
+        </div>
+        <!-- Card 14 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">盘子</div><div class="fc-pinyin">pánzi</div></div>
+          <div class="fc-back"><div class="fc-en">plate; dish; tray</div></div>
+        </div>
+        <!-- Card 15 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">一边</div><div class="fc-pinyin">yībiān</div></div>
+          <div class="fc-back"><div class="fc-en">at the same time; while (doing sth. else)</div></div>
+        </div>
+        <!-- Card 16 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">来自</div><div class="fc-pinyin">láizì</div></div>
+          <div class="fc-back"><div class="fc-en">to come from; to originate from</div></div>
+        </div>
+        <!-- Card 17 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">夫妻</div><div class="fc-pinyin">fūqī</div></div>
+          <div class="fc-back"><div class="fc-en">husband and wife; (married) couple</div></div>
+        </div>
+        <!-- Card 18 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">地图</div><div class="fc-pinyin">dìtú</div></div>
+          <div class="fc-back"><div class="fc-en">map</div></div>
+        </div>
+        <!-- Card 19 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">感到</div><div class="fc-pinyin">gǎndào</div></div>
+          <div class="fc-back"><div class="fc-en">to feel; to sense; to become aware of</div></div>
+        </div>
+        <!-- Card 20 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">东方</div><div class="fc-pinyin">dōngfāng</div></div>
+          <div class="fc-back"><div class="fc-en">the East; eastern; Oriental</div></div>
+        </div>
+        <!-- Card 21 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">文化</div><div class="fc-pinyin">wénhuà</div></div>
+          <div class="fc-back"><div class="fc-en">culture; civilization; (level of) education</div></div>
+        </div>
+        <!-- Card 22 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">英国</div><div class="fc-pinyin">Yīngguó</div></div>
+          <div class="fc-back"><div class="fc-en">the United Kingdom; England</div></div>
+        </div>
+        <!-- Card 23 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">红茶</div><div class="fc-pinyin">hóngchá</div></div>
+          <div class="fc-back"><div class="fc-en">black tea (lit. "red tea")</div></div>
+        </div>
+        <!-- Card 24 -->
+        <div class="fc-card" onclick="flipCard(this)">
+          <div class="fc-front"><div class="fc-zh">旅游</div><div class="fc-pinyin">lǚyóu</div></div>
+          <div class="fc-back"><div class="fc-en">to travel; tourism</div></div>
+        </div>
+      </div><!-- end fc-slider -->
+      <div class="fc-controls">
+        <button class="fc-nav-btn" onclick="fcNav('l13-fcSlider','l13-fcCur',-1)">‹</button>
+        <span class="fc-counter"><span id="l13-fcCur">1</span> / 24</span>
+        <button class="fc-nav-btn" onclick="fcNav('l13-fcSlider','l13-fcCur',1)">›</button>
+      </div>
+    </div><!-- end flashcard-wrap -->
+
+    <!-- Vocab grid -->
+    <div class="vocab-grid">
+      <div class="vocab-item"><span class="vocab-zh">请客</span><span class="vocab-pinyin">qǐng kè</span><span class="vocab-en">to treat (invite to dinner)</span></div>
+      <div class="vocab-item"><span class="vocab-zh">做法</span><span class="vocab-pinyin">zuòfǎ</span><span class="vocab-en">cooking method; way of doing</span></div>
+      <div class="vocab-item"><span class="vocab-zh">不同</span><span class="vocab-pinyin">bùtóng</span><span class="vocab-en">different; not the same</span></div>
+      <div class="vocab-item"><span class="vocab-zh">如果</span><span class="vocab-pinyin">rúguǒ</span><span class="vocab-en">if; in case</span></div>
+      <div class="vocab-item"><span class="vocab-zh">打算</span><span class="vocab-pinyin">dǎsuàn</span><span class="vocab-en">to plan; to intend</span></div>
+      <div class="vocab-item"><span class="vocab-zh">做客</span><span class="vocab-pinyin">zuò kè</span><span class="vocab-en">to be a guest; to visit</span></div>
+      <div class="vocab-item"><span class="vocab-zh">邻居</span><span class="vocab-pinyin">línjū</span><span class="vocab-en">neighbor</span></div>
+      <div class="vocab-item"><span class="vocab-zh">酒</span><span class="vocab-pinyin">jiǔ</span><span class="vocab-en">wine; alcohol</span></div>
+      <div class="vocab-item"><span class="vocab-zh">放</span><span class="vocab-pinyin">fàng</span><span class="vocab-en">to put; to place</span></div>
+      <div class="vocab-item"><span class="vocab-zh">晚会</span><span class="vocab-pinyin">wǎnhuì</span><span class="vocab-en">evening party</span></div>
+      <div class="vocab-item"><span class="vocab-zh">礼物</span><span class="vocab-pinyin">lǐwù</span><span class="vocab-en">gift; present</span></div>
+      <div class="vocab-item"><span class="vocab-zh">画</span><span class="vocab-pinyin">huà</span><span class="vocab-en">to draw; painting</span></div>
+      <div class="vocab-item"><span class="vocab-zh">画家</span><span class="vocab-pinyin">huàjiā</span><span class="vocab-en">painter; artist</span></div>
+      <div class="vocab-item"><span class="vocab-zh">盘子</span><span class="vocab-pinyin">pánzi</span><span class="vocab-en">plate; dish; tray</span></div>
+      <div class="vocab-item"><span class="vocab-zh">一边</span><span class="vocab-pinyin">yībiān</span><span class="vocab-en">at the same time; while</span></div>
+      <div class="vocab-item"><span class="vocab-zh">来自</span><span class="vocab-pinyin">láizì</span><span class="vocab-en">to come from</span></div>
+      <div class="vocab-item"><span class="vocab-zh">夫妻</span><span class="vocab-pinyin">fūqī</span><span class="vocab-en">husband and wife; couple</span></div>
+      <div class="vocab-item"><span class="vocab-zh">地图</span><span class="vocab-pinyin">dìtú</span><span class="vocab-en">map</span></div>
+      <div class="vocab-item"><span class="vocab-zh">感到</span><span class="vocab-pinyin">gǎndào</span><span class="vocab-en">to feel; to sense</span></div>
+      <div class="vocab-item"><span class="vocab-zh">东方</span><span class="vocab-pinyin">dōngfāng</span><span class="vocab-en">the East; eastern</span></div>
+      <div class="vocab-item"><span class="vocab-zh">文化</span><span class="vocab-pinyin">wénhuà</span><span class="vocab-en">culture; civilization</span></div>
+      <div class="vocab-item"><span class="vocab-zh">英国</span><span class="vocab-pinyin">Yīngguó</span><span class="vocab-en">the United Kingdom</span></div>
+      <div class="vocab-item"><span class="vocab-zh">红茶</span><span class="vocab-pinyin">hóngchá</span><span class="vocab-en">black tea (lit. red tea)</span></div>
+      <div class="vocab-item"><span class="vocab-zh">旅游</span><span class="vocab-pinyin">lǚyóu</span><span class="vocab-en">to travel; tourism</span></div>
+    </div>
+
+  </div><!-- end vocab tab -->
+
+  <!-- ══ 词汇详解 TAB ══ -->
+  <div data-tab="worddetail" class="tab-panel">
+
+    <div class="wd-block">
+      <div class="wd-title">1 · 请客 vs 做客</div>
+      <div class="wd-desc">These two look similar but mean the opposite! <strong>请客</strong> (qǐng kè) means to <em>be the host</em> — you invite someone and pay the bill. <strong>做客</strong> (zuò kè) means to <em>be the guest</em> — you visit someone else's home. Remember: 请 = invite (you're in charge); 做 = act as (you're the visitor).</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">今天我<strong>请客</strong>，大家随便点！</span><span class="wd-en">Today I'm treating everyone — order whatever you like!</span></div>
+        <div class="wd-ex"><span class="wd-zh">我打算去邻居家<strong>做客</strong>。</span><span class="wd-en">I plan to visit the neighbors' home as a guest.</span></div>
+        <div class="wd-ex"><span class="wd-zh">下次你来北京，我一定<strong>请你</strong>吃北京烤鸭。</span><span class="wd-en">Next time you come to Beijing, I'll definitely treat you to Peking duck.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">2 · 如果……的话 — "If…"</div>
+      <div class="wd-desc"><strong>如果</strong> (rúguǒ) introduces a condition. <strong>的话</strong> (de huà) is an optional marker at the end of the conditional clause that softens the tone. The main clause often uses <strong>就</strong> (jiù) to signal the result. You can use 如果 alone or with 的话, but the two always go together if both appear.</div>
+      <div class="wd-pattern" style="background:#fdf5f0;border-left:3px solid var(--vermillion);padding:0.6rem 1rem;border-radius:6px;font-size:0.85rem;margin:0.5rem 0;">
+        如果 ＋ [condition] ＋ （的话），（就）＋ [result]
+      </div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh"><strong>如果</strong>你有时间<strong>的话</strong>，我们就一起去爬山吧。</span><span class="wd-en"><strong>If</strong> you have time, let's go hiking together.</span></div>
+        <div class="wd-ex"><span class="wd-zh"><strong>如果</strong>他们喜欢中国菜<strong>的话</strong>，你就多做几道。</span><span class="wd-en"><strong>If</strong> they like Chinese food, just make more dishes.</span></div>
+        <div class="wd-ex"><span class="wd-zh"><strong>如果</strong>明天下雨<strong>的话</strong>，我们就不去了。</span><span class="wd-en"><strong>If</strong> it rains tomorrow, we won't go.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">3 · 不同 vs 一样 — "Different" vs "the Same"</div>
+      <div class="wd-desc"><strong>不同</strong> (bùtóng) means "different / not the same" and is used as an adjective or predicate. <strong>一样</strong> (yīyàng) means "the same" and often appears in the pattern A 跟 B 一样 or A 和 B 不一样. Note: 不同 is slightly more formal than 不一样.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">南方菜和北方菜的做法<strong>不同</strong>，味道也<strong>不一样</strong>。</span><span class="wd-en">Southern and northern cooking methods are <strong>different</strong>, and so are the flavors.</span></div>
+        <div class="wd-ex"><span class="wd-zh">他们两个人的想法<strong>不一样</strong>。</span><span class="wd-en">The two of them have <strong>different</strong> ideas.</span></div>
+        <div class="wd-ex"><span class="wd-zh">我跟你的意见完全<strong>一样</strong>。</span><span class="wd-en">My opinion is exactly <strong>the same</strong> as yours.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">4 · 一边……一边…… — Simultaneous Actions</div>
+      <div class="wd-desc"><strong>一边……一边……</strong> (yībiān … yībiān …) means doing two things at the same time. Both verbs should be actions that can realistically happen together. The subject does not need to be repeated. Use this with two verb phrases, not two nouns.</div>
+      <div class="wd-pattern" style="background:#fdf5f0;border-left:3px solid var(--vermillion);padding:0.6rem 1rem;border-radius:6px;font-size:0.85rem;margin:0.5rem 0;">
+        [Subject] ＋ 一边 ＋ V₁ ＋ 一边 ＋ V₂
+      </div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">他<strong>一边</strong>听音乐，<strong>一边</strong>画画儿。</span><span class="wd-en">He listens to music <strong>while</strong> drawing.</span></div>
+        <div class="wd-ex"><span class="wd-zh">我们<strong>一边</strong>吃饭，<strong>一边</strong>聊天。</span><span class="wd-en">We chat <strong>while</strong> eating.</span></div>
+        <div class="wd-ex"><span class="wd-zh">她<strong>一边</strong>走路，<strong>一边</strong>看手机。</span><span class="wd-en">She looks at her phone <strong>while</strong> walking.</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">5 · 来自 vs 从……来 — Two Ways to Express Origin</div>
+      <div class="wd-desc">Both express where someone or something comes from, but they differ in structure and register. <strong>来自</strong> (láizì) is a single verb meaning "come from / originate from" — more formal, used for permanent origin or background. <strong>从……来</strong> (cóng … lái) is a prepositional phrase meaning "come from [a place]" — focuses on movement and is more colloquial.</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">他<strong>来自</strong>英国。</span><span class="wd-en">He <strong>comes from</strong> the UK. (his origin/background)</span></div>
+        <div class="wd-ex"><span class="wd-zh">他是<strong>从</strong>英国<strong>来</strong>的。</span><span class="wd-en">He came here <strong>from</strong> the UK. (he traveled here)</span></div>
+        <div class="wd-ex"><span class="wd-zh">这种茶<strong>来自</strong>中国云南。</span><span class="wd-en">This tea <strong>comes from</strong> Yunnan, China. (origin)</span></div>
+      </div>
+    </div>
+
+    <div class="wd-block">
+      <div class="wd-title">6 · 文化 — Culture</div>
+      <div class="wd-desc"><strong>文化</strong> (wénhuà) literally combines <em>文</em> (writing, civilization) and <em>化</em> (transformation, becoming). It covers culture, civilization, and also educational level in informal usage (e.g., 他没有文化 = "he has little education"). In everyday speech, 文化 is broad — from art and traditions to way of life. Common collocations include 中国文化, 传统文化 (traditional culture), 文化差异 (cultural difference).</div>
+      <div class="wd-examples">
+        <div class="wd-ex"><span class="wd-zh">他对东方<strong>文化</strong>很感兴趣。</span><span class="wd-en">He is very interested in Eastern <strong>culture</strong>.</span></div>
+        <div class="wd-ex"><span class="wd-zh">中西方<strong>文化</strong>差异很大。</span><span class="wd-en">The <strong>cultural</strong> differences between China and the West are significant.</span></div>
+        <div class="wd-ex"><span class="wd-zh">学语言的时候，了解那个国家的<strong>文化</strong>也很重要。</span><span class="wd-en">When learning a language, understanding that country's <strong>culture</strong> is also very important.</span></div>
+      </div>
+    </div>
+
+  </div><!-- end worddetail tab -->
+
+  <!-- ══ 语法 TAB ══ -->
+  <div data-tab="grammar" class="tab-panel">
+
+    <div class="grammar-switcher">
+      <button class="grammar-switch-btn active" onclick="switchGrammar(0,this)">① 如果……的话</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(1,this)">② 把字句(4)</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(2,this)">③ 老/小 前缀</button>
+      <button class="grammar-switch-btn" onclick="switchGrammar(3,this)">④ 一边……一边</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="grammar-panel active">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">1</span>如果……的话，就…… — Hypothetical Condition</div>
+        <div class="grammar-desc"><strong>如果</strong> (rúguǒ) introduces a hypothetical "if" condition. <strong>的话</strong> (de huà) at the end of the conditional clause is optional but adds a softer, more conversational tone. The result clause typically uses <strong>就</strong> (jiù, "then") to connect. This is one of the most common conditional patterns in Mandarin.</div>
+        <div class="grammar-pattern">
+          如果 ＋ [Condition] ＋ （的话），[Subject] ＋ 就 ＋ [Result]
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">如果你有时间<strong>的话</strong>，<strong>就</strong>来我家玩儿吧。</div><div class="en"><strong>If</strong> you have time, come hang out at my place.</div></div>
+          <div class="grammar-ex"><div class="zh">如果他们喜欢中国菜<strong>的话</strong>，你<strong>就</strong>多做几道。</div><div class="en"><strong>If</strong> they like Chinese food, just make a few extra dishes.</div></div>
+          <div class="grammar-ex"><div class="zh">如果明天天气好<strong>的话</strong>，我们<strong>就</strong>去公园。</div><div class="en"><strong>If</strong> the weather is nice tomorrow, we'll go to the park.</div></div>
+          <div class="grammar-ex"><div class="zh">如果你不明白<strong>的话</strong>，<strong>就</strong>再看一遍。</div><div class="en"><strong>If</strong> you don't understand, read it again.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">2</span>把字句 (4) — with Directional / Resultative Complements</div>
+        <div class="grammar-desc">The <strong>把</strong> (bǎ) construction emphasizes what happens to a definite object as a result of the action. In this lesson, 把 is used with <em>directional complements</em> (e.g., 放到…上/里/下) and <em>resultative complements</em> (e.g., 放好, 搬来, 拿出来), showing where the object ends up or what state it reaches.</div>
+        <div class="grammar-pattern">
+          [Subject] ＋ 把 ＋ [Object] ＋ V ＋ 到/在 ＋ [Location]<br>
+          [Subject] ＋ 把 ＋ [Object] ＋ V ＋ [Result Complement]
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">把酒<strong>放到</strong>桌子上。</div><div class="en">Put the wine <strong>on</strong> the table.</div></div>
+          <div class="grammar-ex"><div class="zh">把盘子<strong>放好</strong>，一会儿要用。</div><div class="en">Set the plates <strong>neatly</strong> — we'll need them soon.</div></div>
+          <div class="grammar-ex"><div class="zh">把蛋糕<strong>放到</strong>冰箱里。</div><div class="en">Put the cake <strong>in</strong> the fridge.</div></div>
+          <div class="grammar-ex"><div class="zh">请把那张桌子<strong>搬到</strong>客厅中间。</div><div class="en">Please move that table <strong>to</strong> the middle of the living room.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">3</span>前缀/后缀 — 老/小 and 家/师/员</div>
+        <div class="grammar-desc">Chinese uses <em>prefixes</em> and <em>suffixes</em> to modify nouns, especially for people. <strong>老</strong> (lǎo) and <strong>小</strong> (xiǎo) as prefixes before surnames show familiarity or seniority. As suffixes, <strong>家</strong> (jiā = expert), <strong>师</strong> (shī = teacher/specialist), and <strong>员</strong> (yuán = member/worker) form professional nouns.</div>
+        <div class="grammar-pattern">
+          老/小 ＋ Surname → informal address by seniority<br>
+          Noun ＋ 家 → expert in a field<br>
+          Noun ＋ 师 → specialist / teacher<br>
+          Noun ＋ 员 → member / staff
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh"><strong>老</strong>张今天不来了。/ <strong>小</strong>李，你来一下。</div><div class="en"><strong>Old</strong> Zhang isn't coming today. / <strong>Young</strong> Li, come here a moment.</div></div>
+          <div class="grammar-ex"><div class="zh">他是一位有名的<strong>画家</strong>。</div><div class="en">He is a famous <strong>painter</strong>. (画 + 家)</div></div>
+          <div class="grammar-ex"><div class="zh">她是我们学校的音乐<strong>老师</strong>。</div><div class="en">She is our school's music <strong>teacher</strong>. (老 + 师)</div></div>
+          <div class="grammar-ex"><div class="zh">他在银行做工作<strong>人员</strong>。</div><div class="en">He works as a bank <strong>staff member</strong>. (人 + 员)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4 -->
+    <div class="grammar-panel">
+      <div class="grammar-block">
+        <div class="grammar-title"><span class="grammar-num">4</span>一边……一边…… — Simultaneous Actions</div>
+        <div class="grammar-desc"><strong>一边……一边……</strong> (yībiān … yībiān …) describes two actions happening at the same time by the same subject. Both slots take verb phrases. The two actions should be physically compatible (e.g., walking and talking). This pattern only works for deliberate, ongoing actions — not instantaneous ones.</div>
+        <div class="grammar-pattern">
+          [Subject] ＋ 一边 ＋ V₁ (+ Obj₁) ＋ 一边 ＋ V₂ (+ Obj₂)
+        </div>
+        <div class="grammar-examples">
+          <div class="grammar-ex"><div class="zh">小明<strong>一边</strong>听音乐，<strong>一边</strong>画画儿。</div><div class="en">Xiǎo Míng listens to music <strong>while</strong> drawing.</div></div>
+          <div class="grammar-ex"><div class="zh">我们<strong>一边</strong>吃饭，<strong>一边</strong>聊天。</div><div class="en">We chat <strong>while</strong> eating.</div></div>
+          <div class="grammar-ex"><div class="zh">她总是喜欢<strong>一边</strong>走路<strong>一边</strong>看手机。</div><div class="en">She always likes looking at her phone <strong>while</strong> walking.</div></div>
+          <div class="grammar-ex"><div class="zh">他们<strong>一边</strong>喝红茶，<strong>一边</strong>聊东方文化。</div><div class="en">They chatted about Eastern culture <strong>while</strong> drinking black tea.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grammar tab -->
+
+  <!-- ══ 练习 TAB ══ -->
+  <div data-tab="exercise" class="tab-panel">
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">1. 选择正确的词：今天老板说要______，请大家去饭馆吃饭。</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">A</span>请客</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">B</span>做客</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>请假</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>做饭</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">2. 选择正确的词：周末我打算去朋友家______，他们做了很多好吃的菜。</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>请客</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>做客</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>拜访</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>作客</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">3. 用"如果……的话，就……"完成句子：______，我就多做几道中国菜。</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>虽然他们喜欢中国菜</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>如果他们喜欢中国菜的话</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>因为他们喜欢中国菜</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>他们喜欢中国菜因为</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">选择题 · Multiple Choice</div>
+      <div class="exercise-q">4. 下面哪个句子用了正确的"一边……一边……"结构？</div>
+      <div class="exercise-choices">
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">A</span>他一边开心一边高兴。</div>
+        <div class="choice" onclick="selectChoice(this,true)"><span class="choice-label">B</span>他们一边喝茶一边聊天。</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">C</span>她一边书一边音乐。</div>
+        <div class="choice" onclick="selectChoice(this,false)"><span class="choice-label">D</span>我一边睡觉一边跑步。</div>
+      </div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">填空题 · Fill in the Blank</div>
+      <div class="exercise-q">5. 用"把"改写句子：我已经把酒和盘子都准备好了。→ 用"把"字句写出："我______（酒）______桌子上，______（盘子）______好。"</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        <input id="l13-fill1" type="text" placeholder="写出完整句子…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:360px;outline:none;">
+        <button class="check-btn" onclick="checkFill('l13-fill1','open','l13-reveal1')">检查</button>
+      </div>
+      <div id="l13-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：我把酒<strong>放到</strong>桌子上，把盘子<strong>放好</strong>。（注意：把字句动词后需有补语或趋向补语）</div>
+    </div>
+
+    <div class="exercise-block">
+      <div class="exercise-type">填空题 · Fill in the Blank</div>
+      <div class="exercise-q">6. 用"来自"或"从……来"完成句子：我们的新邻居______英国，他们______英国______中国已经住了两年了。</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        <input id="l13-fill2" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:360px;outline:none;">
+        <button class="check-btn" onclick="checkFill('l13-fill2','open','l13-reveal2')">检查</button>
+      </div>
+      <div id="l13-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：我们的新邻居<strong>来自</strong>英国，他们<strong>从</strong>英国<strong>来</strong>，在中国已经住了两年了。</div>
+    </div>
+
+    <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--mist);display:flex;justify-content:flex-end;">
+      <button onclick="resetExercises(this)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--mist);background:#fff;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;color:#999;cursor:pointer;transition:all 0.2s;"
+        onmouseover="this.style.borderColor='var(--vermillion)';this.style.color='var(--vermillion)'"
+        onmouseout="this.style.borderColor='var(--mist)';this.style.color='#999'">
+        🔄 重新作答
+      </button>
+    </div>
+
+  </div><!-- end exercise tab -->
+
+  <!-- ══ 话题讨论 TAB ══ -->
+  <div data-tab="discussion" class="tab-panel">
+
+    <div style="background:linear-gradient(135deg,#fff8f5,#fff);border-left:3px solid var(--vermillion);border-radius:10px;margin-bottom:1.5rem;overflow:hidden;">
+      <div style="padding:0.8rem 1.5rem;border-bottom:1px solid var(--mist);">
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--vermillion);">🔥 热身 · Warm-Up</span>
+        <div style="font-size:0.65rem;color:#bbb;margin-top:2px;">课前思考 · Before you begin</div>
+      </div>
+      <div style="padding:1rem 1.5rem;">
+        <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">情景讨论 · Think About It</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;line-height:1.7;color:var(--ink);">
+          <div>（1）如果你有外国邻居，你会怎么和他们交流？你会请他们来家里做客吗？</div>
+          <div>（2）在你的国家，邻居之间一般关系怎么样？经常互动还是很少来往？</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">💬 贴近课文 · Text-Based Questions</div>
+      </div>
+      <div class="culture-title">围绕课文思考 <span class="pinyin">Think about the story</span></div>
+      <div class="culture-zh">
+        <strong>（1）</strong> 在课文中，同乐说"如果他们喜欢中国菜的话，就多做几道拿手菜"。你有没有"拿手菜"？如果有，是什么菜？<br><br>
+        <strong>（2）</strong> 英国邻居送给小明画板和画笔。你觉得选礼物最重要的是什么？你上次送给别人什么礼物？<br><br>
+        <strong>（3）</strong> 日记里说，英国夫妻对东方文化很感兴趣。你对哪个国家或地区的文化最感兴趣？为什么？
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">🌏 延展话题 · Extended Discussion</div>
+      </div>
+      <div class="culture-title">更多思考 <span class="pinyin">Broader topics</span></div>
+      <div class="culture-zh">
+        <strong>（1）</strong> 中国南方菜和北方菜的做法不同。你的国家有地区性的饮食差异吗？请举一个例子，用"如果……的话"介绍你最推荐的地方菜。<br><br>
+        <strong>（2）</strong> 英国夫妻的地图上有很多红点，表示他们去过的地方。如果你有这样一张地图，你希望地图上有多少个红点？你最想去哪些地方旅游？<br><br>
+        <strong>（3）</strong> 学习汉语对你来说，哪方面最有意思？哪方面最难？请用"一边……一边……"造一个关于你学习中文方法的句子。
+      </div>
+    </div>
+
+  </div><!-- end discussion tab -->
+
+  <!-- ══ 更多 TAB ══ -->
+  <div data-tab="culture" class="tab-panel">
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">🏮 Culture · 文化</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">中国的请客文化 <span class="pinyin">Chinese Hosting Culture</span></div>
+      <div class="culture-zh">在中国，"请客"（qǐng kè）是一种重要的社交活动。主人通常会事先准备很多菜，热情招待客人。去别人家做客时，带礼物（lǐwù）是基本礼貌，常见的礼物有水果、茶叶、酒或者小点心。吃饭时，主人会不断给客人夹菜（jiā cài），表示热情。客人一般不会第一个动筷子，要等主人先邀请。在中国，饭桌是联系感情、增进友谊的重要场所。与朋友一起吃饭，不仅仅是为了填饱肚子，更是为了增进感情。</div>
+      <div class="culture-en">In China, "qǐng kè" (treating guests) is an important social activity. Hosts typically prepare many dishes in advance and welcome guests warmly. When visiting someone's home as a guest, bringing a gift is basic courtesy — common gifts include fruit, tea, wine, or small snacks. During the meal, the host will keep offering food to guests as a sign of warmth. Guests generally don't pick up their chopsticks first — they wait for the host's invitation. In China, the dining table is an important place for bonding and building friendships. Eating together with friends is not just about satisfying hunger — it is about deepening relationships.</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">⚖️ Compare · 比一比</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">红茶 vs 绿茶 vs 茉莉花茶 <span class="pinyin">Three Types of Chinese Tea</span></div>
+      <div class="culture-zh">
+        <strong>① 绿茶 (lǜchá)</strong>：未经发酵，保留了茶叶的天然色泽和清爽香气。代表：龙井茶（Lóngjǐng chá）、碧螺春（Bìluóchūn）。<br><br>
+        <strong>② 红茶 (hóngchá)</strong>：经过完全发酵，颜色深红，味道浓郁，在西方也很受欢迎。英语叫"black tea"（黑茶），但中文叫"红茶"（red tea）。<br><br>
+        <strong>③ 茉莉花茶 (mòlì huāchá)</strong>：绿茶与茉莉花混合，香气迷人，在中国北方特别流行。<br><br>
+        <strong>注意：</strong>英语的"black tea"翻译成中文是"红茶"，不是"黑茶"！
+      </div>
+      <div class="culture-en">
+        <strong>① Green tea (绿茶)</strong>: Unfermented, retaining the natural color and fresh aroma of the leaves. Notable examples: Longjing (Dragon Well), Biluochun.<br><br>
+        <strong>② Black tea (红茶)</strong>: Fully fermented, deep red in color, rich in flavor, and popular in the West. In English it's called "black tea," but in Chinese it's called 红茶 (red tea).<br><br>
+        <strong>③ Jasmine tea (茉莉花茶)</strong>: A blend of green tea and jasmine flowers, with a captivating fragrance, especially popular in northern China.<br><br>
+        <strong>Note:</strong> The English "black tea" translates to 红茶 in Chinese — not 黑茶!
+      </div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-head">
+        <div class="culture-tag">✏️ Grammar · 语言点</div>
+        <button class="en-toggle" onclick="toggleEn(this)">En</button>
+      </div>
+      <div class="culture-title">来自 vs 是……人 vs 从……来 <span class="pinyin">Three Ways to Express Origin</span></div>
+      <div class="culture-zh">
+        三种方式都可以表示"来自哪里"，但用法有细微区别：<br><br>
+        <strong>来自 (láizì)</strong>：正式一些，强调出身或背景。<br>
+        例：他来自英国。（他的背景/国籍是英国）<br><br>
+        <strong>是……人 (shì … rén)</strong>：最口语的方式，直接说国籍或地区身份。<br>
+        例：他是英国人。（他的国籍是英国）<br><br>
+        <strong>从……来 (cóng … lái)</strong>：强调动作，"从某地来到这里"。<br>
+        例：他从英国来的。（他从英国来了，来到了中国）<br><br>
+        <strong>总结：</strong>身份/背景用"来自/是…人"，移动/行程用"从…来"。
+      </div>
+      <div class="culture-en">
+        All three express "where someone is from," but with subtle differences:<br><br>
+        <strong>来自 (láizì)</strong>: Slightly more formal, emphasizes origin or background.<br>
+        E.g.: He comes from the UK. (his nationality/background)<br><br>
+        <strong>是……人 (shì … rén)</strong>: Most colloquial, directly states nationality or regional identity.<br>
+        E.g.: He is British. (his nationality is British)<br><br>
+        <strong>从……来 (cóng … lái)</strong>: Emphasizes movement — "came here from somewhere."<br>
+        E.g.: He came from the UK. (he traveled here from the UK)<br><br>
+        <strong>Summary:</strong> Use 来自/是…人 for identity/background; use 从…来 for travel/movement.
+      </div>
+    </div>
+
+  </div><!-- end culture tab -->
+
+  </div><!-- end content-area L13 -->
+  </div><!-- end lesson-content data-lesson="13" -->
 
   <!-- ═══════════════ LESSON 14 (stub) ═══════════════ -->
   <div class="lesson-header" id="lesson-header-14" data-lesson="14" data-watermark="十四" style="display:none"></div>
