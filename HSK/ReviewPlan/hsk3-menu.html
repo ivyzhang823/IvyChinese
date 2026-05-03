@@ -443,6 +443,17 @@
       '<span class="wk-dates">' + fmt(weekStart) + ' – ' + fmt(displayEnd) + '</span>' +
       (isCurrent ? '<span class="current-dot"></span>' : '');
 
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      fetch(slug, { method: 'HEAD' })
+        .then(res => {
+          window.location.href = res.ok ? slug : 'coming-soon.html';
+        })
+        .catch(() => {
+          window.location.href = 'coming-soon.html';
+        });
+    });
+
     grid.appendChild(card);
 
     weekStart.setDate(weekStart.getDate() + 7);
