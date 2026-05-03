@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 01 · HSK 3 复习</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --red: #c0392b;
+    --gold: #b8860b;
+    --gold-light: #d4a843;
+    --muted: #8a7f6e;
+    --border: #d4c9b0;
+    --bg: #fffdf7;
+    --green: #2e7d32;
+    --green-bg: #f1f8f1;
+    --blue: #1565c0;
+    --blue-bg: #f0f4ff;
+    --red-bg: #fff0f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', sans-serif;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(180,160,100,0.08) 31px, rgba(180,160,100,0.08) 32px),
+      repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(180,160,100,0.05) 31px, rgba(180,160,100,0.05) 32px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .back-btn {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+    margin: 1.5rem 0 0 2rem;
+  }
+  .back-btn:hover { color: var(--ink); border-color: var(--ink); }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem 0;
+  }
+
+  /* Page header */
+  .page-header {
+    text-align: center;
+    padding-top: 0.5rem;
+    margin-bottom: 0;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .week-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .lesson-tag {
+    display: inline-block;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .date-range {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* Section blocks */
+  .section {
+    margin-bottom: 3rem;
+    margin-left: 0;
+    margin-right: 0;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-num {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 1.5rem;
+  }
+
+  .section-title h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+
+  /* ── Vocabulary ── */
+  .vocab-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0;
+  }
+
+  .vocab-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 1rem;
+    transition: box-shadow 0.18s;
+  }
+
+  .vocab-card:hover {
+    box-shadow: 0 3px 14px rgba(184,134,11,0.1);
+    border-color: var(--gold);
+  }
+
+  .vocab-index {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    padding-top: 0.2rem;
+    text-align: right;
+  }
+
+  .vocab-body {}
+
+  .vocab-main {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .vocab-hanzi {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .vocab-pinyin {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--gold);
+  }
+
+  .vocab-pos {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .vocab-en {
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+    font-weight: 400;
+  }
+
+  .vocab-breakdown {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .vocab-expand {
+    margin-top: 0.5rem;
+    padding: 0.55rem 0.8rem;
+    background: #fdf8ee;
+    border-left: 2px solid var(--gold-light);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .expand-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  /* ── Grammar ── */
+  .grammar-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grammar-pattern {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .grammar-pattern .highlight { color: var(--gold); }
+
+  .grammar-en {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+    font-weight: 300;
+  }
+
+  .grammar-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .example {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.8rem;
+    background: var(--blue-bg);
+    border-left: 2px solid var(--blue);
+    border-radius: 0 4px 4px 0;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .example em {
+    color: var(--blue);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ── Exercises ── */
+  .exercise-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1.2rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ex-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .ex-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .ex-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .ex-instruction {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* Ex1: 选词填空 */
+  .word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    background: #fdf8ee;
+    border-radius: 4px;
+    border: 1px dashed var(--border);
+  }
+
+  .word-chip {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .word-chip:hover { border-color: var(--gold); color: var(--gold); }
+  .word-chip.used { opacity: 0.3; pointer-events: none; text-decoration: line-through; }
+
+  .fill-sentence {
+    font-size: 0.9rem;
+    line-height: 2.2;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .fill-blank {
+    display: inline-block;
+    min-width: 80px;
+    border-bottom: 2px solid var(--gold);
+    text-align: center;
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 2px 2px 0 0;
+    min-height: 1.4em;
+    line-height: 1.4;
+  }
+
+  .fill-blank:hover { background: #fdf8ee; }
+  .fill-blank.correct { color: var(--green); border-color: var(--green); background: var(--green-bg); }
+  .fill-blank.wrong { color: var(--red); border-color: var(--red); background: var(--red-bg); }
+
+  /* Ex2: 排序 */
+  .sort-sentences {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .sort-group { margin-bottom: 1rem; }
+
+  .sort-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .sort-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .sort-item {
+    padding: 0.35rem 0.8rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sort-item .letter {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .sort-item:hover { border-color: var(--gold); }
+  .sort-item.dragging { opacity: 0.4; }
+
+  .sort-answer-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .sort-slot {
+    width: 44px;
+    height: 36px;
+    border: 2px dashed var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--muted);
+    transition: border-color 0.15s;
+  }
+
+  .sort-slot.over { border-color: var(--gold); background: #fdf8ee; }
+  .sort-slot.filled { border-style: solid; border-color: var(--gold); color: var(--ink); font-weight: 700; }
+  .sort-slot.correct { border-color: var(--green); color: var(--green); background: var(--green-bg); }
+  .sort-slot.wrong { border-color: var(--red); color: var(--red); background: var(--red-bg); }
+
+  .sort-arrow {
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  /* Ex3: 整理句子 */
+  .scramble-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.8rem;
+    min-height: 44px;
+    padding: 0.5rem;
+    background: #fdf8ee;
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+  }
+
+  .word-tile {
+    padding: 0.3rem 0.75rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .word-tile:hover { border-color: var(--gold); }
+  .word-tile.selected { border-color: var(--gold); background: #fdf8ee; opacity: 0.5; }
+
+  .scramble-answer {
+    min-height: 44px;
+    padding: 0.5rem 0.7rem;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .scramble-answer.correct { border-color: var(--green); background: var(--green-bg); }
+  .scramble-answer.wrong { border-color: var(--red); background: var(--red-bg); }
+
+  .answer-tile {
+    padding: 0.2rem 0.65rem;
+    background: var(--gold);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+
+  .answer-tile:hover { background: var(--gold-light); }
+
+  /* Ex4: 图片造句 */
+  .img-exercise {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .img-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .img-placeholder {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0ebe0, #e8e0d0);
+    gap: 0.4rem;
+  }
+
+  .img-placeholder .emoji { font-size: 2.2rem; }
+
+  .img-placeholder .keyword {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .img-input-area {
+    padding: 0.7rem;
+  }
+
+  .img-input-area textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    padding: 0.5rem 0.6rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    resize: none;
+    height: 60px;
+    transition: border-color 0.15s;
+    outline: none;
+  }
+
+  .img-input-area textarea:focus { border-color: var(--gold); }
+
+  .img-keyword-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--gold-light);
+    border-radius: 20px;
+    color: var(--gold);
+    margin-top: 0.4rem;
+  }
+
+  /* Buttons */
+  .btn-row {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn:hover { color: var(--ink); border-color: var(--ink); }
+
+  .btn-check {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .btn-check:hover { background: #333; border-color: #333; color: var(--paper); }
+
+  .result-msg {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    margin-top: 0.7rem;
+    display: none;
+  }
+
+  .result-msg.show { display: block; }
+  .result-msg.ok { background: var(--green-bg); color: var(--green); border: 1px solid #a5d6a7; }
+  .result-msg.err { background: var(--red-bg); color: var(--red); border: 1px solid #ffcdd2; }
+
+
+  /* ── Tabs ── */
+  .tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .tab-bar-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  .tab-bar-divider {
+    width: 1px;
+    height: 1.2rem;
+    background: var(--border);
+    margin: 0 0.8rem;
+  }
+
+  .tab-bar-spacer { flex: 1; }
+
+  .scroll-top-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    transition: all 0.18s;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top-btn:hover { color: var(--ink); border-color: var(--ink); }
+
+  .tab-btn {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.9rem 1.4rem;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.18s;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .tab-btn .tab-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold-light);
+  }
+
+  .tab-btn:hover { color: var(--ink); }
+
+  .tab-btn.active {
+    color: var(--ink);
+    border-bottom-color: var(--gold);
+  }
+
+  .container-tabs {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.2rem 1.5rem 6rem;
+    box-sizing: border-box;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; padding-top: 0.5rem; max-width: 100%; }
+
+
+  /* ── Ex5: True/False ── */
+  .tf-list { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .tf-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+  }
+
+  .tf-sentence {
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .tf-btns { display: flex; gap: 0.5rem; }
+
+  .tf-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .tf-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .tf-btn.selected-correct { background: var(--green-bg); border-color: var(--green); color: var(--green); }
+  .tf-btn.selected-wrong { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+  .tf-btn.result-ok { background: var(--green-bg); border-color: var(--green); color: var(--green); }
+  .tf-btn.result-err { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+
+  .tf-feedback {
+    font-size: 0.72rem;
+    margin-top: 0.4rem;
+    color: var(--muted);
+    min-height: 1rem;
+  }
+
+  /* ── Ex6: Correction ── */
+  .correction-list { display: flex; flex-direction: column; gap: 1rem; }
+
+  .correction-item { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .correction-wrong {
+    font-size: 0.88rem;
+    color: var(--red);
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .correction-input {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    padding: 0.5rem 0.7rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .correction-input:focus { border-color: var(--gold); }
+  .correction-input.ok { border-color: var(--green); background: var(--green-bg); }
+  .correction-input.err { border-color: var(--red); background: var(--red-bg); }
+
+  .correction-hint {
+    font-size: 0.75rem;
+    color: var(--green);
+    padding: 0.3rem 0.6rem;
+    background: var(--green-bg);
+    border-radius: 4px;
+  }
+
+  /* ── Ex7: Translation ── */
+  .translation-list { display: flex; flex-direction: column; gap: 1rem; }
+
+  .translation-item { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .translation-en {
+    font-size: 0.88rem;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .translation-input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    padding: 0.5rem 0.7rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    resize: none;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .translation-input:focus { border-color: var(--gold); }
+
+  .translation-answer {
+    font-size: 0.75rem;
+    color: var(--green);
+    padding: 0.4rem 0.7rem;
+    background: var(--green-bg);
+    border-radius: 4px;
+    line-height: 1.6;
+  }
+
+  /* ── Ex8: Dialogue ── */
+  .dialogue-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .dialogue-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .speaker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .dialogue-text {
+    font-size: 0.9rem;
+    color: var(--ink);
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .dialogue-input {
+    flex: 1;
+    border: none;
+    border-bottom: 1.5px solid var(--border);
+    background: transparent;
+    padding: 0.3rem 0.4rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .dialogue-input:focus { border-bottom-color: var(--gold); }
+
+
+  /* ── Reading comprehension ── */
+  .reading-block { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .reading-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+  }
+
+  .reading-passage {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.9;
+    padding: 0.6rem 0.8rem;
+    background: #fdf8ee;
+    border-left: 3px solid var(--gold-light);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .reading-question {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .reading-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .reading-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--bg);
+  }
+
+  .reading-option:hover { border-color: var(--gold); }
+  .reading-option.selected { border-color: var(--gold); background: #fdf8ee; }
+  .reading-option.correct { border-color: var(--green); background: var(--green-bg); color: var(--green); }
+  .reading-option.wrong { border-color: var(--red); background: var(--red-bg); color: var(--red); }
+
+  .opt-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 1rem;
+  }
+
+  .reading-option.correct .opt-label { color: var(--green); }
+  .reading-option.wrong .opt-label { color: var(--red); }
+
+  .ans-placeholder {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+
+  @media (max-width: 600px) {
+    .container-tabs { padding: 1rem 1rem 4rem; }
+    .tab-bar-inner { padding: 0 1rem; }
+    .container { padding: 0 1rem 0; }
+    .container { padding: 4rem 1rem 5rem; }
+    .img-exercise { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+
+<a class="back-btn" href="hsk3-homepage.html">← Back To HSK 3</a>
+<div class="container">
+
+  <div class="page-header">
+    <div class="week-tag">Week 01</div>
+    <h1>课文单词 · 语法 · 练习</h1>
+    <div class="date-range">5月3日 – 5月9日</div>
+    <div class="lesson-tag">Lesson 9 复习</div>
+  </div>
+</div><!-- /container -->
+
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" onclick="switchTab('vocab')">Vocabulary</button>
+    <button class="tab-btn" onclick="switchTab('grammar')">Grammar</button>
+    <button class="tab-btn" onclick="switchTab('exercise')">Practise</button>
+    <div class="tab-bar-spacer"></div>
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+  </div>
+  </div><!-- /tab-bar -->
+
+<div class="container-tabs">
+  <!-- ══════════════════════════════════════
+       一  词汇
+  ══════════════════════════════════════ -->
+  <div class="tab-panel active" id="tab-vocab">
+    <div class="vocab-grid">
+
+      <!-- 1 中文 -->
+      <div class="vocab-card">
+        <span class="vocab-index">1</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">中文</span>
+            <span class="vocab-pinyin">zhōng wén</span>
+            <span class="vocab-pos">n.</span>
+          </div>
+          <div class="vocab-en">Chinese Language</div>
+          <div class="vocab-breakdown">中 = 中国 &nbsp;·&nbsp; 文 = 文字 wordage</div>
+          <div class="vocab-expand">
+            <div class="expand-title">拓展 Extension</div>
+            也可以说 <strong>汉语 hàn yǔ</strong>（Chinese Language）<br>
+            汉 = 汉族 ethnic Han &nbsp;·&nbsp; 语 = 语言 language
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 班 -->
+      <div class="vocab-card">
+        <span class="vocab-index">2</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">班</span>
+            <span class="vocab-pinyin">bān</span>
+            <span class="vocab-pos">n.</span>
+          </div>
+          <div class="vocab-en">class</div>
+          <div class="vocab-expand">
+            <div class="expand-title">拓展 Extension</div>
+            班 also means <strong>work</strong><br>
+            上班 shàng bān — to go to the office<br>
+            下班 xià bān — get off work<br>
+            加班 jiā bān — work overtime（加 = plus）
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 一样 -->
+      <div class="vocab-card">
+        <span class="vocab-index">3</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">一样</span>
+            <span class="vocab-pinyin">yí yàng</span>
+            <span class="vocab-pos">adj.</span>
+          </div>
+          <div class="vocab-en">same; as…as…</div>
+        </div>
+      </div>
+
+      <!-- 4 最后 -->
+      <div class="vocab-card">
+        <span class="vocab-index">4</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">最后</span>
+            <span class="vocab-pinyin">zuì hòu</span>
+            <span class="vocab-pos">n.</span>
+          </div>
+          <div class="vocab-en">the last (one); finally</div>
+          <div class="vocab-expand">
+            <div class="expand-title">时间顺序词 Sequence Words</div>
+            先 xiān — firstly &nbsp;→&nbsp; 然后 rán hòu — then &nbsp;→&nbsp; 最后 — the last
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 放心 -->
+      <div class="vocab-card">
+        <span class="vocab-index">5</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">放心</span>
+            <span class="vocab-pinyin">fàng xīn</span>
+            <span class="vocab-pos">v.</span>
+          </div>
+          <div class="vocab-en">to ease one's mind; to rest assured</div>
+          <div class="vocab-expand">
+            <div class="expand-title">拓展</div>
+            放心 = 别担心 don't worry
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 担心 -->
+      <div class="vocab-card">
+        <span class="vocab-index">6</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">担心</span>
+            <span class="vocab-pinyin">dān xīn</span>
+            <span class="vocab-pos">v.</span>
+          </div>
+          <div class="vocab-en">to worry</div>
+        </div>
+      </div>
+
+      <!-- 7 比较 -->
+      <div class="vocab-card">
+        <span class="vocab-index">7</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">比较</span>
+            <span class="vocab-pinyin">bǐ jiào</span>
+            <span class="vocab-pos">adv. / v.</span>
+          </div>
+          <div class="vocab-en">① fairly, rather, relatively &nbsp;&nbsp; ② to compare</div>
+        </div>
+      </div>
+
+      <!-- 8 一定 -->
+      <div class="vocab-card">
+        <span class="vocab-index">8</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">一定</span>
+            <span class="vocab-pinyin">yí dìng</span>
+            <span class="vocab-pos">adv.</span>
+          </div>
+          <div class="vocab-en">definitely; certainly; must</div>
+          <div class="vocab-breakdown">定 = stand still, no changing</div>
+          <div class="vocab-expand">
+            <div class="expand-title">拓展</div>
+            一定 = only one &amp; no changing → <em>must</em><br>
+            确定 què dìng — 确 = check；check &amp; no changing → <em>make sure</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 了解 -->
+      <div class="vocab-card">
+        <span class="vocab-index">9</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">了解</span>
+            <span class="vocab-pinyin">liǎo jiě</span>
+            <span class="vocab-pos">v.</span>
+          </div>
+          <div class="vocab-en">to know; to understand</div>
+          <div class="vocab-expand">
+            <div class="expand-title">相关词 Related</div>
+            理解 lǐ jiě &nbsp;·&nbsp; 明白 míng bai &nbsp;·&nbsp; 清楚 qīng chǔ
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 中间 -->
+      <div class="vocab-card">
+        <span class="vocab-index">10</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">中间</span>
+            <span class="vocab-pinyin">zhōng jiān</span>
+            <span class="vocab-pos">n.</span>
+          </div>
+          <div class="vocab-en">middle; in between</div>
+          <div class="vocab-breakdown">中 = center &nbsp;·&nbsp; 间 = between / space / measure word for rooms</div>
+        </div>
+      </div>
+
+      <!-- 11 参加 -->
+      <div class="vocab-card">
+        <span class="vocab-index">11</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">参加</span>
+            <span class="vocab-pinyin">cān jiā</span>
+            <span class="vocab-pos">v.</span>
+          </div>
+          <div class="vocab-en">to participate; to join</div>
+          <div class="vocab-breakdown">用于 events / matches / activities</div>
+        </div>
+      </div>
+
+      <!-- 12 影响 -->
+      <div class="vocab-card">
+        <span class="vocab-index">12</span>
+        <div class="vocab-body">
+          <div class="vocab-main">
+            <span class="vocab-hanzi">影响</span>
+            <span class="vocab-pinyin">yǐng xiǎng</span>
+            <span class="vocab-pos">n.</span>
+          </div>
+          <div class="vocab-en">influence; effect; impact</div>
+        </div>
+      </div>
+
+    </div><!-- /vocab-grid -->
+  </div><!-- /section 一 -->
+
+
+  </div><!-- /tab-vocab -->
+
+  <div class="tab-panel" id="tab-grammar">
+  <div class="section">
+    <!-- Pattern 1 -->
+    <div class="grammar-card">
+      <div class="grammar-pattern">A <span class="highlight">跟</span> B <span class="highlight">一样</span>（+ adj.）</div>
+      <div class="grammar-en">A and B are the same (in some way)</div>
+      <div class="grammar-note">跟 = 和。加形容词说明哪方面一样。</div>
+      <div class="examples">
+        <div class="example">我的蛋糕和Anna的蛋糕<em>一样</em>甜。<br><span style="font-size:0.75rem;color:var(--muted)">My cake and Anna's cake are equally sweet.</span></div>
+        <div class="example">这件衬衫<em>跟</em>那件<em>一样</em>贵。<br><span style="font-size:0.75rem;color:var(--muted)">This shirt is as expensive as that one.</span></div>
+      </div>
+    </div>
+
+    <!-- Pattern 2 -->
+    <div class="grammar-card">
+      <div class="grammar-pattern"><span class="highlight">越</span> A <span class="highlight">越</span> B</div>
+      <div class="grammar-en">The more A, the more B — B changes with A</div>
+      <div class="examples">
+        <div class="example">雨<em>越</em>下<em>越</em>大。<br><span style="font-size:0.75rem;color:var(--muted)">The more it rains, the heavier it gets.</span></div>
+        <div class="example">你的中文<em>越</em>说<em>越</em>好。<br><span style="font-size:0.75rem;color:var(--muted)">The more you speak Chinese, the better it gets.</span></div>
+        <div class="example"><em>越</em>往南，天气<em>越</em>热。<br><span style="font-size:0.75rem;color:var(--muted)">The further south you go, the hotter it gets.</span></div>
+        <div class="example">山<em>越</em>高，路<em>越</em>难走。<br><span style="font-size:0.75rem;color:var(--muted)">The higher the mountain, the harder the road.</span></div>
+      </div>
+    </div>
+
+    <!-- Pattern 3 -->
+    <div class="grammar-card">
+      <div class="grammar-pattern"><span class="highlight">越来越</span>……</div>
+      <div class="grammar-en">more and more…</div>
+      <div class="examples">
+        <div class="example">天气<em>越来越</em>冷了。<br><span style="font-size:0.75rem;color:var(--muted)">The weather is getting colder and colder.</span></div>
+        <div class="example">我<em>越来越</em>喜欢中文。<br><span style="font-size:0.75rem;color:var(--muted)">I like Chinese more and more.</span></div>
+      </div>
+    </div>
+
+  </div><!-- /section 二 -->
+
+
+    </div><!-- /section -->
+  </div><!-- /tab-grammar -->
+
+  <div class="tab-panel" id="tab-exercise">
+  <div class="section">
+
+    <!-- ══ 题型一：选词填空 ══ -->
+    <div class="exercise-card">
+      <div class="ex-header">
+        <span class="ex-type">题型一</span>
+        <span class="ex-title">选词填空</span>
+      </div>
+      <div class="ex-instruction">从词库中选择正确的词填入句子空格。每个词只能用一次。<br>Choose the correct word from the bank to fill each blank.</div>
+
+      <div class="word-bank" id="wb1">
+        <span class="word-chip" data-word="放心" onclick="selectChip(this,'wb1')">放心</span>
+        <span class="word-chip" data-word="影响" onclick="selectChip(this,'wb1')">影响</span>
+        <span class="word-chip" data-word="参加" onclick="selectChip(this,'wb1')">参加</span>
+        <span class="word-chip" data-word="了解" onclick="selectChip(this,'wb1')">了解</span>
+        <span class="word-chip" data-word="一定" onclick="selectChip(this,'wb1')">一定</span>
+      </div>
+      <div id="ex1-sentences">
+        <div class="fill-sentence"><span>1. 你</span><span class="fill-blank" data-answer="放心" onclick="fillBlank(this,'wb1')"></span><span>，他一定会来的。</span></div>
+        <div class="fill-sentence"><span>2. 睡眠不好会</span><span class="fill-blank" data-answer="影响" onclick="fillBlank(this,'wb1')"></span><span>学习效果。</span></div>
+        <div class="fill-sentence"><span>3. 她没有</span><span class="fill-blank" data-answer="参加" onclick="fillBlank(this,'wb1')"></span><span>这次活动。</span></div>
+        <div class="fill-sentence"><span>4. 我想更多地</span><span class="fill-blank" data-answer="了解" onclick="fillBlank(this,'wb1')"></span><span>中国文化。</span></div>
+        <div class="fill-sentence"><span>5. 他</span><span class="fill-blank" data-answer="一定" onclick="fillBlank(this,'wb1')"></span><span>能通过考试。</span></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEx1()">检查答案 Check</button>
+        <button class="btn" onclick="resetEx1()">重置 Reset</button>
+      </div>
+      <div class="result-msg" id="ex1-msg"></div>
+    </div>
+
+    <div class="exercise-card">
+      <div class="ex-header">
+        <span class="ex-type">题型一</span>
+        <span class="ex-title">选词填空（二）</span>
+      </div>
+      <div class="ex-instruction">Choose the correct word to fill each blank.</div>
+
+      <div class="word-bank" id="wb2">
+        <span class="word-chip" data-word="比较" onclick="selectChip(this,'wb2')">比较</span>
+        <span class="word-chip" data-word="中间" onclick="selectChip(this,'wb2')">中间</span>
+        <span class="word-chip" data-word="最后" onclick="selectChip(this,'wb2')">最后</span>
+        <span class="word-chip" data-word="担心" onclick="selectChip(this,'wb2')">担心</span>
+        <span class="word-chip" data-word="一样" onclick="selectChip(this,'wb2')">一样</span>
+      </div>
+      <div id="ex1b-sentences">
+        <div class="fill-sentence"><span>1. 两个孩子</span><span class="fill-blank" data-answer="中间" onclick="fillBlank(this,'wb2')"></span><span>坐着一位老人。</span></div>
+        <div class="fill-sentence"><span>2. 这道题</span><span class="fill-blank" data-answer="比较" onclick="fillBlank(this,'wb2')"></span><span>难，我需要多想想。</span></div>
+        <div class="fill-sentence"><span>3. 她的发音跟老师</span><span class="fill-blank" data-answer="一样" onclick="fillBlank(this,'wb2')"></span><span>好。</span></div>
+        <div class="fill-sentence"><span>4. 我</span><span class="fill-blank" data-answer="担心" onclick="fillBlank(this,'wb2')"></span><span>他一个人在外面不安全。</span></div>
+        <div class="fill-sentence"><span>5.</span><span class="fill-blank" data-answer="最后" onclick="fillBlank(this,'wb2')"></span><span>，他终于找到了答案。</span></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEx1b()">检查答案 Check</button>
+        <button class="btn" onclick="resetEx1b()">重置 Reset</button>
+      </div>
+      <div class="result-msg" id="ex1b-msg"></div>
+    </div>
+
+    <!-- ══ 题型二：句子排列 ══ -->
+    <div class="exercise-card">
+      <div class="ex-header">
+        <span class="ex-type">题型二</span>
+        <span class="ex-title">句子排列</span>
+      </div>
+      <div class="ex-instruction">将 A、B、C 三句话拖拽排列成正确顺序。<br>Drag A / B / C into the correct order.</div>
+
+      <div class="sort-group" id="sg1">
+        <div class="sort-label">第一题</div>
+        <div class="sort-items" id="si1">
+          <div class="sort-item" draggable="true" data-letter="A" ondragstart="dragStart(event)"><span class="letter">A</span>然后他去图书馆看书。</div>
+          <div class="sort-item" draggable="true" data-letter="B" ondragstart="dragStart(event)"><span class="letter">B</span>最后他回家吃饭。</div>
+          <div class="sort-item" draggable="true" data-letter="C" ondragstart="dragStart(event)"><span class="letter">C</span>他先去超市买东西，</div>
+        </div>
+        <div class="sort-answer-row">
+          <div class="sort-slot" data-pos="0" data-group="sg1" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+          <span class="sort-arrow">→</span>
+          <div class="sort-slot" data-pos="1" data-group="sg1" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+          <span class="sort-arrow">→</span>
+          <div class="sort-slot" data-pos="2" data-group="sg1" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+        </div>
+      </div>
+
+      <div class="sort-group" id="sg2" style="margin-top:1.2rem">
+        <div class="sort-label">第二题</div>
+        <div class="sort-items" id="si2">
+          <div class="sort-item" draggable="true" data-letter="A" ondragstart="dragStart(event)"><span class="letter">A</span>我越来越喜欢这里了。</div>
+          <div class="sort-item" draggable="true" data-letter="B" ondragstart="dragStart(event)"><span class="letter">B</span>所以我决定留下来。</div>
+          <div class="sort-item" draggable="true" data-letter="C" ondragstart="dragStart(event)"><span class="letter">C</span>这里的生活比较方便，</div>
+        </div>
+        <div class="sort-answer-row">
+          <div class="sort-slot" data-pos="0" data-group="sg2" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+          <span class="sort-arrow">→</span>
+          <div class="sort-slot" data-pos="1" data-group="sg2" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+          <span class="sort-arrow">→</span>
+          <div class="sort-slot" data-pos="2" data-group="sg2" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+        </div>
+      </div>
+
+      <div class="sort-group" id="sg3" style="margin-top:1.2rem">
+        <div class="sort-label">第三题</div>
+        <div class="sort-items" id="si3">
+          <div class="sort-item" draggable="true" data-letter="A" ondragstart="dragStart(event)"><span class="letter">A</span>因为她参加了很多比赛，</div>
+          <div class="sort-item" draggable="true" data-letter="B" ondragstart="dragStart(event)"><span class="letter">B</span>她的中文越来越好。</div>
+          <div class="sort-item" draggable="true" data-letter="C" ondragstart="dragStart(event)"><span class="letter">C</span>所以她一点也不担心考试。</div>
+        </div>
+        <div class="sort-answer-row">
+          <div class="sort-slot" data-pos="0" data-group="sg3" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+          <span class="sort-arrow">→</span>
+          <div class="sort-slot" data-pos="1" data-group="sg3" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+          <span class="sort-arrow">→</span>
+          <div class="sort-slot" data-pos="2" data-group="sg3" ondragover="allowDrop(event)" ondrop="drop(event)">?</div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEx2()">检查答案 Check</button>
+        <button class="btn" onclick="resetEx2()">重置 Reset</button>
+      </div>
+      <div class="result-msg" id="ex2-msg"></div>
+    </div>
+
+    <!-- ══ 题型三：阅读理解选择 ══ -->
+    <div class="exercise-card">
+      <div class="ex-header">
+        <span class="ex-type">题型三</span>
+        <span class="ex-title">阅读理解</span>
+      </div>
+      <div class="ex-instruction">读短文，选出最合适的答案。<br>Read the passage and choose the best answer.</div>
+
+      <div class="reading-block" id="reading-block">
+
+        <div class="reading-item">
+          <div class="reading-passage">他很活泼，说话很有趣，总能给我们带来快乐，我们都喜欢和他在一起。</div>
+          <div class="reading-question">他是个什么样的人？</div>
+          <div class="reading-options">
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">A</span>幽默</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">B</span>马虎</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">C</span>骄傲</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>害羞</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">她每天早上六点就起来学习，从不放弃，即使考试失败了，她也继续努力。</div>
+          <div class="reading-question">她是个什么样的人？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>骄傲</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">B</span>粗心</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">C</span>努力</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>担心</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">这两件衣服的颜色不一样，但是大小和价格都一样，你喜欢哪个颜色就买哪个吧。</div>
+          <div class="reading-question">这两件衣服有什么不同？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>价格</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">B</span>颜色</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">C</span>大小</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>样子</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">他参加工作以后，越来越忙，上班时间越来越长，有时候还要加班到很晚。</div>
+          <div class="reading-question">"加班"是什么意思？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>换一个班级</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">B</span>早点下班</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">C</span>在正常工作时间之外继续工作</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>请假不上班</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">老师说："这次考试比较难，但是你们不用担心，只要认真复习，一定没有问题。"</div>
+          <div class="reading-question">老师的意思是什么？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>这次考试大家都会失败</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">B</span>认真复习就能通过考试</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">C</span>不需要复习</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>考试很简单</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">小明坐在教室的中间，左边是他的好朋友李华，右边是新来的同学王芳。他们三个人在同一个班。</div>
+          <div class="reading-question">小明坐在哪里？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>教室的左边</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">B</span>教室的右边</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">C</span>李华和王芳中间</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>教室的最后一排</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">她说她不太了解这个城市，所以每次出门都要先查地图，慢慢地她越来越熟悉这里了。</div>
+          <div class="reading-question">"了解"在这里是什么意思？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>喜欢</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">B</span>担心</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">C</span>知道、熟悉</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">D</span>参加</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-passage">妈妈对我说："你放心去参加比赛吧，家里的事情我来照顾，你只要好好发挥就行了。"</div>
+          <div class="reading-question">妈妈希望我怎么做？</div>
+          <div class="reading-options">
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">A</span>不要参加比赛</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">B</span>快点回家</div>
+            <div class="reading-option" onclick="pickOption(this)"><span class="opt-label">C</span>帮她照顾家里</div>
+            <div class="reading-option" data-correct="true" onclick="pickOption(this)"><span class="opt-label">D</span>放松心情，认真比赛</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkReading()">检查答案 Check</button>
+        <button class="btn" onclick="resetReading()">重置 Reset</button>
+      </div>
+      <div class="result-msg" id="reading-msg"></div>
+    </div>
+
+    <!-- ══ 题型四：组合句子 ══ -->
+    <div class="exercise-card">
+      <div class="ex-header">
+        <span class="ex-type">题型四</span>
+        <span class="ex-title">组合句子</span>
+      </div>
+      <div class="ex-instruction">点击词语，按正确顺序排列成完整的句子。<br>Tap words in the correct order to form a complete sentence.</div>
+
+      <div style="margin-bottom:1.5rem">
+        <div class="sort-label">第一题</div>
+        <div class="scramble-words" id="pool1">
+          <div class="word-tile" data-word="历史" onclick="pickTile(this,'pool1','ans1')">历史</div>
+          <div class="word-tile" data-word="有" onclick="pickTile(this,'pool1','ans1')">有</div>
+          <div class="word-tile" data-word="了" onclick="pickTile(this,'pool1','ans1')">了</div>
+          <div class="word-tile" data-word="那座桥" onclick="pickTile(this,'pool1','ans1')">那座桥</div>
+          <div class="word-tile" data-word="800年的" onclick="pickTile(this,'pool1','ans1')">800年的</div>
+        </div>
+        <div class="scramble-answer" id="ans1">
+          <span class="ans-placeholder">点击上方词语组成句子</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem">
+        <div class="sort-label">第二题</div>
+        <div class="scramble-words" id="pool2">
+          <div class="word-tile" data-word="一样" onclick="pickTile(this,'pool2','ans2')">一样</div>
+          <div class="word-tile" data-word="我" onclick="pickTile(this,'pool2','ans2')">我</div>
+          <div class="word-tile" data-word="高" onclick="pickTile(this,'pool2','ans2')">高</div>
+          <div class="word-tile" data-word="跟" onclick="pickTile(this,'pool2','ans2')">跟</div>
+          <div class="word-tile" data-word="姐姐" onclick="pickTile(this,'pool2','ans2')">姐姐</div>
+        </div>
+        <div class="scramble-answer" id="ans2">
+          <span class="ans-placeholder">点击上方词语组成句子</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem">
+        <div class="sort-label">第三题</div>
+        <div class="scramble-words" id="pool3">
+          <div class="word-tile" data-word="好" onclick="pickTile(this,'pool3','ans3')">好</div>
+          <div class="word-tile" data-word="了" onclick="pickTile(this,'pool3','ans3')">了</div>
+          <div class="word-tile" data-word="他的中文" onclick="pickTile(this,'pool3','ans3')">他的中文</div>
+          <div class="word-tile" data-word="越来越" onclick="pickTile(this,'pool3','ans3')">越来越</div>
+        </div>
+        <div class="scramble-answer" id="ans3">
+          <span class="ans-placeholder">点击上方词语组成句子</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="sort-label">第四题</div>
+        <div class="scramble-words" id="pool4">
+          <div class="word-tile" data-word="有" onclick="pickTile(this,'pool4','ans4')">有</div>
+          <div class="word-tile" data-word="影响" onclick="pickTile(this,'pool4','ans4')">影响</div>
+          <div class="word-tile" data-word="这件事" onclick="pickTile(this,'pool4','ans4')">这件事</div>
+          <div class="word-tile" data-word="你的学习" onclick="pickTile(this,'pool4','ans4')">你的学习</div>
+          <div class="word-tile" data-word="对" onclick="pickTile(this,'pool4','ans4')">对</div>
+        </div>
+        <div class="scramble-answer" id="ans4">
+          <span class="ans-placeholder">点击上方词语组成句子</span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEx3()">检查答案 Check</button>
+        <button class="btn" onclick="resetEx3()">重置 Reset</button>
+      </div>
+      <div class="result-msg" id="ex3-msg"></div>
+    </div>
+
+    <!-- ══ 题型五：图片造句 ══ -->
+    <div class="exercise-card">
+      <div class="ex-header">
+        <span class="ex-type">题型五</span>
+        <span class="ex-title">图片造句</span>
+      </div>
+      <div class="ex-instruction">根据图片和关键词写一句中文句子，尽量使用本周语法。<br>Write a sentence using the picture and keyword. Try to use this week's grammar.</div>
+
+      <div class="img-exercise">
+        <div class="img-card">
+          <div class="img-placeholder"><span class="emoji">☕🍵</span></div>
+          <div class="img-input-area">
+            <span class="img-keyword-tag">一样</span>
+            <textarea placeholder="写你的句子…"></textarea>
+          </div>
+        </div>
+        <div class="img-card">
+          <div class="img-placeholder"><span class="emoji">📚📖</span></div>
+          <div class="img-input-area">
+            <span class="img-keyword-tag">越来越</span>
+            <textarea placeholder="写你的句子…"></textarea>
+          </div>
+        </div>
+        <div class="img-card">
+          <div class="img-placeholder"><span class="emoji">🏃‍♂️💨</span></div>
+          <div class="img-input-area">
+            <span class="img-keyword-tag">越…越…</span>
+            <textarea placeholder="写你的句子…"></textarea>
+          </div>
+        </div>
+        <div class="img-card">
+          <div class="img-placeholder"><span class="emoji">🏆🥇</span></div>
+          <div class="img-input-area">
+            <span class="img-keyword-tag">参加</span>
+            <textarea placeholder="写你的句子…"></textarea>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.72rem;color:var(--muted);margin-top:0.8rem">💡 开放题，请老师批改。</p>
+    </div>
+
+  </div><!-- /section -->
+    </div><!-- /section -->
+  </div><!-- /tab-exercise -->
+
+</div><!-- /container-tabs -->
+
+<script>
+
+// ─── Scroll to top ──────────────────────────
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('scrollTopBtn');
+  if (btn) {
+    if (window.scrollY > 200) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }
+});
+
+// ─── Tabs ───────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── 题型一：选词填空 ───────────────────────
+let selectedChip = null;
+let selectedBankId = null;
+
+function selectChip(chip, bankId) {
+  if (selectedChip) selectedChip.style.outline = '';
+  if (selectedChip === chip) { selectedChip = null; selectedBankId = null; return; }
+  selectedChip = chip;
+  selectedBankId = bankId;
+  chip.style.outline = '2px solid var(--gold)';
+}
+
+function fillBlank(blank, bankId) {
+  if (!selectedChip || selectedBankId !== bankId) return;
+  if (blank.dataset.filled) {
+    const oldChip = document.querySelector(`#${bankId} [data-word="${blank.dataset.filled}"]`);
+    if (oldChip) oldChip.classList.remove('used');
+  }
+  blank.textContent = selectedChip.dataset.word;
+  blank.dataset.filled = selectedChip.dataset.word;
+  blank.classList.remove('correct','wrong');
+  selectedChip.classList.add('used');
+  selectedChip.style.outline = '';
+  selectedChip = null; selectedBankId = null;
+}
+
+function checkFillBlanks(sentenceId, msgId) {
+  const blanks = document.querySelectorAll(`#${sentenceId} .fill-blank`);
+  let correct = 0;
+  blanks.forEach(b => {
+    if (!b.dataset.filled) return;
+    const ok = b.dataset.filled === b.dataset.answer;
+    b.classList.toggle('correct', ok);
+    b.classList.toggle('wrong', !ok);
+    if (ok) correct++;
+  });
+  const msg = document.getElementById(msgId);
+  msg.className = 'result-msg show ' + (correct === blanks.length ? 'ok' : 'err');
+  msg.textContent = correct === blanks.length ? '✓ 全对！太棒了！' : `答对 ${correct} / ${blanks.length}，再试试！`;
+}
+
+function resetFillBlanks(sentenceId, bankId, msgId) {
+  document.querySelectorAll(`#${sentenceId} .fill-blank`).forEach(b => {
+    b.textContent = ''; b.dataset.filled = ''; b.className = 'fill-blank';
+  });
+  document.querySelectorAll(`#${bankId} .word-chip`).forEach(c => { c.classList.remove('used'); c.style.outline = ''; });
+  document.getElementById(msgId).className = 'result-msg';
+  selectedChip = null; selectedBankId = null;
+}
+
+function checkEx1()  { checkFillBlanks('ex1-sentences', 'ex1-msg'); }
+function resetEx1()  { resetFillBlanks('ex1-sentences', 'wb1', 'ex1-msg'); }
+function checkEx1b() { checkFillBlanks('ex1b-sentences', 'ex1b-msg'); }
+function resetEx1b() { resetFillBlanks('ex1b-sentences', 'wb2', 'ex1b-msg'); }
+
+// ─── 题型二：句子排列 drag & drop ───────────
+const answers2 = { sg1: ['C','A','B'], sg2: ['C','A','B'], sg3: ['B','A','C'] };
+let draggedLetter = null;
+
+function dragStart(e) {
+  draggedLetter = e.currentTarget.dataset.letter;
+  e.currentTarget.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+
+function allowDrop(e) { e.preventDefault(); e.currentTarget.classList.add('over'); }
+
+function drop(e) {
+  e.preventDefault();
+  const slot = e.currentTarget;
+  slot.classList.remove('over');
+  if (!draggedLetter) return;
+  slot.textContent = draggedLetter;
+  slot.dataset.placed = draggedLetter;
+  slot.classList.add('filled');
+  slot.classList.remove('correct','wrong');
+  draggedLetter = null;
+  document.querySelectorAll('.sort-item').forEach(i => i.classList.remove('dragging'));
+}
+
+function checkEx2() {
+  let allOk = true;
+  Object.keys(answers2).forEach(gid => {
+    const el = document.getElementById(gid);
+    if (!el) return;
+    const slots = el.querySelectorAll('.sort-slot');
+    slots.forEach((slot, i) => {
+      const ok = slot.dataset.placed === answers2[gid][i];
+      slot.classList.toggle('correct', ok);
+      slot.classList.toggle('wrong', !ok);
+      if (!ok) allOk = false;
+    });
+  });
+  const msg = document.getElementById('ex2-msg');
+  msg.className = 'result-msg show ' + (allOk ? 'ok' : 'err');
+  msg.textContent = allOk ? '✓ 全对！顺序完全正确！' : '有些顺序不对，再想想！';
+}
+
+function resetEx2() {
+  document.querySelectorAll('.sort-slot').forEach(s => {
+    s.textContent = '?'; s.dataset.placed = ''; s.className = 'sort-slot';
+  });
+  document.getElementById('ex2-msg').className = 'result-msg';
+}
+
+// ─── 题型三：阅读理解 ───────────────────────
+function pickOption(opt) {
+  const group = opt.closest('.reading-item').querySelectorAll('.reading-option');
+  group.forEach(o => o.classList.remove('selected'));
+  opt.classList.add('selected');
+}
+
+function checkReading() {
+  const items = document.querySelectorAll('.reading-item');
+  let correct = 0;
+  items.forEach(item => {
+    const selected = item.querySelector('.reading-option.selected');
+    const options = item.querySelectorAll('.reading-option');
+    options.forEach(o => o.classList.remove('correct','wrong'));
+    if (selected) {
+      if (selected.dataset.correct === 'true') { selected.classList.add('correct'); correct++; }
+      else {
+        selected.classList.add('wrong');
+        options.forEach(o => { if (o.dataset.correct === 'true') o.classList.add('correct'); });
+      }
+    }
+  });
+  const msg = document.getElementById('reading-msg');
+  msg.className = 'result-msg show ' + (correct === items.length ? 'ok' : 'err');
+  msg.textContent = correct === items.length ? '✓ 全对！理解得很好！' : `答对 ${correct} / ${items.length}，再读读短文！`;
+}
+
+function resetReading() {
+  document.querySelectorAll('.reading-option').forEach(o => o.className = 'reading-option');
+  document.getElementById('reading-msg').className = 'result-msg';
+}
+
+// ─── 题型四：组合句子 ───────────────────────
+const ex3Answers = {
+  ans1: ['那座桥','有','800年的','历史','了'],
+  ans2: ['我','跟','姐姐','一样','高'],
+  ans3: ['他的中文','越来越','好','了'],
+  ans4: ['这件事','对','你的学习','有','影响']
+};
+
+function pickTile(tile, poolId, ansId) {
+  if (tile.classList.contains('selected')) return;
+  tile.classList.add('selected');
+  const ans = document.getElementById(ansId);
+  const placeholder = ans.querySelector('.ans-placeholder');
+  if (placeholder) placeholder.remove();
+  const t = document.createElement('div');
+  t.className = 'answer-tile';
+  t.textContent = tile.dataset.word;
+  t.dataset.word = tile.dataset.word;
+  t.onclick = function() {
+    tile.classList.remove('selected');
+    t.remove();
+    const a = document.getElementById(ansId);
+    if (!a.children.length) a.innerHTML = '<span class="ans-placeholder">点击上方词语组成句子</span>';
+    a.classList.remove('correct','wrong');
+  };
+  ans.appendChild(t);
+  ans.classList.remove('correct','wrong');
+}
+
+function checkEx3() {
+  let allOk = true;
+  Object.keys(ex3Answers).forEach(ansId => {
+    const ans = document.getElementById(ansId);
+    if (!ans) return;
+    const tiles = [...ans.querySelectorAll('.answer-tile')].map(t => t.dataset.word);
+    const ok = JSON.stringify(tiles) === JSON.stringify(ex3Answers[ansId]);
+    ans.classList.remove('correct','wrong');
+    ans.classList.add(ok ? 'correct' : 'wrong');
+    if (!ok) allOk = false;
+  });
+  const msg = document.getElementById('ex3-msg');
+  msg.className = 'result-msg show ' + (allOk ? 'ok' : 'err');
+  msg.textContent = allOk ? '✓ 全部正确！句子排列得很好！' : '有些句子顺序不对，再试试！';
+}
+
+function resetEx3() {
+  Object.keys(ex3Answers).forEach(ansId => {
+    const poolId = 'pool' + ansId.replace('ans','');
+    const ans = document.getElementById(ansId);
+    if (ans) { ans.innerHTML = '<span class="ans-placeholder">点击上方词语组成句子</span>'; ans.classList.remove('correct','wrong'); }
+    const pool = document.getElementById(poolId);
+    if (pool) pool.querySelectorAll('.word-tile').forEach(t => t.classList.remove('selected'));
+  });
+  document.getElementById('ex3-msg').className = 'result-msg';
+}
+
+</script>
