@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — IvyChinese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Cinzel:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1208;
+      --parchment: #f5efe6;
+      --gold: #c8962a;
+      --gold-light: #e8b84b;
+      --red: #c0392b;
+      --jade: #2d6a4f;
+      --divider: rgba(200, 150, 42, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Paper texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Ink wash corners */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(200,150,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ornament-wash {
+      position: fixed;
+      bottom: -250px; left: -250px;
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(192,57,43,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Top nav */
+    .top-nav {
+      padding: 22px 40px 0;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.1s;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 10px 22px 10px 16px;
+      border: 1px solid var(--divider);
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(4px);
+      transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .back-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+
+    .back-btn:hover::before { transform: scaleX(1); }
+    .back-btn:hover { color: var(--parchment); transform: translateY(-1px); }
+    .back-btn span, .back-btn svg { position: relative; z-index: 1; }
+
+    /* Main card */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px 60px;
+    }
+
+    .card {
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      padding: 56px 40px 48px;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--divider);
+      border-radius: 3px;
+      box-shadow:
+        4px 4px 0px rgba(200,150,42,0.15),
+        8px 8px 0px rgba(200,150,42,0.08),
+        0 16px 50px rgba(26,18,8,0.12);
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.25s;
+    }
+
+    /* Corner flourishes */
+    .card::before, .card::after {
+      content: '';
+      position: absolute;
+      width: 28px; height: 28px;
+      border: 1px solid var(--gold);
+      opacity: 0.5;
+    }
+    .card::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+    .card::after  { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+    .eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hanzi-big {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(54px, 10vw, 92px);
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: 0.15em;
+      margin-bottom: 6px;
+    }
+
+    .pinyin {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.35em;
+      color: rgba(26,18,8,0.45);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .divider-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 0 auto 30px;
+    }
+
+    .divider-ornament::before,
+    .divider-ornament::after {
+      content: '';
+      flex: 1;
+      max-width: 110px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .divider-ornament::after {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+
+    .ornament-diamond {
+      width: 7px; height: 7px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(24px, 3.4vw, 32px);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+      margin-bottom: 22px;
+    }
+
+    .message {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: rgba(26,18,8,0.78);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .message-fr {
+      font-style: italic;
+    }
+
+    .signature {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--divider);
+      font-family: 'Dancing Script', cursive;
+      font-size: 26px;
+      color: var(--jade);
+      font-weight: 700;
+    }
+
+    .signature-meta {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: rgba(26,18,8,0.4);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* Writing hand animation */
+    .hand-wrap {
+      margin: 0 auto 10px;
+      font-size: 42px;
+      display: inline-block;
+      animation: write 2.4s ease-in-out infinite;
+      transform-origin: 70% 80%;
+    }
+
+    @keyframes write {
+      0%, 100% { transform: rotate(-6deg) translateX(0); }
+      25%      { transform: rotate(2deg)  translateX(3px); }
+      50%      { transform: rotate(-4deg) translateX(-2px); }
+      75%      { transform: rotate(4deg)  translateX(2px); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px 32px 36px;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: rgba(26,18,8,0.3);
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+    }
+
+    footer span { color: var(--gold); }
+
+    @media (max-width: 560px) {
+      .card { padding: 42px 24px 34px; }
+      .message { font-size: 15px; }
+      .top-nav { padding: 16px 20px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ornament-wash"></div>
+
+<nav class="top-nav">
+  <a class="back-btn" href="hsk3-menu.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Back to menu</span>
+  </a>
+</nav>
+
+<main>
+  <div class="card">
+    <p class="eyebrow">Under Construction</p>
+
+    <div class="hand-wrap" aria-hidden="true">✍️</div>
+
+    <div class="hanzi-big">敬请期待</div>
+    <div class="pinyin">jìng qǐng qí dài</div>
+
+    <div class="divider-ornament">
+      <div class="ornament-diamond"></div>
+    </div>
+
+    <h1>This section is coming soon</h1>
+
+    <p class="message">
+      I am carefully putting the finishing touches
+      on this part of the course with great care&nbsp;🤍
+    </p>
+    <p class="message message-fr">
+      Every character, every dialogue, every cultural note is thoughtfully crafted
+      to bring you the very best. Thank you for your patience&nbsp;!
+    </p>
+
+    <div class="signature">
+      Ivy
+      <div class="signature-meta">The most gifted Chinese teacher</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>汉语水平考试</span> &nbsp;·&nbsp; Coming Soon
+</footer>
+
+</body>
+</html>
