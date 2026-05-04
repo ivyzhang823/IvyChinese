@@ -797,8 +797,410 @@
 ══════════════════════════════════════ -->
 <div id="page-lesson" class="page">
 
-  <div class="lesson-header" id="lesson-header-1" data-lesson="1" data-watermark="一" style="display:none"></div>
-  <div class="lesson-content" data-lesson="1" style="display:none"></div>
+  <div class="lesson-header" id="lesson-header-1" data-lesson="1" data-watermark="一" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 6
+      </button>
+      <span class="lesson-tag-num">第一课 · Lesson 01</span>
+    </div>
+    <h1>天才的秘密</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Tiāncái de mìmì</p>
+    <p class="lesson-subtitle">The Secret of Genius</p>
+  </div>
+
+  <div class="lesson-content" data-lesson="1" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
+  </div>
+  <div class="content-area">
+
+    <!-- 课文 -->
+    <div data-tab="text" class="tab-panel active">
+      <div class="dialogue-block" id="l1-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">课文 · 天才的秘密（700字）</span>
+              <button class="dh-play-btn" id="l1-dhBtn1" onclick="dhPlay('l1-audioEl1','l1-dhBtn1')">
+                <svg id="l1-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l1-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l1-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">The Secret of Genius</span>
+          </div>
+          <audio id="l1-audioEl1" src="audio/01-1.mp3" onended="dhEnded('l1-audioEl1','l1-dhBtn1','l1-dhIcon1')" ontimeupdate="dhUpdate('l1-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              <p style="margin:0 0 0.15em 0;">从前，有一位年轻的画家，他的作品令所有观者赞叹不已。无论走到哪里，人们总是称他为"天才"，认为他超凡的技艺是与生俱来的天赋，根本无需后天习得。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Cóngqián, yǒu yī wèi niánqīng de huàjiā, tā de zuòpǐn lìng suǒyǒu guānzhě zàntàn bù yǐ. Wúlùn zǒudào nǎlǐ, rénmen zǒngshì chēng tā wéi "tiāncái", rènwéi tā chāofán de jìyì shì yǔ shēng jù lái de tiānfù, gēnběn wúxū hòutiān xídé.</p>
+              <p style="margin:0 0 0.15em 0;">年轻画家的导师，一位德高望重的老画家，每当听到这些赞美之词，总是沉默不语，只是若有所思地摇摇头。他从不反驳，也不附和，仿佛那些浮华的赞誉与他毫不相干。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Niánqīng huàjiā de dǎoshī, yī wèi dé gāo wàng zhòng de lǎo huàjiā, měi dāng tīngdào zhèxiē zànměi zhī cí, zǒngshì chénmò bù yǔ, zhǐshì ruò yǒu suǒ sī de yáoyao tóu. Tā cóng bù fǎnbó, yě bù fùhè, fǎngfú nàxiē fúhuá de zànyù yǔ tā háo bù xiāng gān.</p>
+              <p style="margin:0 0 0.15em 0;">一天，一位慕名前来的学生向老画家倾诉苦恼："老师，我苦练多年，进步却微乎其微。我的天赋或许远不及那位画家，难道真的有人生来就注定能够成为天才吗？我有时几乎要放弃了。"老画家没有立刻回答，而是引领学生参观了年轻画家的画室。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Yī tiān, yī wèi mùmíng qián lái de xuésheng xiàng lǎo huàjiā qīngsù kǔnǎo: "Lǎoshī, wǒ kǔliàn duō nián, jìnbù què wēi hū qí wēi. Wǒ de tiānfù huòxǔ yuǎn bù jí nà wèi huàjiā, nándào zhēnde yǒu rén shēng lái jiù zhùdìng nénggòu chéngwéi tiāncái ma? Wǒ yǒushí jīhū yào fàngqì le." Lǎo huàjiā méiyǒu lìkè huídá, ér shì yǐnlǐng xuésheng cānguān le niánqīng huàjiā de huàshì.</p>
+              <p style="margin:0 0 0.15em 0;">画室里的景象令学生大为震惊：四面墙壁旁堆满了无数废弃的习作，一叠叠高高摞起，足有几千张之多。每一张都皱皱巴巴、布满涂改的痕迹，有些甚至被揉成一团，随手扔在地板上。"你看到了什么？"老画家淡然问道。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Huàshì lǐ de jǐngxiàng lìng xuésheng dà wéi zhènjīng: sìmiàn qiángbì páng duī mǎn le wúshù fèiqì de xízuò, yī dié dié gāogāo luò qǐ, zú yǒu jǐ qiān zhāng zhī duō. Měi yī zhāng dōu zhòuzhòu bābā, bù mǎn túgǎi de hénjì, yǒuxiē shènzhì bèi róu chéng yī tuán, suíshǒu rēng zài dìbǎn shàng. "Nǐ kàndào le shénme?" Lǎo huàjiā dànrán wèn dào.</p>
+              <p style="margin:0 0 0.15em 0;">学生半晌说不出话来，最终哑然失笑道："他……他竟然画了这么多废稿？""对，"老画家点点头，"他从不依赖天赋。他只是比别人多付出了十倍的努力，仅此而已。所谓天才，不过是持之以恒的人对外呈现出的模样，与其说是天生，不如说是磨砺出来的。"</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Xuésheng bàn shǎng shuō bù chū huà lái, zuìzhōng yǎrán shī xiào dào: "Tā…tā jìngrán huà le zhème duō fèigǎo?" "Duì," lǎo huàjiā diǎndiǎn tóu, "tā cóng bù yīlài tiānfù. Tā zhǐshì bǐ biérén duō fùchū le shí bèi de nǔlì, jǐn cǐ ér yǐ. Suǒwèi tiāncái, bùguò shì chí zhī yǐ héng de rén duì wài chéngxiàn chū de múyàng, yǔqí shuō shì tiānshēng, bùrú shuō shì mólì chūlái de."</p>
+              <p style="margin:0 0 0.15em 0;">学生若有所悟，从那天起，他开始以全然不同的态度重新审视自己的每一幅作品。他不再抱怨天赋不足，而是将每一天的勤奋都视为通向卓越的阶梯，循序渐进，坚持不懈。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Xuésheng ruò yǒu suǒ wù, cóng nà tiān qǐ, tā kāishǐ yǐ quánrán bùtóng de tàidu chóngxīn shěnshì zìjǐ de měi yī fú zuòpǐn. Tā bù zài bàoyuàn tiānfù bùzú, ér shì jiāng měi yī tiān de qínfèn dōu shì wéi tōng xiàng zhuóyuè de jiētī, xúnxù jiànjìn, jiānchí bùxiè.</p>
+              <p style="margin:0 0 0.15em 0;">多年之后，人们也开始称那位学生为"天才"。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Duō nián zhī hòu, rénmen yě kāishǐ chēng nà wèi xuésheng wéi "tiāncái".</p>
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);display:none;">Once upon a time, there was a young painter whose works filled all who saw them with endless admiration. Wherever he went, people would call him a "genius," believing that his extraordinary skill was an innate gift — something that required no cultivation whatsoever.<br><br>His mentor — a venerable old painter of great prestige — would silently shake his head whenever he heard such praise, as if lost in thought. He never argued against it, nor did he echo it, as though all that flashy acclaim had nothing to do with him.<br><br>One day, a student who had come especially to seek his guidance poured out his troubles: "Master, I have practiced for years, yet my progress is negligible. My talent is surely far less than that young painter's — can it really be that some people are simply born destined to be geniuses? Sometimes I almost want to give up." The old painter gave no immediate reply, but instead led the student to visit the young painter's studio.<br><br>The scene in the studio left the student utterly astonished: along all four walls were piles upon piles of discarded practice works, stacked high — thousands of sheets in all. Every single page was crumpled and covered with corrections; some had even been scrunched into a ball and carelessly tossed onto the floor. "What do you see?" the old painter asked calmly.<br><br>The student was at a loss for words for some time, then finally burst out laughing: "He — he actually produced this many discarded drafts?" "That's right," the old painter nodded. "He never relied on talent. He simply put in ten times more effort than others — that's all. What we call genius is nothing more than the appearance a persistently dedicated person presents to the world. Rather than saying he was born this way, it is more accurate to say he was forged this way."<br><br>The student seemed to grasp something profound. From that day on, he began to examine each of his works with a completely different attitude. No longer did he complain about a lack of talent; instead he treated each day's diligent effort as a step on the staircase leading to excellence, proceeding steadily and persevering without cease.<br><br>Years later, people also began calling that student a "genius."</div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end 课文 tab -->
+
+    <!-- 生词表 -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l1-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">赞叹不已</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zàntàn bù yǐ</div><div class="fcs-en">filled with endless admiration</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">超凡</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chāofán</div><div class="fcs-en">extraordinary; transcendent</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">天赋</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tiānfù</div><div class="fcs-en">natural talent; innate gift</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">与生俱来</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǔ shēng jù lái</div><div class="fcs-en">innate; born with</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">习得</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xídé</div><div class="fcs-en">to acquire; to learn (a skill)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">导师</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dǎoshī</div><div class="fcs-en">mentor; tutor; advisor</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">德高望重</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dé gāo wàng zhòng</div><div class="fcs-en">of high virtue and great prestige</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">沉默不语</div><div class="fcs-pos">phrase</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chénmò bù yǔ</div><div class="fcs-en">to remain silent; to say nothing</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">若有所思</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">ruò yǒu suǒ sī</div><div class="fcs-en">seemingly lost in thought</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">反驳</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fǎnbó</div><div class="fcs-en">to refute; to rebut</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">附和</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fùhè</div><div class="fcs-en">to echo; to agree without thinking</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">浮华</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fúhuá</div><div class="fcs-en">flashy; superficial; vain</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">赞誉</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zànyù</div><div class="fcs-en">praise; acclaim; commendation</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">慕名</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mùmíng</div><div class="fcs-en">to come drawn by sb's fame</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">倾诉</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qīngsù</div><div class="fcs-en">to pour out one's feelings; to confide</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">微乎其微</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">wēi hū qí wēi</div><div class="fcs-en">extremely small; negligible</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">注定</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhùdìng</div><div class="fcs-en">destined; fated</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">震惊</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhènjīng</div><div class="fcs-en">to be shocked; to be astonished</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">废弃</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fèiqì</div><div class="fcs-en">to discard; to abandon</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">习作</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xízuò</div><div class="fcs-en">practice work; exercise piece</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">摞</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">luò</div><div class="fcs-en">to stack; to pile up</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">皱巴巴</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhòubābā</div><div class="fcs-en">wrinkled; crumpled</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">涂改</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">túgǎi</div><div class="fcs-en">to alter; to correct by writing over</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">淡然</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dànrán</div><div class="fcs-en">calm; unperturbed; indifferent</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">哑然失笑</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yǎrán shī xiào</div><div class="fcs-en">to burst out laughing involuntarily</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">废稿</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">fèigǎo</div><div class="fcs-en">discarded draft</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">依赖</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">yīlài</div><div class="fcs-en">to rely on; to depend on</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">仅此而已</div><div class="fcs-pos">phrase</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jǐn cǐ ér yǐ</div><div class="fcs-en">that's all; nothing more</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">所谓</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">suǒwèi</div><div class="fcs-en">so-called; what is called</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">持之以恒</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chí zhī yǐ héng</div><div class="fcs-en">to persevere consistently</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">呈现</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chéngxiàn</div><div class="fcs-en">to present; to appear; to emerge</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">磨砺</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mólì</div><div class="fcs-en">to temper; to hone; to forge</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">若有所悟</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">ruò yǒu suǒ wù</div><div class="fcs-en">as if having realized something</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">全然</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">quánrán</div><div class="fcs-en">completely; entirely</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">审视</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shěnshì</div><div class="fcs-en">to examine carefully; to scrutinize</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">抱怨</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bàoyuàn</div><div class="fcs-en">to complain; to grumble</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">循序渐进</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xúnxù jiànjìn</div><div class="fcs-en">to proceed step by step</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">坚持不懈</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiānchí bùxiè</div><div class="fcs-en">to persevere; unwavering persistence</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">卓越</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhuóyuè</div><div class="fcs-en">outstanding; excellent; remarkable</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">阶梯</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiētī</div><div class="fcs-en">ladder; step; staircase</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l1-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 40</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#4255FF"/><text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text></svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">赞叹不已</div><div class="vocab-pinyin">zàntàn bù yǐ</div><div class="vocab-pos">idiom</div><div class="vocab-en">filled with endless admiration</div><div class="vocab-example">他的作品令所有观者<em>赞叹不已</em>。<br><span style="color:#bbb">His works filled all who saw them with endless admiration.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">超凡</div><div class="vocab-pinyin">chāofán</div><div class="vocab-pos">adj.</div><div class="vocab-en">extraordinary; transcendent</div><div class="vocab-example">他<em>超凡</em>的技艺令人叹服。<br><span style="color:#bbb">His extraordinary skill inspired awe.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">天赋</div><div class="vocab-pinyin">tiānfù</div><div class="vocab-pos">n.</div><div class="vocab-en">natural talent; innate gift</div><div class="vocab-example">认为技艺是与生俱来的<em>天赋</em>。<br><span style="color:#bbb">Believing the skill was an innate gift.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">与生俱来</div><div class="vocab-pinyin">yǔ shēng jù lái</div><div class="vocab-pos">idiom</div><div class="vocab-en">innate; born with</div><div class="vocab-example">这种<em>与生俱来</em>的才能十分罕见。<br><span style="color:#bbb">This kind of innate talent is very rare.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">习得</div><div class="vocab-pinyin">xídé</div><div class="vocab-pos">v.</div><div class="vocab-en">to acquire; to learn</div><div class="vocab-example">语言能力可以通过后天<em>习得</em>。<br><span style="color:#bbb">Language ability can be acquired through learning.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">导师</div><div class="vocab-pinyin">dǎoshī</div><div class="vocab-pos">n.</div><div class="vocab-en">mentor; tutor; advisor</div><div class="vocab-example">他的<em>导师</em>是一位德高望重的老画家。<br><span style="color:#bbb">His mentor was a venerable old painter.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">德高望重</div><div class="vocab-pinyin">dé gāo wàng zhòng</div><div class="vocab-pos">idiom</div><div class="vocab-en">of high virtue and great prestige</div><div class="vocab-example">一位<em>德高望重</em>的老教授。<br><span style="color:#bbb">A venerable old professor of high prestige.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">沉默不语</div><div class="vocab-pinyin">chénmò bù yǔ</div><div class="vocab-pos">phrase</div><div class="vocab-en">to remain silent; to say nothing</div><div class="vocab-example">他听到赞美，总是<em>沉默不语</em>。<br><span style="color:#bbb">Whenever he heard praise, he always remained silent.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">若有所思</div><div class="vocab-pinyin">ruò yǒu suǒ sī</div><div class="vocab-pos">idiom</div><div class="vocab-en">seemingly lost in thought</div><div class="vocab-example"><em>若有所思</em>地摇摇头。<br><span style="color:#bbb">Shaking his head as if lost in thought.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">反驳</div><div class="vocab-pinyin">fǎnbó</div><div class="vocab-pos">v.</div><div class="vocab-en">to refute; to rebut</div><div class="vocab-example">他从不<em>反驳</em>别人的赞美。<br><span style="color:#bbb">He never refuted others' praise.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">附和</div><div class="vocab-pinyin">fùhè</div><div class="vocab-pos">v.</div><div class="vocab-en">to echo; to agree without thinking</div><div class="vocab-example">也不<em>附和</em>那些浮华的赞誉。<br><span style="color:#bbb">Nor did he echo that flashy acclaim.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">浮华</div><div class="vocab-pinyin">fúhuá</div><div class="vocab-pos">adj.</div><div class="vocab-en">flashy; superficial; vain</div><div class="vocab-example">那些<em>浮华</em>的赞誉与他毫不相干。<br><span style="color:#bbb">That flashy acclaim had nothing to do with him.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">赞誉</div><div class="vocab-pinyin">zànyù</div><div class="vocab-pos">n.</div><div class="vocab-en">praise; acclaim</div><div class="vocab-example">获得广泛的<em>赞誉</em>。<br><span style="color:#bbb">To receive widespread acclaim.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">慕名</div><div class="vocab-pinyin">mùmíng</div><div class="vocab-pos">v.</div><div class="vocab-en">to come drawn by sb's fame</div><div class="vocab-example">一位<em>慕名</em>前来的学生。<br><span style="color:#bbb">A student who came drawn by his fame.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">倾诉</div><div class="vocab-pinyin">qīngsù</div><div class="vocab-pos">v.</div><div class="vocab-en">to pour out one's feelings; to confide</div><div class="vocab-example">向老画家<em>倾诉</em>苦恼。<br><span style="color:#bbb">Pouring out his troubles to the old painter.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">微乎其微</div><div class="vocab-pinyin">wēi hū qí wēi</div><div class="vocab-pos">idiom</div><div class="vocab-en">extremely small; negligible</div><div class="vocab-example">进步却<em>微乎其微</em>。<br><span style="color:#bbb">Yet the progress was negligible.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">注定</div><div class="vocab-pinyin">zhùdìng</div><div class="vocab-pos">v.</div><div class="vocab-en">destined; fated</div><div class="vocab-example">有人生来就<em>注定</em>成为天才吗？<br><span style="color:#bbb">Is anyone born destined to be a genius?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">震惊</div><div class="vocab-pinyin">zhènjīng</div><div class="vocab-pos">v.</div><div class="vocab-en">to be shocked; to be astonished</div><div class="vocab-example">画室的景象令学生大为<em>震惊</em>。<br><span style="color:#bbb">The scene in the studio left the student astonished.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">废弃</div><div class="vocab-pinyin">fèiqì</div><div class="vocab-pos">v.</div><div class="vocab-en">to discard; to abandon</div><div class="vocab-example">堆满了无数<em>废弃</em>的习作。<br><span style="color:#bbb">Piled high with countless discarded works.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">习作</div><div class="vocab-pinyin">xízuò</div><div class="vocab-pos">n.</div><div class="vocab-en">practice work; exercise piece</div><div class="vocab-example">废弃的<em>习作</em>足有几千张。<br><span style="color:#bbb">Thousands of discarded practice pieces.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">摞</div><div class="vocab-pinyin">luò</div><div class="vocab-pos">v.</div><div class="vocab-en">to stack; to pile up</div><div class="vocab-example">一叠叠高高<em>摞</em>起。<br><span style="color:#bbb">Stacked high in piles.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">皱巴巴</div><div class="vocab-pinyin">zhòubābā</div><div class="vocab-pos">adj.</div><div class="vocab-en">wrinkled; crumpled</div><div class="vocab-example">每一张都<em>皱皱巴巴</em>。<br><span style="color:#bbb">Every single page was crumpled.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">涂改</div><div class="vocab-pinyin">túgǎi</div><div class="vocab-pos">v.</div><div class="vocab-en">to alter; to correct by writing over</div><div class="vocab-example">布满<em>涂改</em>的痕迹。<br><span style="color:#bbb">Covered with correction marks.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">淡然</div><div class="vocab-pinyin">dànrán</div><div class="vocab-pos">adv.</div><div class="vocab-en">calm; unperturbed; indifferent</div><div class="vocab-example">老画家<em>淡然</em>问道。<br><span style="color:#bbb">The old painter asked calmly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">哑然失笑</div><div class="vocab-pinyin">yǎrán shī xiào</div><div class="vocab-pos">idiom</div><div class="vocab-en">to burst out laughing involuntarily</div><div class="vocab-example">学生最终<em>哑然失笑</em>道。<br><span style="color:#bbb">The student finally burst out laughing.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">废稿</div><div class="vocab-pinyin">fèigǎo</div><div class="vocab-pos">n.</div><div class="vocab-en">discarded draft</div><div class="vocab-example">竟然画了这么多<em>废稿</em>。<br><span style="color:#bbb">He actually produced so many discarded drafts.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">依赖</div><div class="vocab-pinyin">yīlài</div><div class="vocab-pos">v.</div><div class="vocab-en">to rely on; to depend on</div><div class="vocab-example">他从不<em>依赖</em>天赋。<br><span style="color:#bbb">He never relied on talent.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">仅此而已</div><div class="vocab-pinyin">jǐn cǐ ér yǐ</div><div class="vocab-pos">phrase</div><div class="vocab-en">that's all; nothing more</div><div class="vocab-example">比别人多努力了十倍，<em>仅此而已</em>。<br><span style="color:#bbb">Put in ten times more effort than others — that's all.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">所谓</div><div class="vocab-pinyin">suǒwèi</div><div class="vocab-pos">adj.</div><div class="vocab-en">so-called; what is called</div><div class="vocab-example"><em>所谓</em>天才，不过是……<br><span style="color:#bbb">What we call genius is nothing but…</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">持之以恒</div><div class="vocab-pinyin">chí zhī yǐ héng</div><div class="vocab-pos">idiom</div><div class="vocab-en">to persevere consistently</div><div class="vocab-example"><em>持之以恒</em>的人对外呈现出的模样。<br><span style="color:#bbb">The face a persistently dedicated person shows to the world.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">呈现</div><div class="vocab-pinyin">chéngxiàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to present; to appear; to emerge</div><div class="vocab-example">对外<em>呈现</em>出的模样。<br><span style="color:#bbb">The appearance presented to the outside world.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">磨砺</div><div class="vocab-pinyin">mólì</div><div class="vocab-pos">v.</div><div class="vocab-en">to temper; to hone; to forge</div><div class="vocab-example">不如说是<em>磨砺</em>出来的。<br><span style="color:#bbb">More accurately forged through hardship.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">若有所悟</div><div class="vocab-pinyin">ruò yǒu suǒ wù</div><div class="vocab-pos">idiom</div><div class="vocab-en">as if having realized something</div><div class="vocab-example">学生<em>若有所悟</em>。<br><span style="color:#bbb">The student seemed to grasp something profound.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">全然</div><div class="vocab-pinyin">quánrán</div><div class="vocab-pos">adv.</div><div class="vocab-en">completely; entirely</div><div class="vocab-example">以<em>全然</em>不同的态度重新审视。<br><span style="color:#bbb">With a completely different attitude to re-examine.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">审视</div><div class="vocab-pinyin">shěnshì</div><div class="vocab-pos">v.</div><div class="vocab-en">to examine carefully; to scrutinize</div><div class="vocab-example">重新<em>审视</em>自己的每一幅作品。<br><span style="color:#bbb">Re-examining each of his works carefully.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">抱怨</div><div class="vocab-pinyin">bàoyuàn</div><div class="vocab-pos">v.</div><div class="vocab-en">to complain; to grumble</div><div class="vocab-example">不再<em>抱怨</em>天赋不足。<br><span style="color:#bbb">No longer complaining about a lack of talent.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">循序渐进</div><div class="vocab-pinyin">xúnxù jiànjìn</div><div class="vocab-pos">idiom</div><div class="vocab-en">to proceed step by step</div><div class="vocab-example"><em>循序渐进</em>，坚持不懈。<br><span style="color:#bbb">Proceeding step by step, persevering without cease.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">坚持不懈</div><div class="vocab-pinyin">jiānchí bùxiè</div><div class="vocab-pos">idiom</div><div class="vocab-en">to persevere; unwavering persistence</div><div class="vocab-example">循序渐进，<em>坚持不懈</em>。<br><span style="color:#bbb">Proceeding steadily and persevering without cease.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">卓越</div><div class="vocab-pinyin">zhuóyuè</div><div class="vocab-pos">adj.</div><div class="vocab-en">outstanding; excellent; remarkable</div><div class="vocab-example">通向<em>卓越</em>的阶梯。<br><span style="color:#bbb">A staircase leading to excellence.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">阶梯</div><div class="vocab-pinyin">jiētī</div><div class="vocab-pos">n.</div><div class="vocab-en">ladder; step; staircase</div><div class="vocab-example">视为通向卓越的<em>阶梯</em>。<br><span style="color:#bbb">Treated as a step on the staircase to excellence.</span></div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- 词汇详解 -->
+    <div data-tab="worddetail" class="tab-panel">
+      <div class="vocab-card">
+        <div class="vocab-zh">与生俱来</div><div class="vocab-pinyin">yǔ shēng jù lái</div><div class="vocab-pos">idiom</div>
+        <div class="vocab-en">innate; born with — literally "brought along at birth." Used to describe qualities, abilities, or traits present from birth. Typically modifies nouns as an attributive.</div>
+        <div class="vocab-example">
+          他超凡的技艺是<em>与生俱来</em>的天赋。<br>
+          <span style="color:#bbb">His extraordinary skill is an innate gift.</span><br>
+          领导才能并不总是<em>与生俱来</em>的，更多是在实践中培养出来的。<br>
+          <span style="color:#bbb">Leadership ability is not always innate; more often it is developed through practice.</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">微乎其微</div><div class="vocab-pinyin">wēi hū qí wēi</div><div class="vocab-pos">idiom</div>
+        <div class="vocab-en">extremely small; negligible — follows the pattern X乎其X, where 乎 is a classical intensifier. Describes abstract quantities (chances, differences, progress). Compare: 微不足道 (trivial, insignificant).</div>
+        <div class="vocab-example">
+          我苦练多年，进步却<em>微乎其微</em>。<br>
+          <span style="color:#bbb">I practiced for years, yet my progress was negligible.</span><br>
+          成功的可能性<em>微乎其微</em>，但他依然没有放弃。<br>
+          <span style="color:#bbb">The chances of success were negligible, but he still didn't give up.</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">所谓</div><div class="vocab-pinyin">suǒwèi</div><div class="vocab-pos">adj.</div>
+        <div class="vocab-en">so-called; what is called — used before a noun to question or redefine a widely used concept. Often pairs with 不过是/只是 to introduce the "real" definition.</div>
+        <div class="vocab-example">
+          <em>所谓</em>天才，不过是持之以恒的人呈现出的模样。<br>
+          <span style="color:#bbb">What we call genius is nothing but the face of someone who perseveres.</span><br>
+          <em>所谓</em>友谊，不过是在你最难过的时候还陪着你的人。<br>
+          <span style="color:#bbb">What we call friendship is nothing but the person who stays with you at your lowest.</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">若有所思 vs 若有所悟</div><div class="vocab-pinyin">ruò yǒu suǒ sī vs ruò yǒu suǒ wù</div><div class="vocab-pos">idiom</div>
+        <div class="vocab-en">Both follow the pattern 若有所X. 若有所思 describes the appearance of being deep in thought (thinking). 若有所悟 describes the appearance of having just grasped something (realizing). The key contrast: 思 = thinking process; 悟 = moment of insight.</div>
+        <div class="vocab-example">
+          他<em>若有所思</em>地望着远方。（陷入沉思，还没有答案）<br>
+          <span style="color:#bbb">He gazed into the distance as if deep in thought. (still pondering)</span><br>
+          听完老师的话，她<em>若有所悟</em>，点了点头。（领悟了道理）<br>
+          <span style="color:#bbb">After hearing the teacher's words, she seemed to grasp something and nodded. (had an insight)</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">天赋 vs 才能 vs 本领</div><div class="vocab-pinyin">tiānfù vs cáinéng vs běnlǐng</div><div class="vocab-pos">n.</div>
+        <div class="vocab-en">All refer to ability, but with distinct nuances: 天赋 stresses innateness (natural gift); 才能 is neutral, covering both innate and acquired abilities; 本领 emphasizes practical, applied skill earned through experience.</div>
+        <div class="vocab-example">
+          他有音乐<em>天赋</em>，从小就表现出超凡的听力。（先天）<br>
+          <span style="color:#bbb">He has musical talent — extraordinary hearing evident from childhood. (innate)</span><br>
+          她的外语<em>才能</em>是多年学习积累的结果。（后天习得也可用）<br>
+          <span style="color:#bbb">Her foreign language ability is the result of years of accumulated study. (acquired skills OK)</span><br>
+          他是个有<em>本领</em>的人，什么困难都能解决。（实际应用能力）<br>
+          <span style="color:#bbb">He is a capable man who can solve any problem. (practical competence)</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">持之以恒 vs 坚持不懈</div><div class="vocab-pinyin">chí zhī yǐ héng vs jiānchí bùxiè</div><div class="vocab-pos">idiom</div>
+        <div class="vocab-en">Both mean to keep at something over time. 持之以恒 emphasizes maintaining a consistent practice (the steadiness of effort). 坚持不懈 emphasizes not stopping despite obstacles (the tenacity against giving up).</div>
+        <div class="vocab-example">
+          学外语要<em>持之以恒</em>，每天都要练习。（强调坚持的规律性）<br>
+          <span style="color:#bbb">Learning a foreign language requires consistent practice every day. (steady habit)</span><br>
+          面对困难，他<em>坚持不懈</em>，终于取得了成功。（强调不放弃）<br>
+          <span style="color:#bbb">Facing difficulties, he persevered without giving up and finally succeeded. (against adversity)</span>
+        </div>
+      </div>
+    </div><!-- end worddetail tab -->
+
+    <!-- 语法 -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0, this)">与生俱来</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1, this)">微乎其微</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2, this)">持之以恒</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(3, this)">循序渐进</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(4, this)">所谓……不过是……</button>
+      </div>
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>与生俱来 · Innate; born with</div>
+          <p class="grammar-desc">"与生俱来"，四字成语，字面意思是"随着出生就带来了"。常与"天赋、使命感、个性"等词搭配，形容人天生具有的特质。通常用作定语修饰名词，或用作谓语。<br><span style="color:#888;font-size:0.85em;">The idiom 与生俱来 means "brought along at birth." It describes innate traits and commonly modifies nouns as an attributive or functions as a predicate.</span></p>
+          <div class="grammar-pattern">与生俱来的 + N &nbsp;|&nbsp; N + 是与生俱来的</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">他超凡的技艺是与生俱来的天赋，根本无需后天习得。</div><div class="en">His extraordinary skill is an innate gift that requires no cultivation.</div></div>
+            <div class="grammar-ex"><div class="zh">对音乐的热爱似乎是与生俱来的，从小就显露无疑。</div><div class="en">The love of music seems innate — it was evident from childhood.</div></div>
+            <div class="grammar-ex"><div class="zh">领导才能并不总是与生俱来的，更多是在实践中磨砺出来的。</div><div class="en">Leadership ability is not always innate; more often it is forged through practice.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>微乎其微 · Extremely small; negligible</div>
+          <p class="grammar-desc">"微乎其微"，四字成语，"乎"是文言助词，起加强语气的作用。整体形容事物极其微小，通常修饰"可能性、差距、进步"等抽象概念。属于"X乎其X"结构（如：难乎其难、大乎其大）。<br><span style="color:#888;font-size:0.85em;">微乎其微 follows the classical X乎其X intensification pattern. It describes extremely small abstract quantities such as chances, differences, or progress.</span></p>
+          <div class="grammar-pattern">N + 微乎其微 &nbsp;|&nbsp; 微乎其微的 + N</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">我苦练多年，进步却微乎其微。</div><div class="en">I practiced for years, yet my progress was negligible.</div></div>
+            <div class="grammar-ex"><div class="zh">他成功的可能性微乎其微，但他依然没有放弃。</div><div class="en">His chances of success were negligible, but he still didn't give up.</div></div>
+            <div class="grammar-ex"><div class="zh">两人水平的差距已经微乎其微，再努力一把就能赶上了。</div><div class="en">The gap between the two has become negligible — a little more effort and you'll catch up.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>持之以恒 · To persevere consistently</div>
+          <p class="grammar-desc">"持之以恒"，四字成语，字面意思是"长久地保持（某种行为或态度）"。强调长时间不间断地坚持，而非一时的热情。常与"学习、练习、努力"等词搭配，也可单独作谓语。<br><span style="color:#888;font-size:0.85em;">持之以恒 emphasizes maintaining a steady, unbroken effort over time — not fleeting enthusiasm. It often pairs with study, practice, or effort contexts.</span></p>
+          <div class="grammar-pattern">持之以恒地 + V &nbsp;|&nbsp; 只要持之以恒，就能……</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">所谓天才，不过是持之以恒的人对外呈现出的模样。</div><div class="en">What we call genius is nothing but the face a persistently dedicated person presents to the world.</div></div>
+            <div class="grammar-ex"><div class="zh">学习语言最重要的是持之以恒，每天坚持练习。</div><div class="en">The key to learning a language is perseverance — practice every single day.</div></div>
+            <div class="grammar-ex"><div class="zh">只要持之以恒，任何人都能取得进步。</div><div class="en">As long as you keep at it consistently, anyone can make progress.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">4</span>循序渐进 · To proceed step by step</div>
+          <p class="grammar-desc">"循序渐进"，四字成语，强调按照一定顺序，有条不紊地逐步前进，不急于求成。与"一蹴而就"（to achieve at one stroke）意思相反，常用于学习、成长、改革等语境。<br><span style="color:#888;font-size:0.85em;">循序渐进 stresses systematic, orderly, gradual progress — the opposite of 一蹴而就 (achieving everything at once).</span></p>
+          <div class="grammar-pattern">循序渐进地 + V &nbsp;|&nbsp; 要循序渐进，不能急于求成</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">他将每一天的勤奋都视为通向卓越的阶梯，循序渐进，坚持不懈。</div><div class="en">He treated each day's effort as a step toward excellence, progressing steadily and persevering without cease.</div></div>
+            <div class="grammar-ex"><div class="zh">学任何技能都要循序渐进，不能急于求成。</div><div class="en">Learning any skill requires a step-by-step approach — you cannot rush it.</div></div>
+            <div class="grammar-ex"><div class="zh">改革不是一朝一夕的事，需要循序渐进地推进。</div><div class="en">Reform is not an overnight affair; it needs to be advanced step by step.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">5</span>所谓……不过是…… · So-called… is nothing but…</div>
+          <p class="grammar-desc">"所谓"是形容词，意思是"人们通常称作……的"，带有评价或质疑的语气。"不过是"意思是"只不过是"，起到揭示事物本质的作用。两者合用，常用来重新定义一个被误解或美化的概念。<br><span style="color:#888;font-size:0.85em;">所谓 (so-called) questions or redefines a concept; 不过是 (nothing but) introduces the true nature. Together they reframe widely held assumptions.</span></p>
+          <div class="grammar-pattern">所谓 + N + 不过是 + [true nature]</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">所谓天才，不过是持之以恒的人对外呈现出的模样。</div><div class="en">What we call "genius" is nothing but the face of someone who perseveres consistently.</div></div>
+            <div class="grammar-ex"><div class="zh">所谓勇气，不过是在害怕的时候依然选择前进。</div><div class="en">What we call courage is nothing but choosing to move forward even when you are afraid.</div></div>
+            <div class="grammar-ex"><div class="zh">所谓的成功，不过是比别人多坚持了一步。</div><div class="en">So-called success is nothing but holding on one step longer than others.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- 练习 -->
+    <div data-tab="exercise" class="tab-panel">
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 年轻画家的导师每次听到"天才"的赞誉，是什么反应？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>骄傲地微笑，大力赞同</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>沉默不语，若有所思地摇摇头</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>愤怒地反驳众人</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>将赞美全部转告给年轻画家</div>
+        </div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 参观画室后，最令学生震惊的是什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>画室非常整洁，作品全部展示在墙上</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>画室里堆满了几千张废弃的习作</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>年轻画家就住在画室里</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>画室里没有任何成品</div>
+        </div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. 老画家认为"天才"究竟是什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>天生的能力，无法后天习得</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>持之以恒的人对外呈现出的模样，是磨砺出来的</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>一种罕见的遗传特征</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>只有少数幸运儿才拥有的特权</div>
+        </div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">4. 用"微乎其微"完成句子：我努力了很多年，_______。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l1-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l1-fill1','微乎其微','l1-reveal1')">检查</button>
+        </div>
+        <div id="l1-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：我努力了很多年，进步却<strong>微乎其微</strong>（答案不唯一）。</div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"所谓……不过是……"造句（任意主题）。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l1-fill2" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l1-fill2','所谓','l1-reveal2')">检查</button>
+        </div>
+        <div id="l1-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>所谓</strong>成功，<strong>不过是</strong>比别人更努力、更坚持的人（答案不唯一）。</div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"持之以恒"完成句子：要想学好中文，_______。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l1-fill3" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l1-fill3','持之以恒','l1-reveal3')">检查</button>
+        </div>
+        <div id="l1-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：要想学好中文，就要<strong>持之以恒</strong>地坚持练习（答案不唯一）。</div>
+      </div>
+    </div><!-- end exercise tab -->
+
+    <!-- 更多 -->
+    <div data-tab="culture" class="tab-panel">
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 天才与努力</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">中国传统文化中的勤奋观<span class="pinyin">The Chinese view of diligence</span></div>
+        <div class="culture-zh">中国传统文化历来重视勤奋的价值。古语"勤能补拙"意思是"勤奋可以弥补天赋的不足"，而"笨鸟先飞"则告诉我们，缺乏天赋的人只要更加努力，同样可以取得成功。王羲之练字"洗墨成池"，苏秦头悬梁锥刺股，这些经典故事都在强调一个道理：真正决定人生高度的，不是天赋，而是持之以恒的努力。现代研究同样证明，一万小时的刻意练习是成为专家的关键。</div>
+        <div class="culture-en">Traditional Chinese culture has always valued diligence above all. The saying 勤能补拙 means "diligence can compensate for a lack of talent," while 笨鸟先飞 tells us that those without natural gifts can still succeed by working harder. Classic stories — Wang Xizhi washing his inkstone into a pond from years of practice, Su Qin suspending his hair from the ceiling to stay awake — all emphasize the same truth: what truly determines one's height in life is not talent but persistent effort. Modern research confirms this too: 10,000 hours of deliberate practice is the key to mastery.</div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 天赋 · 才能 · 本领</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">三个词的用法区别<span class="pinyin">Key Differences</span></div>
+        <div class="culture-zh">
+          <strong>天赋</strong>：指与生俱来的自然能力，侧重先天，如"音乐天赋""语言天赋"。<br>
+          <strong>才能</strong>：既可指先天，也可指后天习得的能力，范围更广，如"才能出众"。<br>
+          <strong>本领</strong>：强调实际运用的能力，带有"真才实学"的含义，通常通过实践获得，如"有本领的人"。<br><br>
+          口诀：天赋偏先天，才能偏中性，本领偏实用。
+        </div>
+        <div class="culture-en">
+          <strong>天赋 (tiānfù)</strong>: Innate, natural ability — leans toward the inborn side (e.g., "musical gift," "language talent").<br>
+          <strong>才能 (cáinéng)</strong>: Broader term covering both innate and acquired ability (e.g., "outstanding ability").<br>
+          <strong>本领 (běnlǐng)</strong>: Emphasizes practical, applied skill — typically earned through experience, implies real-world competence (e.g., "a capable person").<br><br>
+          Quick rule: 天赋 = innate · 才能 = neutral · 本领 = practical.
+        </div>
+      </div>
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L1 -->
+  </div><!-- end lesson-content data-lesson="1" -->
 
   <!-- ═══════════════ LESSON 2 ═══════════════ -->
 
