@@ -1205,9 +1205,407 @@
   <!-- ═══════════════ LESSON 2 ═══════════════ -->
 
   <div class="lesson-header" id="lesson-header-2" data-lesson="2" data-watermark="二" style="display:none">
+    <div class="lesson-meta">
+      <button class="lesson-tag" onclick="showIndex()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        HSK 6
+      </button>
+      <span class="lesson-tag-num">第二课 · Lesson 02</span>
+    </div>
+    <h1>空杯与满杯</h1>
+    <p style="font-size:0.9rem;color:var(--gold);margin-bottom:0.3rem;letter-spacing:0.02em;">Kōng bēi yǔ mǎn bēi</p>
+    <p class="lesson-subtitle">The Empty Cup and the Full Cup</p>
   </div>
+
   <div class="lesson-content" data-lesson="2" style="display:none">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('text', this)">📖 课文</button>
+    <button class="tab-btn" onclick="switchTab('vocab', this)">📝 生词表</button>
+    <button class="tab-btn" onclick="switchTab('worddetail', this)">🔍 词汇详解</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">🔤 语法</button>
+    <button class="tab-btn" onclick="switchTab('exercise', this)">✏️ 练习</button>
+    <button class="tab-btn" onclick="switchTab('culture', this)">🏮 更多</button>
   </div>
+  <div class="content-area">
+
+    <!-- 课文 -->
+    <div data-tab="text" class="tab-panel active">
+      <div class="dialogue-block" id="l2-block1">
+        <div class="dialogue-header">
+          <div class="dialogue-title-wrap">
+            <div class="dialogue-title-row">
+              <span class="dialogue-title">课文 · 空杯与满杯（730字）</span>
+              <button class="dh-play-btn" id="l2-dhBtn1" onclick="dhPlay('l2-audioEl1','l2-dhBtn1')">
+                <svg id="l2-dhIcon1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <span style="flex:1;"></span>
+              <div class="toggle-btns">
+                <button class="toggle-btn" onclick="toggleBlock(this,'pinyin','l2-block1')"><span class="dot"></span>拼音</button>
+                <button class="toggle-btn" onclick="toggleBlock(this,'en','l2-block1')"><span class="dot"></span>En</button>
+              </div>
+            </div>
+            <span class="dialogue-title-en">The Empty Cup and the Full Cup</span>
+          </div>
+          <audio id="l2-audioEl1" src="audio/02-1.mp3" onended="dhEnded('l2-audioEl1','l2-dhBtn1','l2-dhIcon1')" ontimeupdate="dhUpdate('l2-audioEl1')"></audio>
+        </div>
+        <div class="dialogue-line" style="display:block;">
+          <div class="line-content" style="font-size:0.88em;">
+            <div class="line-zh" style="line-height:1.9;">
+              <p style="margin:0 0 0.15em 0;">从前，有一位满腹经纶的大学者，他遍览群书，博学多才，声名显赫，远近皆知。然而，随着名声日盛，他渐渐变得自以为是，不再虚心求教，以为天下之事，再无什么能令他感到困惑的了。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Cóngqián, yǒu yī wèi mǎnfù jīnglún de dà xuézhě, tā biàn lǎn qún shū, bóxué duōcái, shēngmíng xiǎnhè, yuǎnjìn jiē zhī. Rán'ér, suí zhe míngshēng rì shèng, tā jiànjiàn biàn dé zì yǐ wéi shì, bù zài xūxīn qiú jiào, yǐwéi tiānxià zhī shì, zài wú shénme néng lìng tā gǎndào kùnhuò de le.</p>
+              <p style="margin:0 0 0.15em 0;">一日，他听闻深山之中住着一位德高望重的老禅师，据说凡是登门求教者，无不满载而归。学者心中颇为不屑，却出于好奇，命仆人备轿，亲赴拜访。见到禅师后，他神情倨傲，不失炫耀之意，喋喋不休地讲述着自己的种种见解与成就，言辞间满溢着自满与骄矜。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Yī rì, tā tīng wén shēnshān zhī zhōng zhùzhe yī wèi dé gāo wàng zhòng de lǎo chánshī, jùshuō fánshì dēngmén qiú jiào zhě, wú bù mǎn zài ér guī. Xuézhě xīnzhōng pō wéi bùxiè, què chūyú hàoqí, mìng púrén bèi jiào, qīn fù bàifǎng. Jiàndào chánshī hòu, tā shénqíng jù'ào, bù shī xuànyào zhī yì, diédié bùxiū de jiǎngshù zhe zìjǐ de zhǒngzhǒng jiànjiě yǔ chéngjiù, yáncí jiān mǎn yì zhe zìmǎn yǔ jiāojīn.</p>
+              <p style="margin:0 0 0.15em 0;">禅师静静地听着，不置可否。少顷，起身为学者沏茶。他将茶壶高举，徐徐将热茶注入茶盏，任凭茶水溢出，漫过茶托，滴落在桌上，却始终不住手。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Chánshī jìngjìng de tīng zhe, bù zhì kě fǒu. Shǎo qǐng, qǐ shēn wèi xuézhě qī chá. Tā jiāng cháhú gāo jǔ, xúxú jiāng rè chá zhù rù chá zhǎn, rènpíng cháshuǐ yì chū, màn guò chá tuō, dī luò zài zhuō shàng, què shǐzhōng bù zhù shǒu.</p>
+              <p style="margin:0 0 0.15em 0;">学者见状，心中大惊，连忙说道："禅师！茶盏已经满了，再倒就要溢出来了！""我知道，"禅师泰然自若，缓缓放下茶壶，"这就好比你的心——已经装满了成见与执念，我纵有再多的智慧，又如何才能放进去呢？"</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Xuézhě jiàn zhuàng, xīnzhōng dà jīng, liánmáng shuō dào: "Chánshī! Chá zhǎn yǐjīng mǎn le, zài dào jiù yào yì chūlái le!" "Wǒ zhīdào," chánshī tàirán zìruò, huǎnhuǎn fàng xià cháhú, "zhè jiù hǎobǐ nǐ de xīn——yǐjīng zhuāng mǎn le chéngjiàn yǔ zhíniàn, wǒ zòng yǒu zài duō de zhìhuì, yòu rúhé cái néng fàng jìnqù ne?"</p>
+              <p style="margin:0 0 0.15em 0;">学者愣了许久，方才如梦初醒，满面羞惭。他低下头，沉默良久，终于开口道："请问……我该如何才能清空这只茶盏？"禅师不答，只是微微一笑，目光中满含慈悲。学者恍然顿悟：想要汲取智慧，首先要懂得放下。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Xuézhě lèng le xǔjiǔ, fāngcái rú mèng chū xǐng, mǎnmiàn xiūcán. Tā dī xià tóu, chénmò liáng jiǔ, zhōngyú kāikǒu dào: "Qǐngwèn…… wǒ gāi rúhé cái néng qīngkōng zhè zhī chá zhǎn?" Chánshī bù dá, zhǐshì wēiwēi yī xiào, mùguāng zhōng mǎn hán cíbēi. Xuézhě huǎngrán dùn wù: xiǎng yào jíqǔ zhìhuì, shǒuxiān yào dǒngdé fàng xià.</p>
+              <p style="margin:0 0 0.15em 0;">此后，学者卸下了昔日的傲慢与自满，以谦逊虚怀的态度重新审视一切。人们说，他后来的学识比从前更加精深，却从不再自以为是，因为他终于明白：真正的智慧，始于知晓自己有所不知。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Cǐ hòu, xuézhě xiè xià le xīrì de àomàn yǔ zìmǎn, yǐ qiānxùn xū huái de tàidù chóngxīn shěnshì yīqiè. Rénmen shuō, tā hòulái de xuéshí bǐ cóngqián gèngjiā jīngshēn, què cóng bù zài zì yǐ wéi shì, yīnwèi tā zhōngyú míngbái: zhēnzhèng de zhìhuì, shǐ yú zhīxiǎo zìjǐ yǒu suǒ bù zhī.</p>
+              <p style="margin:0 0 0.15em 0;">这就是所谓的"空杯心态"：以空杯接纳世界，才能持续盛满；而一旦自以为已经满盈，便已失去了成长的空间。</p>
+              <p class="line-pinyin" style="margin:0 0 1.1em 0;display:none;">Zhè jiùshì suǒwèi de "kōng bēi xīntài": yǐ kōng bēi jiēnà shìjiè, cái néng chíxù shèng mǎn; ér yīdàn zì yǐwéi yǐjīng mǎnyíng, biàn yǐ shīqù le chéngzhǎng de kōngjiān.</p>
+            </div>
+            <div class="line-en" style="margin-top:1.5em;padding-top:1em;border-top:1px solid var(--mist);display:none;">Once, there was a great scholar of immense erudition. He had read widely, was learned and talented, renowned far and wide. Yet as his fame grew, he gradually became self-righteous, no longer willing to seek knowledge humbly, believing there was nothing left in the world that could perplex him.<br><br>One day, he heard of a venerable Zen master living deep in the mountains, of whom it was said that all who came to seek his guidance returned with great gain. The scholar felt somewhat disdainful, yet out of curiosity, had his servants prepare a palanquin and went to call on the master in person. Upon meeting the Zen master, the scholar carried himself with haughty arrogance, speaking endlessly with a conspicuous air of showing off about his many insights and achievements, his every word overflowing with complacency and self-importance.<br><br>The Zen master listened quietly, neither agreeing nor disagreeing. After a short while, he rose and prepared tea for the scholar. He lifted the teapot high, slowly pouring hot tea into the teacup, letting the tea overflow, spread over the saucer, and drip onto the table — all without stopping.<br><br>The scholar was alarmed and cried out: "Master! The cup is already full — any more and it will overflow!" "I know," the Zen master replied, perfectly calm and composed, setting down the teapot slowly. "This is just like your mind — already filled to the brim with preconceptions and attachments. Even if I had all the wisdom in the world, how could I possibly put it in?"<br><br>The scholar was stunned for some time, then came to his senses as if waking from a dream, his face filled with shame. He lowered his head and was silent for a long while before finally asking: "Master… how can I empty this cup?" The Zen master gave no answer — only a gentle smile, his gaze full of compassion. The scholar suddenly realized: to draw wisdom, one must first know how to let go.<br><br>From that day on, the scholar shed his former arrogance and complacency, and began to examine everything anew with a humble and open mind. People said that his learning became more profound than ever, yet he never again thought himself always right — for he finally understood: true wisdom begins with knowing that one does not know.<br><br>This is what is called the "empty cup mindset": only by approaching the world with an empty cup can one be continuously filled; the moment one believes oneself already full, one has already lost the space to grow.</div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end 课文 tab -->
+
+    <!-- 生词表 -->
+    <div data-tab="vocab" class="tab-panel">
+      <div class="fc-slider-wrap">
+        <div class="fc-row">
+          <div class="fc-slider" id="l2-fcSlider">
+            <div class="fc-card active" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">满腹经纶</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mǎnfù jīnglún</div><div class="fcs-en">full of erudition and wisdom</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">博学多才</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bóxué duōcái</div><div class="fcs-en">erudite and multitalented</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">声名显赫</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shēngmíng xiǎnhè</div><div class="fcs-en">of great fame and renown</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">自以为是</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zì yǐ wéi shì</div><div class="fcs-en">self-righteous; thinking oneself always right</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">虚心</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xūxīn</div><div class="fcs-en">humble; open-minded; receptive</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">不屑</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bùxiè</div><div class="fcs-en">to disdain; to think beneath oneself</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">倨傲</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jù'ào</div><div class="fcs-en">haughty; arrogant</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">炫耀</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xuànyào</div><div class="fcs-en">to show off; to flaunt</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">喋喋不休</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">diédié bùxiū</div><div class="fcs-en">to talk endlessly; to jabber on</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">骄矜</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jiāojīn</div><div class="fcs-en">arrogant; self-important</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">登门</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dēngmén</div><div class="fcs-en">to pay a visit; to call on sb at home</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">满载而归</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mǎn zài ér guī</div><div class="fcs-en">to return with great gain</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">不置可否</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">bù zhì kě fǒu</div><div class="fcs-en">noncommittal; neither agreeing nor disagreeing</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">少顷</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shǎoqǐng</div><div class="fcs-en">after a short while; shortly</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">茶盏</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chá zhǎn</div><div class="fcs-en">teacup; tea bowl</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">徐徐</div><div class="fcs-pos">adv.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xúxú</div><div class="fcs-en">slowly; gently; gradually</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">漫过</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">màn guò</div><div class="fcs-en">to overflow; to flood over</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">泰然自若</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">tàirán zìruò</div><div class="fcs-en">calm and composed; unruffled</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">成见</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">chéngjiàn</div><div class="fcs-en">preconception; prejudice; bias</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">执念</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhíniàn</div><div class="fcs-en">obsession; stubborn attachment</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">纵有</div><div class="fcs-pos">conj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zòng yǒu</div><div class="fcs-en">even if one has; even having</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">如梦初醒</div><div class="fcs-pos">idiom</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">rú mèng chū xǐng</div><div class="fcs-en">as if waking from a dream; to suddenly come to one's senses</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">羞惭</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiūcán</div><div class="fcs-en">ashamed; embarrassed</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">慈悲</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">cíbēi</div><div class="fcs-en">compassion; mercy; benevolence</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">顿悟</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">dùn wù</div><div class="fcs-en">to suddenly realize; sudden enlightenment</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">汲取</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jíqǔ</div><div class="fcs-en">to draw from; to absorb; to derive</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">卸下</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">xiè xià</div><div class="fcs-en">to shed; to put down; to remove (a burden)</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">谦逊</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qiānxùn</div><div class="fcs-en">humble; modest; unassuming</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">精深</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">jīngshēn</div><div class="fcs-en">profound; thorough; deep</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">傲慢</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">àomàn</div><div class="fcs-en">arrogant; haughty; supercilious</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">自满</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zìmǎn</div><div class="fcs-en">complacent; self-satisfied</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">固执</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">gùzhí</div><div class="fcs-en">stubborn; obstinate; pig-headed</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">遍览</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">biàn lǎn</div><div class="fcs-en">to read extensively; to peruse widely</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">求教</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">qiú jiào</div><div class="fcs-en">to seek advice; to ask for guidance</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">知晓</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhīxiǎo</div><div class="fcs-en">to know; to be aware of</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">盛满</div><div class="fcs-pos">v.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">shèng mǎn</div><div class="fcs-en">to fill to the brim; to be full</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">满盈</div><div class="fcs-pos">adj.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">mǎnyíng</div><div class="fcs-en">brimming full; overflowing</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">空杯心态</div><div class="fcs-pos">phrase</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">kōng bēi xīntài</div><div class="fcs-en">empty cup mindset; being open to new learning</div></div></div></div>
+            <div class="fc-card" onclick="flipCard(this)"><div class="fc-card-inner"><div class="fc-front"><div class="fcs-zh">智慧</div><div class="fcs-pos">n.</div><div class="fcs-hint">tap to flip</div></div><div class="fc-back"><div class="fcs-pinyin">zhìhuì</div><div class="fcs-en">wisdom; sagacity</div></div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="fc-arrow" onclick="fcNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span class="fc-counter" id="l2-fcCounter" style="min-width:36px;text-align:center;line-height:1;">1 / 40</span>
+          <button class="fc-arrow" onclick="fcNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+      <a href="https://quizlet.com" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:1.4rem;padding:7px 14px;border:1.5px solid #e0e0ff;border-radius:8px;background:#f5f5ff;"
+         onmouseover="this.style.background='#eaecff';this.style.borderColor='#4255FF'"
+         onmouseout="this.style.background='#f5f5ff';this.style.borderColor='#e0e0ff'">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#4255FF"/><text x="18" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Q</text></svg>
+        <span style="font-size:0.78rem;font-weight:600;color:#4255FF;font-family:'Outfit',sans-serif;">More HSK Vocabulary on Quizlet</span>
+      </a>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-zh">满腹经纶</div><div class="vocab-pinyin">mǎnfù jīnglún</div><div class="vocab-pos">idiom</div><div class="vocab-en">full of erudition and wisdom</div><div class="vocab-example">他是一位<em>满腹经纶</em>的大学者。<br><span style="color:#bbb">He was a great scholar of immense erudition.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">博学多才</div><div class="vocab-pinyin">bóxué duōcái</div><div class="vocab-pos">idiom</div><div class="vocab-en">erudite and multitalented</div><div class="vocab-example">他<em>博学多才</em>，远近皆知。<br><span style="color:#bbb">He was erudite and multitalented, known far and wide.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">声名显赫</div><div class="vocab-pinyin">shēngmíng xiǎnhè</div><div class="vocab-pos">idiom</div><div class="vocab-en">of great fame and renown</div><div class="vocab-example"><em>声名显赫</em>的老禅师。<br><span style="color:#bbb">A Zen master of great fame and renown.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">自以为是</div><div class="vocab-pinyin">zì yǐ wéi shì</div><div class="vocab-pos">idiom</div><div class="vocab-en">self-righteous; thinking oneself always right</div><div class="vocab-example">他渐渐变得<em>自以为是</em>，不再虚心求教。<br><span style="color:#bbb">He gradually became self-righteous, no longer seeking guidance humbly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">虚心</div><div class="vocab-pinyin">xūxīn</div><div class="vocab-pos">adj.</div><div class="vocab-en">humble; open-minded; receptive</div><div class="vocab-example">不再<em>虚心</em>求教。<br><span style="color:#bbb">No longer willing to seek knowledge humbly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">不屑</div><div class="vocab-pinyin">bùxiè</div><div class="vocab-pos">v.</div><div class="vocab-en">to disdain; to think beneath oneself</div><div class="vocab-example">学者心中颇为<em>不屑</em>。<br><span style="color:#bbb">The scholar felt quite disdainful in his heart.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">倨傲</div><div class="vocab-pinyin">jù'ào</div><div class="vocab-pos">adj.</div><div class="vocab-en">haughty; arrogant</div><div class="vocab-example">他神情<em>倨傲</em>，不失炫耀之意。<br><span style="color:#bbb">He carried himself with haughty arrogance, not missing a chance to show off.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">炫耀</div><div class="vocab-pinyin">xuànyào</div><div class="vocab-pos">v.</div><div class="vocab-en">to show off; to flaunt</div><div class="vocab-example">不失<em>炫耀</em>之意地讲述成就。<br><span style="color:#bbb">Recounting his achievements with a conspicuous air of showing off.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">喋喋不休</div><div class="vocab-pinyin">diédié bùxiū</div><div class="vocab-pos">idiom</div><div class="vocab-en">to talk endlessly; to jabber on</div><div class="vocab-example"><em>喋喋不休</em>地讲述自己的见解。<br><span style="color:#bbb">Talking endlessly about his own insights.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">骄矜</div><div class="vocab-pinyin">jiāojīn</div><div class="vocab-pos">adj.</div><div class="vocab-en">arrogant; self-important</div><div class="vocab-example">言辞间满溢着自满与<em>骄矜</em>。<br><span style="color:#bbb">His words overflowing with complacency and self-importance.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">登门</div><div class="vocab-pinyin">dēngmén</div><div class="vocab-pos">v.</div><div class="vocab-en">to pay a visit; to call on sb at home</div><div class="vocab-example">凡是<em>登门</em>求教者，无不满载而归。<br><span style="color:#bbb">All who came to seek his guidance returned with great gain.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">满载而归</div><div class="vocab-pinyin">mǎn zài ér guī</div><div class="vocab-pos">idiom</div><div class="vocab-en">to return with great gain</div><div class="vocab-example">无不<em>满载而归</em>。<br><span style="color:#bbb">All returned with great gain.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">不置可否</div><div class="vocab-pinyin">bù zhì kě fǒu</div><div class="vocab-pos">idiom</div><div class="vocab-en">noncommittal; neither agreeing nor disagreeing</div><div class="vocab-example">禅师静静地听着，<em>不置可否</em>。<br><span style="color:#bbb">The Zen master listened quietly, neither agreeing nor disagreeing.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">少顷</div><div class="vocab-pinyin">shǎoqǐng</div><div class="vocab-pos">adv.</div><div class="vocab-en">after a short while; shortly</div><div class="vocab-example"><em>少顷</em>，起身为学者沏茶。<br><span style="color:#bbb">After a short while, he rose and prepared tea.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">茶盏</div><div class="vocab-pinyin">chá zhǎn</div><div class="vocab-pos">n.</div><div class="vocab-en">teacup; tea bowl</div><div class="vocab-example">将热茶注入<em>茶盏</em>。<br><span style="color:#bbb">Pouring hot tea into the teacup.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">徐徐</div><div class="vocab-pinyin">xúxú</div><div class="vocab-pos">adv.</div><div class="vocab-en">slowly; gently; gradually</div><div class="vocab-example"><em>徐徐</em>将热茶注入茶盏。<br><span style="color:#bbb">Slowly pouring hot tea into the teacup.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">漫过</div><div class="vocab-pinyin">màn guò</div><div class="vocab-pos">v.</div><div class="vocab-en">to overflow; to flood over</div><div class="vocab-example">茶水溢出，<em>漫过</em>茶托。<br><span style="color:#bbb">The tea overflowed, flooding over the saucer.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">泰然自若</div><div class="vocab-pinyin">tàirán zìruò</div><div class="vocab-pos">idiom</div><div class="vocab-en">calm and composed; unruffled</div><div class="vocab-example">禅师<em>泰然自若</em>，缓缓放下茶壶。<br><span style="color:#bbb">The Zen master, perfectly calm and composed, slowly set down the teapot.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">成见</div><div class="vocab-pinyin">chéngjiàn</div><div class="vocab-pos">n.</div><div class="vocab-en">preconception; prejudice; bias</div><div class="vocab-example">装满了<em>成见</em>与执念。<br><span style="color:#bbb">Filled with preconceptions and attachments.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">执念</div><div class="vocab-pinyin">zhíniàn</div><div class="vocab-pos">n.</div><div class="vocab-en">obsession; stubborn attachment</div><div class="vocab-example">成见与<em>执念</em>装满了心。<br><span style="color:#bbb">The heart filled with preconceptions and attachments.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">纵有</div><div class="vocab-pinyin">zòng yǒu</div><div class="vocab-pos">conj.</div><div class="vocab-en">even if one has; even having</div><div class="vocab-example"><em>纵有</em>再多的智慧，又如何才能放进去呢？<br><span style="color:#bbb">Even if one had all the wisdom in the world, how could it be put in?</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">如梦初醒</div><div class="vocab-pinyin">rú mèng chū xǐng</div><div class="vocab-pos">idiom</div><div class="vocab-en">as if waking from a dream; suddenly coming to one's senses</div><div class="vocab-example">方才<em>如梦初醒</em>，满面羞惭。<br><span style="color:#bbb">He finally came to his senses as if waking from a dream, his face filled with shame.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">羞惭</div><div class="vocab-pinyin">xiūcán</div><div class="vocab-pos">adj.</div><div class="vocab-en">ashamed; embarrassed</div><div class="vocab-example">满面<em>羞惭</em>。<br><span style="color:#bbb">His face filled with shame.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">慈悲</div><div class="vocab-pinyin">cíbēi</div><div class="vocab-pos">n.</div><div class="vocab-en">compassion; mercy; benevolence</div><div class="vocab-example">目光中满含<em>慈悲</em>。<br><span style="color:#bbb">His gaze full of compassion.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">顿悟</div><div class="vocab-pinyin">dùn wù</div><div class="vocab-pos">v.</div><div class="vocab-en">to suddenly realize; sudden enlightenment</div><div class="vocab-example">学者恍然<em>顿悟</em>。<br><span style="color:#bbb">The scholar suddenly realized.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">汲取</div><div class="vocab-pinyin">jíqǔ</div><div class="vocab-pos">v.</div><div class="vocab-en">to draw from; to absorb; to derive</div><div class="vocab-example">想要<em>汲取</em>智慧，首先要懂得放下。<br><span style="color:#bbb">To draw wisdom, one must first know how to let go.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">卸下</div><div class="vocab-pinyin">xiè xià</div><div class="vocab-pos">v.</div><div class="vocab-en">to shed; to put down; to remove (a burden)</div><div class="vocab-example"><em>卸下</em>了昔日的傲慢与自满。<br><span style="color:#bbb">Shed his former arrogance and complacency.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">谦逊</div><div class="vocab-pinyin">qiānxùn</div><div class="vocab-pos">adj.</div><div class="vocab-en">humble; modest; unassuming</div><div class="vocab-example">以<em>谦逊</em>虚怀的态度重新审视一切。<br><span style="color:#bbb">With a humble and open mind, re-examining everything.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">精深</div><div class="vocab-pinyin">jīngshēn</div><div class="vocab-pos">adj.</div><div class="vocab-en">profound; thorough; deep</div><div class="vocab-example">学识比从前更加<em>精深</em>。<br><span style="color:#bbb">His learning became more profound than before.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">傲慢</div><div class="vocab-pinyin">àomàn</div><div class="vocab-pos">adj.</div><div class="vocab-en">arrogant; haughty; supercilious</div><div class="vocab-example">卸下了昔日的<em>傲慢</em>与自满。<br><span style="color:#bbb">Shed his former arrogance and complacency.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">自满</div><div class="vocab-pinyin">zìmǎn</div><div class="vocab-pos">adj.</div><div class="vocab-en">complacent; self-satisfied</div><div class="vocab-example">傲慢与<em>自满</em>是成长的大敌。<br><span style="color:#bbb">Arrogance and complacency are the great enemies of growth.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">固执</div><div class="vocab-pinyin">gùzhí</div><div class="vocab-pos">adj.</div><div class="vocab-en">stubborn; obstinate</div><div class="vocab-example">他太<em>固执</em>，听不进任何意见。<br><span style="color:#bbb">He is too stubborn to listen to any opinions.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">遍览</div><div class="vocab-pinyin">biàn lǎn</div><div class="vocab-pos">v.</div><div class="vocab-en">to read extensively; to peruse widely</div><div class="vocab-example"><em>遍览</em>群书，博学多才。<br><span style="color:#bbb">Having read widely, he was erudite and multitalented.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">求教</div><div class="vocab-pinyin">qiú jiào</div><div class="vocab-pos">v.</div><div class="vocab-en">to seek advice; to ask for guidance</div><div class="vocab-example">不再虚心<em>求教</em>。<br><span style="color:#bbb">No longer willing to seek guidance humbly.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">知晓</div><div class="vocab-pinyin">zhīxiǎo</div><div class="vocab-pos">v.</div><div class="vocab-en">to know; to be aware of</div><div class="vocab-example">始于<em>知晓</em>自己有所不知。<br><span style="color:#bbb">Begins with knowing that one does not know.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">盛满</div><div class="vocab-pinyin">shèng mǎn</div><div class="vocab-pos">v.</div><div class="vocab-en">to fill to the brim; to be full</div><div class="vocab-example">以空杯接纳世界，才能持续<em>盛满</em>。<br><span style="color:#bbb">Only with an empty cup can one be continuously filled.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">满盈</div><div class="vocab-pinyin">mǎnyíng</div><div class="vocab-pos">adj.</div><div class="vocab-en">brimming full; overflowing</div><div class="vocab-example">一旦自以为已经<em>满盈</em>，便失去了成长的空间。<br><span style="color:#bbb">The moment one believes oneself already full, one loses the space to grow.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">空杯心态</div><div class="vocab-pinyin">kōng bēi xīntài</div><div class="vocab-pos">phrase</div><div class="vocab-en">empty cup mindset; openness to new learning</div><div class="vocab-example">保持<em>空杯心态</em>，方能不断进步。<br><span style="color:#bbb">Maintaining an empty cup mindset, one can continually improve.</span></div></div>
+        <div class="vocab-card"><div class="vocab-zh">智慧</div><div class="vocab-pinyin">zhìhuì</div><div class="vocab-pos">n.</div><div class="vocab-en">wisdom; sagacity</div><div class="vocab-example">真正的<em>智慧</em>，始于知晓自己有所不知。<br><span style="color:#bbb">True wisdom begins with knowing that one does not know.</span></div></div>
+      </div>
+    </div><!-- end vocab tab -->
+
+    <!-- 词汇详解 -->
+    <div data-tab="worddetail" class="tab-panel">
+      <div class="vocab-card">
+        <div class="vocab-zh">自以为是</div><div class="vocab-pinyin">zì yǐ wéi shì</div><div class="vocab-pos">idiom</div>
+        <div class="vocab-en">self-righteous; thinking oneself always right — literally "to think oneself correct." Carries a negative connotation of refusing to listen to others or consider alternative views. Often contrasted with 谦虚 (humble) or 虚心 (receptive).</div>
+        <div class="vocab-example">
+          他渐渐变得<em>自以为是</em>，不再虚心求教。<br>
+          <span style="color:#bbb">He gradually became self-righteous, no longer willing to seek guidance humbly.</span><br>
+          不要<em>自以为是</em>，多听听别人的意见。<br>
+          <span style="color:#bbb">Don't be self-righteous — listen more to what others have to say.</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">不置可否</div><div class="vocab-pinyin">bù zhì kě fǒu</div><div class="vocab-pos">idiom</div>
+        <div class="vocab-en">noncommittal; neither agreeing nor disagreeing — literally "not stating whether something is acceptable or not." Used when someone deliberately withholds their opinion. Similar: 模棱两可 (ambiguous), but 不置可否 implies a deliberate choice not to respond.</div>
+        <div class="vocab-example">
+          禅师静静地听着，<em>不置可否</em>。<br>
+          <span style="color:#bbb">The Zen master listened quietly, neither agreeing nor disagreeing.</span><br>
+          对于这个计划，领导只是<em>不置可否</em>地点了点头。<br>
+          <span style="color:#bbb">Regarding this plan, the leader only gave a noncommittal nod.</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">成见 vs 偏见</div><div class="vocab-pinyin">chéngjiàn vs piānjiàn</div><div class="vocab-pos">n.</div>
+        <div class="vocab-en">Both refer to bias, but: 成见 = a fixed, preformed opinion about sb/sth (often based on past experience or assumptions); 偏见 = unfair bias or prejudice, often against a group. 成见 is about fixed beliefs; 偏见 is about unfairness.</div>
+        <div class="vocab-example">
+          他对新事物有很多<em>成见</em>，不愿意尝试。（固有印象）<br>
+          <span style="color:#bbb">He has many preconceptions about new things and is unwilling to try. (fixed view)</span><br>
+          不要对某类人抱有<em>偏见</em>，要客观看待。（不公正的判断）<br>
+          <span style="color:#bbb">Don't harbor prejudice against any group — be objective. (unfair judgment)</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">执念</div><div class="vocab-pinyin">zhíniàn</div><div class="vocab-pos">n.</div>
+        <div class="vocab-en">obsession; stubborn attachment — rooted in Buddhist thought, refers to an attachment or fixation the mind cannot release. More formal and literary than 执着 (tenacious attachment). Often implies that this attachment is harmful or prevents growth.</div>
+        <div class="vocab-example">
+          你的心装满了成见与<em>执念</em>，如何容纳智慧？<br>
+          <span style="color:#bbb">Your heart is filled with preconceptions and obsessions — how can wisdom enter?</span><br>
+          放下对结果的<em>执念</em>，才能享受过程。<br>
+          <span style="color:#bbb">Only by letting go of your obsession with the outcome can you enjoy the process.</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">谦逊 vs 谦虚 vs 虚心</div><div class="vocab-pinyin">qiānxùn vs qiānxū vs xūxīn</div><div class="vocab-pos">adj.</div>
+        <div class="vocab-en">All express humility, but with nuances: 谦逊 = modest and unassuming in manner (formal, literary); 谦虚 = not boastful, self-effacing (common, everyday); 虚心 = receptive, willing to listen and learn (focuses on openness to input).</div>
+        <div class="vocab-example">
+          他以<em>谦逊</em>虚怀的态度重新审视一切。（正式书面语）<br>
+          <span style="color:#bbb">He re-examined everything with a humble and open-minded attitude. (formal)</span><br>
+          取得好成绩也要保持<em>谦虚</em>。（日常用语）<br>
+          <span style="color:#bbb">Even after achieving great results, stay humble. (everyday)</span><br>
+          <em>虚心</em>听取别人的建议。（侧重接受意见）<br>
+          <span style="color:#bbb">Be receptive to others' suggestions. (focus: open to input)</span>
+        </div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-zh">顿悟 vs 渐悟</div><div class="vocab-pinyin">dùn wù vs jiàn wù</div><div class="vocab-pos">v.</div>
+        <div class="vocab-en">A key distinction in Chan (Zen) Buddhism: 顿悟 = sudden enlightenment, an instant flash of insight; 渐悟 = gradual enlightenment, wisdom built step by step over time. In everyday use, 顿悟 means "to suddenly understand something."</div>
+        <div class="vocab-example">
+          学者恍然<em>顿悟</em>：想要汲取智慧，首先要放下。<br>
+          <span style="color:#bbb">The scholar suddenly realized: to draw wisdom, one must first let go.</span><br>
+          有些道理需要经历才能<em>渐悟</em>，不是一下子就明白的。<br>
+          <span style="color:#bbb">Some truths are understood gradually through experience — you don't grasp them all at once.</span>
+        </div>
+      </div>
+    </div><!-- end worddetail tab -->
+
+    <!-- 语法 -->
+    <div data-tab="grammar" class="tab-panel">
+      <div class="grammar-switcher">
+        <button class="grammar-switch-btn active" onclick="switchGrammar(0, this)">自以为是</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(1, this)">不置可否</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(2, this)">纵有/纵然……也……</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(3, this)">喋喋不休</button>
+        <button class="grammar-switch-btn" onclick="switchGrammar(4, this)">凡是……无不……</button>
+      </div>
+      <div class="grammar-panel active">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">1</span>自以为是 · Self-righteous; always thinking oneself right</div>
+          <p class="grammar-desc">"自以为是"，四字成语，字面意思是"认为只有自己才是正确的"。带有强烈的贬义，形容人固执己见、不听他人意见。常与"不再""却""仍然"等词连用，表示对比。注意与"自信"（self-confident，褒义）的区别。<br><span style="color:#888;font-size:0.85em;">自以为是 has a strongly negative connotation — it means one refuses to consider that others may be right. Contrast with 自信 (self-confident, positive).</span></p>
+          <div class="grammar-pattern">变得 + 自以为是 &nbsp;|&nbsp; 不要 + 自以为是</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">随着名声日盛，他渐渐变得自以为是，不再虚心求教。</div><div class="en">As his fame grew, he gradually became self-righteous, no longer seeking guidance humbly.</div></div>
+            <div class="grammar-ex"><div class="zh">他不但固执，而且自以为是，从来听不进别人的意见。</div><div class="en">He was not only stubborn but self-righteous — he never listened to others' opinions.</div></div>
+            <div class="grammar-ex"><div class="zh">学了一点儿就自以为是，这是学习的大忌。</div><div class="en">To become self-righteous after learning a little is the great taboo of learning.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">2</span>不置可否 · Noncommittal</div>
+          <p class="grammar-desc">"不置可否"，四字成语，意思是不表明是否赞同，态度模糊。常用于描述人故意不发表意见的状态。与"模棱两可"（ambiguous）相似，但"不置可否"侧重沉默不表态；"模棱两可"侧重说话含糊。<br><span style="color:#888;font-size:0.85em;">不置可否 describes deliberately withholding one's opinion; 模棱两可 describes saying something that could mean either thing.</span></p>
+          <div class="grammar-pattern">主语 + 不置可否（地 + V）</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">禅师静静地听着，不置可否。</div><div class="en">The Zen master listened quietly, neither agreeing nor disagreeing.</div></div>
+            <div class="grammar-ex"><div class="zh">对于这个建议，经理只是不置可否地点了点头。</div><div class="en">As for the suggestion, the manager only gave a noncommittal nod.</div></div>
+            <div class="grammar-ex"><div class="zh">她对他的告白不置可否，让他摸不着头脑。</div><div class="en">She was noncommittal about his confession, leaving him completely confused.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">3</span>纵有/纵然……也…… · Even if… still…</div>
+          <p class="grammar-desc">"纵有"和"纵然"都是文言色彩较强的连词，表示让步假设，意思是"即使……也……"。"纵有"后接名词短语；"纵然"后接动词短语或分句。书面语，常出现在文学性文章中。<br><span style="color:#888;font-size:0.85em;">纵有/纵然 are literary concessive conjunctions meaning "even if/even having." 纵有 + noun phrase; 纵然 + clause. Both are formal/written.</span></p>
+          <div class="grammar-pattern">纵有 + NP，也 + VP &nbsp;|&nbsp; 纵然 + clause，也 + VP</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">我纵有再多的智慧，又如何才能放进去呢？</div><div class="en">Even if I had all the wisdom in the world, how could I possibly put it in?</div></div>
+            <div class="grammar-ex"><div class="zh">纵有千言万语，也难以表达我的感激之情。</div><div class="en">Even with a thousand words, it would be hard to express my gratitude.</div></div>
+            <div class="grammar-ex"><div class="zh">纵然前路艰难，我们也要勇敢地走下去。</div><div class="en">Even if the road ahead is difficult, we must keep moving forward bravely.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">4</span>喋喋不休 · To talk endlessly</div>
+          <p class="grammar-desc">"喋喋不休"，四字成语，形容说话啰嗦、说个没完没了，带有贬义。结构：喋喋（象声词，形容不停讲话的声音）+ 不休（不停止）。类似结构：念念不忘（always thinking about）、滔滔不绝（speaking in a torrent）。<br><span style="color:#888;font-size:0.85em;">喋喋不休 (onomatopoeia + 不休) means speaking without stop. Similar: 滔滔不绝 (speaking in an unstoppable torrent, more neutral/positive).</span></p>
+          <div class="grammar-pattern">喋喋不休地 + V &nbsp;|&nbsp; 对某人 + 喋喋不休</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">他喋喋不休地讲述着自己的种种见解与成就。</div><div class="en">He talked endlessly about his many insights and achievements.</div></div>
+            <div class="grammar-ex"><div class="zh">她喋喋不休地抱怨，令人不堪其扰。</div><div class="en">Her endless complaining was unbearable to those around her.</div></div>
+            <div class="grammar-ex"><div class="zh">他对此事喋喋不休，大家早就不想再听了。</div><div class="en">He went on and on about this matter — everyone had long since stopped listening.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grammar-panel">
+        <div class="grammar-block">
+          <div class="grammar-title"><span class="grammar-num">5</span>凡是……无不…… · All who… without exception…</div>
+          <p class="grammar-desc">"凡是"表示"所有的；任何的"，用于泛指范围。"无不"是双重否定，意思是"没有一个不……"，即"全都……"。两者合用，构成强调全称的句型，语气比"都"更正式、更强烈。书面语。<br><span style="color:#888;font-size:0.85em;">凡是 (any; every) + 无不 (double negative = without exception) creates a strong universal affirmative, more formal than 都 (all).</span></p>
+          <div class="grammar-pattern">凡是 + [subject/condition] + 无不 + VP</div>
+          <div class="grammar-examples">
+            <div class="grammar-ex"><div class="zh">凡是登门求教者，无不满载而归。</div><div class="en">All who came to seek his guidance returned with great gain — not a single exception.</div></div>
+            <div class="grammar-ex"><div class="zh">凡是见过她的人，无不对她印象深刻。</div><div class="en">All who have met her have been deeply impressed — without exception.</div></div>
+            <div class="grammar-ex"><div class="zh">凡是读过这本书的人，无不深受感动。</div><div class="en">Everyone who has read this book has been deeply moved — no exception.</div></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end grammar tab -->
+
+    <!-- 练习 -->
+    <div data-tab="exercise" class="tab-panel">
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">1. 学者拜访禅师时，禅师是什么态度？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>热情地与学者分享智慧</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>静静地听着，不置可否</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>当场反驳学者的傲慢</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>拒绝与学者交谈</div>
+        </div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">2. 禅师不断往满杯里倒茶，是为了说明什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>茶艺要求必须把杯子倒满</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">B</span>学者的心已经装满成见，无法接受新的智慧</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">C</span>禅师故意激怒学者</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>禅师想测试学者的耐心</div>
+        </div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">选择题 · Multiple Choice</div>
+        <div class="exercise-q">3. "空杯心态"的核心含义是什么？</div>
+        <div class="exercise-choices">
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">A</span>把所有知识清空，从头开始</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">B</span>不要学太多，保持空白</div>
+          <div class="choice" onclick="selectChoice(this, true)"><span class="choice-label">C</span>以开放、虚怀的心态接纳新知，放下成见与执念</div>
+          <div class="choice" onclick="selectChoice(this, false)"><span class="choice-label">D</span>对所有问题都不表态，保持中立</div>
+        </div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">4. 用"纵有……也……"完成句子：_______，也无法弥补失去的时间。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l2-fill1" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l2-fill1','纵有','l2-reveal1')">检查</button>
+        </div>
+        <div id="l2-reveal1" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：<strong>纵有</strong>再多的金钱，<strong>也</strong>无法弥补失去的时间（答案不唯一）。</div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">5. 用"凡是……无不……"仿写句子：凡是看过这部电影的人，_______。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l2-fill2" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l2-fill2','无不','l2-reveal2')">检查</button>
+        </div>
+        <div id="l2-reveal2" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：凡是看过这部电影的人，<strong>无不</strong>被深深感动（答案不唯一）。</div>
+      </div>
+      <div class="exercise-block">
+        <div class="exercise-type">填空题 · Fill in the Blank</div>
+        <div class="exercise-q">6. 用"不置可否"造句（描述某人对某件事的态度）。</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <input id="l2-fill3" type="text" placeholder="写出答案…" style="padding:8px 12px;border:1.5px solid var(--mist);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.9rem;width:280px;outline:none;">
+          <button class="check-btn" onclick="checkFill('l2-fill3','不置可否','l2-reveal3')">检查</button>
+        </div>
+        <div id="l2-reveal3" style="display:none;margin-top:8px;padding:8px 12px;border-radius:8px;border:1.5px solid #b2dac9;font-size:0.88rem;">参考答案：对于我的提议，他只是<strong>不置可否</strong>地笑了笑，让我感到很困惑（答案不唯一）。</div>
+      </div>
+    </div><!-- end exercise tab -->
+
+    <!-- 更多 -->
+    <div data-tab="culture" class="tab-panel">
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">🏮 Culture · 禅宗与空杯心态</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">禅宗故事的智慧<span class="pinyin">The wisdom of Zen teaching stories</span></div>
+        <div class="culture-zh">这个"空杯"的故事源自禅宗（Chán Buddhism）的教学传统。禅师常用具体的、生活化的场景来传递深刻的道理，这类故事称为"公案"。空杯的寓意是：一个已经装满固有观念的人，就像一只满杯的茶盏，根本无法再接受新的东西。"空杯心态"如今在中国现代管理和教育领域被广泛引用，强调归零的勇气——无论你过去取得了怎样的成就，都要保持对新知识、新观点的开放与谦逊。</div>
+        <div class="culture-en">This "empty cup" story originates from the teaching tradition of Chan (Zen) Buddhism. Zen masters commonly used concrete, everyday scenes to convey profound truths; such stories are called 公案 (kōng'àn, or "koan" in Japanese). The metaphor of the empty cup is clear: a person already filled with fixed ideas is like a full teacup — nothing more can enter. The "empty cup mindset" (空杯心态) is now widely cited in modern Chinese management and education, emphasizing the courage to reset — no matter what achievements you have accumulated, stay open and humble to new knowledge and perspectives.</div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-head">
+          <div class="culture-tag">⚖️ Compare · 傲慢 · 自满 · 固执</div>
+          <button class="en-toggle" onclick="toggleEn(this)">En</button>
+        </div>
+        <div class="culture-title">三个"学习之敌"<span class="pinyin">Three enemies of learning</span></div>
+        <div class="culture-zh">
+          <strong>傲慢</strong>：态度上看不起他人，觉得自己高人一等；侧重对他人的轻视。<br>
+          <strong>自满</strong>：对自己的现状或成就感到满足，不再努力进步；侧重对现状的满足。<br>
+          <strong>固执</strong>：不愿改变自己的想法或行为，听不进他人的意见；侧重不肯变通。<br><br>
+          三者都可能阻碍成长。一个"满杯"的人，往往三者兼而有之。
+        </div>
+        <div class="culture-en">
+          <strong>傲慢 (àomàn)</strong>: Arrogance — looking down on others, feeling superior; emphasizes contempt toward others.<br>
+          <strong>自满 (zìmǎn)</strong>: Complacency — contentment with one's current state or achievements, no longer striving; emphasizes satisfaction with the status quo.<br>
+          <strong>固执 (gùzhí)</strong>: Stubbornness — unwillingness to change one's views or behavior, unable to accept others' input; emphasizes inflexibility.<br><br>
+          All three can hinder growth. A person with a "full cup" mindset often combines all three.
+        </div>
+      </div>
+    </div><!-- end culture tab -->
+
+  </div><!-- end content-area L2 -->
+  </div><!-- end lesson-content data-lesson="2" -->
 
   <!-- ═══════════════ LESSON 3 ═══════════════ -->
   <div class="lesson-header" id="lesson-header-3" data-lesson="3" data-watermark="三" style="display:none">
