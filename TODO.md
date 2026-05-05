@@ -16,7 +16,7 @@ Suivi des tâches en cours et à venir pour le projet IvyChinese.
 | 04 | 完美的胜利 | ✅ Complète | ✅ | ❌ |
 | 05 | 学一门外语需要理由吗 | ✅ Complète | ✅ | ❌ |
 | 06 | 当好职场插班生 | ✅ Complète | ✅ | ❌ |
-| 07 | 第七课 | ❌ Stub vide | ❌ | ❌ |
+| 07 | 我的人生我做主 | ✅ Complète | ✅ | ❌ |
 | 08 | 第八课 | ❌ Stub vide | ❌ | ❌ |
 | 09 | 第九课 | ❌ Stub vide | ❌ | ❌ |
 | 10 | 第十课 | ❌ Stub vide | ❌ | ❌ |
