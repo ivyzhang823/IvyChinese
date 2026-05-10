@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Chinese Year · Slowly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Serif+SC:wght@200;300;400;500;700&family=Caveat:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f4efe6;
+    --paper-warm: #efe8d9;
+    --paper-shadow: #e6dfd0;
+    --paper-deep: #ebe4d6;
+    --ink: #1a1814;
+    --ink-soft: #3a342c;
+    --ink-mute: #6b6258;
+    --ink-faint: #9a8e80;
+    --ink-trace: #c4b8a4;
+    --line: rgba(26,24,20,.1);
+    --line-strong: rgba(26,24,20,.2);
+    --cinnabar: #b73225;
+    --cinnabar-soft: #c94a3a;
+    --jade: #5c7a6a;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Cormorant Garamond','Noto Serif SC',serif;
+    font-weight:300;
+    line-height:1.7;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+
+  /* === 纸张氛围 === */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background:
+      radial-gradient(ellipse at 15% 10%, rgba(183,50,37,.025) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(92,122,106,.03) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(184,170,143,.04) 100%);
+    pointer-events:none;z-index:1;
+  }
+  body::after{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1, 0 0 0 0 0.09, 0 0 0 0 0.07, 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.5;mix-blend-mode:multiply;pointer-events:none;z-index:2;
+  }
+
+  /* === 顶部最简导航 === */
+  nav{
+    position:fixed;top:0;left:0;right:0;
+    padding:24px 40px;
+    z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(244,239,230,0);
+    transition:background .6s ease, backdrop-filter .6s ease, border-color .6s ease;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(244,239,230,.55);
+    backdrop-filter:blur(8px);
+    border-bottom-color:rgba(26,24,20,.05);
+  }
+  .nav-mark{
+    font-family:'Noto Serif SC',serif;
+    font-weight:500;
+    font-size:17px;
+    letter-spacing:.15em;
+    color:var(--ink);
+    text-decoration:none;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .nav-mark .seal{
+    display:inline-block;
+    width:26px;height:26px;
+    background:var(--cinnabar);
+    color:var(--paper);
+    font-family:'Noto Serif SC',serif;
+    font-size:13px;font-weight:400;
+    line-height:26px;text-align:center;
+    transform:rotate(-2deg);
+    box-shadow:0 1px 0 rgba(0,0,0,.1);
+  }
+  .nav-link{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    text-decoration:none;
+    letter-spacing:.08em;
+    transition:color .4s ease;
+  }
+  .nav-link:hover{color:var(--cinnabar)}
+
+  /* ==========================================================
+     页面头部
+     ========================================================== */
+  .calendar-header{
+    max-width:920px;
+    margin:0 auto;
+    padding:140px 40px 40px;
+    position:relative;
+    z-index:5;
+    text-align:center;
+  }
+  /* 巨大水印「年」字 */
+  .calendar-watermark{
+    position:absolute;
+    top:60px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:clamp(280px, 38vw, 460px);
+    line-height:1;
+    color:rgba(26,24,20,.04);
+    pointer-events:none;
+    user-select:none;
+    z-index:1;
+    white-space:nowrap;
+  }
+  .calendar-mark{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+    position:relative;
+    z-index:2;
+    opacity:0;
+    animation:fadeIn 1.4s .3s ease forwards;
+  }
+  .calendar-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(48px, 7vw, 84px);
+    line-height:1.05;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin-bottom:14px;
+    position:relative;
+    z-index:2;
+    opacity:0;
+    animation:fadeUp 1.6s .5s ease forwards;
+  }
+  .calendar-title em{
+    font-style:italic;
+    color:var(--cinnabar);
+  }
+  .calendar-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:18px;
+    color:var(--ink-mute);
+    letter-spacing:.32em;
+    margin-bottom:6px;
+    position:relative;
+    z-index:2;
+    opacity:0;
+    animation:fadeUp 1.4s .8s ease forwards;
+  }
+  .calendar-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    margin-bottom:32px;
+    position:relative;
+    z-index:2;
+    opacity:0;
+    animation:fadeUp 1.4s .95s ease forwards;
+  }
+  .calendar-intro{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:540px;
+    margin:0 auto;
+    letter-spacing:.005em;
+    position:relative;
+    z-index:2;
+    opacity:0;
+    animation:fadeUp 1.4s 1.1s ease forwards;
+  }
+  .calendar-intro em{font-style:italic;color:var(--cinnabar)}
+
+  /* ==========================================================
+     翻页台历主体
+     ========================================================== */
+  .calendar-frame{
+    max-width:1280px;             /* 加宽以容纳右侧节日列表 */
+    margin:60px auto 0;
+    padding:0 40px;
+    position:relative;
+    z-index:5;
+    display:grid;
+    grid-template-columns:1fr 280px;     /* 左日历主区 + 右节日栏 */
+    gap:48px;
+    align-items:start;
+  }
+  .calendar-main{
+    min-width:0;                   /* 防止 grid item 撑破容器 */
+  }
+
+  /* 月份切换条 */
+  .month-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    margin-bottom:32px;
+  }
+  .month-nav-btn{
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:8px 12px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    letter-spacing:.12em;
+    transition:color .4s ease, transform .3s ease;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .month-nav-btn:hover{
+    color:var(--cinnabar);
+  }
+  .month-nav-btn.prev:hover{transform:translateX(-4px)}
+  .month-nav-btn.next:hover{transform:translateX(4px)}
+  .month-nav-btn:disabled{
+    opacity:.25;
+    cursor:not-allowed;
+  }
+  .month-nav-btn:disabled:hover{
+    color:var(--ink-mute);
+    transform:none;
+  }
+
+  /* 月份标题 - 居中 */
+  .month-display{
+    text-align:center;
+    flex:1;
+  }
+  .month-en{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(36px, 5vw, 52px);
+    line-height:1;
+    color:var(--ink);
+    letter-spacing:.02em;
+    margin-bottom:6px;
+    transition:opacity .35s ease;
+  }
+  .month-zh-row{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:12px;
+    transition:opacity .35s ease;
+  }
+  .month-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:14px;
+    color:var(--ink-mute);
+    letter-spacing:.32em;
+  }
+  .month-zh::before,
+  .month-zh::after{
+    content:'·';
+    margin:0 4px;
+    color:var(--ink-faint);
+  }
+  .month-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:lowercase;
+  }
+  .month-year{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+  }
+  /* fade transition wrapper */
+  .month-display.fading .month-en,
+  .month-display.fading .month-zh-row{opacity:0}
+
+  /* 月份的小副标题 - 这个月的氛围 */
+  .month-tagline{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--ink-mute);
+    margin-bottom:36px;
+    letter-spacing:.005em;
+    transition:opacity .35s ease;
+    min-height:24px;   /* 防止高度跳动 */
+  }
+  .month-tagline.fading{opacity:0}
+
+  /* ==========================================================
+     日历网格
+     ========================================================== */
+  .calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    background:var(--paper);
+    border:1px solid rgba(26,24,20,.2);
+    border-right:none;             /* 右边不画 - 由每格的 border-right 接管 */
+    border-bottom:none;            /* 下边不画 - 由每格的 border-bottom 接管 */
+    transition:opacity .35s ease;
+  }
+  .calendar-grid.fading{opacity:0}
+
+  /* 周几标头 */
+  .day-header{
+    background:var(--paper);
+    padding:12px 8px;
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    border-right:1px solid rgba(26,24,20,.2);
+    border-bottom:1px solid rgba(26,24,20,.2);
+  }
+  /* 每行第七个格子（包括 day-header 和 day-cell）不画右边线 - 因为容器右边已经有 border */
+  .day-header:nth-child(7n){border-right:none}
+  .day-header.weekend{
+    color:var(--ink-mute);
+  }
+  .day-header .zh{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-size:10px;
+    color:var(--ink-trace);
+    margin-top:2px;
+    letter-spacing:.15em;
+  }
+
+  /* 日期格子 */
+  .day-cell{
+    background:var(--paper);
+    aspect-ratio:1;
+    padding:10px 8px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:background .3s ease;
+    min-height:96px;
+    border-right:1px solid rgba(26,24,20,.2);
+    border-bottom:1px solid rgba(26,24,20,.2);
+  }
+  /* 因为 day-header 占了前 7 个 grid 项，所以 day-cell 是从第 8 项开始
+     不画右边的格子是: 第 14, 21, 28, 35, 42, 49 项 (即 7n)
+     更稳妥：用 grid-column 的 last 选择器 - 但 nth-child 选择器对网格行末同样有效 */
+  /* 每 7 个 cell 中的最后一个不画右边 */
+  /* 由于前 7 项是 header，cell 的 nth-child 编号是从第 8 开始
+     第 14, 21, 28... 都是 7n - 这些是行末（第 7 列） */
+  .day-cell:nth-child(7n){border-right:none}
+  .day-cell.empty{
+    background:var(--paper-deep);
+    opacity:.5;
+  }
+  .day-cell.has-event{
+    cursor:pointer;
+  }
+  .day-cell.has-event:hover{
+    background:var(--paper-warm);
+  }
+  /* 今天 */
+  /* 今天 - 用朱砂印章式圆环包围数字 */
+  .day-cell.today .day-num{
+    color:var(--paper);
+    font-weight:400;
+    position:relative;
+    z-index:2;
+    width:24px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    background:var(--cinnabar);
+    border-radius:50%;
+    margin-bottom:4px;
+    box-shadow:0 1px 0 rgba(0,0,0,.12);
+    transform:rotate(-2deg);     /* 像盖章稍微歪一点 */
+  }
+  /* 今天的格子整体也加一道极淡的朱砂底纹，强调"今天"的位置 */
+  .day-cell.today{
+    background:rgba(183,50,37,.04);
+  }
+  .day-cell.today.has-event:hover{
+    background:rgba(183,50,37,.08);
+  }
+
+  .day-num{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:14px;
+    color:var(--ink-mute);
+    line-height:1;
+    margin-bottom:6px;
+  }
+
+  /* 简笔画图标 */
+  .day-icon{
+    font-size:24px;
+    line-height:1;
+    margin:2px 0 4px;
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  /* 节日图标稍大 */
+  .day-cell.is-festival .day-icon{
+    font-size:28px;
+  }
+
+  .day-event-name{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:9px;
+    color:var(--ink-faint);
+    letter-spacing:.1em;
+    text-align:center;
+    line-height:1.2;
+    margin-top:auto;
+  }
+  .day-event-zh{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-size:10px;
+    color:var(--ink-mute);
+    letter-spacing:.05em;
+    margin-top:2px;
+  }
+
+  /* 国假标志 - 极细朱砂边框，不挡文字 */
+  .day-cell.holiday{
+    box-shadow:inset 0 -2px 0 var(--cinnabar);
+  }
+  .day-cell.holiday.selected{
+    box-shadow:inset 0 0 0 2px var(--cinnabar);
+  }
+  /* 右上角小印章式朱砂点（区别于"今天"圆点）*/
+  .day-cell.holiday::before{
+    content:'';
+    position:absolute;
+    top:6px;
+    left:6px;
+    width:4px;
+    height:4px;
+    background:var(--cinnabar);
+    transform:rotate(45deg);
+    opacity:.7;
+  }
+
+  /* 选中格子 */
+  .day-cell.selected{
+    background:var(--paper-warm);
+    box-shadow:inset 0 0 0 2px var(--cinnabar);
+    z-index:2;
+  }
+
+  
+  /* 日期格子 hover 时显示农历的 tooltip - 中英双语 */
+  .day-cell[data-lunar]:hover::before{
+    content:attr(data-lunar-en) '\A' attr(data-lunar);
+    white-space:pre;
+    position:absolute;
+    bottom:calc(100% + 6px);
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(58,52,44,.92);    /* 墨棕 + 半透明 - 比纯黑柔和 */
+    color:var(--paper);
+    padding:7px 12px;
+    border-radius:2px;
+    font-family:'Cormorant Garamond','Noto Serif SC',serif;
+    font-weight:300;
+    font-size:11px;
+    letter-spacing:.1em;
+    white-space:pre;
+    text-align:center;
+    line-height:1.6;
+    z-index:10;
+    pointer-events:none;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
+    backdrop-filter:blur(4px);
+  }
+  .day-cell[data-lunar]:hover::after{
+    content:'';
+    position:absolute;
+    bottom:calc(100% + 1px);
+    left:50%;
+    transform:translateX(-50%);
+    border:4px solid transparent;
+    border-top-color:rgba(58,52,44,.92);
+    z-index:10;
+    pointer-events:none;
+  }
+  /* 但今天的::after 是朱砂点，不冲突；国假的::before 是朱砂菱形，要让它们不和 tooltip 的 ::before 冲突 */
+  /* 解决方法：tooltip 用 data-lunar 触发；今天的::after 用 .today.has-tooltip 时也要重写 */
+  /* 因为 .day-cell.today 已经用了 ::after，hover tooltip 的 ::after 会和它冲突 */
+  /* 我们让今天 hover 时不显示 tooltip 箭头（::after），只用 ::before */
+  /* 国假格子的 ::before 是朱砂菱形，hover 时也保留它，不让 tooltip 抢 */
+  .day-cell.holiday[data-lunar]:hover::before{
+    /* 保持原本的菱形 */
+    content:'';
+    position:absolute;
+    top:6px;
+    left:6px;
+    bottom:auto;
+    width:4px;
+    height:4px;
+    background:var(--cinnabar);
+    transform:rotate(45deg);
+    opacity:.7;
+    padding:0;
+    border-radius:0;
+    box-shadow:none;
+    color:transparent;
+    font-size:0;
+  }
+
+  /* ==========================================================
+     展开的事件介绍卡片
+     ========================================================== */
+  .event-detail{
+    margin:32px 0 60px;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    transition:max-height .55s cubic-bezier(.45,.05,.55,.95), opacity .4s ease;
+  }
+  .event-detail.is-open{
+    max-height:800px;
+    opacity:1;
+  }
+  .event-detail-inner{
+    padding:40px 48px;
+    background:var(--paper-warm);
+    border-left:2px solid var(--cinnabar);
+    position:relative;
+  }
+  .event-detail-close{
+    position:absolute;
+    top:16px;
+    right:20px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    width:28px;height:28px;
+    color:var(--ink-mute);
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;
+    transition:color .3s ease;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .event-detail-close:hover{color:var(--cinnabar)}
+
+  .event-detail-meta{
+    display:flex;
+    gap:18px;
+    align-items:baseline;
+    margin-bottom:14px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    flex-wrap:wrap;
+  }
+  .event-detail-meta .type{
+    color:var(--cinnabar);
+    font-style:normal;
+    font-weight:400;
+  }
+  .event-detail-meta .holiday-tag{
+    color:var(--cinnabar-soft);
+    font-style:normal;
+  }
+
+  .event-detail-title{
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    margin-bottom:14px;
+    flex-wrap:wrap;
+  }
+  .event-detail-icon{
+    font-size:48px;
+    line-height:1;
+  }
+  .event-detail-en{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(28px, 3.4vw, 40px);
+    color:var(--ink);
+    letter-spacing:-.005em;
+    line-height:1.2;
+  }
+  .event-detail-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:18px;
+    color:var(--ink-mute);
+    letter-spacing:.18em;
+    margin-bottom:4px;
+  }
+  .event-detail-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:.18em;
+    margin-bottom:14px;
+  }
+  /* 农历日期一行 */
+  .event-detail-lunar{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.12em;
+    margin-bottom:24px;
+    padding-top:10px;
+    border-top:1px dashed rgba(26,24,20,.15);
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .event-detail-lunar .label{
+    font-size:10px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+  }
+  .event-detail-lunar .zh{
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-weight:300;
+    font-size:14px;
+    color:var(--ink);
+    letter-spacing:.18em;
+  }
+  .event-detail-summary{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:18px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:640px;
+    letter-spacing:.005em;
+  }
+  .event-detail-summary em{
+    font-style:italic;
+    color:var(--cinnabar);
+  }
+  .event-detail-more{
+    display:inline-block;
+    margin-top:24px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    text-decoration:none;
+    letter-spacing:.12em;
+    border-bottom:1px solid var(--line);
+    padding-bottom:3px;
+    transition:color .4s ease, border-color .4s ease, transform .4s ease;
+  }
+  .event-detail-more:hover{
+    color:var(--cinnabar);
+    border-bottom-color:var(--cinnabar);
+    transform:translateX(4px);
+  }
+
+  /* ==========================================================
+     右侧节日列表
+     ========================================================== */
+  .festival-list{
+    /* 顶部对齐到日历的"月份横线"那条线 */
+    position:relative;
+    padding-left:24px;
+    border-left:1px solid var(--line);
+  }
+  .festival-list-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    /* 让 label 和月份的 "May" 文字大致水平 */
+    padding-top:32px;
+  }
+
+  /* Tab 切换栏 - 固定在滚动时不动 */
+  .list-tabs{
+    display:flex;
+    gap:0;
+    margin-bottom:24px;
+    border-bottom:1px solid var(--line);
+    /* sticky 让 Tab 在内容滚动时停留在 nav 下方 */
+    position:sticky;
+    top:88px;
+    background:var(--paper);
+    z-index:20;
+    /* 上下加点 padding 让 sticky 时不紧贴 nav */
+    padding-top:8px;
+  }
+  .list-tab{
+    flex:1;
+    background:transparent;
+    border:none;
+    padding:10px 8px 12px;
+    cursor:pointer;
+    font:inherit;
+    color:var(--ink-faint);
+    text-align:center;
+    position:relative;
+    transition:color .4s ease;
+    margin-bottom:-1px;     /* 让朱砂下划线压在容器底部 border 上 */
+  }
+  .list-tab:hover{
+    color:var(--ink-mute);
+  }
+  .list-tab.is-active{
+    color:var(--ink);
+  }
+  .list-tab::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%) scaleX(0);
+    width:36px;
+    height:2px;
+    background:var(--cinnabar);
+    transition:transform .45s cubic-bezier(.2,.7,.3,1);
+  }
+  .list-tab.is-active::after{
+    transform:translateX(-50%) scaleX(1);
+  }
+  .tab-en{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:14px;
+    letter-spacing:.06em;
+    margin-bottom:2px;
+  }
+  .tab-zh{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:11px;
+    letter-spacing:.18em;
+  }
+  .festival-list-items{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  /* 单个节日项 */
+  .festival-item{
+    display:grid;
+    grid-template-columns:32px 1fr;
+    gap:14px;
+    padding:14px 8px 14px 0;
+    text-align:left;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    color:inherit;
+    font:inherit;
+    border-bottom:1px solid var(--line);
+    transition:padding-left .5s ease, background .4s ease;
+    align-items:center;
+    position:relative;
+  }
+  .festival-item:last-child{border-bottom:none}
+  .festival-item:hover{
+    padding-left:14px;
+    background:rgba(244,239,230,.4);
+  }
+  /* 悬停时左侧朱砂细线滑入 */
+  .festival-item::before{
+    content:'';
+    position:absolute;
+    left:0;top:50%;transform:translateY(-50%);
+    width:0;height:1px;
+    background:var(--cinnabar);
+    transition:width .5s ease;
+  }
+  .festival-item:hover::before{width:8px}
+
+  .festival-icon{
+    font-size:22px;
+    line-height:1;
+    transition:transform .4s cubic-bezier(.2,.7,.3,1), font-size .4s ease;
+    text-align:center;
+  }
+  .festival-item:hover .festival-icon{
+    transform:scale(1.5) rotate(-3deg);     /* 悬停时图标变大 + 微旋 */
+    font-size:28px;
+  }
+
+  .festival-text{
+    min-width:0;
+  }
+  .festival-en{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:14px;
+    line-height:1.3;
+    color:var(--ink);
+    letter-spacing:.005em;
+    margin-bottom:2px;
+    transition:color .4s ease;
+  }
+  .festival-item:hover .festival-en{
+    color:var(--cinnabar);
+  }
+  .festival-zh-line{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:11px;
+    color:var(--ink-mute);
+    letter-spacing:.12em;
+    display:flex;
+    gap:8px;
+    align-items:baseline;
+  }
+  .festival-zh-line .date{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:10px;
+    color:var(--ink-faint);
+    letter-spacing:.1em;
+  }
+  /* 公假节日左侧加朱砂小菱形 */
+  .festival-item.is-holiday .festival-icon::after{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:-2px;
+    transform:translateY(-50%) rotate(45deg);
+    width:3px;
+    height:3px;
+    background:var(--cinnabar);
+    opacity:.6;
+  }
+  .festival-icon{
+    position:relative;
+  }
+
+  /* ==========================================================
+     底部图例
+     ========================================================== */
+  .legend{
+    margin:0 auto;
+    padding:60px 40px 0;
+    max-width:920px;
+    text-align:center;
+  }
+  .legend-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:32px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.18em;
+  }
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:transparent;
+    border:none;
+    padding:0;
+    color:inherit;
+    font:inherit;
+    letter-spacing:inherit;
+  }
+  /* "today" 按钮交互 */
+  .legend-today{
+    cursor:pointer;
+    transition:color .4s ease, transform .3s ease;
+    padding:6px 12px;
+    margin:-6px 0;
+    border-radius:2px;
+  }
+  .legend-today:hover{
+    color:var(--cinnabar);
+    transform:translateY(-1px);
+  }
+  .legend-today:hover .legend-dot{
+    transform:scale(1.4);
+    transition:transform .3s ease;
+  }
+  .legend-dot{
+    transition:transform .3s ease;
+  }
+  .legend-dot{
+    width:8px;height:8px;
+    background:var(--cinnabar);
+    border-radius:50%;
+  }
+  .legend-bar{
+    width:24px;height:8px;
+    background:var(--cinnabar);
+    border-radius:1px;
+    opacity:.85;
+  }
+
+  /* ==========================================================
+     底部「缘」深色联系块
+     ========================================================== */
+  .meeting{
+    position:relative;
+    background:#1a1814;
+    color:var(--paper);
+    padding:120px 56px 80px;
+    overflow:hidden;
+    margin-top:120px;
+    border-top:1px solid rgba(183,50,37,.4);
+  }
+  .meeting::before{
+    content:'';
+    position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1, 0 0 0 0 0.95, 0 0 0 0 0.85, 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.6;
+    mix-blend-mode:screen;
+    pointer-events:none;
+  }
+  .meeting-watermark{
+    position:absolute;
+    bottom:-60px;
+    right:-30px;
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:480px;
+    line-height:1;
+    color:rgba(244,239,230,.04);
+    pointer-events:none;
+    user-select:none;
+  }
+  .meeting-inner{
+    position:relative;
+    z-index:2;
+    max-width:680px;
+    margin:0 auto;
+  }
+  .meeting-line{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--cinnabar-soft);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .meeting-text{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.55;
+    color:rgba(244,239,230,.85);
+    margin-bottom:48px;
+    max-width:480px;
+  }
+
+  /* === Slowly Social Icons === */
+  .slowly-social{
+    display:flex;flex-direction:column;align-items:flex-start;gap:0;
+    --ss-color: #6b6258;--ss-color-hover: #b73225;--ss-tip-color: #9a8e80;
+    --ss-popup-bg: #f4efe6;--ss-popup-shadow: rgba(183,50,37,.4);--ss-popup-text: #6b6258;
+  }
+  .on-dark .slowly-social{
+    --ss-color: rgba(244,239,230,.55);
+    --ss-color-hover: #c94a3a;
+    --ss-tip-color: rgba(244,239,230,.55);
+  }
+  .slowly-social__icons{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+  .slowly-social__dot{
+    width:36px;height:36px;
+    display:inline-flex;align-items:center;justify-content:center;
+    color:var(--ss-color);background:transparent;border:none;cursor:pointer;
+    text-decoration:none;
+    transition:color .4s ease, transform .4s ease, opacity .4s ease;
+    position:relative;padding:0;opacity:.85;font:inherit;
+  }
+  .slowly-social__dot svg{width:20px;height:20px;display:block}
+  .slowly-social__dot:hover,.slowly-social__dot:focus-visible{
+    color:var(--ss-color-hover);opacity:1;transform:translateY(-2px);outline:none;
+  }
+  .slowly-social__dot::after{
+    content:attr(data-tip);
+    position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;
+    color:var(--ss-tip-color);letter-spacing:.15em;white-space:nowrap;
+    opacity:0;pointer-events:none;transition:opacity .4s ease;
+  }
+  .slowly-social__dot:hover::after,.slowly-social__dot:focus-visible::after{opacity:1}
+  .slowly-social__dot.is-wechat-active{color:var(--ss-color-hover);opacity:1}
+  .slowly-social__qr{
+    margin-top:0;max-width:240px;overflow:hidden;max-height:0;opacity:0;
+    transition:max-height .55s cubic-bezier(.45,.05,.55,.95),opacity .45s ease,margin-top .5s ease;
+  }
+  .slowly-social__qr.is-open{max-height:340px;opacity:1;margin-top:24px}
+  .slowly-social__qr-card{
+    background:var(--ss-popup-bg);padding:16px 16px 12px;border-radius:4px;
+    display:inline-block;
+    box-shadow:0 2px 0 var(--ss-popup-shadow),0 6px 24px rgba(0,0,0,.15);
+    position:relative;
+  }
+  .slowly-social__qr-card::before{
+    content:'';position:absolute;top:-5px;left:108px;
+    transform:rotate(45deg);width:10px;height:10px;background:var(--ss-popup-bg);
+  }
+  .slowly-social__qr-card img{display:block;width:160px;height:auto;image-rendering:pixelated}
+  .slowly-social__qr-caption{
+    font-family:'Noto Serif SC',serif;font-weight:300;font-size:10px;
+    color:var(--ss-popup-text);letter-spacing:.15em;text-align:center;margin:8px 0 0;
+  }
+
+  /* footer */
+  footer{
+    text-align:left;
+    padding:32px 56px 40px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:rgba(244,239,230,.4);
+    letter-spacing:.2em;
+    background:#1a1814;
+    border-top:1px solid rgba(244,239,230,.06);
+  }
+  footer .with{
+    color:var(--cinnabar-soft);
+    margin-left:6px;
+    opacity:.85;
+  }
+
+  /* === 动画 === */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* === 响应式 === */
+  /* 中等屏幕（< 1080px）：节日列表移到日历下方 */
+  @media (max-width:1080px){
+    .calendar-frame{
+      grid-template-columns:1fr;
+      gap:60px;
+    }
+    .festival-list{
+      position:static;
+      max-height:none;
+      padding-left:0;
+      border-left:none;
+      border-top:1px solid var(--line);
+      padding-top:32px;
+    }
+    .festival-list-items{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+      gap:0 24px;
+    }
+  }
+  @media (max-width:760px){
+    nav{padding:18px 22px}
+    .nav-mark{font-size:15px}
+    .calendar-header{padding:120px 24px 32px}
+    .calendar-watermark{font-size:200px;top:80px}
+    .calendar-title{font-size:42px}
+    .calendar-frame{padding:0 16px;margin-top:32px}
+    .month-bar{flex-wrap:nowrap;gap:8px}
+    .month-en{font-size:32px}
+    .month-zh{font-size:12px}
+    .month-zh::before,.month-zh::after{margin:0 2px}
+    .month-pinyin,.month-year{font-size:10px;letter-spacing:.2em}
+    .month-zh-row{gap:6px;flex-wrap:wrap;justify-content:center}
+    .month-nav-btn{font-size:12px;padding:6px 4px}
+    .month-nav-btn .label{display:none}    /* 移动端只显示箭头 */
+    .day-header{padding:8px 2px;font-size:9px;letter-spacing:.15em}
+    .day-header .zh{font-size:9px}
+    .day-cell{padding:6px 2px;min-height:72px}
+    .day-num{font-size:11px}
+    .day-icon{font-size:18px}
+    .day-cell.is-festival .day-icon{font-size:20px}
+    .day-event-name{font-size:7px;display:none}    /* 移动端隐藏事件名，只留图标 */
+    .day-event-zh{display:none}
+    .day-cell.holiday::after{font-size:6px;letter-spacing:.1em}
+    .event-detail-inner{padding:28px 24px}
+    .event-detail-icon{font-size:36px}
+    .event-detail-en{font-size:24px}
+    .event-detail-summary{font-size:16px}
+    .legend{padding:40px 24px 0}
+    .legend-row{gap:20px;font-size:11px}
+    .meeting{padding:80px 24px 60px}
+    .meeting-watermark{font-size:280px;bottom:-30px;right:-20px}
+    .meeting-text{font-size:18px}
+    footer{padding:24px;font-size:10px}
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav id="topNav">
+  <a href="../../index.html" class="nav-mark">
+    <span class="seal">慢</span>
+    Slowly
+  </a>
+  <a href="../../index.html" class="nav-link">return home</a>
+</nav>
+
+
+<!-- ============================================================
+     页面头部
+     ============================================================ -->
+<header class="calendar-header">
+  <div class="calendar-watermark" aria-hidden="true" lang="zh">年</div>
+
+  <div class="calendar-mark">II · CULTURE · CHINESE CALENDAR</div>
+
+  <h1 class="calendar-title">
+    A <em>Chinese Year</em>,<br>
+    one month at a time.
+  </h1>
+  <div class="calendar-zh" lang="zh">中国一年</div>
+  <div class="calendar-pinyin">zhōngguó yī nián · 24 solar terms · 11 traditional festivals</div>
+
+  <p class="calendar-intro">
+    The Chinese year doesn't pass through four seasons. It moves through <em>twenty-four</em> — each fifteen days, each with its own name, its own weather, its own thing to eat. Tap any day to read its quiet story.
+  </p>
+</header>
+
+
+<!-- ============================================================
+     日历主体
+     ============================================================ -->
+<section class="calendar-frame">
+
+  <div class="calendar-main">
+    <!-- 月份切换条 -->
+    <div class="month-bar">
+      <button class="month-nav-btn prev" id="prevBtn" aria-label="previous month">
+        <span>‹</span> <span class="label">prev</span>
+      </button>
+
+      <div class="month-display" id="monthDisplay">
+        <div class="month-en" id="monthEn">May</div>
+        <div class="month-zh-row">
+          <span class="month-zh" lang="zh" id="monthZh">五月</span>
+          <span class="month-pinyin" id="monthPinyin">wǔ yuè</span>
+          <span class="month-year" id="monthYear">2026</span>
+        </div>
+      </div>
+
+      <button class="month-nav-btn next" id="nextBtn" aria-label="next month">
+        <span class="label">next</span> <span>›</span>
+      </button>
+    </div>
+
+    <!-- 月份氛围副标题 -->
+    <div class="month-tagline" id="monthTagline">— summer slowly arrives —</div>
+
+    <!-- 日历网格 -->
+    <div class="calendar-grid" id="calendarGrid">
+      <!-- 周几标头 -->
+      <div class="day-header weekend">Sun<span class="zh" lang="zh">日</span></div>
+      <div class="day-header">Mon<span class="zh" lang="zh">一</span></div>
+      <div class="day-header">Tue<span class="zh" lang="zh">二</span></div>
+      <div class="day-header">Wed<span class="zh" lang="zh">三</span></div>
+      <div class="day-header">Thu<span class="zh" lang="zh">四</span></div>
+      <div class="day-header">Fri<span class="zh" lang="zh">五</span></div>
+      <div class="day-header weekend">Sat<span class="zh" lang="zh">六</span></div>
+      <!-- 日期格子由 JS 注入 -->
+    </div>
+
+    <!-- 事件展开卡片 -->
+    <div class="event-detail" id="eventDetail" aria-hidden="true">
+      <div class="event-detail-inner">
+        <button class="event-detail-close" id="eventClose" aria-label="close">×</button>
+        <div class="event-detail-meta" id="eventMeta"></div>
+        <div class="event-detail-title">
+          <span class="event-detail-icon" id="eventIcon"></span>
+          <span class="event-detail-en" id="eventEn"></span>
+        </div>
+        <div class="event-detail-zh" lang="zh" id="eventZh"></div>
+        <div class="event-detail-pinyin" id="eventPinyin"></div>
+        <div class="event-detail-lunar" id="eventLunar" hidden></div>
+        <p class="event-detail-summary" id="eventSummary"></p>
+        <a href="#" class="event-detail-more" id="eventMore">read the full story →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右侧列表 - Tab 切换 24 节气 / 传统节日 -->
+  <aside class="festival-list" id="festivalList" aria-label="cultural events list">
+    <div class="festival-list-label">— moments of the year —</div>
+
+    <!-- Tab 切换栏 -->
+    <div class="list-tabs" role="tablist">
+      <button type="button" class="list-tab is-active" data-tab="festivals" role="tab" aria-selected="true">
+        <span class="tab-en">Festivals</span>
+        <span class="tab-zh" lang="zh">节日</span>
+      </button>
+      <button type="button" class="list-tab" data-tab="jieqi" role="tab" aria-selected="false">
+        <span class="tab-en">Solar Terms</span>
+        <span class="tab-zh" lang="zh">节气</span>
+      </button>
+    </div>
+
+    <div class="festival-list-items" id="festivalListItems">
+      <!-- 由 JS 注入 -->
+    </div>
+  </aside>
+
+</section>
+
+
+<!-- 底部图例 + jump to today 按钮 -->
+<div class="legend">
+  <div class="legend-row">
+    <button type="button" class="legend-item legend-today" id="todayBtn" aria-label="jump to today">
+      <span class="legend-dot"></span> today
+    </button>
+    <div class="legend-item"><span class="legend-bar"></span> public holiday</div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     底部「缘」联系块
+     ============================================================ -->
+<section class="meeting on-dark">
+  <div class="meeting-watermark" aria-hidden="true" lang="zh">缘</div>
+
+  <div class="meeting-inner">
+    <div class="meeting-line">— if our paths cross —</div>
+    <p class="meeting-text">
+      A few quiet places where I can be found.
+    </p>
+
+    <div class="slowly-social">
+      <div class="slowly-social__icons">
+        <a href="mailto:ivyzhangyaochen@gmail.com" class="slowly-social__dot" aria-label="Email" data-tip="email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 4.5h21c.83 0 1.5.67 1.5 1.5v12c0 .83-.67 1.5-1.5 1.5h-21C.67 19.5 0 18.83 0 18V6c0-.83.67-1.5 1.5-1.5zM12 13.5L1.74 6.42c-.32.27-.49.66-.49 1.08v.07L12 15l10.75-7.43v-.07c0-.42-.17-.81-.49-1.08L12 13.5z"/></svg>
+        </a>
+        <a href="https://wa.me/8615950075140" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="WhatsApp" data-tip="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://m.me/ivyzhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="Messenger" data-tip="Messenger">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.001 11.639C.001 4.949 5.241 0 12.001 0S24 4.95 24 11.639c0 6.689-5.24 11.638-12 11.638-1.21 0-2.38-.16-3.47-.46a.96.96 0 00-.64.05l-2.39 1.05a.96.96 0 01-1.35-.85l-.07-2.14a.97.97 0 00-.32-.68A11.39 11.389 0 010 11.639zm8.32-2.19l-3.52 5.6c-.35.53.32 1.139.82.75l3.79-2.87c.26-.2.6-.2.87 0l2.8 2.1c.84.63 2.04.4 2.6-.48l3.52-5.6c.35-.53-.32-1.13-.82-.75l-3.79 2.87c-.25.2-.6.2-.86 0l-2.8-2.1a1.8 1.8 0 00-2.61.48z"/></svg>
+        </a>
+        <button type="button" class="slowly-social__dot js-wechat-trigger" aria-label="WeChat" data-tip="WeChat">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .55-.012.821-.03-.273-.813-.42-1.677-.42-2.575 0-3.952 3.747-7.131 8.355-7.131.198 0 .395.011.59.024-.65-3.4-4.151-5.97-8.346-5.97zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-3.93 0-7.116 2.703-7.116 6.035 0 3.332 3.186 6.035 7.115 6.035a8.4 8.4 0 002.346-.33c.265-.078.53-.078.795.064l1.578.92c.078.058.156.078.234.078a.31.31 0 00.295-.295c0-.078-.02-.155-.04-.213-.02-.058-.293-1.117-.293-1.197a.567.567 0 01.234-.591C23.34 18.387 24 16.798 24 15.058c0-3.332-3.186-6.2-7.115-6.2zm-2.43 1.838c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816zm5.078 0c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816z"/></svg>
+        </button>
+        <a href="https://www.xiaohongshu.com/user/profile/60deed2c000000000101da45?exSource=" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="RedNote" data-tip="RedNote">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="serif" font-weight="700" font-size="11" fill="#1a1814">小红</text></svg>
+        </a>
+        <a href="https://www.tiktok.com/@ivyzhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="TikTok" data-tip="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@IvyZhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="YouTube" data-tip="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/ivyZhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="Facebook" data-tip="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="slowly-social__qr js-wechat-popup" aria-hidden="true">
+        <div class="slowly-social__qr-card">
+          <img src="data:image/png;base64,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" alt="WeChat QR" />
+          <p class="slowly-social__qr-caption">扫一扫 · scan to add</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Slowly · enter Chinese gently. <span class="with">with Ivy</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lunar-javascript@1.7.0/lunar.js"></script>
+<script>
+/* ============================================================
+   月份名称数据
+   ============================================================ */
+const MONTHS = [
+  { en: 'January',   zh: '一月',  pinyin: 'yī yuè',     tagline: '— the year quietly begins —' },
+  { en: 'February',  zh: '二月',  pinyin: 'èr yuè',     tagline: '— spring waits behind a door —' },
+  { en: 'March',     zh: '三月',  pinyin: 'sān yuè',    tagline: '— frost lifting, blossoms beginning —' },
+  { en: 'April',     zh: '四月',  pinyin: 'sì yuè',     tagline: '— rain that knows the season —' },
+  { en: 'May',       zh: '五月',  pinyin: 'wǔ yuè',     tagline: '— summer slowly arrives —' },
+  { en: 'June',      zh: '六月',  pinyin: 'liù yuè',    tagline: '— the longest day approaches —' },
+  { en: 'July',      zh: '七月',  pinyin: 'qī yuè',     tagline: '— heat, cicadas, slow afternoons —' },
+  { en: 'August',    zh: '八月',  pinyin: 'bā yuè',     tagline: '— first leaves remember autumn —' },
+  { en: 'September', zh: '九月',  pinyin: 'jiǔ yuè',    tagline: '— moon, dew, the year tilts —' },
+  { en: 'October',   zh: '十月',  pinyin: 'shí yuè',    tagline: '— harvest light, falling things —' },
+  { en: 'November',  zh: '十一月', pinyin: 'shíyī yuè', tagline: '— winter writes a first letter —' },
+  { en: 'December',  zh: '十二月', pinyin: 'shíèr yuè', tagline: '— the year curls inward —' },
+];
+
+/* ============================================================
+   2026 年所有事件数据
+   key: "MM-DD" (公历日期, 1-indexed month)
+   type: 'jieqi' | 'festival'
+   icon: emoji 占位 (将来替换为简笔画)
+   ============================================================ */
+const EVENT_META = {
+  // 24 节气：用 jieqi 名称索引，由 lunar-javascript 计算每年具体公历日
+  jieqi: {
+    '小寒':  { icon:'🧣', en:'Lesser Cold', pinyin:'xiǎo hán',
+      summary:'The cold begins to deepen, but has not yet reached its peak. Old Chinese houses bring out the heated stone bed (火炕). Plum blossoms — often the first flower of the year — begin to open in the south.', slug:'LesserCold' },
+    '大寒':  { icon:'🪟', en:'Greater Cold', pinyin:'dà hán',
+      summary:'The coldest 15 days of the year. Frost flowers form on windows. People stay indoors, drink hot soup, and prepare for the spring festival that is just around the corner.', slug:'GreaterCold' },
+    '立春':  { icon:'🌱', en:'Beginning of Spring', pinyin:'lì chūn',
+      summary:'The first of 24 solar terms — the moment the Chinese year truly begins. Even when the air is still cold, something underground has decided to start. Farmers traditionally taste the spring vegetables on this day, a ritual called 咬春 (biting spring).', slug:'BeginningOfSpring' },
+    '雨水':  { icon:'🌧', en:'Rain Water', pinyin:'yǔ shuǐ',
+      summary:'The snow turns to rain. The earth begins to thaw. In old farming wisdom, the rain on this day was watched closely — an early rain meant a good harvest year.', slug:'RainWater' },
+    '惊蛰':  { icon:'⚡', en:'Awakening of Insects', pinyin:'jīng zhé',
+      summary:'The first thunder of spring is said to wake the sleeping insects. Frogs begin to sing, bees emerge, the soil warms. One of the most poetic names in the Chinese calendar — "the moment something underground decides to listen."', slug:'AwakeningOfInsects' },
+    '春分':  { icon:'🌸', en:'Spring Equinox', pinyin:'chūn fēn',
+      summary:'Day and night meet in equal halves. Peach blossoms, plum blossoms, cherry blossoms — China is at its most floral. An old saying: "On 春分, eggs can stand on their ends" — a small gravitational legend, mostly believed.', slug:'SpringEquinox' },
+    '清明':  { icon:'🪦', en:'Pure Brightness', pinyin:'qīng míng',
+      summary:'Tomb-sweeping day. Families return to their ancestors\' graves to clean, leave flowers, and offer food. One of the rare festivals where the sad and the alive sit together. Du Mu wrote the most famous line: "清明时节雨纷纷" — at Qingming, the rain falls in a hundred small ways.', slug:'PureBrightness', holiday:true },
+    '谷雨':  { icon:'🌾', en:'Grain Rain', pinyin:'gǔ yǔ',
+      summary:'The last solar term of spring. Rain that helps the grain. Tea farmers harvest their best leaves now — this is the season for 雨前 (yǔ qián, "before-the-rain") tea, the most prized green tea of the year.', slug:'GrainRain' },
+    '立夏':  { icon:'🌳', en:'Beginning of Summer', pinyin:'lì xià',
+      summary:'Summer announces itself. The mulberries ripen, peonies bloom in their last flush. In old Jiangnan tradition, families weigh the children today — to record how much each has grown since last summer.', slug:'BeginningOfSummer' },
+    '小满':  { icon:'🌾', en:'Lesser Fullness', pinyin:'xiǎo mǎn',
+      summary:'The grain begins to fill but is not yet full. A name with a quiet philosophy — Chinese culture often prefers 小满 (small fullness) over 大满 (great fullness). Just enough is the wisdom; complete is the warning.', slug:'LesserFullness' },
+    '芒种':  { icon:'🌾', en:'Grain in Ear', pinyin:'máng zhǒng',
+      summary:'A double-meaning name: 芒 (the spikes on the wheat) and 种 (planting). The wheat is ready to be cut, and the rice must be planted, all in the same week. The busiest fortnight in the farming year.', slug:'GrainInEar' },
+    '夏至':  { icon:'☀️', en:'Summer Solstice', pinyin:'xià zhì',
+      summary:'The longest day of the year. From now, the days begin to shorten — even as summer is just beginning. An ancient paradox the Chinese calendar quietly contains: at the height of light, the dark already turns back.', slug:'SummerSolstice' },
+    '小暑':  { icon:'🍃', en:'Lesser Heat', pinyin:'xiǎo shǔ',
+      summary:'The summer turns hot, but not yet at its hottest. Cicadas begin their long single note. The lotus opens. People start eating cooling foods: mung bean soup, watermelon, cold noodles.', slug:'LesserHeat' },
+    '大暑':  { icon:'💦', en:'Greater Heat', pinyin:'dà shǔ',
+      summary:'The hottest fifteen days of the year. Old wisdom: do nothing strenuous, drink tea, sleep at noon, eat hot food to sweat out the heat (以热制热). Some traditions even drink hot ginger soup in the height of summer.', slug:'GreaterHeat' },
+    '立秋':  { icon:'🍂', en:'Beginning of Autumn', pinyin:'lì qiū',
+      summary:'Autumn is announced — though the weather is still hot. The first leaf falls. An ancient phrase: 一叶知秋 — "one leaf, and autumn is known." Not all changes need a chorus.', slug:'BeginningOfAutumn' },
+    '处暑':  { icon:'🍃', en:'End of Heat', pinyin:'chǔ shǔ',
+      summary:'The heat steps back. The crickets begin to come into the house. Mornings have a coolness that wasn\'t there yesterday. The character 处 here means "to retreat, to cease" — heat, withdrawing.', slug:'EndOfHeat' },
+    '白露':  { icon:'💧', en:'White Dew', pinyin:'bái lù',
+      summary:'The mornings cool enough that water gathers on the grass. The most poetic of solar terms — its very name is an image. The Book of Songs (诗经) opens with this term: 蒹葭苍苍，白露为霜.', slug:'WhiteDew' },
+    '秋分':  { icon:'🌕', en:'Autumn Equinox', pinyin:'qiū fēn',
+      summary:'Day and night equal again. The osmanthus (桂花) blooms, perfuming the air across southern China. From now on, the night will grow longer than the day.', slug:'AutumnEquinox' },
+    '寒露':  { icon:'❄️', en:'Cold Dew', pinyin:'hán lù',
+      summary:'The dew turns cold enough to bite. Geese begin their long flight south. Chrysanthemums (菊花) come into full bloom — the flower of late autumn, the favorite of poets who wrote about not being seen.', slug:'ColdDew' },
+    '霜降':  { icon:'🍁', en:'Frost Descent', pinyin:'shuāng jiàng',
+      summary:'The first frost of the year. Persimmons turn deep orange. An old Chinese saying: 霜降摘柿子 — pick persimmons after the frost, they will be sweetest then. Some kinds of beauty only arrive after a small cold.', slug:'FrostDescent' },
+    '立冬':  { icon:'🍲', en:'Beginning of Winter', pinyin:'lì dōng',
+      summary:'Winter announces itself. In the north, families eat dumplings (a tradition: 立冬不端饺子碗，冻掉耳朵没人管 — if you don\'t eat dumplings on lì dōng, your ears might fall off from the cold). In the south, people drink stew — beginning the long ritual of warming the body.', slug:'BeginningOfWinter' },
+    '小雪':  { icon:'🌨', en:'Lesser Snow', pinyin:'xiǎo xuě',
+      summary:'The first snow may fall — but not heavily. The earth is preparing. Old Chinese houses begin to stockpile firewood, salt, and pickled vegetables. The kitchen becomes the warmest room in the house.', slug:'LesserSnow' },
+    '大雪':  { icon:'☃️', en:'Greater Snow', pinyin:'dà xuě',
+      summary:'Heavy snow now possible. The land becomes very quiet. People begin preparing the slow, deep foods of winter: cured meats, salted fish, candied fruits — foods that need cold and time to become themselves.', slug:'GreaterSnow' },
+    '冬至':  { icon:'🥟', en:'Winter Solstice', pinyin:'dōng zhì',
+      summary:'The shortest day of the year. From now, the light begins to return. In ancient China this was as important as the new year — 冬至大如年. Northern families eat dumplings; southern families eat sweet rice balls. Both are round things, marking the year\'s lowest point.', slug:'WinterSolstice' },
+  },
+  // 11 个传统节日：用农历日期索引（M-D 格式，如 '1-1' = 正月初一）
+  festival: {
+    '1-1':   { icon:'🧧', en:'Spring Festival', zh:'春节', pinyin:'chūn jié',
+      summary:'The biggest reset of the Chinese year. Lunar New Year. Red envelopes, dumplings, fireworks, the first poem of the year written on red paper. Most of China is on holiday for a full week. Family above everything.',
+      slug:'SpringFestival', holiday:true, lunarEn:'1st day, 1st lunar month' },
+    '1-15':  { icon:'🏮', en:'Lantern Festival', zh:'元宵节', pinyin:'yuán xiāo jié',
+      summary:'15 days after Spring Festival, the first full moon of the new year. Streets fill with lanterns, families eat sticky-sweet rice balls (汤圆) in soup. The festival of light returning. Traditionally also the only night young people could meet freely.',
+      slug:'LanternFestival', lunarEn:'15th day, 1st lunar month' },
+    '2-2':   { icon:'🐉', en:'Dragon Raises Head', zh:'龙抬头', pinyin:'lóng tái tóu',
+      summary:'The 2nd day of the 2nd lunar month. Folk belief: the dragon (the rain spirit) raises its head and the spring rains begin in earnest. People traditionally cut their hair on this day — it had been forbidden during the new year period.',
+      slug:'DragonRaisesHead', lunarEn:'2nd day, 2nd lunar month' },
+    '3-3':   { icon:'🌊', en:'Shangsi Festival', zh:'上巳节', pinyin:'shàng sì jié',
+      summary:'The 3rd day of the 3rd lunar month. An ancient festival, mostly forgotten today. Once, scholars would float wine cups down winding streams and write poems where the cups stopped. The whole festival was a love letter to spring water.',
+      slug:'ShangsiFestival', lunarEn:'3rd day, 3rd lunar month' },
+    '5-5':   { icon:'🎋', en:'Dragon Boat Festival', zh:'端午节', pinyin:'duān wǔ jié',
+      summary:'The 5th day of the 5th lunar month. Born 2,300 years ago, when the poet Qu Yuan drowned himself in protest. People threw rice into the river so the fish wouldn\'t eat his body — and so 粽子 (zòngzi, sticky rice in bamboo leaves) was born. Today: dragon boat races, bitter wormwood at the door, and warm afternoons of sticky rice.',
+      slug:'DragonBoatFestival', holiday:true, lunarEn:'5th day, 5th lunar month' },
+    '7-7':   { icon:'💌', en:'Qixi Festival', zh:'七夕', pinyin:'qī xī',
+      summary:'The 7th day of the 7th lunar month. China\'s ancient lovers\' day. The cowherd and the weaver girl, separated by the Milky Way, are allowed to meet only this one night a year — when magpies form a bridge across the sky.',
+      slug:'QixiFestival', lunarEn:'7th day, 7th lunar month' },
+    '7-15':  { icon:'👻', en:'Ghost Festival', zh:'中元节', pinyin:'zhōng yuán jié',
+      summary:'The 15th day of the 7th lunar month. The ancestors come back. Families burn paper money, set out food on the doorstep, float lanterns down rivers. A festival not of horror but of welcome — once a year, the gates between worlds are open.',
+      slug:'GhostFestival', lunarEn:'15th day, 7th lunar month' },
+    '8-15':  { icon:'🥮', en:'Mid-Autumn Festival', zh:'中秋节', pinyin:'zhōng qiū jié',
+      summary:'The 15th day of the 8th lunar month. The fullest moon of the year. Families gather, eat moon cakes, and watch the sky together. The festival of round things — round moon, round table, round family. A line every Chinese person knows: 但愿人长久，千里共婵娟.',
+      slug:'MidAutumnFestival', holiday:true, lunarEn:'15th day, 8th lunar month' },
+    '9-9':   { icon:'🌼', en:'Double Ninth Festival', zh:'重阳节', pinyin:'chóng yáng jié',
+      summary:'The 9th day of the 9th lunar month. 9 is the highest single digit, so two of them stacked is "yang within yang." Traditionally a day to climb mountains, drink chrysanthemum wine, and honor the elderly. Today it is also China\'s Seniors\' Day.',
+      slug:'DoubleNinthFestival', lunarEn:'9th day, 9th lunar month' },
+    '12-8':  { icon:'🥣', en:'Laba Festival', zh:'腊八节', pinyin:'là bā jié',
+      summary:'The 8th day of the 12th lunar month. 19 days before Spring Festival. Families cook 腊八粥 — a porridge of eight grains and dried fruits, slow-simmered for hours. The kitchen smells of jujube and lotus seed and rice. The new year is being quietly approached.',
+      slug:'LabaFestival', lunarEn:'8th day, 12th lunar month' },
+    // 除夕：农历年的最后一天 - 可能是腊月廿九或三十，需要动态计算
+    'newyearseve':  { icon:'🥢', en:"New Year's Eve", zh:'除夕', pinyin:'chú xī',
+      summary:'The last night of the lunar year. Families gather for 年夜饭 — the year-eve dinner — the most important meal of the Chinese year. They stay up together (守岁, "guarding the year"), waiting for midnight to arrive together. The character 除 means "to remove" — to remove the old year, and step into the new.',
+      slug:'NewYearsEve', holiday:true, lunarEn:'last day of the 12th lunar month' },
+  }
+};
+
+/* 给定年份，返回 { 'MM-DD': eventObj } 形式的事件映射
+   策略：逐日扫描，问每一天"是不是节气"或"对应农历什么日期" */
+function buildEventsForYear(year) {
+  const events = {};
+  if (typeof Solar === 'undefined' || typeof Lunar === 'undefined') {
+    console.warn('lunar-javascript not loaded');
+    return events;
+  }
+
+  // === 1. 节气：扫描全年每一天 ===
+  for (let m = 1; m <= 12; m++) {
+    const daysInMonth = new Date(year, m, 0).getDate();
+    for (let d = 1; d <= daysInMonth; d++) {
+      try {
+        const solar = Solar.fromYmd(year, m, d);
+        const lunar = solar.getLunar();
+        // getJieQi() 返回当天的节气名（如果是节气日），否则空字符串
+        const jieqiName = lunar.getJieQi();
+        if (jieqiName && EVENT_META.jieqi[jieqiName]) {
+          const meta = EVENT_META.jieqi[jieqiName];
+          const key = String(m).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+          // 农历月份信息
+          const lunarMonthZh = lunar.getMonthInChinese();    // 如 '四'
+          const lunarMonthNum = Math.abs(lunar.getMonth());  // 闰月返回负数，取绝对值
+          events[key] = Object.assign({
+            type: 'jieqi',
+            zh: jieqiName,
+            lunarZh: '农历' + lunarMonthZh + '月',
+            lunarEn: 'around the ' + ordinalEn(lunarMonthNum) + ' lunar month'
+          }, meta);
+        }
+      } catch(e) {}
+    }
+  }
+
+  // === 2. 节日：把农历日期转成当年公历 ===
+  Object.keys(EVENT_META.festival).forEach(lunarKey => {
+    if (lunarKey === 'newyearseve') return;   // 除夕单独处理
+    const [lm, ld] = lunarKey.split('-').map(Number);
+    try {
+      const lunar = Lunar.fromYmd(year, lm, ld);
+      const solar = lunar.getSolar();
+      if (solar.getYear() === year) {
+        const mm = String(solar.getMonth()).padStart(2,'0');
+        const dd = String(solar.getDay()).padStart(2,'0');
+        const key = mm + '-' + dd;
+        const meta = EVENT_META.festival[lunarKey];
+        const lunarZh = lunar.getMonthInChinese() + '月' + lunar.getDayInChinese();
+        if (!events[key]) {
+          events[key] = Object.assign({ type: 'festival', lunarZh: lunarZh }, meta);
+        }
+      }
+    } catch(e) {
+      console.warn('Cannot convert lunar', lunarKey, e);
+    }
+  });
+
+  // === 除夕：腊月最后一天（廿九或三十）===
+  // 思路：找到下一个农历正月初一（春节），它的前一天就是除夕
+  // 但要注意：当前公历 year 里的除夕可能属于"上一个农历年的腊月"或"当前年的腊月"
+  // 实际上一个公历年里通常有 1 个除夕（如果春节落在 1月初，则除夕在 1月内；
+  // 如果春节落在 2月，则除夕也在 2月初），但也可能跨年导致 0 或 2 个
+  // 简单做法：找上一年和当前年的春节，分别取前一天
+  [year, year + 1].forEach(yr => {
+    try {
+      // 上一个春节（农历 yr 年的正月初一）
+      const lunar = Lunar.fromYmd(yr, 1, 1);
+      const solar = lunar.getSolar();
+      // 除夕 = 春节的前一天
+      const eveDate = new Date(solar.getYear(), solar.getMonth() - 1, solar.getDay() - 1);
+      if (eveDate.getFullYear() === year) {
+        const mm = String(eveDate.getMonth() + 1).padStart(2,'0');
+        const dd = String(eveDate.getDate()).padStart(2,'0');
+        const key = mm + '-' + dd;
+        const eveLunar = Solar.fromDate(eveDate).getLunar();
+        const lunarZh = eveLunar.getMonthInChinese() + '月' + eveLunar.getDayInChinese();
+        const meta = EVENT_META.festival['newyearseve'];
+        if (!events[key]) {
+          events[key] = Object.assign({ type: 'festival', lunarZh: lunarZh }, meta);
+        }
+      }
+    } catch(e) {
+      console.warn('Cannot compute new year eve for', yr, e);
+    }
+  });
+
+  return events;
+}
+
+function ordinalEn(n) {
+  const map = ['', '1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th','11th','12th'];
+  return map[n] || (n + 'th');
+}
+
+/* ============================================================
+   日历核心逻辑
+   ============================================================ */
+// 年份和月份基于"今天" - 自动跟着真实时间走
+const today = new Date();
+let YEAR = today.getFullYear();
+let currentMonth = today.getMonth();  // 0-indexed
+
+const TODAY_KEY = String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+
+// 当前年份的所有事件（每次切换年份时重新生成）
+let EVENTS = {};
+
+// 当前激活的列表模式 - 'festivals' 或 'jieqi'
+let currentListTab = 'festivals';
+
+const grid = document.getElementById('calendarGrid');
+const monthEnEl = document.getElementById('monthEn');
+const monthZhEl = document.getElementById('monthZh');
+const monthPinyinEl = document.getElementById('monthPinyin');
+const monthYearEl = document.getElementById('monthYear');
+const monthTaglineEl = document.getElementById('monthTagline');
+const monthDisplay = document.getElementById('monthDisplay');
+const eventDetail = document.getElementById('eventDetail');
+
+function getDaysInMonth(year, month) {
+  return new Date(year, month + 1, 0).getDate();
+}
+
+function getStartDayOfMonth(year, month) {
+  return new Date(year, month, 1).getDay();  // 0 = Sunday
+}
+
+function renderMonth(monthIdx) {
+  // 隐藏事件卡片
+  closeEventDetail();
+
+  // 淡出
+  monthDisplay.classList.add('fading');
+  monthTaglineEl.classList.add('fading');
+  grid.classList.add('fading');
+
+  setTimeout(() => {
+    // 更新月份标题
+    const m = MONTHS[monthIdx];
+    monthEnEl.textContent = m.en;
+    monthZhEl.textContent = m.zh;
+    monthPinyinEl.textContent = m.pinyin;
+    monthYearEl.textContent = YEAR;
+    monthTaglineEl.textContent = m.tagline;
+
+    // 清空旧的日期格子（保留周几标头：前 7 个）
+    while (grid.children.length > 7) {
+      grid.removeChild(grid.lastChild);
+    }
+
+    const startDay = getStartDayOfMonth(YEAR, monthIdx);
+    const daysInMonth = getDaysInMonth(YEAR, monthIdx);
+
+    // 前面留空格
+    for (let i = 0; i < startDay; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'day-cell empty';
+      grid.appendChild(empty);
+    }
+
+    // 渲染每一天
+    for (let d = 1; d <= daysInMonth; d++) {
+      const cell = document.createElement('div');
+      cell.className = 'day-cell';
+
+      const key = String(monthIdx+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+      const event = EVENTS[key];
+
+      // 今天高亮 - 比较月也要对（不仅是 KEY，因为 KEY 不带年份）
+      if (key === TODAY_KEY && YEAR === today.getFullYear()) cell.classList.add('today');
+
+      // 给每天加农历日期 tooltip - 中英双语
+      if (typeof Solar !== 'undefined') {
+        try {
+          const solar = Solar.fromYmd(YEAR, monthIdx+1, d);
+          const lunar = solar.getLunar();
+          const monthZh = lunar.getMonthInChinese();
+          const dayZh = lunar.getDayInChinese();
+          const lunarMonth = Math.abs(lunar.getMonth());
+          const lunarDay = lunar.getDay();
+          // 中文行：农历X月初X / 廿X / 三十
+          cell.setAttribute('data-lunar', '农历' + monthZh + '月' + dayZh);
+          // 英文行：lunar M-D 或 day D, Mth lunar month
+          cell.setAttribute('data-lunar-en', ordinalEn(lunarMonth) + ' lunar month, day ' + lunarDay);
+        } catch(e) {}
+      }
+
+      // 日期数字
+      const num = document.createElement('div');
+      num.className = 'day-num';
+      num.textContent = d;
+      cell.appendChild(num);
+
+      if (event) {
+        cell.classList.add('has-event');
+        cell.setAttribute('data-key', key);
+        if (event.type === 'festival') cell.classList.add('is-festival');
+        if (event.holiday) cell.classList.add('holiday');
+
+        const icon = document.createElement('div');
+        icon.className = 'day-icon';
+        icon.textContent = event.icon;
+        cell.appendChild(icon);
+
+        const name = document.createElement('div');
+        name.className = 'day-event-name';
+        name.innerHTML = event.pinyin + '<span class="day-event-zh" lang="zh">' + event.zh + '</span>';
+        cell.appendChild(name);
+
+        cell.addEventListener('click', () => openEventDetail(key, event, cell));
+      }
+
+      grid.appendChild(cell);
+    }
+
+    // 月末补空格让最后一行满 7 天 - 这样最后一行下方也会有底线
+    const totalCells = startDay + daysInMonth;
+    const trailingEmpty = (7 - (totalCells % 7)) % 7;
+    for (let i = 0; i < trailingEmpty; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'day-cell empty';
+      grid.appendChild(empty);
+    }
+
+    // 淡入
+    monthDisplay.classList.remove('fading');
+    monthTaglineEl.classList.remove('fading');
+    grid.classList.remove('fading');
+
+    // 月份按钮永远可用（跨年自动）
+    document.getElementById('prevBtn').disabled = false;
+    document.getElementById('nextBtn').disabled = false;
+  }, 220);
+}
+
+function openEventDetail(key, event, cell) {
+  // 选中视觉
+  document.querySelectorAll('.day-cell.selected').forEach(c => c.classList.remove('selected'));
+  cell.classList.add('selected');
+
+  // 填入数据
+  const [mm, dd] = key.split('-');
+  const monthName = MONTHS[parseInt(mm,10)-1].en;
+
+  const meta = document.getElementById('eventMeta');
+  let metaHtml = `<span class="type">${event.type === 'jieqi' ? 'Solar Term' : 'Festival'}</span>`;
+  if (event.holiday) metaHtml += `<span class="holiday-tag">· public holiday</span>`;
+  meta.innerHTML = metaHtml;
+
+  document.getElementById('eventIcon').textContent = event.icon;
+  document.getElementById('eventEn').textContent = event.en;
+  document.getElementById('eventZh').textContent = event.zh;
+  document.getElementById('eventPinyin').textContent = event.pinyin;
+
+  // 农历日期 - 节气和节日都显示
+  const lunarEl = document.getElementById('eventLunar');
+  if (event.lunarZh) {
+    // 节日 lunar 是固定日期（如"正月初一"），节气 lunar 是大致月份（如"农历四月"）
+    // 节日的 zh 已包含"正月初一"，不需要再加"农历"前缀
+    // 节气的 zh 已包含"农历"前缀（如"农历四月"）
+    const zhDisplay = event.lunarZh.startsWith('农历') ? event.lunarZh : '农历' + event.lunarZh;
+    lunarEl.innerHTML = '<span class="label">lunar date</span><span>' + event.lunarEn + '</span><span class="zh" lang="zh">' + zhDisplay + '</span>';
+    lunarEl.hidden = false;
+  } else {
+    lunarEl.hidden = true;
+  }
+
+  document.getElementById('eventSummary').textContent = event.summary;
+
+  const moreLink = document.getElementById('eventMore');
+  moreLink.setAttribute('href', event.slug + '.html');
+  moreLink.setAttribute('data-route', 'Culture/Calendar/' + event.slug + '.html');
+
+  // 展开
+  eventDetail.classList.add('is-open');
+  eventDetail.setAttribute('aria-hidden', 'false');
+
+  // 滚动到展开卡片
+  setTimeout(() => {
+    eventDetail.scrollIntoView({ behavior:'smooth', block:'center' });
+  }, 250);
+}
+
+function closeEventDetail() {
+  eventDetail.classList.remove('is-open');
+  eventDetail.setAttribute('aria-hidden', 'true');
+  document.querySelectorAll('.day-cell.selected').forEach(c => c.classList.remove('selected'));
+}
+
+document.getElementById('eventClose').addEventListener('click', closeEventDetail);
+function goPrev() {
+  if (currentMonth > 0) {
+    currentMonth--;
+    renderMonth(currentMonth);
+  } else {
+    // 上一年 12 月
+    YEAR--;
+    currentMonth = 11;
+    EVENTS = buildEventsForYear(YEAR);
+    renderMonth(currentMonth);
+    renderFestivalList();
+  }
+}
+function goNext() {
+  if (currentMonth < 11) {
+    currentMonth++;
+    renderMonth(currentMonth);
+  } else {
+    // 下一年 1 月
+    YEAR++;
+    currentMonth = 0;
+    EVENTS = buildEventsForYear(YEAR);
+    renderMonth(currentMonth);
+    renderFestivalList();
+  }
+}
+document.getElementById('prevBtn').addEventListener('click', goPrev);
+document.getElementById('nextBtn').addEventListener('click', goNext);
+
+// jump to today 按钮
+document.getElementById('todayBtn').addEventListener('click', () => {
+  const realToday = new Date();
+  const yearChanged = (YEAR !== realToday.getFullYear());
+  YEAR = realToday.getFullYear();
+  currentMonth = realToday.getMonth();
+  EVENTS = buildEventsForYear(YEAR);
+  renderMonth(currentMonth);
+  if (yearChanged) renderFestivalList();
+  // 滚动到日历位置
+  document.querySelector('.calendar-frame').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// 键盘翻页
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') goPrev();
+  if (e.key === 'ArrowRight') goNext();
+  if (e.key === 'Escape') closeEventDetail();
+});
+
+// 等 lunar-javascript 库加载后再渲染
+function initCalendar() {
+  if (typeof Solar === 'undefined' || typeof Lunar === 'undefined') {
+    // 库还没加载，等等
+    setTimeout(initCalendar, 50);
+    return;
+  }
+  // 库已加载，构建当前年份事件
+  EVENTS = buildEventsForYear(YEAR);
+  renderMonth(currentMonth);
+  renderFestivalList();
+}
+initCalendar();
+
+/* 渲染右侧节日列表 - 当年所有节日按时间顺序 */
+function renderFestivalList(){
+  const container = document.getElementById('festivalListItems');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // 根据当前 tab 筛选事件类型
+  const targetType = (currentListTab === 'festivals') ? 'festival' : 'jieqi';
+
+  // 从 EVENTS 中筛出对应类型，按公历日期排序
+  const items = [];
+  Object.keys(EVENTS).forEach(key => {
+    const ev = EVENTS[key];
+    if (ev.type === targetType) {
+      items.push({ key, ...ev });
+    }
+  });
+  items.sort((a, b) => a.key.localeCompare(b.key));
+
+  items.forEach(item_data => {
+    const [mm, dd] = item_data.key.split('-').map(Number);
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.className = 'festival-item' + (item_data.holiday ? ' is-holiday' : '');
+    item.setAttribute('data-month', mm - 1);   // 0-indexed
+    item.setAttribute('data-key', item_data.key);
+
+    item.innerHTML = `
+      <span class="festival-icon">${item_data.icon}</span>
+      <span class="festival-text">
+        <div class="festival-en">${item_data.en}</div>
+        <div class="festival-zh-line">
+          <span lang="zh">${item_data.zh}</span>
+          <span class="date">${MONTHS[mm-1].en.slice(0,3)} ${dd}</span>
+        </div>
+      </span>
+    `;
+
+    item.addEventListener('click', () => {
+      const targetMonth = parseInt(item.getAttribute('data-month'), 10);
+      const targetKey = item.getAttribute('data-key');
+      // 跳到对应月份
+      if (targetMonth !== currentMonth) {
+        currentMonth = targetMonth;
+        renderMonth(currentMonth);
+      }
+      // 等月份切换动画走完，再展开事件卡片
+      setTimeout(() => {
+        const cell = document.querySelector(`.day-cell.has-event[data-key="${targetKey}"]`);
+        if (cell) {
+          cell.click();
+        } else {
+          document.querySelector('.calendar-main').scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      }, 320);
+    });
+
+    container.appendChild(item);
+  });
+
+  // 内容淡入
+  container.style.opacity = '0';
+  requestAnimationFrame(() => {
+    container.style.transition = 'opacity .35s ease';
+    container.style.opacity = '1';
+  });
+}
+
+// Tab 切换绑定
+document.querySelectorAll('.list-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const newTab = tab.getAttribute('data-tab');
+    if (newTab === currentListTab) return;
+    // 切换激活状态
+    document.querySelectorAll('.list-tab').forEach(t => {
+      const isThis = (t === tab);
+      t.classList.toggle('is-active', isThis);
+      t.setAttribute('aria-selected', isThis ? 'true' : 'false');
+    });
+    currentListTab = newTab;
+    renderFestivalList();
+  });
+});
+
+/* nav 滚动后磨砂 */
+(function nav(){
+  var n = document.getElementById('topNav');
+  function update(){ n.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
+/* 微信 */
+(function wechat(){
+  document.querySelectorAll('.slowly-social').forEach(function(root){
+    var trigger = root.querySelector('.js-wechat-trigger');
+    var popup = root.querySelector('.js-wechat-popup');
+    if (!trigger || !popup) return;
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      var open = popup.classList.toggle('is-open');
+      trigger.classList.toggle('is-wechat-active', open);
+      popup.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  });
+})();
+
+  /* ============================================================
+     智能链接 Fallback - 事件委托版
+     检测带 [data-route] 的链接点击，未发布的页面跳 coming-soon.html
+     用事件委托是为了支持动态生成的链接（如展开卡片里的"read the full story"）
+     ============================================================ */
+  (function setupSmartLinks(){
+    const FALLBACK = '../../coming-soon.html';   // 相对于 Culture/Calendar/ 的路径
+    const probeCache = new Map();
+
+    async function probe(url){
+      if (probeCache.has(url)) {
+        const v = probeCache.get(url);
+        return v instanceof Promise ? v : v;
+      }
+      const p = (async () => {
+        try {
+          const res = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+          return res.ok;
+        } catch (e) {
+          return false;
+        }
+      })();
+      probeCache.set(url, p);
+      const exists = await p;
+      probeCache.set(url, exists);
+      return exists;
+    }
+
+    // 全局 hover/touch 预探测 - 用事件委托
+    document.addEventListener('mouseover', (e) => {
+      const a = e.target.closest('a[data-route]');
+      if (a) probe(a.getAttribute('data-route'));
+    }, true);
+    document.addEventListener('touchstart', (e) => {
+      const a = e.target.closest('a[data-route]');
+      if (a) probe(a.getAttribute('data-route'));
+    }, { passive: true, capture: true });
+
+    // 全局点击拦截
+    document.addEventListener('click', async (e) => {
+      const a = e.target.closest('a[data-route]');
+      if (!a) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+
+      const route = a.getAttribute('data-route');
+      // 把 data-route 转成相对路径
+      // data-route 是从项目根开始的（如 'Culture/Calendar/SummerSolstice.html'）
+      // 但在 Culture/Calendar/menu.html 里要相对当前位置
+      // 对于本目录的链接，href 已经是 './SummerSolstice.html' 形式
+      // 所以我们直接用 href 来探测
+      const href = a.getAttribute('href');
+      const cached = probeCache.get(href);
+      let exists;
+      if (cached === true || cached === false) {
+        exists = cached;
+      } else if (cached instanceof Promise) {
+        exists = await cached;
+      } else {
+        exists = await probe(href);
+      }
+      window.location.href = exists ? href : FALLBACK;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>
