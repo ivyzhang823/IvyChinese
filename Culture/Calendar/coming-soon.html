@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coming Slowly · Slowly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f4efe6;
+    --paper-deep: #ebe4d6;
+    --ink: #1a1814;
+    --ink-soft: #3a342c;
+    --ink-mute: #6b6258;
+    --cinnabar: #b73225;
+    --jade: #5c7a6a;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{
+    background:var(--paper);
+    color:var(--ink);
+    overflow-x:hidden;
+    min-height:100vh;
+    font-family:'Noto Serif SC','Cormorant Garamond',serif;
+    font-weight:300;
+  }
+
+  /* 纸张纹理 */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(183,50,37,.04) 0%, transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(92,122,106,.05) 0%, transparent 55%);
+    pointer-events:none;
+    z-index:1;
+  }
+  body::after{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1, 0 0 0 0 0.09, 0 0 0 0 0.07, 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.55;
+    mix-blend-mode:multiply;
+    pointer-events:none;
+    z-index:2;
+  }
+
+  /* 水墨流动背景（比首页更轻） */
+  .ink-flow{
+    position:fixed;inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .ink-blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.3;
+    animation:drift 32s ease-in-out infinite;
+  }
+  .ink-blob.b1{
+    width:520px;height:520px;
+    background:radial-gradient(circle, rgba(26,24,20,.45), transparent 65%);
+    top:-12%;left:-10%;
+  }
+  .ink-blob.b2{
+    width:440px;height:440px;
+    background:radial-gradient(circle, rgba(183,50,37,.32), transparent 65%);
+    bottom:-10%;right:-8%;
+    animation-delay:-12s;
+    animation-duration:38s;
+  }
+  @keyframes drift{
+    0%,100%{transform:translate(0,0) scale(1)}
+    33%{transform:translate(50px,-30px) scale(1.06)}
+    66%{transform:translate(-40px,40px) scale(.96)}
+  }
+
+  /* 顶部 logo */
+  .top{
+    position:fixed;top:0;left:0;right:0;
+    padding:28px 56px;
+    z-index:10;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .logo{
+    font-family:'Noto Serif SC',serif;
+    font-weight:500;
+    font-size:18px;
+    letter-spacing:.15em;
+    color:var(--ink);
+    text-decoration:none;
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .logo .seal{
+    display:inline-block;
+    width:28px;height:28px;
+    background:var(--cinnabar);
+    color:var(--paper);
+    font-size:14px;
+    font-weight:400;
+    line-height:28px;
+    text-align:center;
+    transform:rotate(-2deg);
+    box-shadow:0 1px 0 rgba(0,0,0,.1);
+  }
+  .logo small{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--ink-mute);
+    font-weight:300;
+  }
+  .top-back{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    text-decoration:none;
+    letter-spacing:.1em;
+    transition:color .4s ease;
+  }
+  .top-back:hover{color:var(--cinnabar)}
+
+  /* 主内容 */
+  main{
+    position:relative;
+    z-index:5;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 32px 80px;
+  }
+
+  /* 中央汉字 + 同心圆 - 视觉锚点 */
+  .anchor{
+    position:relative;
+    width:280px;height:280px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:60px;
+  }
+  .anchor-circle{
+    position:absolute;
+    border:1px solid rgba(26,24,20,.15);
+    border-radius:50%;
+    animation:rotate 80s linear infinite;
+  }
+  .anchor-circle.c1{width:100%;height:100%}
+  .anchor-circle.c2{
+    width:72%;height:72%;
+    border-style:dashed;
+    border-color:rgba(183,50,37,.22);
+    animation-direction:reverse;
+    animation-duration:60s;
+  }
+  @keyframes rotate{to{transform:rotate(360deg)}}
+  .anchor-char{
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:120px;
+    color:var(--ink);
+    line-height:1;
+    position:relative;
+    z-index:2;
+  }
+  .anchor-pinyin{
+    position:absolute;
+    bottom:-26px;left:50%;
+    transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.25em;
+    white-space:nowrap;
+  }
+
+  .label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    margin-bottom:32px;
+  }
+  .label::before{content:'— ';color:var(--cinnabar)}
+  .label::after{content:' —';color:var(--cinnabar)}
+
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(44px, 6vw, 80px);
+    line-height:1.1;
+    letter-spacing:-.005em;
+    margin-bottom:28px;
+    max-width:780px;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--cinnabar);
+    font-weight:300;
+  }
+
+  .zh-line{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:16px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+    margin-bottom:8px;
+  }
+  .zh-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-mute);
+    opacity:.7;
+    letter-spacing:.1em;
+    margin-bottom:48px;
+  }
+
+  .body-text{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:18px;
+    color:var(--ink-soft);
+    line-height:1.75;
+    max-width:560px;
+    margin-bottom:56px;
+  }
+
+  .actions{
+    display:flex;
+    gap:32px;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:.15em;
+    text-decoration:none;
+    padding:14px 28px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    background:transparent;
+    transition:all .5s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .btn::before{
+    content:'';
+    position:absolute;inset:0;
+    background:var(--ink);
+    transform:translateX(-101%);
+    transition:transform .5s ease;
+    z-index:-1;
+  }
+  .btn:hover{color:var(--paper)}
+  .btn:hover::before{transform:translateX(0)}
+  .btn .arrow{transition:transform .4s ease}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  .btn-text{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--ink-mute);
+    text-decoration:none;
+    border-bottom:1px solid var(--ink-mute);
+    padding-bottom:3px;
+    letter-spacing:.1em;
+    transition:color .4s ease, border-color .4s ease;
+    display:inline-flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .btn-text .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--cinnabar);
+    align-self:center;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:.85;transform:scale(1)}
+    50%{opacity:.4;transform:scale(1.25)}
+  }
+  .btn-text:hover{
+    color:var(--cinnabar);
+    border-color:var(--cinnabar);
+  }
+  .btn-text .rednote-id{
+    font-family:'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size:11.5px;
+    font-weight:400;
+    letter-spacing:.02em;
+    color:var(--ink-soft);
+    padding-left:12px;
+    margin-left:4px;
+    border-left:1px solid rgba(26,24,20,.22);
+    transition:color .4s ease;
+  }
+  .btn-text:hover .rednote-id{color:var(--cinnabar)}
+
+  /* 底部署名 */
+  footer{
+    position:fixed;
+    bottom:32px;left:0;right:0;
+    text-align:center;
+    z-index:5;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+    opacity:.6;
+  }
+  footer span[lang="zh"]{
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-weight:300;
+    margin-left:8px;
+  }
+  footer .foot-with{
+    color:var(--cinnabar);
+    font-style:italic;
+    margin-left:6px;
+    letter-spacing:.1em;
+    opacity:.85;
+  }
+
+  /* 出现动画 */
+  .fade-up{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp 1.4s ease forwards;
+  }
+  .fade-up.d1{animation-delay:.2s}
+  .fade-up.d2{animation-delay:.45s}
+  .fade-up.d3{animation-delay:.7s}
+  .fade-up.d4{animation-delay:.95s}
+  .fade-up.d5{animation-delay:1.2s}
+  .fade-up.d6{animation-delay:1.45s}
+  @keyframes fadeUp{
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  
+  /* === Elsewhere - 安静的社交图标组 === */
+  .elsewhere{
+    margin-top:56px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+  .elsewhere-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:lowercase;
+    opacity:.7;
+  }
+  .elsewhere-icons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .social-dot{
+    width:32px;
+    height:32px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink-mute);
+    text-decoration:none;
+    transition:color .4s ease, transform .4s ease, opacity .4s ease;
+    position:relative;
+    opacity:.6;
+  }
+  .social-dot svg{
+    width:18px;
+    height:18px;
+    display:block;
+  }
+  .social-dot:hover{
+    color:var(--cinnabar);
+    opacity:1;
+    transform:translateY(-2px);
+  }
+  .social-dot::after{
+    content:attr(data-tip);
+    position:absolute;
+    bottom:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:10px;
+    color:var(--ink-faint);
+    letter-spacing:.15em;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .4s ease;
+  }
+  .social-dot:hover::after{
+    opacity:1;
+  }
+  .fade-up.d7{animation-delay:1.7s}
+  /* === button 重置 (WeChat trigger 用 button 元素) === */
+  button.social-dot{
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    font:inherit;
+  }
+  button.social-dot.wechat-active{
+    color:var(--cinnabar);
+    opacity:1;
+  }
+
+  /* === WeChat 二维码弹层 === */
+  .wechat-popup{
+    margin:0 auto;
+    max-width:240px;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    transition:max-height .55s cubic-bezier(.45,.05,.55,.95),
+               opacity .45s ease,
+               margin-top .5s ease;
+  }
+  .wechat-popup.open{
+    max-height:340px;
+    opacity:1;
+    margin-top:18px;
+  }
+  .wechat-popup-inner{
+    background:var(--paper);
+    padding:16px 16px 12px;
+    border-radius:4px;
+    display:inline-block;
+    box-shadow:0 2px 0 rgba(183,50,37,.4),
+               0 6px 24px rgba(26,24,20,.12);
+    position:relative;
+  }
+  .wechat-popup-inner::before{
+    content:'';
+    position:absolute;
+    top:-5px;
+    left:50%;
+    transform:translateX(-50%) rotate(45deg);
+    width:10px;height:10px;
+    background:var(--paper);
+  }
+  .wechat-popup img{
+    display:block;
+    width:160px;
+    height:auto;
+    image-rendering:pixelated;
+  }
+  .wechat-popup-caption{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:10px;
+    color:var(--ink-mute);
+    letter-spacing:.15em;
+    text-align:center;
+    margin-top:8px;
+  }
+
+
+  @media (max-width: 720px){
+    .top{padding:20px 24px}
+    .logo small{display:none}
+    .anchor{width:220px;height:220px;margin-bottom:48px}
+    .anchor-char{font-size:90px}
+    main{padding:100px 24px 80px}
+    .body-text{font-size:16px}
+    .actions{flex-direction:column;gap:20px}
+    .elsewhere{margin-top:36px;gap:14px}
+    .elsewhere-icons{gap:14px}
+    .social-dot{width:28px;height:28px}
+    .social-dot svg{width:16px;height:16px}
+    footer{position:static;padding:30px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- 水墨背景 -->
+<div class="ink-flow">
+  <div class="ink-blob b1"></div>
+  <div class="ink-blob b2"></div>
+</div>
+
+<!-- 顶部 -->
+<div class="top">
+  <a href="index.html" class="logo">
+    <span class="seal">慢</span>
+    Slowly
+    <small>· enter chinese</small>
+  </a>
+  <a href="index.html" class="top-back">← back to home</a>
+</div>
+
+<!-- 主体 -->
+<main>
+  <!-- 中央视觉：「未」字 = not yet, with pinyin -->
+  <div class="anchor fade-up">
+    <div class="anchor-circle c1"></div>
+    <div class="anchor-circle c2"></div>
+    <div class="anchor-char" lang="zh" title="wèi · not yet">未</div>
+    <div class="anchor-pinyin">wèi · not yet</div>
+  </div>
+
+  <div class="label fade-up d1">Coming Slowly</div>
+
+  <h1 class="fade-up d2">
+    Some doors are still being<br>
+    <em>quietly written.</em>
+  </h1>
+
+  <div class="zh-line fade-up d3" lang="zh">这扇门，还在静静地写着</div>
+  <div class="zh-pinyin fade-up d3">zhè shàn mén, hái zài jìngjìng de xiězhe</div>
+
+  <p class="body-text fade-up d4">
+    Slowly is built one essay, one character, one season at a time. The page you were looking for hasn't arrived yet — but it will, when it's ready to be read slowly.
+  </p>
+
+  <div class="actions fade-up d5">
+    <a href="menu.html" class="btn">
+      <span>← Back</span>
+    </a>
+  </div>
+
+  <!-- 一组安静的社交图标 -->
+  <div class="elsewhere fade-up d6">
+    <div class="elsewhere-label">— or find me elsewhere —</div>
+    <div class="elsewhere-icons">
+      <a href="mailto:ivyzhangyaochen@gmail.com"  class="social-dot" aria-label="Email" data-tip="email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 4.5h21c.83 0 1.5.67 1.5 1.5v12c0 .83-.67 1.5-1.5 1.5h-21C.67 19.5 0 18.83 0 18V6c0-.83.67-1.5 1.5-1.5zM12 13.5L1.74 6.42c-.32.27-.49.66-.49 1.08v.07L12 15l10.75-7.43v-.07c0-.42-.17-.81-.49-1.08L12 13.5z"/></svg></a>
+      <a href="https://wa.me/8615950075140" target="_blank" rel="noopener" class="social-dot" aria-label="WhatsApp" data-tip="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://m.me/ivyzhang.823" target="_blank" rel="noopener" class="social-dot" aria-label="Messenger" data-tip="Messenger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.001 11.639C.001 4.949 5.241 0 12.001 0S24 4.95 24 11.639c0 6.689-5.24 11.638-12 11.638-1.21 0-2.38-.16-3.47-.46a.96.96 0 00-.64.05l-2.39 1.05a.96.96 0 01-1.35-.85l-.07-2.14a.97.97 0 00-.32-.68A11.39 11.389 0 010 11.639zm8.32-2.19l-3.52 5.6c-.35.53.32 1.139.82.75l3.79-2.87c.26-.2.6-.2.87 0l2.8 2.1c.84.63 2.04.4 2.6-.48l3.52-5.6c.35-.53-.32-1.13-.82-.75l-3.79 2.87c-.25.2-.6.2-.86 0l-2.8-2.1a1.8 1.8 0 00-2.61.48z"/></svg></a>
+      <button type="button" class="social-dot wechat-trigger" id="wechatTriggerCS" aria-label="WeChat" data-tip="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .55-.012.821-.03-.273-.813-.42-1.677-.42-2.575 0-3.952 3.747-7.131 8.355-7.131.198 0 .395.011.59.024-.65-3.4-4.151-5.97-8.346-5.97zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-3.93 0-7.116 2.703-7.116 6.035 0 3.332 3.186 6.035 7.115 6.035a8.4 8.4 0 002.346-.33c.265-.078.53-.078.795.064l1.578.92c.078.058.156.078.234.078a.31.31 0 00.295-.295c0-.078-.02-.155-.04-.213-.02-.058-.293-1.117-.293-1.197a.567.567 0 01.234-.591C23.34 18.387 24 16.798 24 15.058c0-3.332-3.186-6.2-7.115-6.2zm-2.43 1.838c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816zm5.078 0c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816z"/></svg></button>
+      <a href="https://www.xiaohongshu.com/user/profile/60deed2c000000000101da45?exSource=" target="_blank" rel="noopener" class="social-dot" aria-label="RedNote" data-tip="RedNote"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="serif" font-weight="700" font-size="11" fill="#f4efe6">小红</text></svg></a>
+      <a href="https://www.tiktok.com/@ivyzhang.823" target="_blank" rel="noopener" class="social-dot" aria-label="TikTok" data-tip="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.youtube.com/@IvyZhang.823" target="_blank" rel="noopener" class="social-dot" aria-label="YouTube" data-tip="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.facebook.com/ivyZhang.823" target="_blank" rel="noopener" class="social-dot" aria-label="Facebook" data-tip="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    </div>
+
+    <!-- WeChat 二维码弹层 -->
+    <div class="wechat-popup" id="wechatPopupCS" aria-hidden="true">
+      <div class="wechat-popup-inner">
+        <img src="data:image/png;base64,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" alt="WeChat QR" />
+        <p class="wechat-popup-caption">扫一扫 · scan to add</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="fade-up d7">
+  Slowly · enter Chinese gently. <span class="foot-with">with Ivy</span>
+</footer>
+
+<script>
+  (function wechatToggle(){
+    var trigger = document.getElementById('wechatTriggerCS');
+    var popup = document.getElementById('wechatPopupCS');
+    if (!trigger || !popup) return;
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      var open = popup.classList.toggle('open');
+      trigger.classList.toggle('wechat-active', open);
+      popup.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  })();
+</script>
+</body>
+</html>
