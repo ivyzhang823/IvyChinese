@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enter Chinese Slowly · 通过感知进入中文世界</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@200;300;400;500;700&family=Inter:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f4efe6;          /* 宣纸米白 */
+    --paper-deep: #ebe4d6;     /* 较深米色 */
+    --ink: #1a1814;            /* 墨色 */
+    --ink-soft: #3a342c;       /* 淡墨 */
+    --ink-mute: #6b6258;       /* 远墨 */
+    --cinnabar: #b73225;       /* 朱砂 */
+    --cinnabar-soft: #c94a3a;
+    --jade: #5c7a6a;           /* 远山青 */
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--paper);color:var(--ink);overflow-x:hidden}
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;     /* 固定导航高度，避免锚点被遮 */
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}    /* 尊重系统「减少动效」设置 */
+  }
+  body{
+    font-family:'Noto Serif SC', 'Cormorant Garamond', serif;
+    font-weight:300;
+    line-height:1.6;
+    min-height:100vh;
+    position:relative;
+  }
+
+  /* 纸张纹理 */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(183,50,37,.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(92,122,106,.05) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(26,24,20,.02) 0%, transparent 70%);
+    pointer-events:none;
+    z-index:1;
+  }
+  /* 颗粒噪点 */
+  body::after{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1, 0 0 0 0 0.09, 0 0 0 0 0.07, 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.6;
+    mix-blend-mode:multiply;
+    pointer-events:none;
+    z-index:2;
+  }
+
+  /* 水墨流动背景 */
+  .ink-flow{
+    position:fixed;inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .ink-blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.35;
+    animation:drift 28s ease-in-out infinite;
+  }
+  .ink-blob.b1{
+    width:540px;height:540px;
+    background:radial-gradient(circle, rgba(26,24,20,.5), transparent 65%);
+    top:-10%;left:-8%;
+    animation-delay:0s;
+  }
+  .ink-blob.b2{
+    width:420px;height:420px;
+    background:radial-gradient(circle, rgba(183,50,37,.35), transparent 65%);
+    top:55%;right:-6%;
+    animation-delay:-9s;
+    animation-duration:34s;
+  }
+  .ink-blob.b3{
+    width:380px;height:380px;
+    background:radial-gradient(circle, rgba(92,122,106,.4), transparent 65%);
+    bottom:-12%;left:30%;
+    animation-delay:-16s;
+    animation-duration:40s;
+  }
+  @keyframes drift{
+    0%,100%{transform:translate(0,0) scale(1)}
+    25%{transform:translate(60px,-40px) scale(1.08)}
+    50%{transform:translate(-30px,50px) scale(.95)}
+    75%{transform:translate(-50px,-20px) scale(1.05)}
+  }
+
+  /* 全局容器 */
+  main{position:relative;z-index:5}
+
+  /* 顶部导航 */
+  nav{
+    position:fixed;top:0;left:0;right:0;
+    z-index:100;
+    padding:28px 56px;
+    display:flex;justify-content:space-between;align-items:center;
+    backdrop-filter:blur(8px);
+    background:rgba(244,239,230,.4);
+    border-bottom:1px solid rgba(26,24,20,.06);
+    gap:32px;
+  }
+  .logo{
+    font-family:'Noto Serif SC',serif;
+    font-weight:500;
+    font-size:18px;
+    letter-spacing:.15em;
+    color:var(--ink);
+    display:flex;align-items:baseline;gap:14px;
+    flex-shrink:0;
+  }
+  .logo .seal{
+    display:inline-block;
+    width:28px;height:28px;
+    background:var(--cinnabar);
+    color:var(--paper);
+    font-size:14px;
+    font-weight:400;
+    line-height:28px;
+    text-align:center;
+    transform:rotate(-2deg);
+    box-shadow:0 1px 0 rgba(0,0,0,.1);
+  }
+  .logo small{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--ink-mute);
+    font-weight:300;
+  }
+  /* 链接外壳：负责右侧渐变提示 */
+  .nav-links-wrap{
+    position:relative;
+    flex:1;
+    min-width:0;
+    display:flex;
+    justify-content:flex-end;
+  }
+  .nav-links-wrap::after{
+    content:'';
+    position:absolute;
+    top:0;right:0;bottom:0;
+    width:48px;
+    background:linear-gradient(to right, transparent, rgba(244,239,230,.85));
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+  .nav-links-wrap.is-scrollable::after{opacity:1}
+  .nav-links{
+    display:flex;
+    gap:42px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:.08em;
+    overflow-x:auto;
+    scrollbar-width:none;          /* Firefox */
+    -ms-overflow-style:none;        /* IE / Edge */
+    -webkit-overflow-scrolling:touch;
+    padding:4px 2px;                /* 给悬停下划线留呼吸空间 */
+    scroll-snap-type:x proximity;
+    max-width:100%;
+  }
+  .nav-links::-webkit-scrollbar{display:none}  /* Chrome / Safari */
+  .nav-links a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    position:relative;
+    padding-bottom:2px;
+    transition:color .4s ease;
+    display:inline-flex;
+    align-items:baseline;
+    gap:8px;
+    white-space:nowrap;             /* 单个链接不换行 */
+    flex-shrink:0;                  /* 不被挤压 */
+    scroll-snap-align:end;
+  }
+  .nav-links a span[lang="zh"]{
+    font-family:'Noto Serif SC',serif;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.1em;
+    opacity:.7;
+    font-weight:300;
+    white-space:nowrap;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;
+    bottom:0;left:0;width:0;height:1px;
+    background:var(--cinnabar);
+    transition:width .5s ease;
+  }
+  .nav-links a:hover{color:var(--cinnabar)}
+  .nav-links a:hover::after{width:100%}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    padding:180px 56px 120px;
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+    gap:60px;
+    position:relative;
+  }
+
+  .hero-left{
+    text-align:right;
+    padding-right:20px;
+  }
+  .label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    margin-bottom:32px;
+    opacity:0;
+    animation:fadeUp 1.2s .3s ease forwards;
+  }
+  .label::before{
+    content:'— ';color:var(--cinnabar);
+  }
+
+  h1.eng{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(48px, 7.2vw, 104px);
+    line-height:1.05;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin-bottom:20px;
+    opacity:0;
+    animation:fadeUp 1.4s .6s ease forwards;
+  }
+  h1.eng em{
+    font-style:italic;
+    font-weight:300;
+    color:var(--cinnabar);
+    position:relative;
+  }
+  h1.eng em::after{
+    content:'';
+    position:absolute;
+    left:0;right:0;bottom:8%;
+    height:1px;
+    background:var(--cinnabar);
+    opacity:.3;
+  }
+
+  .sub-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(16px,1.4vw,20px);
+    font-style:italic;
+    color:var(--ink-soft);
+    letter-spacing:.02em;
+    line-height:1.6;
+    max-width:480px;
+    margin-left:auto;
+    opacity:0;
+    animation:fadeUp 1.4s .9s ease forwards;
+  }
+  .sub-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.1em;
+    line-height:1.7;
+    max-width:480px;
+    margin:14px 0 0 auto;
+    opacity:0;
+    animation:fadeUp 1.4s 1s ease forwards;
+  }
+
+  /* 中央竖排中文 */
+  .hero-center{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    position:relative;
+    padding:30px 0;
+    opacity:0;
+    animation:fadeIn 2s 1.2s ease forwards;
+  }
+  .hero-center-zh{
+    writing-mode:vertical-rl;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:clamp(28px,3.4vw,46px);
+    letter-spacing:.4em;
+    color:var(--ink);
+    line-height:1.4;
+    position:relative;
+  }
+  .hero-center-zh::before,
+  .hero-center-zh::after{
+    content:'';
+    position:absolute;
+    left:50%;transform:translateX(-50%);
+    width:1px;
+    background:linear-gradient(to bottom, transparent, var(--ink-mute), transparent);
+  }
+  .hero-center-zh::before{top:-80px;height:80px}
+  .hero-center-zh::after{bottom:-80px;height:80px}
+  .hero-center-zh .accent{color:var(--cinnabar)}
+  .hero-center-pinyin{
+    writing-mode:vertical-rl;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+    opacity:.7;
+    align-self:center;
+  }
+  .hero-center-en{
+    writing-mode:vertical-rl;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-soft);
+    letter-spacing:.1em;
+    align-self:center;
+    max-height:280px;
+  }
+
+  .hero-right{
+    text-align:left;
+    padding-left:20px;
+    align-self:end;
+    padding-bottom:20px;
+  }
+  .hero-quote-en{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1.6;
+    letter-spacing:.01em;
+    max-width:340px;
+    opacity:0;
+    animation:fadeUp 1.4s 1.4s ease forwards;
+  }
+  .hero-quote-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:14px;
+    color:var(--ink-mute);
+    line-height:1.9;
+    letter-spacing:.08em;
+    max-width:300px;
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid rgba(26,24,20,.12);
+    opacity:0;
+    animation:fadeUp 1.4s 1.55s ease forwards;
+  }
+  .pinyin-line{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-mute);
+    opacity:.7;
+    letter-spacing:.05em;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .hero-right .quote-mark{
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+    color:var(--cinnabar);
+    line-height:0;
+    position:relative;
+    top:20px;
+    margin-right:6px;
+    opacity:.6;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:.15em;
+    text-decoration:none;
+    padding:14px 28px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    background:transparent;
+    transition:all .5s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .btn::before{
+    content:'';
+    position:absolute;inset:0;
+    background:var(--ink);
+    transform:translateX(-101%);
+    transition:transform .5s ease;
+    z-index:-1;
+  }
+  .btn:hover{color:var(--paper)}
+  .btn:hover::before{transform:translateX(0)}
+  .btn .arrow{transition:transform .4s ease}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* 滚动提示 */
+  .scroll-hint{
+    position:absolute;
+    bottom:40px;left:50%;transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    display:flex;flex-direction:column;align-items:center;gap:14px;
+    opacity:0;
+    animation:fadeIn 1.4s 2.2s ease forwards, breathe 3s 2.2s ease-in-out infinite;
+  }
+  .scroll-hint .line{
+    width:1px;height:40px;
+    background:linear-gradient(to bottom, var(--ink-mute), transparent);
+  }
+
+  /* 章节通用 */
+  section.chapter{
+    padding:60px 56px 100px;     /* 上 60，下 100 - 让标题贴近 nav，内容向下展开 */
+    position:relative;
+    z-index:5;
+    scroll-margin-top:20px;       /* 跳转时只留 20px 缓冲，紧贴 nav 下方 */
+  }
+  .chapter-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--cinnabar);
+    letter-spacing:.3em;
+    margin-bottom:24px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .chapter-num::after{
+    content:'';flex:0 0 60px;height:1px;background:var(--cinnabar);opacity:.4;
+  }
+  .chapter-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(40px, 5vw, 72px);
+    line-height:1.1;
+    color:var(--ink);
+    margin-bottom:24px;
+    letter-spacing:-.005em;
+  }
+  .chapter-title em{
+    font-style:italic;
+    color:var(--cinnabar);
+    font-weight:300;
+  }
+  .chapter-title .en{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:.45em;
+    color:var(--ink-mute);
+    letter-spacing:.05em;
+    margin-top:12px;
+  }
+  .chapter-title .zh-sub{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:.32em;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid rgba(26,24,20,.12);
+    width:fit-content;
+  }
+  .chapter-intro{
+    font-family:'Cormorant Garamond',serif;
+    font-size:19px;
+    color:var(--ink-soft);
+    line-height:1.75;
+    max-width:600px;
+    letter-spacing:.005em;
+    font-weight:300;
+  }
+
+  /* 哲学三段 */
+  .philosophy{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:0;
+    margin-top:100px;
+    border-top:1px solid rgba(26,24,20,.12);
+  }
+  .phil-item{
+    padding:60px 40px;
+    border-right:1px solid rgba(26,24,20,.12);
+    position:relative;
+    transition:background .6s ease;
+  }
+  .phil-item:last-child{border-right:none}
+  .phil-item:hover{background:rgba(26,24,20,.03)}
+  .phil-char{
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:140px;
+    line-height:1;
+    color:var(--ink);
+    margin-bottom:28px;
+    position:relative;
+    display:inline-block;
+  }
+  .phil-char .pin{
+    position:absolute;
+    top:8px;right:-30px;
+    width:24px;height:24px;
+    background:var(--cinnabar);
+    color:var(--paper);
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;
+    font-weight:400;
+    text-align:center;
+    line-height:24px;
+    transform:rotate(4deg);
+    letter-spacing:.05em;
+  }
+  .phil-meaning{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:28px;
+    color:var(--ink);
+    margin-bottom:6px;
+    letter-spacing:.01em;
+    font-style:italic;
+  }
+  .phil-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    margin-bottom:24px;
+    letter-spacing:.15em;
+    text-transform:lowercase;
+  }
+  .phil-desc{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:16px;
+    color:var(--ink-soft);
+    line-height:1.75;
+    margin-bottom:24px;
+  }
+  .phil-etymology{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:13px;
+    color:var(--ink-mute);
+    line-height:1.65;
+    padding-top:18px;
+    border-top:1px dashed rgba(26,24,20,.18);
+    font-style:italic;
+  }
+  .phil-etymology span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--cinnabar);
+    margin-bottom:8px;
+    opacity:.8;
+  }
+
+  /* 内容入口 */
+  .gateways{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);    /* 三等宽 */
+    gap:24px;
+    margin-top:80px;
+  }
+  .gateway{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:3/5;                        /* 统一高耸比例 */
+    cursor:pointer;
+    background:var(--ink);
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    transition:transform .6s cubic-bezier(.2,.7,.3,1),
+               box-shadow .6s ease,
+               filter .6s ease,
+               z-index 0s .3s;                /* z-index 延迟切换避免突变 */
+    z-index:1;
+    will-change:transform;
+  }
+  /* 当鼠标悬停某一道门时 - 该门"亮起、浮起、轻微放大" */
+  .gateway:hover{
+    transform:scale(1.04) translateY(-4px);
+    box-shadow:0 30px 60px -20px rgba(26,24,20,.4),
+               0 12px 24px -8px rgba(26,24,20,.3);
+    z-index:10;
+    transition-delay:0s, 0s, 0s, 0s;
+  }
+  /* 当鼠标在 .gateways 容器内时，未被悬停的门稍微"退后" */
+  .gateways:hover .gateway:not(:hover){
+    filter:brightness(.7) saturate(.85);
+    transform:scale(.985);
+  }
+  /* 移除旧的 .tall 修饰符（不再需要——三个都是 tall）*/
+  .gateway.tall{aspect-ratio:3/5}             /* 留兼容，效果和 .gateway 一致 */
+
+  .gateway-bg{
+    position:absolute;inset:0;
+    transition:transform 1.2s ease, filter .8s ease;
+    filter:grayscale(.3) contrast(.95);
+  }
+  .gateway:hover .gateway-bg{
+    transform:scale(1.08);                    /* 比之前 1.05 更明显 */
+    filter:grayscale(0) contrast(1);
+  }
+  .gateway-1 .gateway-bg{
+    background:
+      linear-gradient(135deg, rgba(26,24,20,.5), rgba(26,24,20,.7)),
+      radial-gradient(circle at 30% 40%, #8a7560, #3a342c 70%);
+  }
+  .gateway-2 .gateway-bg{
+    background:
+      linear-gradient(180deg, rgba(183,50,37,.4), rgba(26,24,20,.7)),
+      radial-gradient(circle at 50% 30%, #c94a3a, #5a1a14 80%);
+  }
+  .gateway-3 .gateway-bg{
+    background:
+      linear-gradient(160deg, rgba(92,122,106,.5), rgba(26,24,20,.75)),
+      radial-gradient(circle at 60% 50%, #7a9a86, #2a3a32 75%);
+  }
+  .gateway-content{
+    position:absolute;inset:0;
+    padding:36px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    color:var(--paper);
+    z-index:2;
+  }
+  .gateway-tag{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:.2em;
+    opacity:.8;
+  }
+  .gateway-tag::before{content:'· '}
+  .gateway-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:30px;
+    line-height:1.15;
+    letter-spacing:.005em;
+  }
+  .gateway-title .zh-line{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:14px;
+    opacity:.7;
+    margin-top:10px;
+    letter-spacing:.15em;
+  }
+  .gateway-title .zh-line em{
+    font-style:italic;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;
+    opacity:.7;
+    letter-spacing:.1em;
+  }
+  .gateway-arrow{
+    align-self:flex-start;
+    width:40px;height:40px;
+    border:1px solid rgba(244,239,230,.5);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;
+    transition:all .5s ease;
+    margin-top:16px;
+  }
+  .gateway:hover .gateway-arrow{
+    background:var(--paper);
+    color:var(--ink);
+    transform:translateX(6px);
+  }
+  /* 装饰汉字 */
+  .gateway-deco{
+    position:absolute;
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:200px;
+    line-height:1;
+    color:rgba(244,239,230,.06);
+    pointer-events:none;
+    z-index:1;
+  }
+  .gateway-1 .gateway-deco{top:30%;right:-30px;font-size:240px}
+  .gateway-2 .gateway-deco{top:40%;left:-20px}
+  .gateway-3 .gateway-deco{bottom:-20px;right:-10px}
+
+  /* 氛围引言区 */
+  .quote-section{
+    padding:120px 56px;
+    text-align:center;
+    position:relative;
+    background:
+      radial-gradient(ellipse at center, rgba(183,50,37,.06), transparent 60%);
+  }
+  .quote-mark-big{
+    font-family:'Cormorant Garamond',serif;
+    font-size:160px;
+    color:var(--cinnabar);
+    opacity:.2;
+    line-height:0;
+    height:80px;
+    margin-bottom:0;
+  }
+  .quote-text{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(30px, 3.6vw, 52px);
+    line-height:1.45;
+    letter-spacing:-.005em;
+    color:var(--ink);
+    max-width:920px;
+    margin:0 auto 40px;
+  }
+  .quote-text em{
+    font-style:italic;
+    color:var(--cinnabar);
+  }
+  .quote-text .zh{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:.36em;
+    color:var(--ink-mute);
+    margin-top:32px;
+    padding-top:32px;
+    border-top:1px solid rgba(26,24,20,.12);
+    letter-spacing:.15em;
+    line-height:1.8;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .quote-attr{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+  }
+  .quote-attr::before{content:'— '}
+
+  /* Essays - 慢读 */
+  .essays-section{
+    padding-top:120px;
+    padding-bottom:120px;
+  }
+  .essays-head{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:end;
+    margin-bottom:80px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(26,24,20,.12);
+  }
+  .essays-head .chapter-intro{
+    margin-bottom:8px;
+  }
+  .essay-list{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0;
+  }
+  .essay-item{
+    text-decoration:none;
+    color:inherit;
+    padding:40px 36px 40px 36px;
+    border-right:1px solid rgba(26,24,20,.1);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    transition:background .5s ease;
+    cursor:pointer;
+  }
+  .essay-item:first-child{padding-left:0}
+  .essay-item:last-child{border-right:none;padding-right:0}
+  /* 悬停：左侧朱砂细线缓缓滑入 */
+  .essay-item::before{
+    content:'';
+    position:absolute;
+    top:40px;bottom:40px;
+    left:36px;
+    width:1px;
+    background:var(--cinnabar);
+    transform:scaleY(0);
+    transform-origin:top;
+    transition:transform .6s ease;
+  }
+  .essay-item:first-child::before{left:0}
+  .essay-item:hover::before{transform:scaleY(1)}
+  .essay-item:hover .essay-arrow{
+    color:var(--cinnabar);
+    transform:translateX(4px);
+  }
+  .essay-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.18em;
+    margin-bottom:24px;
+    text-transform:uppercase;
+  }
+  .essay-cat{
+    color:var(--cinnabar);
+    opacity:.8;
+  }
+  .essay-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:24px;
+    line-height:1.3;
+    color:var(--ink);
+    margin-bottom:18px;
+    letter-spacing:.005em;
+  }
+  .essay-title .zh-line{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.12em;
+    margin-top:10px;
+    line-height:1.6;
+  }
+  .essay-excerpt{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:15px;
+    color:var(--ink-soft);
+    line-height:1.7;
+    margin-bottom:28px;
+    flex:1;
+  }
+  .essay-arrow{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    letter-spacing:.15em;
+    transition:color .4s ease, transform .4s ease;
+    align-self:flex-start;
+  }
+  .essays-more{
+    margin-top:60px;
+    text-align:center;
+    padding-top:40px;
+    border-top:1px solid rgba(26,24,20,.12);
+  }
+  .btn-text-large{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--ink);
+    text-decoration:none;
+    letter-spacing:.1em;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:6px;
+    transition:color .4s ease, border-color .4s ease;
+    display:inline-flex;
+    gap:10px;
+    align-items:baseline;
+  }
+  .btn-text-large span[lang="zh"]{
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.15em;
+  }
+  .btn-text-large:hover{
+    color:var(--cinnabar);
+    border-color:var(--cinnabar);
+  }
+
+  /* 系统中文学习 - 四支柱 */
+  .learn-section{
+    padding:160px 56px;
+  }
+  .learn-grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:100px;
+    align-items:center;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  .learn-visual{
+    position:relative;
+    aspect-ratio:1/1;
+    max-width:480px;
+    width:100%;
+    margin:0 auto;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .learn-circle{
+    position:absolute;
+    border:1px solid rgba(26,24,20,.15);
+    border-radius:50%;
+    animation:rotate 60s linear infinite;
+  }
+  .learn-circle.c1{width:100%;height:100%;animation-duration:80s}
+  .learn-circle.c2{width:75%;height:75%;animation-duration:60s;animation-direction:reverse;border-style:dashed;border-color:rgba(183,50,37,.2)}
+  .learn-circle.c3{width:50%;height:50%;animation-duration:40s;border-color:rgba(92,122,106,.25)}
+  @keyframes rotate{to{transform:rotate(360deg)}}
+  .learn-center{
+    text-align:center;
+    z-index:2;
+    position:relative;
+  }
+  .learn-center-char{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:140px;
+    color:var(--ink);
+    line-height:1;
+  }
+  .learn-center-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    letter-spacing:.25em;
+    margin-top:8px;
+  }
+
+  .learn-text .chapter-intro{
+    margin-bottom:48px;
+  }
+  .learn-pillars{
+    list-style:none;
+  }
+  .learn-pillars li{
+    border-bottom:1px solid rgba(26,24,20,.1);
+  }
+  .learn-pillars li:first-child{
+    border-top:1px solid rgba(26,24,20,.1);
+  }
+  .learn-pillars li a{
+    display:flex;
+    align-items:flex-start;
+    padding:28px 0;
+    gap:28px;
+    text-decoration:none;
+    color:inherit;
+    transition:padding-left .5s ease;
+    position:relative;
+  }
+  .learn-pillars li a:hover{
+    padding-left:16px;
+  }
+  /* 悬停时左侧朱砂细线滑入（呼应整站签名） */
+  .learn-pillars li a::before{
+    content:'';
+    position:absolute;
+    left:0;top:50%;
+    width:0;height:1px;
+    background:var(--cinnabar);
+    transition:width .5s ease;
+  }
+  .learn-pillars li a:hover::before{width:8px}
+  .learn-pillars li a:hover .pillar-num{color:var(--cinnabar)}
+  .learn-pillars li a:hover .pillar-arrow{transform:translateX(6px);color:var(--cinnabar)}
+  .pillar-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--ink-mute);
+    flex:0 0 56px;
+    transition:color .4s ease;
+    line-height:1.4;
+  }
+  .pillar-body{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .pillar-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:22px;
+    color:var(--ink);
+    letter-spacing:.005em;
+    line-height:1.3;
+  }
+  .pillar-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.12em;
+    margin-top:2px;
+  }
+  .pillar-zh em{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    letter-spacing:.08em;
+    opacity:.7;
+    margin-top:3px;
+  }
+  .pillar-desc{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin-top:6px;
+    max-width:480px;
+  }
+  .pillar-arrow{
+    color:var(--ink-mute);
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;
+    transition:transform .4s ease, color .4s ease;
+    align-self:center;
+  }
+
+  /* 创作者区 */
+  .creator-section{
+    padding:140px 56px;
+    background:var(--ink);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    scroll-margin-top:80px;
+  }
+  .creator-section::before{
+    content:'入';
+    position:absolute;
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:600px;
+    color:rgba(244,239,230,.03);
+    top:-120px;
+    right:-50px;
+    line-height:1;
+    pointer-events:none;
+  }
+  .creator-content{
+    max-width:900px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .creator-section .chapter-num{color:var(--cinnabar-soft)}
+  .creator-section .chapter-title{color:var(--paper)}
+  .creator-section .chapter-title .en{color:rgba(244,239,230,.5)}
+  .creator-section .chapter-intro{color:rgba(244,239,230,.75);max-width:700px}
+  .creator-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    margin-top:80px;
+  }
+  .creator-stat{
+    border-left:1px solid rgba(244,239,230,.2);
+    padding-left:30px;
+  }
+  .creator-stat-num{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:64px;
+    color:var(--paper);
+    line-height:1;
+    margin-bottom:12px;
+  }
+  .creator-stat-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:16px;
+    color:rgba(244,239,230,.8);
+    letter-spacing:.02em;
+    line-height:1.7;
+    font-weight:300;
+  }
+  .creator-stat-label .zh{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-size:12px;
+    color:rgba(244,239,230,.4);
+    margin-top:6px;
+    letter-spacing:.15em;
+  }
+  .rednote-cta .zh-tag{
+    font-family:'Noto Serif SC',serif;
+    font-size:13px;
+    letter-spacing:.15em;
+    opacity:.7;
+    margin-left:-4px;
+  }
+
+  .creator-actions{
+    margin-top:60px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+  }
+
+  /* RedNote 链接 - 简化为无框轻量风格 */
+  .rednote-cta{
+    margin-top:56px;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    color:rgba(244,239,230,.75);
+    text-decoration:none;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    letter-spacing:.08em;
+    font-size:15px;
+    padding-bottom:6px;
+    border-bottom:1px solid rgba(244,239,230,.2);
+    transition:color .5s ease, border-color .5s ease;
+    width:fit-content;
+  }
+  .rednote-cta:hover{
+    color:var(--paper);
+    border-bottom-color:var(--cinnabar-soft);
+  }
+  .rednote-cta .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--cinnabar-soft);
+    animation:pulse 2.4s ease-in-out infinite;
+    flex-shrink:0;
+  }
+  .rednote-cta .zh-tag{
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:.15em;
+    opacity:.55;
+  }
+  .rednote-cta .rednote-id{
+    font-family:'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-style:normal;
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:.02em;
+    color:rgba(244,239,230,.55);
+    padding-left:12px;
+    margin-left:4px;
+    border-left:1px solid rgba(244,239,230,.2);
+    transition:color .5s ease;
+  }
+  .rednote-cta:hover .rednote-id{color:rgba(244,239,230,.85)}
+  .rednote-cta .rednote-arrow{
+    margin-left:2px;
+    transition:transform .4s ease;
+    font-style:normal;
+  }
+  .rednote-cta:hover .rednote-arrow{transform:translateX(4px)}
+  /* === 段落内嵌的 RedNote 链接 === */
+  .inline-rednote{
+    color:var(--cinnabar-soft);
+    text-decoration:none;
+    border-bottom:1px solid rgba(244,239,230,.25);
+    padding-bottom:1px;
+    transition:color .4s ease, border-color .4s ease;
+    white-space:nowrap;
+  }
+  .inline-rednote:hover{
+    color:var(--paper);
+    border-bottom-color:var(--cinnabar-soft);
+  }
+
+  /* === 关于区底部图标排（替代原来的大 RedNote 按钮）=== */
+  .creator-icons{
+    margin-top:48px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    align-items:center;
+  }
+  .creator-dot{
+    width:36px;
+    height:36px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(244,239,230,.55);
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    transition:color .4s ease, transform .4s ease, opacity .4s ease;
+    position:relative;
+    padding:0;
+    opacity:.85;
+  }
+  .creator-dot svg{
+    width:20px;
+    height:20px;
+    display:block;
+  }
+  .creator-dot:hover{
+    color:var(--cinnabar-soft);
+    opacity:1;
+    transform:translateY(-2px);
+  }
+  .creator-dot::after{
+    content:attr(data-tip);
+    position:absolute;
+    bottom:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:rgba(244,239,230,.55);
+    letter-spacing:.15em;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .4s ease;
+  }
+  .creator-dot:hover::after{
+    opacity:1;
+  }
+  .creator-dot.wechat-active{
+    color:var(--cinnabar-soft);
+    opacity:1;
+  }
+
+  /* === WeChat 二维码弹层（关于区版本，深色底）=== */
+  .wechat-popup-idx{
+    margin-top:0;
+    max-width:240px;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    transition:max-height .55s cubic-bezier(.45,.05,.55,.95),
+               opacity .45s ease,
+               margin-top .5s ease;
+  }
+  .wechat-popup-idx.open{
+    max-height:340px;
+    opacity:1;
+    margin-top:24px;
+  }
+  .wechat-popup-idx .wechat-popup-inner{
+    background:var(--paper);
+    padding:16px 16px 12px;
+    border-radius:4px;
+    display:inline-block;
+    box-shadow:0 2px 0 rgba(183,50,37,.5),
+               0 6px 24px rgba(0,0,0,.3);
+    position:relative;
+  }
+  .wechat-popup-idx .wechat-popup-inner::before{
+    content:'';
+    position:absolute;
+    top:-5px;
+    left:24px;
+    transform:rotate(45deg);
+    width:10px;height:10px;
+    background:var(--paper);
+  }
+  .wechat-popup-idx img{
+    display:block;
+    width:160px;
+    height:auto;
+    image-rendering:pixelated;
+  }
+  .wechat-popup-idx .wechat-popup-caption{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:10px;
+    color:var(--ink-mute);
+    letter-spacing:.15em;
+    text-align:center;
+    margin-top:8px;
+  }
+
+
+  /* About Ivy - 创作者卡片（带头像）· 主 CTA */
+  .about-ivy{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    padding:24px 28px 24px 24px;
+    background:rgba(244,239,230,.04);
+    border:1px solid rgba(244,239,230,.12);
+    text-decoration:none;
+    color:var(--paper);
+    transition:background .5s ease, border-color .5s ease;
+    max-width:520px;
+    position:relative;
+  }
+  .about-ivy:hover{
+    background:rgba(244,239,230,.08);
+    border-color:rgba(244,239,230,.28);
+  }
+  .about-ivy:hover .ivy-avatar-ring{
+    transform:scale(1.08) rotate(45deg);
+    border-color:var(--cinnabar-soft);
+    opacity:.7;
+  }
+  .about-ivy:hover .ivy-arrow{
+    transform:translateX(4px);
+    color:var(--cinnabar-soft);
+  }
+
+  /* 头像 */
+  .ivy-avatar{
+    position:relative;
+    width:64px;
+    height:64px;
+    flex-shrink:0;
+  }
+  .ivy-avatar img,
+  .ivy-avatar-placeholder{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+  }
+  /* 占位：宣纸色圆 + 中央"慢"字 */
+  .ivy-avatar-placeholder{
+    background:radial-gradient(circle at 30% 30%, var(--paper-deep), #d8cfb8 80%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:28px;
+    color:var(--ink);
+  }
+  /* 朱砂细线虚线圆环 - 围绕头像，悬停时旋转 */
+  .ivy-avatar-ring{
+    position:absolute;
+    inset:-6px;
+    border:1px dashed rgba(183,50,37,.45);
+    border-radius:50%;
+    transition:transform .8s ease, border-color .5s ease, opacity .5s ease;
+    opacity:.5;
+    pointer-events:none;
+  }
+
+  .ivy-text{
+    flex:1;
+    min-width:0;
+  }
+  .ivy-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:rgba(244,239,230,.45);
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .ivy-name{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:20px;
+    color:var(--paper);
+    letter-spacing:.005em;
+    line-height:1.2;
+    margin-bottom:4px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .ivy-name-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:13px;
+    color:rgba(244,239,230,.55);
+    letter-spacing:.12em;
+  }
+  .ivy-tagline{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:14px;
+    color:rgba(244,239,230,.7);
+    line-height:1.5;
+  }
+  .ivy-arrow{
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;
+    color:rgba(244,239,230,.5);
+    transition:transform .4s ease, color .4s ease;
+    flex-shrink:0;
+    align-self:center;
+  }
+
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.4;transform:scale(1.3)}
+  }
+
+  /* Footer */
+  footer{
+    padding:60px 56px 40px;
+    border-top:1px solid rgba(26,24,20,.12);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:30px;
+    position:relative;
+    z-index:5;
+  }
+  footer .foot-left{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-mute);
+    letter-spacing:.1em;
+    line-height:1.8;
+  }
+  footer .foot-left em{
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  footer .foot-left strong{
+    display:block;
+    font-style:normal;
+    color:var(--ink);
+    font-family:'Noto Serif SC',serif;
+    font-size:14px;
+    letter-spacing:.15em;
+    margin-bottom:6px;
+  }
+  footer .foot-right{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+  }
+  footer .foot-with{
+    color:var(--cinnabar);
+    font-style:italic;
+    margin-left:6px;
+    letter-spacing:.1em;
+    opacity:.85;
+  }
+
+  /* 动效关键帧 */
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(24px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+  }
+  @keyframes breathe{
+    0%,100%{opacity:.6}
+    50%{opacity:1}
+  }
+
+  /* 滚动出现 */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s ease, transform 1s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* 响应式 */
+  @media (max-width: 900px){
+    nav{padding:20px 24px;gap:20px}
+    .nav-links{gap:28px;font-size:13px}
+    .nav-links-wrap::after{width:32px}
+    .logo small{display:none}        /* 小屏隐藏 logo 的副标题，省空间 */
+    .hero{
+      grid-template-columns:1fr;
+      padding:140px 28px 80px;
+      gap:60px;
+    }
+    .hero-left,.hero-right{text-align:left;padding:0}
+    .sub-en{margin-left:0}
+    .hero-center{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+    }
+    .hero-center-zh{
+      writing-mode:horizontal-tb;
+      text-align:left;
+      letter-spacing:.3em;
+    }
+    .hero-center-zh::before,.hero-center-zh::after{display:none}
+    .hero-center-pinyin,.hero-center-en{
+      writing-mode:horizontal-tb;
+      max-height:none;
+    }
+    section.chapter{padding:48px 28px 70px;scroll-margin-top:16px}
+    .philosophy{grid-template-columns:1fr}
+    .phil-item{border-right:none;border-bottom:1px solid rgba(26,24,20,.12)}
+    .gateways{grid-template-columns:1fr;gap:16px}
+    .gateway,.gateway.tall{aspect-ratio:3/4}
+    .essays-head{grid-template-columns:1fr;gap:24px;margin-bottom:50px}
+    .essay-list{grid-template-columns:1fr;gap:0}
+    .essay-item{
+      padding:36px 0 !important;
+      border-right:none;
+      border-bottom:1px solid rgba(26,24,20,.1);
+    }
+    .essay-item:last-child{border-bottom:none}
+    .essay-item::before{
+      top:36px;bottom:36px;
+      left:-16px !important;
+    }
+    .learn-section{padding:100px 28px}
+    .learn-grid{grid-template-columns:1fr;gap:60px}
+    .learn-visual{max-width:280px}
+    .learn-center-char{font-size:90px}
+    .creator-grid{grid-template-columns:1fr;gap:40px}
+    .about-ivy{padding:18px 20px;gap:16px;max-width:none}
+    .creator-icons{margin-top:32px;gap:14px}
+    .creator-dot{width:32px;height:32px}
+    .creator-dot svg{width:18px;height:18px}
+    .ivy-avatar,.ivy-avatar img,.ivy-avatar-placeholder{width:54px;height:54px}
+    .ivy-avatar-placeholder{font-size:24px}
+    .ivy-name{font-size:18px}
+    .ivy-tagline{font-size:13px}
+    footer{padding:40px 28px;flex-direction:column;align-items:flex-start}
+    .creator-section{padding:80px 28px}
+  }
+</style>
+</head>
+<body>
+
+<!-- 流动水墨背景 -->
+<div class="ink-flow">
+  <div class="ink-blob b1"></div>
+  <div class="ink-blob b2"></div>
+  <div class="ink-blob b3"></div>
+</div>
+
+<!-- 导航 -->
+<nav>
+  <div class="logo">
+    <span class="seal" title="màn · slow">慢</span>
+    Slowly
+    <small>· enter chinese</small>
+  </div>
+  <div class="nav-links-wrap">
+    <div class="nav-links">
+      <a href="#world">The World <span lang="zh">中文世界</span></a>
+      <a href="#culture">Culture <span lang="zh">文化</span></a>
+      <a href="#learn">Learn <span lang="zh">学习</span></a>
+      <a href="#essays">Essays <span lang="zh">随笔</span></a>
+      <a href="#about">About <span lang="zh">关于</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="label">A Quiet Doorway</div>
+      <h1 class="eng">Enter Chinese<br><em>Slowly</em>.</h1>
+      <p class="sub-en">Learn Chinese through atmosphere, culture, and feeling — not flashcards, but a way of seeing the world.</p>
+      <p class="sub-zh" lang="zh">
+        通过氛围、文化与感受，而非词卡，进入中文世界。
+      </p>
+    </div>
+
+    <div class="hero-center">
+      <div class="hero-center-zh">
+        通过<span class="accent">感知</span>进入中文世界
+      </div>
+      <div class="hero-center-pinyin">Tōngguò gǎnzhī jìnrù Zhōngwén shìjiè</div>
+      <div class="hero-center-en">— enter the Chinese world through perception</div>
+    </div>
+
+    <div class="hero-right">
+      <p class="hero-quote-en">
+        <span class="quote-mark">"</span>
+        Chinese is not something to conquer,<br>but something to live inside.
+      </p>
+      <p class="hero-quote-zh" lang="zh">
+        中文不是用来"掌握"的，<br>是用来栖居的。
+        <span class="pinyin-line">Zhōngwén bú shì yòng lái "zhǎngwò" de, shì yòng lái qījū de.</span>
+      </p>
+    </div>
+
+    <div class="scroll-hint">
+      <span>scroll to begin</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- 哲学三字 -->
+  <section class="chapter" id="world">
+    <div class="chapter-num">I · Three Characters</div>
+    <h2 class="chapter-title">
+      Before language,<br>cultivate the feeling.
+      <span class="zh-sub" lang="zh">不学语言，先养感受</span>
+    </h2>
+    <p class="chapter-intro">
+      Chinese isn't a system to master — it's a place to inhabit. Before you speak a single sentence, sit with three characters. They are how this culture breathes.
+    </p>
+
+    <div class="philosophy">
+      <div class="phil-item reveal">
+        <div class="phil-char" lang="zh">慢<span class="pin">màn</span></div>
+        <div class="phil-meaning">Slowness</div>
+        <div class="phil-pinyin">màn · 慢</div>
+        <p class="phil-desc">Not lagging behind, but giving permission. Permission for language to take root in the body. Permission for a single character to be chewed slowly. Some meanings only appear when we stop chasing them.</p>
+        <p class="phil-etymology"><span>字源 · etymology</span> The radical 忄 (heart) plus 曼 (drawn out) — literally, "the heart taking its time."</p>
+      </div>
+      <div class="phil-item reveal">
+        <div class="phil-char" lang="zh">静<span class="pin">jìng</span></div>
+        <div class="phil-meaning">Stillness</div>
+        <div class="phil-pinyin">jìng · 静</div>
+        <p class="phil-desc">In an age of algorithms and noise, keep one undisturbed room. Inside it, the character 月 (yuè) really does become moonlight. The character 风 (fēng) really does move the curtain.</p>
+        <p class="phil-etymology"><span>字源 · etymology</span> 青 (clear, blue-green) + 争 (struggle resolved) — clarity that emerges after the struggle ends.</p>
+      </div>
+      <div class="phil-item reveal">
+        <div class="phil-char" lang="zh">感<span class="pin">gǎn</span></div>
+        <div class="phil-meaning">Feeling</div>
+        <div class="phil-pinyin">gǎn · 感</div>
+        <p class="phil-desc">Chinese is a deeply contextual language. The same word 好 (hǎo, "good") can mean praise, dismissal, or quiet resignation — it depends on tone, on the moment, on what isn't said. Hearing the tone matters more than memorizing the word.</p>
+        <p class="phil-etymology"><span>字源 · etymology</span> 咸 (all, together) over 心 (heart) — what moves the whole heart at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容入口 -->
+  <section class="chapter" id="culture">
+    <div class="chapter-num">II · Three Gateways</div>
+    <h2 class="chapter-title">
+      Enter through atmosphere,<br>not vocabulary.
+      <span class="zh-sub" lang="zh">从氛围进入中文</span>
+    </h2>
+    <p class="chapter-intro">
+      You can begin with a calendar, a meal, a poem. Behind each doorway lies an entire Chinese world — pick one that moves you, and walk in slowly.
+    </p>
+
+    <div class="gateways">
+      <a href="Culture/Calendar/menu.html" data-route="Culture/Calendar/menu.html" class="gateway gateway-1 reveal">
+        <div class="gateway-bg"></div>
+        <div class="gateway-deco" lang="zh">年</div>
+        <div class="gateway-content">
+          <div class="gateway-tag">Time</div>
+          <div>
+            <div class="gateway-title">
+              The Chinese Calendar
+              <span class="zh-line" lang="zh">时令 <em>· shí lìng</em></span>
+            </div>
+            <div class="gateway-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <div class="gateway gateway-2 tall reveal">
+        <div class="gateway-bg"></div>
+        <div class="gateway-deco" lang="zh">茶</div>
+        <div class="gateway-content">
+          <div class="gateway-tag">Daily Life</div>
+          <div>
+            <div class="gateway-title">
+              Tea, Food &amp; Vessel
+              <span class="zh-line" lang="zh">茶 · 食 · 器 <em>· chá · shí · qì</em></span>
+            </div>
+            <div class="gateway-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gateway gateway-3 tall reveal">
+        <div class="gateway-bg"></div>
+        <div class="gateway-deco" lang="zh">诗</div>
+        <div class="gateway-content">
+          <div class="gateway-tag">Poetry</div>
+          <div>
+            <div class="gateway-title">
+              One Word, One World
+              <span class="zh-line" lang="zh">一字一境 <em>· yí zì yí jìng</em></span>
+            </div>
+            <div class="gateway-arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 引言/品牌主张 -->
+  <section class="quote-section">
+    <div class="quote-mark-big">"</div>
+    <p class="quote-text">
+      In an age when AI writes and speaks for us,<br>
+      we need, more than ever, to preserve<br>
+      the ability to <em>feel firsthand</em>.
+      <span class="zh" lang="zh">在 AI 替我们书写、替我们言说的时代，<br>我们更需要保留一种亲身感受的能力。</span>
+    </p>
+    <div class="quote-attr">Slowly · for those still willing to slow down</div>
+  </section>
+
+  <!-- 系统中文学习 -->
+  <section class="chapter learn-section" id="learn">
+    <div class="learn-grid">
+      <div class="learn-visual reveal">
+        <div class="learn-circle c1"></div>
+        <div class="learn-circle c2"></div>
+        <div class="learn-circle c3"></div>
+        <div class="learn-center">
+          <div class="learn-center-char" lang="zh" title="xí · to study / to learn">习</div>
+          <div class="learn-center-pinyin">xí · to study</div>
+        </div>
+      </div>
+
+      <div class="learn-text">
+        <div class="chapter-num">III · Systematic Learning</div>
+        <h2 class="chapter-title">
+          The four pillars<br>of learning Chinese.
+          <span class="zh-sub" lang="zh">系统学习中文 · 四个支柱</span>
+        </h2>
+        <p class="chapter-intro">
+          Language doesn't grow on a single track. Vocabulary, grammar, characters, and sound — each one a separate season, each one supporting the others.
+        </p>
+
+        <ul class="learn-pillars">
+          <li><a href="HSK/hsk-menu.html" data-route="HSK/hsk-menu.html">
+            <span class="pillar-num">01</span>
+            <span class="pillar-body">
+              <span class="pillar-title">HSK Study</span>
+              <span class="pillar-zh" lang="zh">
+                汉语水平考试 · 不止于考试
+                <em>hànyǔ shuǐpíng kǎoshì · bù zhǐ yú kǎoshì</em>
+              </span>
+              <span class="pillar-desc">A structured journey through HSK 1–6, with the warmth and context that textbooks leave out.</span>
+            </span>
+            <span class="pillar-arrow">→</span>
+          </a></li>
+
+          <li><a href="ChineseGrammar/menu.html" data-route="ChineseGrammar/menu.html">
+            <span class="pillar-num">02</span>
+            <span class="pillar-body">
+              <span class="pillar-title">Grammar</span>
+              <span class="pillar-zh" lang="zh">语法 · yǔfǎ</span>
+              <span class="pillar-desc">The quiet logic of Chinese — particles, word order, and the elegance of saying less.</span>
+            </span>
+            <span class="pillar-arrow">→</span>
+          </a></li>
+
+          <li><a href="Characters/menu.html" data-route="Characters/menu.html">
+            <span class="pillar-num">03</span>
+            <span class="pillar-body">
+              <span class="pillar-title">Characters</span>
+              <span class="pillar-zh" lang="zh">汉字 · hànzì</span>
+              <span class="pillar-desc">Each character a small painting. Learn them by their roots, radicals, and stories.</span>
+            </span>
+            <span class="pillar-arrow">→</span>
+          </a></li>
+
+          <li><a href="Pronunciation/menu.html" data-route="Pronunciation/menu.html">
+            <span class="pillar-num">04</span>
+            <span class="pillar-body">
+              <span class="pillar-title">Pronunciation</span>
+              <span class="pillar-zh" lang="zh">发音 · fāyīn</span>
+              <span class="pillar-desc">Tones, rhythm, and the music underneath every Chinese sentence.</span>
+            </span>
+            <span class="pillar-arrow">→</span>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 随笔 Essays -->
+  <section class="chapter essays-section" id="essays">
+    <div class="essays-head">
+      <div>
+        <div class="chapter-num">IV · Slow Readings</div>
+        <h2 class="chapter-title">
+          Essays to sit with.
+          <span class="zh-sub" lang="zh">慢读 · 随笔</span>
+        </h2>
+      </div>
+      <p class="chapter-intro">
+        Short writings on words, seasons, food, silence — the quiet underside of a language you can't rush.
+      </p>
+    </div>
+
+    <div class="essay-list">
+      <a href="Essays/01rain.html" data-route="Essays/01rain.html" class="essay-item reveal">
+        <div class="essay-meta">
+          <span class="essay-date">No. 01 · Spring</span>
+          <span class="essay-cat">Seasons</span>
+        </div>
+        <h3 class="essay-title">
+          The character that means both "rain" and "to fall"
+          <span class="zh-line" lang="zh">一个字，是雨，也是落下 · yǔ</span>
+        </h3>
+        <p class="essay-excerpt">In Chinese, weather is rarely just weather. It is mood, memory, and a quiet kind of time-keeping...</p>
+        <span class="essay-arrow">Read →</span>
+      </a>
+
+      <a href="Essays/02tea.html" data-route="Essays/02tea.html" class="essay-item reveal">
+        <div class="essay-meta">
+          <span class="essay-date">No. 02 · Tea</span>
+          <span class="essay-cat">Daily Life</span>
+        </div>
+        <h3 class="essay-title">
+          Why the Chinese say "drink tea" instead of "have tea"
+          <span class="zh-line" lang="zh">喝茶，不是 have tea · hē chá</span>
+        </h3>
+        <p class="essay-excerpt">A small grammatical difference reveals a whole way of being with the cup in front of you...</p>
+        <span class="essay-arrow">Read →</span>
+      </a>
+
+      <a href="Essays/03yihui.html" data-route="Essays/03yihui.html" class="essay-item reveal">
+        <div class="essay-meta">
+          <span class="essay-date">No. 03 · Silence</span>
+          <span class="essay-cat">Feeling</span>
+        </div>
+        <h3 class="essay-title">
+          What "意会" means, and why it can't be translated
+          <span class="zh-line" lang="zh">意会 · yì huì · understanding without words</span>
+        </h3>
+        <p class="essay-excerpt">Some of the most important things in Chinese culture happen in the space between sentences...</p>
+        <span class="essay-arrow">Read →</span>
+      </a>
+    </div>
+
+    <div class="essays-more">
+      <a href="Essays/menu.html" data-route="Essays/menu.html" class="btn-text-large">View all essays <span lang="zh">查看全部</span> →</a>
+    </div>
+  </section>
+
+  <!-- 创作者 / 小红书 -->
+  <section class="creator-section" id="about">
+    <div class="creator-content">
+      <div class="chapter-num">V · About</div>
+      <h2 class="chapter-title">
+        One person, planting<br>Chinese back<br>into the senses.
+        <span class="zh-sub" lang="zh">把中文重新种回感官里</span>
+      </h2>
+      <p class="chapter-intro">
+        Slowly is an independent content project. On <a href="https://www.xiaohongshu.com/user/profile/60deed2c000000000101da45?exSource=" target="_blank" rel="noopener" class="inline-rednote">RedNote (小红书) →</a> I share short videos that capture atmosphere and small details. Here, I gather them into something you can read slowly, return to, sit with.<br><br>
+        This is not a language school. It's a quiet window facing the Chinese-speaking world.
+      </p>
+
+      <div class="creator-grid">
+        <div class="creator-stat">
+          <div class="creator-stat-num">120<span style="font-size:.5em;color:rgba(244,239,230,.5)">+</span></div>
+          <div class="creator-stat-label">
+            Essays &amp; slow readings
+            <span class="zh" lang="zh">篇文化随笔与慢读</span>
+          </div>
+        </div>
+        <div class="creator-stat">
+          <div class="creator-stat-num">04</div>
+          <div class="creator-stat-label">
+            Pillars of systematic learning
+            <span class="zh" lang="zh">个系统学习板块</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="creator-actions">
+        <a href="ivy.html" data-route="ivy.html" class="about-ivy">
+          <div class="ivy-avatar">
+            <img src="data:image/jpeg;base64,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" alt="Ivy" />
+            <div class="ivy-avatar-ring"></div>
+          </div>
+          <div class="ivy-text">
+            <div class="ivy-label">Meet the writer</div>
+            <div class="ivy-name">
+              About Ivy
+              <span class="ivy-name-zh" lang="zh">关于 Ivy</span>
+            </div>
+            <div class="ivy-tagline">
+              The person slowly writing this place.
+            </div>
+          </div>
+          <span class="ivy-arrow">→</span>
+        </a>
+
+        <!-- 一组安静的社交图标 - 找我的其他地方 -->
+        <div class="creator-icons">
+          <a href="mailto:ivyzhangyaochen@gmail.com" class="creator-dot" aria-label="Email" data-tip="email">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 4.5h21c.83 0 1.5.67 1.5 1.5v12c0 .83-.67 1.5-1.5 1.5h-21C.67 19.5 0 18.83 0 18V6c0-.83.67-1.5 1.5-1.5zM12 13.5L1.74 6.42c-.32.27-.49.66-.49 1.08v.07L12 15l10.75-7.43v-.07c0-.42-.17-.81-.49-1.08L12 13.5z"/></svg>
+          </a>
+          <a href="https://wa.me/8615950075140" target="_blank" rel="noopener" class="creator-dot" aria-label="WhatsApp" data-tip="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://m.me/ivyzhang.823" target="_blank" rel="noopener" class="creator-dot" aria-label="Messenger" data-tip="Messenger">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.001 11.639C.001 4.949 5.241 0 12.001 0S24 4.95 24 11.639c0 6.689-5.24 11.638-12 11.638-1.21 0-2.38-.16-3.47-.46a.96.96 0 00-.64.05l-2.39 1.05a.96.96 0 01-1.35-.85l-.07-2.14a.97.97 0 00-.32-.68A11.39 11.389 0 010 11.639zm8.32-2.19l-3.52 5.6c-.35.53.32 1.139.82.75l3.79-2.87c.26-.2.6-.2.87 0l2.8 2.1c.84.63 2.04.4 2.6-.48l3.52-5.6c.35-.53-.32-1.13-.82-.75l-3.79 2.87c-.25.2-.6.2-.86 0l-2.8-2.1a1.8 1.8 0 00-2.61.48z"/></svg>
+          </a>
+          <button type="button" class="creator-dot wechat-trigger-idx" id="wechatTriggerIdx" aria-label="WeChat" data-tip="WeChat">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .55-.012.821-.03-.273-.813-.42-1.677-.42-2.575 0-3.952 3.747-7.131 8.355-7.131.198 0 .395.011.59.024-.65-3.4-4.151-5.97-8.346-5.97zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-3.93 0-7.116 2.703-7.116 6.035 0 3.332 3.186 6.035 7.115 6.035a8.4 8.4 0 002.346-.33c.265-.078.53-.078.795.064l1.578.92c.078.058.156.078.234.078a.31.31 0 00.295-.295c0-.078-.02-.155-.04-.213-.02-.058-.293-1.117-.293-1.197a.567.567 0 01.234-.591C23.34 18.387 24 16.798 24 15.058c0-3.332-3.186-6.2-7.115-6.2zm-2.43 1.838c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816zm5.078 0c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816z"/></svg>
+          </button>
+          <a href="https://www.xiaohongshu.com/user/profile/60deed2c000000000101da45?exSource=" target="_blank" rel="noopener" class="creator-dot" aria-label="RedNote" data-tip="RedNote">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="serif" font-weight="700" font-size="11" fill="#1a1814">小红</text></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ivyzhang.823" target="_blank" rel="noopener" class="creator-dot" aria-label="TikTok" data-tip="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@IvyZhang.823" target="_blank" rel="noopener" class="creator-dot" aria-label="YouTube" data-tip="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/ivyZhang.823" target="_blank" rel="noopener" class="creator-dot" aria-label="Facebook" data-tip="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+        <!-- WeChat 二维码弹层 -->
+        <div class="wechat-popup-idx" id="wechatPopupIdx" aria-hidden="true">
+          <div class="wechat-popup-inner">
+            <img src="data:image/png;base64,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" alt="WeChat QR" />
+            <p class="wechat-popup-caption">扫一扫 · scan to add</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-left">
+    <strong>Slowly · 慢</strong>
+    A quiet doorway to the Chinese-speaking world.<br>
+    <em>Through perception, not translation.</em>
+  </div>
+  <div class="foot-right">
+    © 2026 · Slowly · enter Chinese gently. <span class="foot-with">with Ivy</span>
+  </div>
+</footer>
+
+<script>
+  // 滚动揭示
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 120);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ============================================================
+     智能链接 Fallback 系统
+     ------------------------------------------------------------
+     - 拦截带 [data-route] 的链接点击
+     - 用 HEAD 请求探测目标页面是否存在
+     - 存在 → 跳转
+     - 不存在 → 跳到统一的 menu.html
+     - hover 时预探测；同会话内每个 URL 只探测一次
+     ============================================================ */
+  (function setupSmartLinks(){
+    const FALLBACK = 'coming-soon.html';
+    // 探测结果缓存：'pending' | true (存在) | false (不存在)
+    const probeCache = new Map();
+
+    async function probe(url){
+      if (probeCache.has(url)) {
+        const v = probeCache.get(url);
+        // 如果还在探测中，等它完成
+        return v instanceof Promise ? v : v;
+      }
+      const p = (async () => {
+        try {
+          // 用 HEAD 而不是 GET，更轻量
+          const res = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+          return res.ok;
+        } catch (e) {
+          // 网络错误、CORS 拒绝、file:// 协议都会到这里
+          return false;
+        }
+      })();
+      probeCache.set(url, p);
+      const exists = await p;
+      probeCache.set(url, exists);
+      return exists;
+    }
+
+    // 对所有 [data-route] 链接绑定行为
+    document.querySelectorAll('a[data-route]').forEach((a) => {
+      const route = a.getAttribute('data-route');
+      if (!route) return;
+
+      // 鼠标悬停时预探测，让点击瞬间几乎无延迟
+      a.addEventListener('mouseenter', () => probe(route), { once: false, passive: true });
+      // 触屏设备：触摸开始时也预探测
+      a.addEventListener('touchstart', () => probe(route), { once: false, passive: true });
+
+      // 拦截点击
+      a.addEventListener('click', async (e) => {
+        // 用户用 Cmd/Ctrl/Shift 点击（要新窗口/新标签），不拦截
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+
+        const cached = probeCache.get(route);
+        let exists;
+        if (cached === true || cached === false) {
+          exists = cached;
+        } else if (cached instanceof Promise) {
+          exists = await cached;
+        } else {
+          exists = await probe(route);
+        }
+        window.location.href = exists ? route : FALLBACK;
+      });
+    });
+  })();
+
+  // 导航横滑：当链接超出容器宽度且未滑到底时，显示右侧渐变提示
+  const navWrap = document.querySelector('.nav-links-wrap');
+  const navLinks = document.querySelector('.nav-links');
+  function updateNavScrollHint(){
+    if (!navWrap || !navLinks) return;
+    const canScroll = navLinks.scrollWidth > navLinks.clientWidth + 2;
+    const atEnd = navLinks.scrollLeft + navLinks.clientWidth >= navLinks.scrollWidth - 2;
+    navWrap.classList.toggle('is-scrollable', canScroll && !atEnd);
+  }
+  if (navLinks) {
+    navLinks.addEventListener('scroll', updateNavScrollHint, { passive: true });
+    window.addEventListener('resize', updateNavScrollHint);
+    // 字体加载完成后再测一次（衬线字体宽度初次测量可能不准）
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateNavScrollHint);
+    }
+    updateNavScrollHint();
+  }
+
+  // 鼠标视差 - 让水墨气泡跟随鼠标轻微飘动
+  const blobs = document.querySelectorAll('.ink-blob');
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  window.addEventListener('mousemove', (e) => {
+    mx = (e.clientX / window.innerWidth - 0.5) * 2;
+    my = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+  function loop(){
+    cx += (mx - cx) * 0.04;
+    cy += (my - cy) * 0.04;
+    blobs.forEach((b, i) => {
+      const f = (i + 1) * 12;
+      b.style.translate = `${cx * f}px ${cy * f}px`;
+    });
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  // WeChat 二维码切换（关于区）
+  (function wechatToggleIdx(){
+    var trigger = document.getElementById('wechatTriggerIdx');
+    var popup = document.getElementById('wechatPopupIdx');
+    if (!trigger || !popup) return;
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      var open = popup.classList.toggle('open');
+      trigger.classList.toggle('wechat-active', open);
+      popup.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  })();
+</script>
+
+</body>
+</html>
