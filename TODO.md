@@ -28,12 +28,31 @@ Suivi des tâches en cours et à venir pour le projet IvyChinese.
 
 ---
 
+## HSK 6 — `HSK/HSK6/hsk6_11-20.html`
+
+### Leçons 11–20 (上 · Volume 1, suite)
+
+| # | Titre | Contenu | Vérifié livre | Audio |
+|---|---|---|---|---|
+| 11 | 我不在时，猫在干什么 | ✅ Complète | ✅ | ❌ |
+| 12 | 第十二课 | ❌ Stub vide | ❌ | ❌ |
+| 13 | 第十三课 | ❌ Stub vide | ❌ | ❌ |
+| 14 | 第十四课 | ❌ Stub vide | ❌ | ❌ |
+| 15 | 第十五课 | ❌ Stub vide | ❌ | ❌ |
+| 16 | 第十六课 | ❌ Stub vide | ❌ | ❌ |
+| 17 | 第十七课 | ❌ Stub vide | ❌ | ❌ |
+| 18 | 第十八课 | ❌ Stub vide | ❌ | ❌ |
+| 19 | 第十九课 | ❌ Stub vide | ❌ | ❌ |
+| 20 | 第二十课 | ❌ Stub vide | ❌ | ❌ |
+
+---
+
 ## Autres fichiers HSK
 
 | Fichier | Statut |
 |---|---|
 | `HSK/HSK6/hsk6_01-10.html` | ✅ Complet (10/10 leçons) |
-| `HSK/HSK6/hsk6_11-20.html` | ❌ À créer |
+| `HSK/HSK6/hsk6_11-20.html` | 🟡 En cours (1/10 leçons) |
 
 ---
 
