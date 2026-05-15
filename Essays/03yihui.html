@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Cannot Be Translated · Slowly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Serif+SC:wong@200;300;400;500;700&family=Caveat:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f4efe6;
+    --paper-warm: #efe8d9;
+    --paper-shadow: #e6dfd0;
+    --ink: #1a1814;
+    --ink-soft: #3a342c;
+    --ink-mute: #6b6258;
+    --ink-faint: #9a8e80;
+    --ink-trace: #c4b8a4;
+    --cinnabar: #b73225;
+    --cinnabar-soft: #c94a3a;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Cormorant Garamond','Noto Serif SC',serif;
+    font-weight:300;
+    line-height:1.85;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+
+  /* === 纸张氛围 === */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background:
+      radial-gradient(ellipse at 15% 10%, rgba(183,50,37,.025) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(92,122,106,.03) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(184,170,143,.04) 100%);
+    pointer-events:none;z-index:1;
+  }
+  body::after{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1, 0 0 0 0 0.09, 0 0 0 0 0.07, 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.5;mix-blend-mode:multiply;pointer-events:none;z-index:2;
+  }
+
+  /* === 顶部最简导航 === */
+  nav{
+    position:fixed;top:0;left:0;right:0;
+    padding:24px 40px;
+    z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(244,239,230,0);
+    transition:background .6s ease, backdrop-filter .6s ease, border-color .6s ease;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(244,239,230,.55);
+    backdrop-filter:blur(8px);
+    border-bottom-color:rgba(26,24,20,.05);
+  }
+  .nav-mark{
+    font-family:'Noto Serif SC',serif;
+    font-weight:500;
+    font-size:17px;
+    letter-spacing:.15em;
+    color:var(--ink);
+    text-decoration:none;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .nav-mark .seal{
+    display:inline-block;
+    width:26px;height:26px;
+    background:var(--cinnabar);
+    color:var(--paper);
+    font-family:'Noto Serif SC',serif;
+    font-size:13px;font-weight:400;
+    line-height:26px;text-align:center;
+    transform:rotate(-2deg);
+    box-shadow:0 1px 0 rgba(0,0,0,.1);
+  }
+  .nav-right{
+    display:flex;
+    gap:28px;
+    align-items:baseline;
+  }
+  .nav-link{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    text-decoration:none;
+    letter-spacing:.08em;
+    transition:color .4s ease;
+  }
+  .nav-link:hover{color:var(--cinnabar)}
+
+  /* === 阅读进度线 - 极淡的左侧朱砂 === */
+  .reading-line{
+    position:fixed;
+    left:0;
+    top:0;
+    width:1px;
+    height:0;
+    background:linear-gradient(to bottom, transparent, rgba(183,50,37,.3) 50%, transparent);
+    z-index:30;
+    pointer-events:none;
+    transition:height .15s linear;
+  }
+
+  /* ==========================================================
+     文章头部
+     ========================================================== */
+  .essay-header{
+    max-width:680px;
+    margin:0 auto;
+    padding:160px 32px 80px;
+    position:relative;
+    z-index:5;
+  }
+
+  /* 极小的元信息 */
+  .essay-meta{
+    display:flex;
+    gap:18px;
+    align-items:baseline;
+    margin-bottom:48px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    opacity:0;
+    animation:fadeIn 1.4s .3s ease forwards;
+  }
+  .essay-meta-num::before{
+    content:'';
+    display:inline-block;
+    width:24px;
+    height:1px;
+    background:var(--cinnabar);
+    vertical-align:4px;
+    margin-right:14px;
+    opacity:.6;
+  }
+  .essay-meta-cat{
+    color:var(--cinnabar);
+    opacity:.85;
+  }
+  .essay-meta-time{
+    margin-left:auto;
+    color:var(--ink-faint);
+  }
+
+  /* 标题 */
+  .essay-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(40px,5.6vw,72px);
+    line-height:1.1;
+    letter-spacing:-.005em;
+    color:var(--ink);
+    margin-bottom:32px;
+    opacity:0;
+    animation:fadeUp 1.6s .5s ease forwards;
+  }
+  .essay-title em{
+    font-style:italic;
+    color:var(--cinnabar);
+    font-weight:300;
+  }
+
+  /* 双语副标题 + 拼音 */
+  .essay-subtitle{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:17px;
+    color:var(--ink-mute);
+    letter-spacing:.18em;
+    line-height:1.6;
+    margin-bottom:6px;
+    opacity:0;
+    animation:fadeUp 1.4s .8s ease forwards;
+  }
+  .essay-subtitle-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:.18em;
+    opacity:0;
+    animation:fadeUp 1.4s .95s ease forwards;
+  }
+
+  /* ==========================================================
+     文章主体 - 散文式排版
+     ========================================================== */
+  article{
+    max-width:680px;
+    margin:0 auto;
+    padding:60px 32px 80px;
+    position:relative;
+    z-index:5;
+  }
+
+  /* 段落分块 - 像 ivy.html 一样的"stanza"系统 */
+  .stanza{
+    margin-bottom:48px;
+    position:relative;
+  }
+  .stanza p{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:19px;
+    line-height:1.95;
+    color:var(--ink-soft);
+    letter-spacing:.005em;
+    margin-bottom:24px;
+  }
+  .stanza p:last-child{margin-bottom:0}
+
+  /* 不对称缩进 */
+  .stanza.left{max-width:540px;margin-left:0}
+  .stanza.right{max-width:540px;margin-left:auto}
+  .stanza.shallow-indent{max-width:560px;margin-left:60px}
+  .stanza.deep-indent{max-width:520px;margin-left:120px}
+
+  /* 第一段首字下沉 */
+  article > .stanza:first-child > p:first-child::first-letter{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:78px;
+    color:var(--cinnabar);
+    float:left;
+    line-height:.85;
+    margin:8px 12px 0 0;
+    padding-top:6px;
+  }
+
+  /* 关键句 - 散文式放大 */
+  .pull{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:clamp(22px,2.4vw,30px);
+    line-height:1.5;
+    color:var(--ink);
+    letter-spacing:-.005em;
+    margin:60px 0;
+    max-width:680px;
+  }
+  .pull.indent{margin-left:80px}
+  .pull em{
+    color:var(--cinnabar);
+    font-style:italic;
+  }
+
+  /* 中文锚点 - 短句独占一段 */
+  .zh-anchor{
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:clamp(32px,4.4vw,52px);
+    line-height:1.2;
+    color:var(--ink);
+    letter-spacing:.2em;
+    margin:80px 0;
+    text-align:left;
+    max-width:600px;
+  }
+  .zh-anchor.right-align{
+    margin-left:auto;
+    margin-right:60px;
+    text-align:right;
+  }
+  .zh-anchor .pinyin{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:.3em;
+    margin-top:18px;
+    text-transform:lowercase;
+  }
+
+
+  /* === 诗句典故引用 - 中文原文 + 拼音 + 英文翻译 === */
+  .poem-cite{
+    margin:48px 0;
+    padding:0 0 0 32px;
+    border-left:1px solid rgba(183,50,37,.35);
+    max-width:600px;
+    position:relative;
+  }
+  .poem-cite + .poem-cite{
+    margin-top:36px;     /* 紧跟另一条引用时间隔小一点 */
+  }
+  /* 标注作者 + 篇名（顶部） */
+  .poem-cite-source{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    display:flex;
+    gap:12px;
+    align-items:baseline;
+    flex-wrap:wrap;
+  }
+  .poem-cite-source .zh{
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-weight:300;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+    text-transform:none;
+  }
+  .poem-cite-source .dot{
+    color:var(--cinnabar);
+    opacity:.6;
+  }
+  /* 中文原文 */
+  .poem-cite-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:22px;
+    line-height:1.7;
+    color:var(--ink);
+    letter-spacing:.18em;
+    margin-bottom:8px;
+  }
+  /* 拼音（中文原文的下方） */
+  .poem-cite-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:.18em;
+    line-height:1.6;
+    margin-bottom:18px;
+  }
+  /* 英文翻译 */
+  .poem-cite-en{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:17px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    letter-spacing:.005em;
+  }
+  .poem-cite-en::before{
+    content:'';
+    display:inline-block;
+    width:14px;
+    height:1px;
+    background:var(--ink-trace);
+    vertical-align:5px;
+    margin-right:10px;
+    opacity:.7;
+  }
+
+
+  /* 章节分隔线 - 极细 */
+  .breath{
+    margin:80px auto;
+    height:1px;
+    width:100%;
+    max-width:520px;
+    background:linear-gradient(to right, transparent, rgba(26,24,20,.18) 30%, rgba(26,24,20,.18) 70%, transparent);
+    position:relative;
+    opacity:0;
+    transform:scaleX(.3);
+    transform-origin:center;
+    transition:opacity 1.6s ease, transform 1.6s ease;
+  }
+  .breath.in{
+    opacity:.6;
+    transform:scaleX(1);
+  }
+  .breath::after{
+    content:'';
+    position:absolute;
+    left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    width:3px;height:3px;
+    background:var(--cinnabar);
+    border-radius:50%;
+    opacity:.6;
+  }
+
+  /* ==========================================================
+     汉字字源块 - 文章的视觉锚点
+     ========================================================== */
+  .character-study{
+    margin:120px auto;
+    max-width:760px;
+    text-align:center;
+    padding:80px 32px;
+    position:relative;
+  }
+  /* 上下两道极细的横线，像古书的"框" */
+  .character-study::before,
+  .character-study::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:120px;
+    height:1px;
+    background:linear-gradient(to right, transparent, rgba(26,24,20,.2), transparent);
+  }
+  .character-study::before{top:0}
+  .character-study::after{bottom:0}
+
+  .character-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    margin-bottom:36px;
+  }
+  .character-label::before{
+    content:'';
+    display:inline-block;
+    width:24px;
+    height:1px;
+    background:var(--cinnabar);
+    vertical-align:4px;
+    margin-right:14px;
+    opacity:.6;
+  }
+  .character-label::after{
+    content:'';
+    display:inline-block;
+    width:24px;
+    height:1px;
+    background:var(--cinnabar);
+    vertical-align:4px;
+    margin-left:14px;
+    opacity:.6;
+  }
+
+  /* 巨大的核心字 */
+  .character-glyph{
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:clamp(140px,18vw,220px);
+    line-height:1;
+    color:var(--ink);
+    letter-spacing:0;
+    margin-bottom:24px;
+    position:relative;
+    display:inline-block;
+  }
+  /* 朱砂"印章"小标 */
+  .character-glyph::after{
+    content:attr(data-stamp);
+    position:absolute;
+    top:18px;
+    right:-44px;
+    width:32px;height:32px;
+    background:var(--cinnabar);
+    color:var(--paper);
+    font-family:'Noto Serif SC',serif;
+    font-size:12px;
+    font-weight:400;
+    line-height:32px;
+    text-align:center;
+    transform:rotate(-3deg);
+    box-shadow:0 1px 0 rgba(0,0,0,.12);
+    letter-spacing:0;
+  }
+
+  .character-pinyin{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--ink-mute);
+    letter-spacing:.3em;
+    margin-bottom:8px;
+  }
+  .character-meaning{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:16px;
+    color:var(--ink-soft);
+    margin-bottom:48px;
+    letter-spacing:.05em;
+  }
+  .character-meaning em{
+    font-style:italic;
+    color:var(--cinnabar);
+  }
+
+  /* 字形演化（甲骨文 → 篆书 → 楷书） */
+  .character-evolution{
+    display:flex;
+    justify-content:center;
+    gap:64px;
+    margin-bottom:32px;
+    flex-wrap:wrap;
+  }
+  .evolution-step{
+    text-align:center;
+  }
+  .evolution-form{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:48px;
+    line-height:1;
+    color:var(--ink);
+    margin-bottom:14px;
+    /* 不同字体大小对应不同年代 */
+  }
+  .evolution-step:nth-child(1) .evolution-form{
+    font-family:'STXingkai','KaiTi',serif;        /* 模拟古字 - 用楷体或行楷 */
+    color:var(--ink-mute);
+    font-style:italic;
+  }
+  .evolution-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.25em;
+    text-transform:uppercase;
+  }
+  .evolution-zh{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-style:normal;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.15em;
+    margin-top:4px;
+  }
+
+  /* 字源说明 */
+  .character-note{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--ink-mute);
+    line-height:1.7;
+    max-width:480px;
+    margin:0 auto;
+    padding-top:32px;
+    border-top:1px dashed rgba(26,24,20,.15);
+  }
+
+  /* ==========================================================
+     滚动出现动画
+     ========================================================== */
+  .reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity 1.4s ease, transform 1.4s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ==========================================================
+     文章结尾 - 签名 + 相关阅读
+     ========================================================== */
+  .essay-end{
+    max-width:680px;
+    margin:0 auto;
+    padding:80px 32px 60px;
+    position:relative;
+    z-index:5;
+  }
+  .essay-signature{
+    text-align:center;
+    padding:60px 0 40px;
+    border-top:1px solid rgba(26,24,20,.12);
+  }
+  .signature{
+    font-family:'Caveat',cursive;
+    font-weight:400;
+    font-size:28px;
+    color:var(--cinnabar);
+    letter-spacing:.02em;
+    margin-bottom:6px;
+  }
+  .signature-meta{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    color:var(--ink-faint);
+    letter-spacing:.25em;
+    text-transform:uppercase;
+  }
+
+  /* ============================================================
+     底部连续阅读导航 - 上一篇 / 下一篇 / 全部
+     ============================================================ */
+  .nav-essays{
+    margin-top:80px;
+    padding-top:60px;
+    border-top:1px solid rgba(26,24,20,.1);
+  }
+  .nav-essays-label{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:48px;
+  }
+  .nav-essays-label::before,
+  .nav-essays-label::after{
+    content:'';
+    display:inline-block;
+    width:24px;
+    height:1px;
+    background:var(--cinnabar);
+    vertical-align:4px;
+    margin:0 14px;
+    opacity:.6;
+  }
+  .nav-essays-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border-top:1px solid rgba(26,24,20,.1);
+    border-bottom:1px solid rgba(26,24,20,.1);
+  }
+  .nav-essay{
+    padding:36px 24px;
+    text-decoration:none;
+    color:inherit;
+    transition:background .5s ease, padding .5s ease;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .nav-essay.prev{
+    text-align:right;
+    border-right:1px solid rgba(26,24,20,.1);
+    align-items:flex-end;
+  }
+  .nav-essay.next{
+    text-align:left;
+    align-items:flex-start;
+  }
+  .nav-essay:hover{
+    background:rgba(244,239,230,.4);
+  }
+  .nav-essay.prev:hover{padding-right:36px}
+  .nav-essay.next:hover{padding-left:36px}
+
+  .nav-essay-direction{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--cinnabar);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:6px;
+  }
+  .nav-essay-direction .arrow{
+    font-style:normal;
+    font-size:13px;
+    transition:transform .4s ease;
+  }
+  .nav-essay.prev:hover .arrow{transform:translateX(-4px)}
+  .nav-essay.next:hover .arrow{transform:translateX(4px)}
+
+  .nav-essay-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+  }
+  .nav-essay-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:18px;
+    color:var(--ink);
+    line-height:1.35;
+    letter-spacing:.005em;
+    transition:color .4s ease;
+  }
+  .nav-essay:hover .nav-essay-title{color:var(--cinnabar)}
+  .nav-essay-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.12em;
+  }
+
+  .nav-essay-empty{
+    padding:36px 24px;
+    color:var(--ink-faint);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    letter-spacing:.18em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .nav-essay-empty.prev{
+    text-align:right;
+    border-right:1px solid rgba(26,24,20,.1);
+    justify-content:flex-end;
+  }
+  .nav-essay-empty.next{
+    text-align:left;
+  }
+  .nav-empty-en{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:12px;
+    letter-spacing:.32em;
+    color:var(--cinnabar);
+    opacity:.7;
+    text-transform:lowercase;
+    margin-bottom:8px;
+  }
+  .nav-empty-zh{
+    font-family:'Noto Serif SC',serif;
+    font-weight:300;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--ink-faint);
+  }
+  .nav-essay-empty{
+    flex-direction:column;
+    justify-content:center !important;
+    gap:0;
+  }
+  .nav-essay-empty.prev{align-items:flex-end}
+  .nav-essay-empty.next{align-items:flex-start}
+
+
+  .nav-essays-all{
+    margin-top:32px;
+    text-align:center;
+  }
+  .nav-essays-all a{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink-mute);
+    text-decoration:none;
+    letter-spacing:.18em;
+    border-bottom:1px solid rgba(26,24,20,.18);
+    padding-bottom:3px;
+    transition:color .4s ease, border-color .4s ease;
+  }
+  .nav-essays-all a:hover{
+    color:var(--cinnabar);
+    border-bottom-color:var(--cinnabar);
+  }
+
+  @media (max-width:780px){
+    .nav-essays-row{
+      grid-template-columns:1fr;
+    }
+    .nav-essay.prev,.nav-essay-empty.prev{
+      text-align:left;
+      align-items:flex-start;
+      border-right:none;
+      border-bottom:1px solid rgba(26,24,20,.1);
+      justify-content:flex-start;
+    }
+    .nav-essay.prev .nav-essay-direction{justify-content:flex-start}
+    .nav-essay.prev:hover{padding-right:24px;padding-left:36px}
+  }
+
+  /* ==========================================================
+     底部「缘」深色联系块
+     ========================================================== */
+  .meeting{
+    position:relative;
+    background:#1a1814;
+    color:var(--paper);
+    padding:120px 56px 80px;
+    overflow:hidden;
+    margin-top:80px;
+    border-top:1px solid rgba(183,50,37,.4);
+  }
+  .meeting::before{
+    content:'';
+    position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1, 0 0 0 0 0.95, 0 0 0 0 0.85, 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.6;
+    mix-blend-mode:screen;
+    pointer-events:none;
+  }
+  .meeting-watermark{
+    position:absolute;
+    bottom:-60px;
+    right:-30px;
+    font-family:'Noto Serif SC',serif;
+    font-weight:200;
+    font-size:480px;
+    line-height:1;
+    color:rgba(244,239,230,.04);
+    pointer-events:none;
+    user-select:none;
+  }
+  .meeting-inner{
+    position:relative;
+    z-index:2;
+    max-width:680px;
+    margin:0 auto;
+  }
+  .meeting-line{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--cinnabar-soft);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .meeting-text{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.55;
+    color:rgba(244,239,230,.85);
+    margin-bottom:48px;
+    max-width:480px;
+  }
+
+  /* === Slowly Social Icons - 复用组件 === */
+  .slowly-social{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    --ss-color: #6b6258;
+    --ss-color-hover: #b73225;
+    --ss-tip-color: #9a8e80;
+    --ss-popup-bg: #f4efe6;
+    --ss-popup-shadow: rgba(183,50,37,.4);
+    --ss-popup-text: #6b6258;
+  }
+  .on-dark .slowly-social{
+    --ss-color: rgba(244,239,230,.55);
+    --ss-color-hover: #c94a3a;
+    --ss-tip-color: rgba(244,239,230,.55);
+  }
+  .slowly-social__icons{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+  .slowly-social__dot{
+    width:36px;height:36px;
+    display:inline-flex;align-items:center;justify-content:center;
+    color:var(--ss-color);background:transparent;border:none;cursor:pointer;
+    text-decoration:none;
+    transition:color .4s ease, transform .4s ease, opacity .4s ease;
+    position:relative;padding:0;opacity:.85;font:inherit;
+  }
+  .slowly-social__dot svg{width:20px;height:20px;display:block}
+  .slowly-social__dot:hover,.slowly-social__dot:focus-visible{
+    color:var(--ss-color-hover);opacity:1;transform:translateY(-2px);outline:none;
+  }
+  .slowly-social__dot::after{
+    content:attr(data-tip);
+    position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;
+    color:var(--ss-tip-color);letter-spacing:.15em;white-space:nowrap;
+    opacity:0;pointer-events:none;transition:opacity .4s ease;
+  }
+  .slowly-social__dot:hover::after,.slowly-social__dot:focus-visible::after{opacity:1}
+  .slowly-social__dot.is-wechat-active{color:var(--ss-color-hover);opacity:1}
+  .slowly-social__qr{
+    margin-top:0;max-width:240px;overflow:hidden;max-height:0;opacity:0;
+    transition:max-height .55s cubic-bezier(.45,.05,.55,.95),opacity .45s ease,margin-top .5s ease;
+  }
+  .slowly-social__qr.is-open{max-height:340px;opacity:1;margin-top:24px}
+  .slowly-social__qr-card{
+    background:var(--ss-popup-bg);padding:16px 16px 12px;border-radius:4px;
+    display:inline-block;
+    box-shadow:0 2px 0 var(--ss-popup-shadow),0 6px 24px rgba(0,0,0,.15);
+    position:relative;
+  }
+  .slowly-social__qr-card::before{
+    content:'';position:absolute;top:-5px;left:108px;
+    transform:rotate(45deg);width:10px;height:10px;background:var(--ss-popup-bg);
+  }
+  .slowly-social__qr-card img{display:block;width:160px;height:auto;image-rendering:pixelated}
+  .slowly-social__qr-caption{
+    font-family:'Noto Serif SC',serif;font-weight:300;font-size:10px;
+    color:var(--ss-popup-text);letter-spacing:.15em;text-align:center;margin:8px 0 0;
+  }
+
+  /* 底部 footer */
+  footer{
+    text-align:left;
+    padding:32px 56px 40px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:11px;
+    color:rgba(244,239,230,.4);
+    letter-spacing:.2em;
+    background:#1a1814;
+    border-top:1px solid rgba(244,239,230,.06);
+  }
+  footer .with{
+    color:var(--cinnabar-soft);
+    margin-left:6px;
+    opacity:.85;
+  }
+
+  /* === 动画 === */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* === 响应式 === */
+  @media (max-width:780px){
+    nav{padding:18px 22px}
+    .nav-mark{font-size:15px}
+    .nav-right{gap:18px}
+    .essay-header{padding:120px 24px 60px}
+    .essay-meta{font-size:10px;gap:12px;letter-spacing:.25em}
+    .essay-meta-time{margin-left:auto}
+    .essay-title{font-size:38px}
+    article{padding:40px 24px 60px}
+    .stanza p{font-size:17px;line-height:1.85}
+    .stanza.left,.stanza.right,.stanza.shallow-indent,.stanza.deep-indent{
+      max-width:none;margin-left:0;margin-right:0;
+    }
+    .pull{font-size:20px;margin:50px 0}
+    .poem-cite{padding-left:20px;margin:36px 0}
+    .poem-cite-zh{font-size:18px;letter-spacing:.12em}
+    .poem-cite-en{font-size:15px}
+    .poem-cite-source{font-size:10px;letter-spacing:.2em}
+    .poem-cite-source .zh{font-size:11px}
+    .pull.indent{margin-left:0}
+    .zh-anchor{font-size:28px;margin:60px 0;text-align:left}
+    .zh-anchor.right-align{text-align:left;margin-left:0;margin-right:0}
+    .character-study{padding:60px 24px;margin:80px auto}
+    .character-glyph{font-size:120px}
+    .character-glyph::after{right:-30px;width:24px;height:24px;line-height:24px;font-size:10px}
+    .character-evolution{gap:32px}
+    .evolution-form{font-size:36px}
+    .related-list{grid-template-columns:1fr}
+    .related-item{border-right:none !important;padding:24px 0}
+    .related-item:hover{padding-left:16px}
+    .meeting{padding:80px 24px 60px}
+    .meeting-watermark{font-size:280px;bottom:-30px;right:-20px}
+    .meeting-text{font-size:18px}
+    footer{padding:24px;font-size:10px}
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav id="topNav">
+  <a href="../index.html" class="nav-mark">
+    <span class="seal">慢</span>
+    Slowly
+  </a>
+  <div class="nav-right">
+    <a href="menu.html" class="nav-link">all essays</a>
+    <a href="../index.html" class="nav-link">home</a>
+  </div>
+</nav>
+
+<!-- 阅读进度线 -->
+<div class="reading-line" id="readingLine" aria-hidden="true"></div>
+
+
+<!-- ============================================================
+     文章头部
+     ============================================================ -->
+<header class="essay-header">
+  <div class="essay-meta">
+    <span class="essay-meta-num">No. 03</span>
+    <span class="essay-meta-cat">Silence</span>
+    <span class="essay-meta-time">a 5-min reading</span>
+  </div>
+
+  <h1 class="essay-title">
+    The Chinese word for <em>understanding</em><br>without saying a word.
+  </h1>
+
+  <div class="essay-subtitle" lang="zh">意会 · 心相通的瞬间</div>
+  <div class="essay-subtitle-pinyin">yìhuì · xīn xiāng tōng de shùnjiān</div>
+</header>
+
+
+<!-- ============================================================
+     文章主体
+     ============================================================ -->
+<article>
+
+  <div class="stanza left reveal">
+    <p>There is a moment, between two people who know each other well, when something is communicated without anything being said. A glance across a table. A shared half-smile. A pause that means <em>yes, I felt that too</em>.</p>
+  </div>
+
+  <div class="stanza left reveal">
+    <p>In English, to describe this you'd need a whole sentence. <em>An unspoken understanding. We're on the same wavelength. I get it without you having to explain.</em> The English language seems to need a lot of words to describe the moment when no words were needed.</p>
+  </div>
+
+  <p class="pull reveal">
+    In Chinese, this moment has a name.<br>
+    Two characters. Two syllables.<br>
+    <span lang="zh" style="font-family:'Noto Serif SC',serif;font-style:normal;color:#1a1814;">意会</span>. <em>yìhuì</em>.
+  </p>
+
+  <!-- 字源块：会 -->
+  <div class="character-study reveal">
+    <div class="character-label">a closer look</div>
+
+    <div class="character-glyph" lang="zh" data-stamp="huì">会</div>
+    <div class="character-pinyin">huì</div>
+    <div class="character-meaning">to meet · to understand · <em>to converge</em></div>
+
+    <div class="character-evolution">
+      <div class="evolution-step">
+        <div class="evolution-form" lang="zh" style="font-family:'STKaiti','KaiTi','楷体',serif;">會</div>
+        <div class="evolution-label">
+          ancient form
+          <span class="evolution-zh">古字 · gǔ zì</span>
+        </div>
+      </div>
+      <div class="evolution-step">
+        <div class="evolution-form" lang="zh" style="font-family:'STKaiti','KaiTi','楷体',serif;">合</div>
+        <div class="evolution-label">
+          to come together
+          <span class="evolution-zh">合 · hé</span>
+        </div>
+      </div>
+      <div class="evolution-step">
+        <div class="evolution-form" lang="zh">日</div>
+        <div class="evolution-label">
+          sun, daylight
+          <span class="evolution-zh">日 · rì</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="character-note">
+      The old form of 会 was 會 — built from a lid, vessels stacked together, and the sun beneath. To "huì" was originally to gather, in daylight, around something shared. Over time, the meaning softened — from a literal meeting of bodies, to a meeting of minds.
+    </p>
+  </div>
+
+  <div class="stanza left reveal">
+    <p>So <span lang="zh" style="font-family:'Noto Serif SC',serif;">意会</span> is, literally, <em>a meeting of minds</em>. <span lang="zh" style="font-family:'Noto Serif SC',serif;">意</span> (yì) — intent, meaning, what is held in the heart. <span lang="zh" style="font-family:'Noto Serif SC',serif;">会</span> (huì) — to converge, to meet, to come together. Together, they describe the moment two inner worlds touch — without language as the bridge.</p>
+  </div>
+
+  <div class="stanza shallow-indent reveal">
+    <p>Notice how the English equivalents fall short.</p>
+    <p><em>"Reading between the lines"</em> assumes something was hidden — that the truth was tucked away inside a sentence, and you had to dig it out.</p>
+    <p><em>"Unspoken understanding"</em> assumes there was something to be said, and it simply wasn't said.</p>
+    <p>But <span lang="zh" style="font-family:'Noto Serif SC',serif;">意会</span> assumes neither. There is nothing hidden. Nothing withheld. The understanding simply <em>arrives</em>, between two people, fully formed — like sunlight finding a window without anyone opening it.</p>
+  </div>
+
+  <p class="pull indent reveal">
+    English communication is a <em>transmission</em>:<br>
+    a sender, a receiver, a message in motion.<br>
+    <br>
+    <span lang="zh" style="font-family:'Noto Serif SC',serif;font-style:normal;color:#1a1814;">意会</span> is a <em>convergence</em>:<br>
+    two centers, quietly arriving at the same place.
+  </p>
+
+  <div class="breath reveal" aria-hidden="true"></div>
+
+  <p class="zh-anchor reveal" lang="zh">
+    只可意会，不可言传。
+    <span class="pinyin">zhǐ kě yìhuì, bù kě yán chuán</span>
+  </p>
+
+  <div class="stanza left reveal">
+    <p>This phrase is one of the most quoted in classical Chinese: <em>only to be grasped by the heart, not transmittable by words</em>. It is a sentence that admits the limits of language — and at the same time, celebrates them.</p>
+    <p>Some things, the saying suggests, were never meant to travel through speech. They were meant to be met directly, mind to mind, in silence.</p>
+  </div>
+
+  <div class="poem-cite reveal">
+    <div class="poem-cite-source">
+      Tao Yuanming <span class="zh" lang="zh">陶渊明</span> <span class="dot">·</span> Drinking Wine, V <span class="zh" lang="zh">饮酒·其五</span>
+    </div>
+    <div class="poem-cite-zh" lang="zh">此中有真意，欲辨已忘言。</div>
+    <div class="poem-cite-pinyin">cǐ zhōng yǒu zhēn yì, yù biàn yǐ wàng yán</div>
+    <div class="poem-cite-en">Here, in all this, lies a truer meaning — and the moment I try to name it, the words have already left me.</div>
+  </div>
+
+  <div class="poem-cite reveal">
+    <div class="poem-cite-source">
+      Wang Wei <span class="zh" lang="zh">王维</span> <span class="dot">·</span> Zhongnan Retreat <span class="zh" lang="zh">终南别业</span>
+    </div>
+    <div class="poem-cite-zh" lang="zh">行到水穷处，坐看云起时。</div>
+    <div class="poem-cite-pinyin">xíng dào shuǐ qióng chù, zuò kàn yún qǐ shí</div>
+    <div class="poem-cite-en">I walk until the stream runs out, and then I sit, and watch the clouds rise.</div>
+  </div>
+
+  <div class="poem-cite reveal">
+    <div class="poem-cite-source">
+      Su Shi <span class="zh" lang="zh">苏轼</span> <span class="dot">·</span> Inscribed on the Wall of West Forest Temple <span class="zh" lang="zh">题西林壁</span>
+    </div>
+    <div class="poem-cite-zh" lang="zh">不识庐山真面目，只缘身在此山中。</div>
+    <div class="poem-cite-pinyin">bù shí lú shān zhēn miàn mù, zhǐ yuán shēn zài cǐ shān zhōng</div>
+    <div class="poem-cite-en">I cannot see the true shape of Mount Lu — only because I am standing inside the mountain itself.</div>
+  </div>
+
+  <div class="stanza shallow-indent reveal">
+    <p>Tao Yuanming sees something true and forgets how to name it. Wang Wei walks to the end of the water and finds, instead of conclusion, a sky beginning to move. Su Shi stands inside a mountain and admits he cannot describe it — and that is the description.</p>
+    <p>None of these poets is being cryptic. They are simply trusting you, the reader, to <span lang="zh" style="font-family:'Noto Serif SC',serif;">意会</span> — to meet them where they are. The poem ends, and the rest is yours.</p>
+  </div>
+
+  <div class="breath reveal" aria-hidden="true"></div>
+
+  <div class="stanza left reveal">
+    <p>Once you have a word for something, you start to notice it everywhere.</p>
+    <p><span lang="zh" style="font-family:'Noto Serif SC',serif;">心领神会</span> (xīn lǐng shén huì) — <em>the heart receives, the spirit understands</em>. A nod that means more than a nod.</p>
+    <p><span lang="zh" style="font-family:'Noto Serif SC',serif;">会心一笑</span> (huì xīn yī xiào) — <em>a smile that meets the heart</em>. The smile two people share when they both, suddenly, understand the same thing.</p>
+    <p><span lang="zh" style="font-family:'Noto Serif SC',serif;">默契</span> (mòqì) — <em>silent agreement</em>. The kind of understanding old friends, long couples, lifelong colleagues develop — where most things no longer need to be said.</p>
+  </div>
+
+  <p class="pull reveal">
+    Chinese has, quietly, built a small <em>vocabulary</em><br>
+    for the things that happen <em>between</em> words.
+  </p>
+
+  <div class="breath reveal" aria-hidden="true"></div>
+
+  <div class="stanza left reveal">
+    <p>I think about this often, now, in an age when so many of our sentences are written by something other than us. We type a few keywords, and a machine completes the thought. We send a message, and another machine has already drafted the reply.</p>
+    <p>What gets left out, in all this completion, is exactly what <span lang="zh" style="font-family:'Noto Serif SC',serif;">意会</span> protects: the part of communication that <em>was never supposed to be in the words</em>.</p>
+  </div>
+
+  <div class="stanza right reveal">
+    <p>The pause before someone speaks. The look that says, <em>I know you well enough to know what you are not saying.</em> The understanding that arrives without being summoned, between two people who have, somewhere along the way, become quiet companions.</p>
+  </div>
+
+  <p class="pull reveal">
+    Maybe what we are losing, in the age of perfect translation,<br>
+    is not language —<br>
+    but everything <em>language was leaving room for</em>.
+  </p>
+
+  <div class="stanza shallow-indent reveal">
+    <p>And maybe this is why <span lang="zh" style="font-family:'Noto Serif SC',serif;">意会</span> matters now, more than it ever has.</p>
+    <p>Not as a piece of cultural exotica. Not as a translation puzzle. But as a small, quiet reminder — held inside two ancient characters — that the deepest understanding between two people has always been the kind that does not need to be put into words.</p>
+  </div>
+
+  <p class="zh-anchor reveal" lang="zh">
+    最深的相遇，是无言的。
+    <span class="pinyin">zuì shēn de xiāng yù, shì wú yán de</span>
+  </p>
+
+</article>
+
+
+<!-- ============================================================
+     签名 + 相关阅读
+     ============================================================ -->
+<section class="essay-end">
+
+  <div class="essay-signature reveal">
+    <div class="signature">slowly written by Ivy</div>
+    <div class="signature-meta">— 10th May 2026 —</div>
+  </div>
+
+    <div class="nav-essays reveal">
+    <div class="nav-essays-label">continue reading</div>
+    <div class="nav-essays-row">
+      <a href="02tea.html" data-route="Essays/02tea.html" class="nav-essay prev">
+        <div class="nav-essay-direction"><span class="arrow">←</span> previous</div>
+        <div class="nav-essay-num">No. 02 · Verbs</div>
+        <div class="nav-essay-title">Why the Chinese say "drink tea" instead of "have tea"</div>
+        <div class="nav-essay-zh" lang="zh">喝茶，不是 have tea</div>
+      </a>
+      <a href="04moonlight.html" data-route="Essays/04moonlight.html" class="nav-essay next">
+        <div class="nav-essay-direction">next <span class="arrow">→</span></div>
+        <div class="nav-essay-num">No. 04 · Love</div>
+        <div class="nav-essay-title">How to say "I love you" without saying it</div>
+        <div class="nav-essay-zh" lang="zh">今晚的月色真美</div>
+      </a>
+    </div>
+    <div class="nav-essays-all">
+      <a href="menu.html" data-route="Essays/menu.html">view all essays →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     底部「缘」联系块
+     ============================================================ -->
+<section class="meeting on-dark">
+  <div class="meeting-watermark" aria-hidden="true" lang="zh">缘</div>
+
+  <div class="meeting-inner">
+    <div class="meeting-line">— if our paths cross —</div>
+    <p class="meeting-text">
+      A few quiet places where I can be found.
+    </p>
+
+    <div class="slowly-social">
+      <div class="slowly-social__icons">
+        <a href="mailto:ivyzhangyaochen@gmail.com" class="slowly-social__dot" aria-label="Email" data-tip="email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 4.5h21c.83 0 1.5.67 1.5 1.5v12c0 .83-.67 1.5-1.5 1.5h-21C.67 19.5 0 18.83 0 18V6c0-.83.67-1.5 1.5-1.5zM12 13.5L1.74 6.42c-.32.27-.49.66-.49 1.08v.07L12 15l10.75-7.43v-.07c0-.42-.17-.81-.49-1.08L12 13.5z"/></svg>
+        </a>
+        <a href="https://wa.me/8615950075140" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="WhatsApp" data-tip="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://m.me/ivyzhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="Messenger" data-tip="Messenger">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.001 11.639C.001 4.949 5.241 0 12.001 0S24 4.95 24 11.639c0 6.689-5.24 11.638-12 11.638-1.21 0-2.38-.16-3.47-.46a.96.96 0 00-.64.05l-2.39 1.05a.96.96 0 01-1.35-.85l-.07-2.14a.97.97 0 00-.32-.68A11.39 11.389 0 010 11.639zm8.32-2.19l-3.52 5.6c-.35.53.32 1.139.82.75l3.79-2.87c.26-.2.6-.2.87 0l2.8 2.1c.84.63 2.04.4 2.6-.48l3.52-5.6c.35-.53-.32-1.13-.82-.75l-3.79 2.87c-.25.2-.6.2-.86 0l-2.8-2.1a1.8 1.8 0 00-2.61.48z"/></svg>
+        </a>
+        <button type="button" class="slowly-social__dot js-wechat-trigger" aria-label="WeChat" data-tip="WeChat">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .55-.012.821-.03-.273-.813-.42-1.677-.42-2.575 0-3.952 3.747-7.131 8.355-7.131.198 0 .395.011.59.024-.65-3.4-4.151-5.97-8.346-5.97zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-3.93 0-7.116 2.703-7.116 6.035 0 3.332 3.186 6.035 7.115 6.035a8.4 8.4 0 002.346-.33c.265-.078.53-.078.795.064l1.578.92c.078.058.156.078.234.078a.31.31 0 00.295-.295c0-.078-.02-.155-.04-.213-.02-.058-.293-1.117-.293-1.197a.567.567 0 01.234-.591C23.34 18.387 24 16.798 24 15.058c0-3.332-3.186-6.2-7.115-6.2zm-2.43 1.838c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816zm5.078 0c.45 0 .816.366.816.816 0 .45-.366.816-.816.816a.817.817 0 01-.816-.816c0-.45.366-.816.816-.816z"/></svg>
+        </button>
+        <a href="https://www.xiaohongshu.com/user/profile/60deed2c000000000101da45?exSource=" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="RedNote" data-tip="RedNote">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="serif" font-weight="700" font-size="11" fill="#1a1814">小红</text></svg>
+        </a>
+        <a href="https://www.tiktok.com/@ivyzhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="TikTok" data-tip="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@IvyZhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="YouTube" data-tip="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/ivyZhang.823" target="_blank" rel="noopener" class="slowly-social__dot" aria-label="Facebook" data-tip="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="slowly-social__qr js-wechat-popup" aria-hidden="true">
+        <div class="slowly-social__qr-card">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAErAQAAAACH2GeeAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAO4UlEQVR42u2aT2gjWX7HP1UqW0WvOy42bbY7bOLKZkKG6YG1DwM7BKIyuYSZSw8kPR0W1vIhl+TSS2AJ24P9pNUh9CnkMMdss7k0M2ZbOQwMCWmXdAtzCct0twITUoLsLrTFUk6wpmyX6pfDq1eqkmS7PcewdbKsp2/V+9X3fX9/LeHVLptfL7zgqin4QmGpk9cXfv+r0FJYXwdEcpPLwksBsCdiQ75QMaTf6fwtqx6cBEC/D6r0jJn5OyLM1AcyBhIACQ1IWN5MiK8a7IKdgBsBBAYkAhvSAlH1aEPmQuIDHJRwbHDM3wYRg7g1fawKIsqybYdlAB+wwrKhRNKaiIhqLLJOZomIhOsiNqSOfnCAuAvd+wikHzCOB5lt4Itn9AH4+8+R9x9x6nP8c/XZzz7Sm/HKzxjpJ9mFLAGIQzjINxPPI9IG2wXwAtiqsud8xJDKrc9HbJRu7UBKdo839G3eibDuvcdSk6U1NXp510b2Wfvd3I71BNajhXZMaymsxrkdSYCIIX3oOC7Ayeb3FfTROyh27epnVAJKUoAk6jLdTLHrpLRrK9+bF4KQ4ZR37ZZ2rRHdKM7tWLr1IsTE98K5W0+f0QJb39llI9AMN7dGJKnHsB6eY54EViNtHoOYMh7BgCaQPU3HY0YDu+B/6Rl/rj77EN6Ux8D//vXv/9W7fPhRRrpw1w3z6G7khb4yH+d33TMLEz8OItXDPseOM4iQnWPHGcQGpcM8Zc+xHB6KPJFtEZn88PT4WJ69yGpJzp6vYsehot/ugHiTW29vBgyhTXkzpWc80GcmZRBBpMBeyEfYog24Tuz6gCJ/1yxGtEm9JDLEW/xmLNr6uLq+ubVTtiPgR6AIbMB2HXwCfIWdAXiesaOIyHmnUEQkMqdQK8XZeARdujThDBiPRqMFiuvzi3efwc/k3qQL4wA+e/bhh9lCNfMVtK3UiP0czQrtiRTsimPEXtPsAkTm3EcuUs7UfcCuOHaO6DcDa6qPDqSnd4GPG2ufjOEN6zGP4HoA1z5mZE8+Bp7ndtQ/WWxH/V3ZjjCkRwdXvIl/EhypIX06LPRc+RlJiIkIUUJmv2oEkLs4v7wwuDiSsIsPatFCqwCxwVL5v5SFjYOLh0+gP4YGxHrVIM6Z/nm2NOIG3cf1936KP3nw8AfXnr9RccPmivbClkht2VlZueltbOyF0iqZvmqeBkhqJyluFIcUNJu3Yw8sJ3OdOPG9wFe9xc9oEB1Sj8gLt35sX4KYOGjExmLENTW6DfuPXdl+5E8ePLzGWtn0VwmGvcn1W7c2FdCn4+BRis3c+up1L18oCWmcRCEQopCkFJtxxri8Gcdzcw3fNRpuCJXaSWlhGie5hreNhmtxw3Iy93LELRAqiEYMLWwtgomJzZZYdr0rm6fZhLPwDEaDwf6gi4TZ7gPGh4wGdJtNedrUNMuW6yJxI9qTsNf6kV2XdDXxNhpRU1otqS3X05X1nGaZq30aHLBrpWYzkRKQFNJczbAT7dNgi7Y4xjy+2srFyctJkX2tQLR27Rzx20TK1scw5TLEhr61E+sUwPrPN++wPHz3j1mRN7M//9PXrbe/9eVr/7gcfG385o1vv++8952TO1e0I5Pr/smmGipoQ71+/boPMOxDxxVv8tu3gjIp8lhayJJcrAVUSsIoj+xLpACs1Had2Lz+bOZwpXFSCIKTkXpG0tuQ77pAjKaIiUZE5RKXesVCT8dmWoCX3RUPwLdAObjcwL+qmjV/JwjbZ5YzuhGPXgsD2MVW42sQj5x/9wLE0mqWrazc9Bpxcy+UVi2riyQ3vYZEeyKtmr1cF0nWc5olaexGcagDzRSc2OxNFc4ld/le4nuBDl0dSL3Er4a8euEcojmF0BYuQnRig6istLzrn6yqwF5aUyPeuWs9BuutwObrCt65G37qgfPoCnZERFbT1eTmxkZzT3ryI1n+jZVv3lyP9yTqiUh9uZ5+82ZDp6QJkESxjqQkHTMCQiJBhyslmoHreyFs0bYckjzKKJxeXNKeJIqDHNF209jQDCvNj+sCxEx/o3VLnFwAnJxmfhLE+a2uZSv4BPpML4nLjdS/6ikE4MuU0Relb8bAAMI8U58uPP0L9ewXpYWHCj5C/gRO/cpCnVrOXemMeeZTy/ysOTPmOQ9Rymp2ESJGzaZOc2lNjV7CWVd/urOm4C7WPlh3FtUxcgmqzf7f1sf/5NamJngev2jR0U7T4yQwThOSiEqcJLmL006zQrPSAvMDi1y4KzSb2W2ovauVVpzmFLFyHYA4c04zAPKY31xb2mlqas5WMIrIZoF5wu2DEBgfjp5TRhyN2B9076NtK5I5jrsuIlEz7FUQw5bU7OW6JMZpGnWP1EEFkYaWlOJdZ4nzmwB+06pGVr3GruWUNPxcxCD/XUHcRKfavtqqIh7kt87dsHXvzupPgLWH1ksy4FFTr7t9m9f3H7tYAQvtuCrn2REmt4IjNdyh38ngvqbaEOjgulScJhEhEWFmg2JjmhHMqFnuJVWDjBq4C3xRjuiZupmNg65zGddYilKqiFU4KUcpgOcDar1v29MMQYHNErCyiGYp679MRZ1jHs2js9FoMLLxvzAHbPSc/U+hKZExeLoqOc1aKY1h0ggLmtUkXS1oNk33DrBh2QmnNIM8ICgv9NUWGcHN2llg4vddyNzUm1moEUP4ZbNEs5lTWEKEn/5DQTPIcraKiGQHIiLHLw+fvcjYk6whiobI4aF8/ERke7ItIvN2bEgqEs3ZUb+Zye/9x3eC1Z0h/QfApIYHQ9b7fT5wk4mf/kFYis26RBJmGXCq+dNUYaZkhmae6+tKkD19/9ppplWaxUmkK0EZEfF/HzlAREMHH2klNisQY9zMsgFf9XTwUaYZEKxGLa1m0WvLAM1Gv6+s82iWUZf/EsnOOYVkCsYwGGScEhs1GwDQJFPFKzx7BIeKlx/ZpkIHPHsJMOly9mg23TsgQwpE7fEWkAK2sLESvyTNOpNgESL/9sgEwRcjEvzNBYhLTVhT3LibaZeUAty+AVC7w1JzsVeoiSQL7ehN/BP/aHNnBzqZdpgJDIe9Ph1X3Ik/zTRjIA4jpSsYosW4SYgyIUUlAtDlQUARAb4K5lIADKL+/HfFoWwvWFhC/J/3/PxQqplE3MMniBVoNZNuDDSt8I9UBzd/94sLPOc4TbYPnirORtU3lcBgADRNjJvV0xXXa0jUrCKGIq2akToxGu4WBceSwmB6JiUN14lgOXcyGVKFFOciYuoBlyHumqaAdpr2Pz3ybdYeVnf9Ftz9HHjEVe0odY+JfxQMd3p07KlTH/b77Q71ujcpnGaiGR1VHpFIdO2M1KhZbgB8VZS1jMdTpHZCOWMvYv5pEBepHruWk7lFjFtGNPGjpYnblrw4jA1cy2Mz1cI2/YVloBXaymIZ50qZpg1wP6/YJIzKoRmgW095bCbZqiTrItFMpSwS0dWOwmlmycKbRWo2BbDdhQt9NZsCXIRYSQEuQixSAEQkeyKTPZFjOZQXpc28FBGRJ9sy2RaRK9mx7gFHAcMegLhMfFM368A0NhNmSZHq+F1CLSmjWZoVSpN3ASqdszLNihxUdwGKMtoczaZ8LBCLl1PQDDfAt/JGk05JsXp64Y0r06x7X0I4G385Hg3odpEwU2eMx8QDut08NEMkW15NVkWiZhD2WqLrZutxIwqk1RJ7ua7lTJPC8cALfXWgQ9DpKWSmoJHGEAeR2tIh6LQDzExB4xzEcg52IWKj/DsR+d6T7EDk9Pj48NkLefJEsoPJ3qkcH8uzF/Lk/W0duV3FjuJOvJNbm8FQt6913ewo0HUzRzymalbOCyXNKNXNtNQtyDSxHFPlmip1zGJEd7Zu5i3MNJ35upmxY6Xsb+G6Kx4E+K28bnZ1NetKyFk4VuMRA+giB08f/AtjRgz2ubfdJVPGaa5K0oj3wlBaktUldW/e3GhEuoy2vLxa1M3yMk7oF3Wb2BhBWUaZSmWcQKuSA2lRjtyV1HZnMvYyYmHWNs6FiLFb1M0KrROR7exATg+O944P5YXIE8me/usP/1mL2wt5/3ta665kR5eJz9H3d4b0O1D3mPgcqeGwT6fj1D2tbXqUI42hS5MwQ3IXGtIUMiV576kI2PXhahg7FjSzZsuz+nD1jB0LmklKta9QQZzW+1W5S6qTUDcIlLJscFwcIKBpYaulnIRfpW7GGSMGdEHCTEvq8wEwpVmp2SQtqYnJLUVaLZFshmYLrwZTB3jhwh5TB3j5fM+rIDZKiA7wXAH24zU14i77YHeXdBT6jbuYgQ0sMUGRXK5m00Eg6OAy8U6CI4X+VOoCZNW+ax6mhbrMNtMFMINA0Lac+dvGzA4CFYjVyoc3Nwi0GDGdGwQym/eKMhpFF+CSQaBK6GoGgcaHBepTxVgxIqcZ1WZ8FJhfJzfXJd6TUHKaGcRyo7uwRxxWSeGUW+c/LtvDtICnNJtHTAHvlRDjbxDPIJYGgdY+KepLf/Ytfktxm5xmXD4IVLWjGQTayaOZiXdya3NzB/rtjlOfZprFmIRW3NQotSLUc0Hx7OBFEatqpQapNknOQdSTHbJotKiKGOruarpoEKhCs0AR2GrJmWaaFw2wVMxjEM++ZDQYdD9t5sXr8QiiiLBpUgCDGAXSyrtLEjdEwlCkVsucom5WPKOvGuXWUJFpOrNjO5HqlTuQRaaZzg6wLECsFDQuQtwt6mbOFHHtE/5ydHdAFz2h8dYY3ti3vlt0Aa5sx6Hq9duAXPdP3t7c3MknkuS6cZqVsR0gI2YQxaEyjQPjNCuDQPk23byRVsmv5xBdTdy54zqLSBUxSyrn2o/yCQ2w3SJUo/h42SDQzCnMlWI8HjCAJk3O0h/Ar4AuzaZxmgViGIZSy0O1jY09CUWkljmF0yxpT8/MAZR3ncyOFhGphinwlHe9SM1eBZFLEEuDQLw1fsnnWPfsLvbDP3zIbWDf+i6mbnbRINACO8JwBzP5c+Ifbe4M6dNxZFrQKA8rZSX/11ShmQ2KZmvNpQ9e6CupHteieFIpaOg8qHJci0GgOcQwt2OOqAeBaqZ1bnpPgSJAObiu433F2OzXC/+fL/w/oeIrvRWwZoUAAAAASUVORK5CYII=" alt="WeChat QR" />
+          <p class="slowly-social__qr-caption">扫一扫 · scan to add</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Slowly · enter Chinese gently. <span class="with">with Ivy</span>
+</footer>
+
+<script>
+  // 1. 阅读进度线 + 滚动后导航磨砂底
+  (function tracker(){
+    var line = document.getElementById('readingLine');
+    var nav = document.getElementById('topNav');
+    function update(){
+      var s = window.scrollY;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = Math.max(0, Math.min(100, (s / max) * 100));
+      if (line) line.style.height = pct + 'vh';
+      if (nav) nav.classList.toggle('scrolled', s > 40);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // 2. 段落淡入
+  (function reveals(){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  })();
+
+  // 3. 微信二维码切换
+  (function wechat(){
+    document.querySelectorAll('.slowly-social').forEach(function(root){
+      var trigger = root.querySelector('.js-wechat-trigger');
+      var popup = root.querySelector('.js-wechat-popup');
+      if (!trigger || !popup) return;
+      trigger.addEventListener('click', function(e){
+        e.preventDefault();
+        var open = popup.classList.toggle('is-open');
+        trigger.classList.toggle('is-wechat-active', open);
+        popup.setAttribute('aria-hidden', open ? 'false' : 'true');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
